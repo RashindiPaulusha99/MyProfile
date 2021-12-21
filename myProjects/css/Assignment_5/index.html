@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 5</title>
+    <link rel="stylesheet" href="assets/css_resources/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css_resources/fonts/css/all.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <style>
+
+        header{
+            position: relative;
+            height: 80px;
+            box-shadow: 0 5px 15px 1px darkgray;
+        }
+
+        header > img{
+            width: 200px;
+            padding-top: 10px;
+            padding-left: 15px;
+        }
+
+        header > ul{
+            position: absolute;
+            right: 30px;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            height: 40px;
+            font-size: 20px;
+            font-family:'Lobster', cursive;
+            list-style: none;
+        }
+
+        header > ul > li{
+            display: inline-block;
+            padding: 0 10px 0 10px;
+        }
+
+        header > ul >li:hover{
+            cursor: pointer;
+            color: red;
+        }
+
+        /*--------------------------------------------------*/
+
+        main{
+            position: relative;
+        }
+
+        main > nav{
+            width: 300px;
+            background-color: blueviolet;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            color: white;
+        }
+
+        main > nav > ul{
+            list-style: none;
+            font-size: 22px;
+            margin-left: 39px;
+        }
+
+        main > nav > ul > li{
+            padding-bottom: 20px;
+        }
+
+        main > nav > ul > li > a{
+            text-decoration: none;
+            color: white;
+            padding-bottom: 4px;
+            margin-left: 13px;
+        }
+
+        main > nav > ul > li > a:hover{
+            color: orange;
+        }
+
+        main > section{
+            margin-left: 300px;
+            padding: 10px;
+            min-height: 1000px;
+        }
+
+        main > section > section{
+            height: 300px;
+            display: flex;
+        }
+
+        main > section > section > div{
+            border: 4px solid white;
+            flex-grow: 1;
+            background-size: cover;
+        }
+
+        main > section > section > div:nth-child(1){
+            background-image: url("assets/images/lap.jpeg");
+        }
+
+        main > section > section > div:nth-child(2){
+            background-image: url("assets/images/lap.jpeg");
+        }
+
+        main > section > section > div:nth-child(3){
+            background-image: url("assets/images/lap.jpeg");
+        }
+
+        /*-------------------------------------------*/
+
+        body > footer{
+            height: 70px;
+            background-color: darkgray;
+        }
+
+        body > footer >p{
+            margin-top: 0;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /*--------------------------------------------------*/
+
+        @media all and (min-width: 320px) and (max-width: 376px) {
+            header{
+                height: 87px;
+            }
+
+            header > img{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                margin: auto;
+            }
+
+            header > ul{
+                right: 0;
+                bottom: 0;
+                left: 0;
+                top: 70px;
+                font-size: 15px;
+                padding-left: 0;
+                margin: auto;
+                width: max-content;
+            }
+
+            main > nav{
+                display: none;
+            }
+
+            main > section{
+                margin-left: 0;
+            }
+
+            main > section > section{
+                flex-direction: column;
+            }
+
+            main > section > section > div{
+                background-size: 346px 91px;
+            }
+        }
+
+        @media all and (min-width: 376px) and (max-width: 426px){
+            header{
+                height: 87px;
+            }
+
+            header > img{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                margin: auto;
+            }
+
+            header > ul{
+                right: 0;
+                bottom: 0;
+                left: 0;
+                top: 70px;
+                font-size: 19px;
+                padding-left: 0;
+                margin: auto;
+                width: max-content;
+            }
+
+            main > nav{
+                display: none;
+            }
+
+            main > section{
+                margin-left: 0;
+            }
+
+            main > section > section{
+                flex-direction: column;
+            }
+
+            main > section > section > div{
+                background-size: 399px 96px;
+                border: 3px solid white;
+            }
+        }
+
+        @media all and (min-width: 426px) and (max-width: 769px){
+            header{
+                height: 80px;
+            }
+
+            main > nav{
+                display: block;
+            }
+
+            main > section > section{
+                height: 224px;
+            }
+
+            main > section > section > div{
+                background-size: 140px 215px;
+            }
+
+            main > section > p{
+                font-size: 18px;
+            }
+
+            body > footer > p{
+                font-size: 21px;
+            }
+        }
+
+        @media all and (min-width: 769px) and (max-width: 1025px){
+            main > section > section >div{
+                background-size: 225px 292px;
+            }
+
+            main > section > p{
+                font-size: 21px;
+            }
+
+            body > footer > p{
+                font-size: 25px;
+            }
+        }
+
+        @media all and (min-width: 1026px) and (max-width: 1441px){
+            main > section > section >div{
+                background-size: 364px 292px;
+            }
+
+            main > section > p{
+                font-size: 21px;
+            }
+
+            body > footer > p{
+                font-size: 25px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<header>
+    <img src="assets/images/ijse.png" alt="">
+
+    <ul>
+        <li>Home</li>
+        <li>Service</li>
+        <li>Contacts</li>
+        <li>About Us</li>
+    </ul>
+</header>
+
+<main>
+    <nav>
+        <ul>
+            <li><i class="fas fa-home"></i><a href="">Home</a></li>
+            <li><i class="fas fa-globe-africa"></i><a href="">Service</a></li>
+            <li><i class="fas fa-id-badge"></i><a href="">Contacts</a></li>
+            <li><i class="fas fa-info-circle"></i><a href="">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <section>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at debitis distinctio doloremque dolorum fugit impedit in itaque laborum laudantium modi mollitia non porro quia soluta ullam veniam, voluptas!</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Developed By IJSE</p>
+</footer>
+
+</body>
+
+</html>
