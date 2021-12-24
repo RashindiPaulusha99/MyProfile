@@ -51,7 +51,7 @@
         }
 
         body > header > div:nth-child(2){
-            left: 34px;
+            left: 36px;
         }
 
         body > header > div > h1{
@@ -94,7 +94,7 @@
             color: hotpink;
         }
 
-        body > main > section > div{
+        body > main > section:nth-child(1) > div{
             width: 228px;
             height: 254px;
             background-image: url("assets/images/me.png");
@@ -106,7 +106,7 @@
             margin: auto;
         }
 
-        body > main > section > section{
+        body > main > section:nth-child(1) > section{
             width: 263px;
             height: 76px;
             position: absolute;
@@ -119,11 +119,44 @@
             margin: auto;
         }
 
-        body > main > section > section > div{
+        body > main > section:nth-child(1) > section > div{
             width: 73px;
             height: 75px;
             flex-grow: 1;
 
+        }
+
+        body > main > section:nth-child(2){
+            /*background-color: red;*/
+            width: 763px;
+            height: 463px;
+            position: absolute;
+            top: 100px;
+            bottom: 0;
+            left: 330px;
+            right: 0;
+            margin: auto;
+        }
+
+        body > main > section:nth-child(2) > div{
+            color: white;
+            width: 100%;
+            height: 100%;
+        }
+
+        body > main > section:nth-child(2) > div > h1:nth-child(1){
+            padding-left: 12px;
+            font-size: 42px;
+        }
+
+        body > main > section:nth-child(2) > div > h1:nth-child(2){
+            padding-left: 100px;
+            font-size: 45px;
+        }
+
+        body > main > section:nth-child(2) > div > pre{
+            padding-left: 180px;
+            font-size: 47px;
         }
 
         /*.description{
@@ -188,19 +221,20 @@
     </section>
 
     <!--introduction---------------------------->
-   <!-- <section id="desc">
-        &lt;!&ndash;for arrows&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
+    <section>
+        <!--for arrows-------------------->
 
-        &lt;!&ndash;for intro&ndash;&gt;
-        <h5 class="description">Hey It's me ,</h5>
-        <h4 class="description">Rashindi Paulusha</h4>
         <div>
-            <pre class="description">Software Developer ,
-           based in Sri Lanka</pre>
+            <!--for intro-->
+            <h1>Hey It's me ,</h1>
+            <h1>Rashindi Paulusha</h1>
+            <pre>Software Developer
+     based in Sri Lanka
+            </pre>
         </div>
 
-        &lt;!&ndash;for arrows&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
-    </section>-->
+        <!--for arrows-------------------->
+    </section>
 </main>
 <!------------------------------------------------------------------------->
 
