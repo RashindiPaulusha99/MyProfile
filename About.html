@@ -4,45 +4,74 @@
     <meta charset="UTF-8">
     <title>About</title>
     <link rel="icon" href="assets/icon/icons8-person-90.png">
+    <link rel="stylesheet" href="assets/resources/css/normalize.css">
 
     <meta name="viewport" content="width=device-width initial-scale=1">
     <meta name="theme-color" content="blue">
 
     <style>
-        .bgColour{
-            background-color: #2C263D;
+        body{
+            background-color: #1D1631;
         }
 
-        .heading{
-            color: white;
-            text-align: center;
+        body > header{
+            height: 57px;
         }
 
-        h3{
+        body > header > h1{
             color: white;
-            text-align: center;
+            margin-bottom: 5px;
+            position: relative;
+            border: 2px solid;
+            display: inline;
+            border-bottom-color: deeppink;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
         }
+
+        body > main > section:nth-child(1){
+            background-color: fuchsia;
+            width: 100vw;
+            height: 82vh;
+            position: absolute;
+
+        }
+
+        body > main > section:nth-child(2){
+            background-color: orange;
+            width: 100vw;
+            height: 10.5%;
+            position: absolute;
+            bottom: 0;
+        }
+
+        body > main > section:nth-child(2) > a {
+            padding-left: 10px;
+        }
+
     </style>
 
 </head>
 
-<body class="bgColour">
+<body>
 <!--------------------------------------------------------------------------------->
 <header>
-    <h1 style="color: white">About Me</h1>
+    <h1>About Me</h1>
 </header>
 <!--------------------------------------------------------------------------------->
 <main>
     <!--for personal information---------------------------->
     <section>
         <!--for image and details------------->
-        <section>
-           <!--images--------->
-            <img src="assets/images/wooden photo frame.png" alt="There was an error loading this image" width="290">
-            <img src="assets/images/me with frame.png" alt="There was an error loading this image" width="180" height="200">
+        <!--<section>
+           &lt;!&ndash;images-&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
+            <div>
+                <img src="assets/images/me with frame.png" alt="There was an error loading this image" width="180" height="200">
+            </div>
 
-           <!--details------->
-            <aside>
+           &lt;!&ndash;details-&#45;&#45;&#45;&#45;&ndash;&gt;
+            <section>
                 <h2 class="heading">Personal Information</h2>
                 <br>
                 <h3>Name : <span>    Rashindi Paulusha Wijesinghe</span></h3>
@@ -51,20 +80,18 @@
                 <h3>Address : <span>Piyadigama , Galle</span></h3>
                 <h3>Country : <span>Sri Lanka</span></h3>
                 <h3>Spoken Languages : <span>Sinhala - English</span></h3>
-            </aside>
+            </section>
         </section>
 
-        <!--for my story---------------------->
+        &lt;!&ndash;for my story&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
         <section>
-            <br>
             <h2 style="color: white">My Story</h2>
             <pre style="color: white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos laboriosam minus<br>molestiae nisi nostrum odio officia, provident quasi quisquam quo sed tempore, vero?<br>Aliquam eligendi impedit sapiente sit voluptas!</pre>
-        </section>
+        </section>-->
     </section>
 
     <!--for download cv------------------------------------->
-    </section>
-        <br>
+    <section>
         <a href="assets/icon/cv" download="cv" style="color: white">Download CV</a>
     </section>
 </main>
