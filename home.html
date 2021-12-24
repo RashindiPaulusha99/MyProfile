@@ -5,15 +5,20 @@
     <title>Home</title>
 
     <link href="assets/icon/icons8-person-90.png" rel="icon">
+    <link rel="stylesheet" href="assets/resources/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/resources/css/fonts/css/all.css">
 
     <meta content="width=device-width initial-scale=1" name="viewport">
     <meta content="blue" name="theme-color">
 
     <style>
-        body {
+        body{
             /*add background image to full body*/
-            background: url("assets/images/bgImage.jpg") ;
-            min-height: 380px;
+            background: url("assets/images/fabio-oyXis2kALVg-unsplash.jpg") ;
+            min-height: 100vh;
 
             /*!* Center and scale the image nicely *!*/
             background-position: center;
@@ -21,8 +26,44 @@
             background-size: cover;
         }
 
+        body > header{
+            position: relative;
+        }
+
+        body > header > h1{
+            color: white;
+            font-size: 25px;
+        }
+
+        body > header > ul{
+            position: absolute;
+            right: 30px;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            height: 30px;
+            font-size: 20px;
+            font-family: 'Lobster', cursive;
+            list-style: none;
+
+        }
+
+        body > header > ul > li{
+            display: inline-block;
+            padding: 0 10px 0 10px;
+            margin-top: 10px;
+            color: white;
+            border-bottom: 3px solid transparent;
+        }
+
+        header > ul > li:hover{
+            border-bottom: 3px solid fuchsia;
+            cursor: pointer;
+            color: hotpink;
+        }
+
         /* Style the links inside the navigation bar */
-        .navLink a {
+        /*.navLink a {
             float: right;
             display: block;
             color: #f2f2f2;
@@ -40,13 +81,7 @@
         .navLink a.active {
             border-bottom: 3px solid fuchsia;
             color: fuchsia;
-        }
-
-        .rp{
-            color: white;
-            font-size: 25px;
-            text-align: start;
-        }
+        }*/
 
         .description{
             font-size: 50px;
@@ -66,33 +101,27 @@
 <body>
 <!------------------------------------------------------------------------->
 <header>
-    <!--for image------------------------------>
-    <section>
-        <!--<h2 style="color: white;">Rp</h2>-->
-    </section>
-    <!--for navigation links------------------->
-    <nav>
-        <div class="navLink">
-            <a>Contact</a>
-            <a>Projects</a>
-            <a>Experience</a>
-            <a>Skills</a>
-            <a>Education</a>
-            <a>About</a>
-            <a class="active">Home</a>
-            <h2 class="rp">Rp</h2>
-        </div>
-    </nav>
+    <h1 class="rp">Rp</h1>
+
+    <ul>
+        <li><a href="home.html"></a>Home</li>
+        <li><a href="About.html"></a>About</li>
+        <li><a href="Education.html"></a>Education</li>
+        <li><a href="Skills.html"></a>Skills</li>
+        <li><a href="Experience.html"></a>Experience</li>
+        <li><a href="projects.html"></a>Projects</li>
+        <li><a href="Contact.html"></a>Contact</li>
+    </ul>
 </header>
 <!------------------------------------------------------------------------->
 <main>
     <!--for image and accounts------------------>
-    <section>
-        <!--for image------->
+    <!--<section>
+        &lt;!&ndash;for image-&#45;&#45;&#45;&#45;&ndash;&gt;
 
         <img alt="There was an error loading this image" class="image" src="assets/images/me.png" width="320" ><br><br>
 
-        <!--accounts-------->
+        &lt;!&ndash;accounts&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
         <div>
             <a href="mailto:rashindipaulusha837@gmail.com" target="_blank"><img alt="There was an error loading this image"
                                                                                 src="assets/icon/icons8-gmail-100 (2).png"
@@ -110,11 +139,11 @@
         </div>
     </section>
 
-    <!--introduction---------------------------->
+    &lt;!&ndash;introduction&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
     <section id="desc">
-        <!--for arrows-------------------->
+        &lt;!&ndash;for arrows&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
 
-        <!--for intro-->
+        &lt;!&ndash;for intro&ndash;&gt;
         <h5 class="description">Hey It's me ,</h5>
         <h4 class="description">Rashindi Paulusha</h4>
         <div>
@@ -122,8 +151,8 @@
            based in Sri Lanka</pre>
         </div>
 
-        <!--for arrows-------------------->
-    </section>
+        &lt;!&ndash;for arrows&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
+    </section>-->
 </main>
 <!------------------------------------------------------------------------->
 
