@@ -19,11 +19,14 @@
             /*add background image to full body*/
             background: url("assets/images/fabio-oyXis2kALVg-unsplash.jpg") ;
             min-height: 100vh;
+            opacity: 10;
 
             /*!* Center and scale the image nicely *!*/
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            /*background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5);*/
         }
 
         body > header{
@@ -94,16 +97,78 @@
             color: hotpink;
         }
 
+        /*body  >main > section:nth-child(1){
+            width: 890px;
+            height: 507px;
+            margin: 101px;
+            margin-left: 51px;
+            background: rgb(0, 0, 0); !* Fallback color *!
+            background: rgba(0, 0, 0, 0.5); !* Black background with 0.5 opacity *!
+            color: #f1f1f1;
+        }*/
+
         body > main > section:nth-child(1) > div{
-            width: 228px;
-            height: 254px;
+            width: 225px;
+            height: 225px;
             background-image: url("assets/images/me.png");
             background-size: cover;
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 15%;
+            left: 13%;
             margin: auto;
+            border-radius: 100%;
+            border: 15px solid #eeeeee;
+            z-index: 2;
+        }
+
+        /*body > main > section:nth-child(1) >div:before{
+            width: 890px;
+            height: 507px;
+            margin: 101px;
+            margin-left: 51px;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+        }*/
+
+       /* .box{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: rgb(0, 0, 0); !* Fallback color *!
+            background: rgba(0, 0, 0, 0.5); !* Black background with 0.5 opacity *!
+            color: #f1f1f1;
+        }*/
+
+        body > main > section:nth-child(1) > div::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -28px;
+            right: 0;
+            margin: auto;
+            border: 14px solid darkgrey;
+            border-radius: 100%;
+            width: 250px;
+            height: 250px;
+            z-index: 1;
+        }
+
+        body > main > section:nth-child(1) > div::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -40px;
+            right: 0;
+            margin: auto;
+            border: 14px solid dimgray;
+            border-radius: 100%;
+            width: 275px;
+            height: 275px;;
+
         }
 
         body > main > section:nth-child(1) > section{
@@ -115,7 +180,7 @@
             justify-content: space-between;
             top: 56%;
             bottom: 0;
-            left: 14.5%;
+            left: 13.5%;
             margin: auto;
         }
 
@@ -123,7 +188,6 @@
             width: 73px;
             height: 75px;
             flex-grow: 1;
-
         }
 
         body > main > section:nth-child(2){
@@ -142,6 +206,10 @@
             width: 100%;
             height: 100%;
             text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px cornflowerblue;
+        }
+
+        body > main > section:nth-child(1) > section > div:nth-child(1):hover{
+            color: pink;
         }
 
         body > main > section:nth-child(2) > div > h1:nth-child(1){
@@ -198,7 +266,7 @@
                 <a href="tel:0787991075" target="_blank"><img alt="There was an error loading this image" src="assets/icon/icons8-whatsapp-100.png" width="61%"></a>
             </div>
             <div>
-                <a href="www.linkedin.com/in/rashindi-wijesinghe-580a1a225" target="_blank"><img alt="There was an error loading this image" src="assets/icon/icons8-linkedin-2-100.png" width="61%"></a>
+                <a href="https://www.linkedin.com/in/rashindi-wijesinghe-580a1a225/" target="_blank"><img alt="There was an error loading this image" src="assets/icon/icons8-linkedin-2-100.png" width="61%"></a>
             </div>
             <div>
                 <a href="https://github.com/RashindiPaulusha99" target="_blank"><img alt="There was an error loading this image" src="assets/icon/icons8-github-64.png" width="61%"></a>

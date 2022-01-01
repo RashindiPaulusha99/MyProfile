@@ -12,16 +12,19 @@
     <style>
         body{
             background-color: #1D1631;
+            min-height: 100vh;
         }
 
         body > header{
             height: 57px;
+            padding-left: 13px;
+            padding-top: 2px;
         }
 
         body > header > h1{
             color: white;
             margin-bottom: 5px;
-            position: relative;
+            position: absolute;
             border: 2px solid;
             display: inline;
             border-bottom-color: deeppink;
@@ -31,23 +34,106 @@
         }
 
         body > main > section:nth-child(1){
-            background-color: fuchsia;
-            width: 100vw;
-            height: 82vh;
+            width: 1100px;
+            height: 601px;
             position: absolute;
-
-        }
-
-        body > main > section:nth-child(2){
-            background-color: orange;
-            width: 100vw;
-            height: 10.5%;
-            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             bottom: 0;
+            margin: auto;
         }
 
-        body > main > section:nth-child(2) > a {
+        .final{
+            background: linear-gradient(to right, #fed330 , #ff9f43);
+            position: absolute;
+            width: 132px;
+            font-size: 20px;
             padding-left: 10px;
+            padding-top: 10px;
+            height: 33px;
+            left: 470px;
+            top: 562px;
+        }
+
+        body > main > section:nth-child(2) > div {
+            padding-left: 10px;
+        }
+
+        body > main > section:nth-child(1) > section:nth-child(1) > section{
+            position: absolute;
+            left: 467px;
+            top: 94px;
+            border: 2px solid deeppink;
+            color: white;
+            width: 616px;
+            height: 262px;
+        }
+
+        main > section:nth-child(1) > section:nth-child(1) > div{
+            position: absolute;
+            top: 137px;
+            left: 72px;
+            background-color: mediumvioletred;
+            width: 319px;
+            height: 335px;
+            box-shadow: 20px 20px 4px 1px maroon;
+        }
+
+        main > section:nth-child(1) > section:nth-child(1) > div > img{
+            border-style: none;
+            position: absolute;
+            left: 18px;
+            top: 20px;
+            width: 278px;
+            height: 291px;
+        }
+
+        main > section:nth-child(1) > section:nth-child(2){
+            border: 2px solid deeppink;
+            position: absolute;
+            left: 467px;
+            top: 386px;
+            width: 616px;
+        }
+
+        ul{
+           list-style: none;
+           padding-left: 24px;
+           font-size: 20px;
+        }
+
+        .first{
+           top: 74px;
+           position: absolute;
+        }
+
+        .second{
+            position: absolute;
+            left: 183px;
+            top: 74px;
+        }
+
+        .third{
+            position: absolute;
+            top: 74px;
+            left: 216px;
+        }
+
+        .heading{
+            padding-left: 24px;
+            padding-top: 7px;
+        }
+
+        .last > h2{
+            color: white;
+            padding-left: 24px;
+        }
+
+        .last > p{
+            color: white;
+            padding-left: 24px;
+            font-size: 16px;
         }
 
     </style>
@@ -67,32 +153,48 @@
         <section>
            <!--images--------->
             <div>
-                <img src="assets/images/me with frame.png" alt="There was an error loading this image" width="180" height="200">
+                <img src="assets/images/me with frame.png" alt="There was an error loading this image">
             </div>
 
            <!--details------->
             <section>
                 <h2 class="heading">Personal Information</h2>
-                <br>
-                <h3>Name : <span>    Rashindi Paulusha Wijesinghe</span></h3>
-                <h3>DOB : <span>06-02-1999</span></h3>
-                <h3>Education : <span>Institute of Java and Software Engineering</span></h3>
-                <h3>Address : <span>Piyadigama , Galle</span></h3>
-                <h3>Country : <span>Sri Lanka</span></h3>
-                <h3>Spoken Languages : <span>Sinhala - English</span></h3>
+                <ul class="first">
+                    <li>Name</li>
+                    <li>DOB</li>
+                    <li>Education</li>
+                    <li>Address</li>
+                    <li>Country</li>
+                    <li>Spoken Languages</li>
+                </ul>
+                <ul class="second">
+                    <li>:</li>
+                    <li>:</li>
+                    <li>:</li>
+                    <li>:</li>
+                    <li>:</li>
+                    <li>:</li>
+                </ul>
+                <ul class="third">
+                    <li>Rashindi Paulusha Wijesinghe</li>
+                    <li>06-02-1999</li>
+                    <li>Institute of Java and Software Engineering</li>
+                    <li>Piyadigama , Galle</li>
+                    <li>Sri Lanka</li>
+                    <li>Sinhala - English</li>
+                </ul>
             </section>
         </section>
 
         <!--for my story---------------------->
-        <section>
-            <h2 style="color: white">My Story</h2>
-            <pre style="color: white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos laboriosam minus<br>molestiae nisi nostrum odio officia, provident quasi quisquam quo sed tempore, vero?<br>Aliquam eligendi impedit sapiente sit voluptas!</pre>
+        <section class="last">
+            <h2>My Story</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos laboriosam minus<br>molestiae nisi nostrum odio officia, provident quasi quisquam quo sed tempore, vero?<br>Aliquam eligendi impedit sapiente sit voluptas!</p>
         </section>
-    </section>
-
-    <!--for download cv------------------------------------->
-    <section>
-        <a href="assets/icon/cv" download="cv" style="color: white">Download CV</a>
+        <!--for download cv------------------------------------->
+        <section class="final">
+            <a href="assets/icon/cv" download="cv" style="color: white">Download CV</a>
+        </section>
     </section>
 </main>
 <!--------------------------------------------------------------------------------->
