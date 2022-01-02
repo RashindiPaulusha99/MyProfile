@@ -5,6 +5,7 @@
     <title>Contact</title>
 
     <link rel="icon" href="assets/icon/icons8-person-90.png">
+    <link rel="stylesheet" href="assets/resources/css/normalize.css">
 
     <meta name="viewport" content="width=device-width initial-scale=1">
     <meta name="theme-color" content="blue">
@@ -33,22 +34,69 @@
             border-right-color: transparent;
         }
 
+        body > header > h1:nth-child(2){
+            left: 840px;
+        }
+
         main > section:nth-child(1) > section:nth-child(1) {
             width: 621px;
             height: 556px;
             background: url(assets/images/Paper-and-Pen-clipart-removebg-preview.png);
-            /*background-color: #ff253a;*/
             position: absolute;
-            top: 130px;
+            top: 102px;
             left: 60px;
             background-size: cover;
         }
 
         main > section:nth-child(1) > section:nth-child(1) > div{
             position: absolute;
-            top: 118px;
-            left: 93px;
+            top: 116px;
+            left: 86px;
             transform: rotate(-18deg);
+            font-size: 18px;
+        }
+
+        main > section:nth-child(1) > section:nth-child(2){
+            width: 521px;
+            height: 555px;
+            position: absolute;
+            top: 124px;
+            left: 841px;
+        }
+
+        main > section:nth-child(1) > section:nth-child(2) > form > label{
+            color: white;
+        }
+
+        main > section:nth-child(1) > section:nth-child(2) > form > #last_name{
+            position: relative;
+            bottom: 27px;
+            left: 83px;
+        }
+
+        main > section:nth-child(1) > section:nth-child(2) > form > .input{
+            overflow: visible;
+            border-top-right-radius: 23px;
+            border-bottom-left-radius: 23px;
+            border-color: white;
+            width: 209px;
+            height: 27px;
+        }
+
+        main > section:nth-child(1) > section:nth-child(2) > form > #txtPhoneNumber,#txtE-mailAddress,#txtMassage{
+            width: 512px;
+        }
+
+        main > section:nth-child(1) > section:nth-child(2) > form > #txtMassage{
+            height: 162px;
+        }
+
+        main > section:nth-child(1) > section:nth-child(2) > form > button{
+            position: relative;
+            left: 370px;
+            height: 34px;
+            width: 150px;
+            background-color: goldenrod;
         }
 
     </style>
@@ -59,6 +107,7 @@
 <!----------------------------------------------------------------------------------------->
 <header>
     <h1>Contact Me</h1>
+    <h1>Get In Touch</h1>
 </header>
 <!----------------------------------------------------------------------------------------->
 <main>
@@ -93,33 +142,34 @@
             </div>
         </section>
 
+
         <!--for massages--------------------->
-        <!--<section>
+        <section>
             <form action="">
-                <fieldset>
-                    <legend style="font-size: 30px">Get In Touch</legend>
+                <!--<fieldset>-->
+                    <!--<legend style="font-size: 30px">Get In Touch</legend>-->
                     <br>
 
                     <label for="txtFirstName">First Name :</label><br>
-                    <input id="txtFirstName" type="text">
+                    <input id="txtFirstName" class="input" type="text">
 
-                    <label for="txtLastName">Last Name :</label>
-                    <input id="txtLastName" type="text"><br><br>
+                    <label for="txtLastName" id="last_name">Last Name :</label>
+                    <input id="txtLastName" type="text" class="input"><br><br>
 
-                    <label for="txtPhoneNumber">Phone Number :</label><br>
-                    <input id="txtPhoneNumber" type="tel"><br><br>
+                    <label for="txtPhoneNumber" class="input">Phone Number :</label><br>
+                    <input id="txtPhoneNumber" type="tel" class="input"><br><br>
 
                     <label for="txtE-mailAddress">E-mail Address :</label><br>
-                    <input id="txtE-mailAddress" type="email"><br><br>
+                    <input id="txtE-mailAddress" type="email" class="input"><br><br>
 
                     <label for="txtMassage">Massage :</label><br>
-                    <textarea id="txtMassage" cols="30" rows="10"></textarea><br><br>
+                    <textarea id="txtMassage" cols="30" rows="10" class="input"></textarea><br><br>
 
                     <button>Send Massage</button>
 
-                </fieldset>
+                <!--</fieldset>-->
             </form>
-        </section>-->
+        </section>
 
     </section>
 
