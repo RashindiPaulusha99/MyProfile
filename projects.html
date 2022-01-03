@@ -5,37 +5,285 @@
     <title>Projects</title>
 
     <link rel="icon" href="assets/icon/icons8-person-90.png">
+    <link rel="stylesheet" href="assets/resources/css/normalize.css">
 
     <meta name="viewport" content="width=device-width initial-scale=1">
     <meta name="theme-color" content="blue">
+
+    <style>
+
+        body{
+            background: linear-gradient(to right, mediumvioletred , cornflowerblue);
+        }
+
+        body > main > section{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            border: 1px solid saddlebrown;
+        }
+
+        body > main > section:nth-child(1){
+            background: url("assets/images/projectImage.jpeg");
+            background-size: cover;
+            width: 100%;
+            height: 626px;
+        }
+
+        body > main > section:nth-child(1) > div{
+            background-color: #eeeeee;
+            width: 100%;
+            height: 75px;
+            position: absolute;
+            bottom: 0;
+            top: 550px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 1;
+        }
+
+        body > main > section:nth-child(1) > div > div{
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            animation-name: drop;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-duration: 20s;
+        }
+
+        @keyframes drop {
+            from{
+                top: 0;
+            }
+            to{
+                bottom: 0;
+            }
+        }
+
+        body > main > section:nth-child(1) > div > div > div:nth-child(1){
+            width: 30px;
+            height: 30px;
+            border: 4px solid red;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(45deg);
+            position: absolute;
+            top: -29px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        body > main > section:nth-child(1) > div > div > div:nth-child(2){
+            width: 30px;
+            height: 30px;
+            border: 4px solid red;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        body > main > section:nth-child(2){
+            position: relative;
+        }
+
+        body > main > section:nth-child(2) > section:nth-child(1){
+            background-color: red;
+            width: 500px;
+            height: 66px;
+            position: absolute;
+            top: 32px;
+        }
+
+        body > main > section:nth-child(2) > section:nth-child(1) > h1 {
+            color: black;
+            position: absolute;
+            top: 7px;
+            left: 204px;
+            right: 0;
+            margin: auto;
+            font-size: 40px;
+        }
+
+        body > main > section:nth-child(2)  > section:nth-child(2){
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            border: 1px solid black;
+        }
+
+        body > main > section:nth-child(2)  > section:nth-child(2) > section{
+            border: 7px solid white;
+            width: 25%;
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+
+        }
+
+        body > main > section:nth-child(2)  > section:nth-child(2) > section:nth-child(1){
+            background: url("assets/images/HotelReservation.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(2)  > section:nth-child(2) > section:nth-child(2){
+            background: url("assets/images/CarParking.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(2)  > section:nth-child(2) > section:nth-child(3){
+            background: url("assets/images/ThogaKade.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(2)  > section:nth-child(3){
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 800px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            border: 1px solid black;
+        }
+
+        body > main > section:nth-child(2)  > section:nth-child(3) > section{
+            border: 7px solid white;
+            width: 25%;
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+
+        }
+
+        body > main > section:nth-child(2)  > section:nth-child(3) > section:nth-child(1){
+            background: url("assets/images/SuperMarket.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(2)  > section:nth-child(3) > section:nth-child(2){
+            background: url("assets/images/TeaSupply.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(3) {
+            position: relative;
+        }
+
+        body > main > section:nth-child(3)  > section:nth-child(1){
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 300px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            border: 1px solid black;
+        }
+
+        body > main > section:nth-child(3)  > section:nth-child(1) > section{
+            border: 7px solid white;
+            width: 25%;
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+
+        }
+
+        body > main > section:nth-child(3)  > section:nth-child(1) > section:nth-child(1){
+            background: url("assets/images/SuperMarket.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(3)  > section:nth-child(1) > section:nth-child(2){
+            background: url("assets/images/TeaSupply.png");
+            background-size: cover;
+        }
+
+    </style>
+
 </head>
 
 <body>
 <!-------------------------------------------------------------------------->
 <header>
-    <h1>Projects</h1>
 </header>
 <!-------------------------------------------------------------------------->
 <main>
-    <!--for computer image-->
-    <img src="assets/images/computer.png" alt="There was an error loading this image" width="500">
+
     <section>
+        <!--For Background Image-->
+        <section></section>
+
+        <!--For Arrow-->
+        <div>
+            <div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <!--for heading-->
+        <section>
+            <h1>JAVA</h1>
+        </section>
+
         <!--for projects-->
-        <figure>
-            <img src="assets/images/Screenshot 2021-11-07 125750 (2).png" alt="There was an error loading this image" width="250">
-        </figure>
+        <section>
+            <section></section>
+            <section></section>
+            <section></section>
+        </section>
 
-        <a href="assets/images/Screenshot 2021-11-07 125750 (2).png" style="background-color: fuchsia;">Java projects</a>
-        <a href="assets/images/wooden photo frame.png" style="background-color: fuchsia;">Web Application</a>
-        <a href="assets/images/tree.png" style="background-color: fuchsia;">Mobile Application</a>
+        <section>
+            <section></section>
+            <section></section>
+            <section></section>
+        </section>
     </section>
+
 
     <section>
-        <figure>
-            <!--for presenter image-->
-            <img src="assets/images/teacher.png" alt="There was an error loading this image" width="300">
-        </figure>
+        <section>
+            <section></section>
+            <section></section>
+            <section></section>
+        </section>
     </section>
+
+
 </main>
 <!-------------------------------------------------------------------------->
 </body>
