@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Animation case2</title>
+
+    <style>
+
+        body{
+            background-color: dimgray;
+        }
+
+        main{
+            width: 700px;
+            height: 400px;
+            border: 7px solid white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        main > section{
+            width: 400%;
+            height: 100%;
+            display: flex;
+            animation-name: case1;
+            animation-direction: alternate;
+            animation-duration: 5s;
+            animation-iteration-count: 5;
+        }
+
+        main > section > div{
+            width: 100%;
+        }
+
+        main > section > div:nth-child(1){
+            background-image: url("assets/images/pradise_beach_club_mirissa_about3.jpg");
+            background-size: cover;
+        }
+
+        main > section > div:nth-child(2){
+            background-image: url("assets/images/French-onion-soup.jpg");
+            background-size: cover;
+        }
+
+        main > section > div:nth-child(3){
+            background-image: url("assets/images/lap.jpeg");
+            background-size: cover;
+        }
+
+        main > section > div:nth-child(4){
+            background-image: url("assets/images/561875_15012712210024857147.jpg");
+            background-size: cover;
+        }
+
+        @keyframes case1 {
+            0%{
+                transform: translateX(0);
+            }
+            25%{
+                transform: translateX(-25%);
+            }
+            50%{
+                transform: translateX(-50%);
+            }
+            100%{
+                transform: translateX(-75%);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<main>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</main>
+
+</body>
+</html>

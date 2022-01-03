@@ -22,6 +22,7 @@
             width: 100vw;
             background: rgb(0, 0, 0);
             background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
         body > header > div{
@@ -358,6 +359,131 @@
         body > main > section:nth-child(6){
             background-color: #1D1631;
             border-top: 1px solid white;
+            position: relative;
+        }
+
+        body > main > section:nth-child(6) > div:nth-child(1){
+            height: 57px;
+            padding-left: 13px;
+            padding-top: 2px;
+        }
+
+        body > main > section:nth-child(6) > div:nth-child(1) > h1{
+            color: white;
+            margin-bottom: 5px;
+            position: absolute;
+            border: 2px solid;
+            display: inline;
+            border-bottom-color: deeppink;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        body > main > section:nth-child(6) > section:nth-child(2){
+            width: 447px;
+            height: 332px;
+            border: 13px solid white;
+            position: absolute;
+            top: 122px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        body > main > section:nth-child(6) >section:nth-child(2) > section{
+            width: 500%;
+            height: 100%;
+            display: flex;
+            animation-name: case1;
+            animation-direction: alternate;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+        }
+
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div{
+            width: 100%;
+        }
+
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(1){
+            background-image: url("assets/images/HotelReservation.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(2){
+            background-image: url("assets/images/CarParking.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(3){
+            background-image: url("assets/images/ThogaKade.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(4){
+            background-image: url("assets/images/SuperMarket.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(5){
+            background-image: url("assets/images/TeaSupply.png");
+            background-size: cover;
+        }
+
+        @keyframes case1 {
+            0%{
+                transform: translateX(0);
+            }
+            25%{
+                transform: translateX(-25%);
+            }
+            50%{
+                transform: translateX(-50%);
+            }
+            100%{
+                transform: translateX(-75%);
+            }
+        }
+
+        body > main > section:nth-child(6) > div:nth-child(3){
+            width: 200px;
+            height: 0;
+            border: 10px solid white;
+            position: absolute;
+            top: 479px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            border-bottom: 61px solid white;
+            border-left: 21px solid transparent;
+            border-right: 21px solid transparent;
+        }
+
+        body > main > section:nth-child(6) > div:nth-child(4){
+            width: 479px;
+            height: 11px;
+            position: absolute;
+            top: 580px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            border-bottom: 72px solid white;
+            border-left: 21px solid transparent;
+            border-right: 21px solid transparent;
+        }
+
+        body > main > section:nth-child(6) > div:nth-child(4) > button{
+            position: absolute;
+            top: 84px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 106px;
+            height: 32px;
+            background-color: deeppink;
+            color: white;
         }
 
         /*---------------------------------Contact Page---------------------------------------*/
@@ -602,7 +728,35 @@
     <section></section>
     <section></section>
     <section></section>
-    <section></section>
+
+    <!-----------------Project Page--------------------->
+    <section>
+
+        <!--For Heading-->
+        <div>
+            <h1>Projects</h1>
+        </div>
+
+        <!--For Computer-->
+        <section>
+            <!--For slide-->
+            <section>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+
+        </section>
+        <!--For computer stand-->
+        <div></div>
+        <!--For Keyboard-->
+        <div>
+            <button>Show More</button>
+        </div>
+
+    </section>
 
     <!-----------------Contact Page--------------------->
     <section>

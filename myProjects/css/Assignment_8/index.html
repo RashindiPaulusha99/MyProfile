@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Animation Case 3</title>
+
+    <style>
+
+        body{
+            background-color: pink;
+        }
+
+        section{
+            width: 80px;
+            height: 150px;
+            background-color: red;
+            position: relative;
+            border-radius: 10px;
+            animation-name: case;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes case {
+           0%{
+               left:0;
+               top: 0;
+               background-color: yellow;
+           }
+            25%{
+                left: 800px;
+                top: 0;
+                background-color: green;
+                transform: rotate(45deg);
+            }
+            50%{
+                left: 800px;
+                top: 500px;
+                background-color: purple;
+                transform: rotate(90deg);
+            }
+            75%{
+                top: 500px;
+                left: 0;
+                background-color: purple;
+                transform: rotate(-45deg);
+            }
+            to{
+                left: 0;
+                top: 0;
+                background-color: blueviolet;
+                transform: rotate(-90deg);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<section>
+
+</section>
+
+</body>
+</html>
