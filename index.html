@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test</title>
+    <title>My Profile</title>
 
     <link href="assets/icon/icons8-person-90.png" rel="icon">
-    <link rel="stylesheet" href="assets/resources/css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="assets/resources/css/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/resources/css/fonts/css/all.css">
+    <link href="assets/resources/css/fonts/css/all.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="styles/styles.css">-->
 
     <meta content="width=device-width initial-scale=1" name="viewport">
     <meta content="blue" name="theme-color">
 
     <style>
         /*-------------------Header-------------------------------*/
-        body > header{
+        body > header {
             position: fixed;
             height: 80px;
             width: 100vw;
@@ -25,7 +26,7 @@
             z-index: 1;
         }
 
-        body > header > div{
+        body > header > div {
             background-color: fuchsia;
             position: absolute;
             height: 76%;
@@ -44,24 +45,24 @@
             width: 0;
         }
 
-        body > header > div:nth-child(2){
+        body > header > div:nth-child(2) {
             left: 36px;
         }
 
-        body > header > div > h1{
+        body > header > div > h1 {
             color: white;
             font-size: 25px;
         }
 
-        body > header > div:nth-child(1) > h1{
+        body > header > div:nth-child(1) > h1 {
             text-align: right;
         }
 
-        body > header > div:nth-child(2) > h1{
+        body > header > div:nth-child(2) > h1 {
             text-align: left;
         }
 
-        body > header > ul{
+        body > header > ul {
             position: absolute;
             right: 30px;
             bottom: 0;
@@ -74,7 +75,7 @@
 
         }
 
-        body > header > ul > li{
+        body > header > ul > li {
             display: inline-block;
             padding: 0 10px 0 10px;
             margin-top: 10px;
@@ -82,7 +83,7 @@
             border-bottom: 3px solid transparent;
         }
 
-        header > ul > li:hover{
+        header > ul > li:hover {
             border-bottom: 3px solid fuchsia;
             cursor: pointer;
             color: hotpink;
@@ -90,7 +91,7 @@
 
         /*--------------------------------------------------*/
 
-        body > main > section{
+        body > main > section {
             display: flex;
             flex-direction: column;
             width: 100vw;
@@ -99,14 +100,14 @@
 
         /*----------------------Home Page---------------------------*/
 
-        body > main > section:nth-child(1){
-            background: url("assets/images/fabio-oyXis2kALVg-unsplash.jpg") ;
+        body > main > section:nth-child(1) {
+            background: url("assets/images/fabio-oyXis2kALVg-unsplash.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
 
-        body > main > section:nth-child(1) > section:nth-child(1) > div{
+        body > main > section:nth-child(1) > section:nth-child(1) > div {
             width: 225px;
             height: 225px;
             background-image: url("assets/images/me.png");
@@ -121,7 +122,7 @@
             z-index: 2;
         }
 
-        body > main > section:nth-child(1)>section:nth-child(1) > div::before{
+        body > main > section:nth-child(1) > section:nth-child(1) > div::before {
             content: "";
             position: absolute;
             top: 0;
@@ -136,7 +137,7 @@
             z-index: 1;
         }
 
-        body > main > section:nth-child(1)>section:nth-child(1) > div::after{
+        body > main > section:nth-child(1) > section:nth-child(1) > div::after {
             content: "";
             position: absolute;
             top: 0;
@@ -151,7 +152,7 @@
 
         }
 
-        body > main > section:nth-child(1)>section:nth-child(1) > section{
+        body > main > section:nth-child(1) > section:nth-child(1) > section {
             width: 263px;
             height: 76px;
             position: absolute;
@@ -164,13 +165,13 @@
             margin: auto;
         }
 
-        body > main > section:nth-child(1)>section:nth-child(1) > section > div{
+        body > main > section:nth-child(1) > section:nth-child(1) > section > div {
             width: 73px;
             height: 75px;
             flex-grow: 1;
         }
 
-        body > main > section:nth-child(1)>section:nth-child(2){
+        body > main > section:nth-child(1) > section:nth-child(2) {
             width: 461px;
             height: 348px;
             position: absolute;
@@ -181,46 +182,46 @@
             margin: auto;
         }
 
-        body > main > section:nth-child(1)>section:nth-child(2) > div{
+        body > main > section:nth-child(1) > section:nth-child(2) > div {
             color: white;
             width: 100%;
             height: 100%;
             text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px cornflowerblue;
         }
 
-        body > main > section:nth-child(1)>section:nth-child(1) > section > div:nth-child(1):hover{
+        body > main > section:nth-child(1) > section:nth-child(1) > section > div:nth-child(1):hover {
             color: pink;
         }
 
-        body > main > section:nth-child(1)>section:nth-child(2) > div > h1:nth-child(1){
+        body > main > section:nth-child(1) > section:nth-child(2) > div > h1:nth-child(1) {
             padding-left: 10px;
             font-size: 40px;
         }
 
-        body > main > section:nth-child(1)>section:nth-child(2) > div > h1:nth-child(2){
+        body > main > section:nth-child(1) > section:nth-child(2) > div > h1:nth-child(2) {
             padding-left: 69px;
             font-size: 40px;
         }
 
-        body > main > section:nth-child(1)>section:nth-child(2) > div > pre{
+        body > main > section:nth-child(1) > section:nth-child(2) > div > pre {
             padding-left: 126px;
             font-size: 30px;
         }
 
         /*---------------------------------About Page---------------------------------------*/
 
-        body > main > section:nth-child(2){
+        body > main > section:nth-child(2) {
             background-color: #1D1631;
             border-top: 1px solid white;
         }
 
-        body > main > section:nth-child(2) > div{
+        body > main > section:nth-child(2) > div {
             height: 57px;
             padding-left: 13px;
             padding-top: 2px;
         }
 
-        body > main > section:nth-child(2) > div > h1{
+        body > main > section:nth-child(2) > div > h1 {
             color: white;
             margin-bottom: 5px;
             position: absolute;
@@ -232,7 +233,7 @@
             border-right-color: transparent;
         }
 
-        body > main > section:nth-child(2) > section{
+        body > main > section:nth-child(2) > section {
             width: 1049px;
             height: 601px;
             position: relative;
@@ -243,11 +244,11 @@
             margin: auto;
         }
 
-        body > main > section:nth-child(2) > section > section:nth-child(1){
+        body > main > section:nth-child(2) > section > section:nth-child(1) {
             position: absolute;
         }
 
-        body > main > section:nth-child(2) > section > section:nth-child(1) > div{
+        body > main > section:nth-child(2) > section > section:nth-child(1) > div {
             position: absolute;
             top: 137px;
             left: 44px;
@@ -257,7 +258,7 @@
             box-shadow: 20px 20px 4px 1px maroon;
         }
 
-        body > main > section:nth-child(2) > section > section:nth-child(1) > div > img{
+        body > main > section:nth-child(2) > section > section:nth-child(1) > div > img {
             border-style: none;
             position: absolute;
             left: 18px;
@@ -266,7 +267,7 @@
             height: 291px;
         }
 
-        body > main > section:nth-child(2) > section > section:nth-child(1) > section{
+        body > main > section:nth-child(2) > section > section:nth-child(1) > section {
             position: absolute;
             left: 424px;
             top: 94px;
@@ -276,7 +277,7 @@
             height: 262px;
         }
 
-        body > main > section:nth-child(2) > section > section:nth-child(2){
+        body > main > section:nth-child(2) > section > section:nth-child(2) {
             border: 2px solid deeppink;
             position: absolute;
             left: 424px;
@@ -284,45 +285,45 @@
             width: 616px;
         }
 
-        .heading{
+        .heading {
             padding-left: 24px;
             padding-top: 7px;
         }
 
-        ul{
+        ul {
             list-style: none;
             padding-left: 24px;
             font-size: 20px;
-           position: absolute;
+            position: absolute;
         }
 
         .first {
             top: 67px;
         }
 
-        .second{
+        .second {
             top: 67px;
             left: 180px;
         }
 
-        .third{
+        .third {
             top: 67px;
             left: 216px;
         }
 
-        .last > h2{
+        .last > h2 {
             color: white;
             padding-left: 24px;
         }
 
-        .last > p{
+        .last > p {
             color: white;
             padding-left: 24px;
             font-size: 16px;
         }
 
-        .final{
-            background: linear-gradient(to right, #fed330 , #ff9f43);
+        .final {
+            background: linear-gradient(to right, #fed330, #ff9f43);
             position: absolute;
             width: 132px;
             font-size: 20px;
@@ -335,40 +336,19 @@
 
         /*---------------------------------Education Page---------------------------------------*/
 
-        body > main > section:nth-child(3){
-            background-color: #1D1631;
-            border-top: 1px solid white;
-        }
-
-        /*---------------------------------Skills Page---------------------------------------*/
-
-        body > main > section:nth-child(4){
-            background-color: #1D1631;
-            border-top: 1px solid white;
-        }
-
-        /*---------------------------------Experience Page---------------------------------------*/
-
-        body > main > section:nth-child(5){
-            background-color: #1D1631;
-            border-top: 1px solid white;
-        }
-
-        /*---------------------------------Projects Page---------------------------------------*/
-
-        body > main > section:nth-child(6){
+        body > main > section:nth-child(3) {
             background-color: #1D1631;
             border-top: 1px solid white;
             position: relative;
         }
 
-        body > main > section:nth-child(6) > div:nth-child(1){
+        body > main > section:nth-child(3) > div:nth-child(1) {
             height: 57px;
             padding-left: 13px;
             padding-top: 2px;
         }
 
-        body > main > section:nth-child(6) > div:nth-child(1) > h1{
+        body > main > section:nth-child(3) > div:nth-child(1) > h1 {
             color: white;
             margin-bottom: 5px;
             position: absolute;
@@ -380,7 +360,311 @@
             border-right-color: transparent;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2){
+        body > main > section:nth-child(3) > section{
+            width: 80%;
+            height: 80%;
+            background-color: pink;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body > main > section:nth-child(3) > section > div{
+            background: url("assets/images/lap girl.png");
+            background-size: cover;
+        }
+
+        body > main > section:nth-child(3) > section > section{
+            height: 100%;
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        body > main > section:nth-child(3) > section > section > div{
+            height: 100px;
+            width: 309px;
+            background-color: cornflowerblue;
+        }
+
+        body > main > section:nth-child(3) > section > section > div > h1{
+            color: white;
+            font-size: 15px;
+            padding-left: 8px;
+        }
+
+        body > main > section:nth-child(3) > section > section:nth-child(1) > div{
+            animation-name: education1;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-duration: 20s;
+        }
+
+        @keyframes education1 {
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(300%);
+            }
+        }
+
+        body > main > section:nth-child(3) > section > section:nth-child(2) > div{
+            animation-name: education2;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-duration: 20s;
+        }
+
+        @keyframes education2 {
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(250%);
+            }
+        }
+
+        body > main > section:nth-child(3) > section > section:nth-child(3) > div{
+            animation-name: education3;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-duration: 20s;
+        }
+
+        @keyframes education3 {
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(200%);
+            }
+        }
+
+        body > main > section:nth-child(3) > section > section:nth-child(4) > div{
+            animation-name: education4;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-duration: 20s;
+        }
+
+        @keyframes education4 {
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(150%);
+            }
+        }
+
+        body > main > section:nth-child(3) > section > section:nth-child(5) > div{
+            animation-name: education5;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-duration: 20s;
+        }
+
+        @keyframes education5 {
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(100%);
+            }
+        }
+
+        /*---------------------------------Skills Page---------------------------------------*/
+
+        body > main > section:nth-child(4) {
+            background-color: #1D1631;
+            border-top: 1px solid white;
+            position: relative;
+        }
+
+        body > main > section:nth-child(4) > div:nth-child(1) {
+            height: 57px;
+            padding-left: 13px;
+            padding-top: 2px;
+        }
+
+        body > main > section:nth-child(4) > div:nth-child(1) > h1 {
+            color: white;
+            margin-bottom: 5px;
+            position: absolute;
+            border: 2px solid;
+            display: inline;
+            border-bottom-color: deeppink;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        /*---------------------------------Experience Page---------------------------------------*/
+
+        body > main > section:nth-child(5) {
+            background-color: #1D1631;
+            border-top: 1px solid white;
+            position: relative;
+        }
+
+        body > main > section:nth-child(5) > div:nth-child(1) {
+            height: 57px;
+            padding-left: 13px;
+            padding-top: 2px;
+        }
+
+        body > main > section:nth-child(5) > div:nth-child(1) > h1 {
+            color: white;
+            margin-bottom: 5px;
+            position: absolute;
+            border: 2px solid;
+            display: inline;
+            border-bottom-color: deeppink;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        body > main > section:nth-child(5) > section {
+            width: 100%;
+            height: 75%;
+            position: absolute;
+            top: 125px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body > main > section:nth-child(5) > section > section {
+            width: 100%;
+            height: 100%;
+        }
+
+        body > main > section:nth-child(5) > section > section:nth-child(1) > section {
+            width: 42%;
+            height: 45%;
+            position: absolute;
+            left: 8px;
+            animation-name: RunToLeft;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-duration: 10s;
+        }
+
+        @keyframes RunToLeft {
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(100%);
+            }
+        }
+
+        body > main > section:nth-child(5) > section > section:nth-child(1) > section > div:nth-child(1) {
+            width: 273px;
+            height: 157px;
+            background: url("assets/images/Experience1.jpg");
+            background-size: cover;
+            position: absolute;
+            top: 34px;
+            left: 0;
+            box-shadow: 17px 20px 3px -5px darkslateblue;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border: 4px solid white;
+        }
+
+        body > main > section:nth-child(5) > section > section:nth-child(1) > section > div:nth-child(2) {
+            width: 310px;
+            height: 157px;
+            position: absolute;
+            top: 34px;
+            left: 310px;
+            border-top: 3px solid mediumvioletred;
+            border-bottom: 3px solid mediumvioletred;
+            color: ghostwhite;
+        }
+
+        body > main > section:nth-child(5) > section > section > section > div:nth-child(2) > p{
+            padding-top: 6px;
+            padding-left: 16px;
+            padding-right: 10px;
+        }
+
+        body > main > section:nth-child(5) > section > section:nth-child(2) > section {
+            width: 42%;
+            height: 45%;
+            position: absolute;
+            right: 8px;
+            animation-name: RunToRight;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-duration: 10s;
+        }
+
+        @keyframes RunToRight {
+            from{
+                transform: translateX(0%);
+            }
+            to{
+                transform: translateX(-100%);
+            }
+        }
+
+        body > main > section:nth-child(5) > section > section:nth-child(2) > section > div:nth-child(1) {
+            width: 273px;
+            height: 157px;
+            background: url(assets/images/Experience2.jpg);
+            background-size: cover;
+            position: absolute;
+            top: 35px;
+            right: 0;
+            box-shadow: -17px 18px 3px -5px darkslateblue;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border: 4px solid white;
+        }
+
+        body > main > section:nth-child(5) > section > section:nth-child(2) > section > div:nth-child(2) {
+            width: 310px;
+            height: 157px;
+            position: absolute;
+            top: 35px;
+            right: 310px;
+            border-top: 3px solid mediumvioletred;
+            border-bottom: 3px solid mediumvioletred;
+            color: ghostwhite;
+        }
+
+        /*---------------------------------Projects Page---------------------------------------*/
+
+        body > main > section:nth-child(6) {
+            background-color: #1D1631;
+            border-top: 1px solid white;
+            position: relative;
+        }
+
+        body > main > section:nth-child(6) > div:nth-child(1) {
+            height: 57px;
+            padding-left: 13px;
+            padding-top: 2px;
+        }
+
+        body > main > section:nth-child(6) > div:nth-child(1) > h1 {
+            color: white;
+            margin-bottom: 5px;
+            position: absolute;
+            border: 2px solid;
+            display: inline;
+            border-bottom-color: deeppink;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        body > main > section:nth-child(6) > section:nth-child(2) {
             width: 447px;
             height: 332px;
             border: 13px solid white;
@@ -392,7 +676,7 @@
             overflow: hidden;
         }
 
-        body > main > section:nth-child(6) >section:nth-child(2) > section{
+        body > main > section:nth-child(6) > section:nth-child(2) > section {
             width: 500%;
             height: 100%;
             display: flex;
@@ -402,51 +686,51 @@
             animation-iteration-count: infinite;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div{
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div {
             width: 100%;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(1){
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(1) {
             background-image: url("assets/images/HotelReservation.png");
             background-size: cover;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(2){
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(2) {
             background-image: url("assets/images/CarParking.png");
             background-size: cover;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(3){
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(3) {
             background-image: url("assets/images/ThogaKade.png");
             background-size: cover;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(4){
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(4) {
             background-image: url("assets/images/SuperMarket.png");
             background-size: cover;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(5){
+        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(5) {
             background-image: url("assets/images/TeaSupply.png");
             background-size: cover;
         }
 
         @keyframes case1 {
-            0%{
+            0% {
                 transform: translateX(0);
             }
-            25%{
+            25% {
                 transform: translateX(-25%);
             }
-            50%{
+            50% {
                 transform: translateX(-50%);
             }
-            100%{
+            100% {
                 transform: translateX(-75%);
             }
         }
 
-        body > main > section:nth-child(6) > div:nth-child(3){
+        body > main > section:nth-child(6) > div:nth-child(3) {
             width: 200px;
             height: 0;
             border: 10px solid white;
@@ -460,7 +744,7 @@
             border-right: 21px solid transparent;
         }
 
-        body > main > section:nth-child(6) > div:nth-child(4){
+        body > main > section:nth-child(6) > div:nth-child(4) {
             width: 479px;
             height: 11px;
             position: absolute;
@@ -473,7 +757,7 @@
             border-right: 21px solid transparent;
         }
 
-        body > main > section:nth-child(6) > div:nth-child(4) > form  > button{
+        body > main > section:nth-child(6) > div:nth-child(4) > form > button {
             position: absolute;
             top: 84px;
             left: 0;
@@ -486,7 +770,7 @@
             color: white;
         }
 
-        body > main > section:nth-child(6) > div:nth-child(5){
+        body > main > section:nth-child(6) > div:nth-child(5) {
             width: 598px;
             height: 399px;
             position: absolute;
@@ -499,34 +783,21 @@
             background-size: cover;
         }
 
-        /*body > main > section:nth-child(6) > div:nth-child(6){
-            width: 522px;
-            height: 269px;
-            position: absolute;
-            top: 449px;
-            bottom: 0;
-            left: 973px;
-            right: 0;
-            margin: auto;
-            background: url(assets/images/project.png);
-            background-size: cover;
-        }*/
-
         /*---------------------------------Contact Page---------------------------------------*/
 
-        body > main > section:nth-child(7){
+        body > main > section:nth-child(7) {
             border-top: 1px solid white;
             background-color: #1D1631;
             min-height: 100vh;
         }
 
-        body > main > section:nth-child(7) > div{
+        body > main > section:nth-child(7) > div {
             height: 57px;
             padding-left: 13px;
             padding-top: 2px;
         }
 
-        body > main > section:nth-child(7) > div > h1{
+        body > main > section:nth-child(7) > div > h1 {
             color: white;
             margin-bottom: 5px;
             position: absolute;
@@ -538,11 +809,11 @@
             border-right-color: transparent;
         }
 
-        body > main > section:nth-child(7) > div > h1:nth-child(2){
+        body > main > section:nth-child(7) > div > h1:nth-child(2) {
             left: 840px;
         }
 
-        body > main > section:nth-child(7) > #m{
+        body > main > section:nth-child(7) > #m {
             width: 93vw;
             height: 650px;
             position: absolute;
@@ -550,7 +821,7 @@
             border-bottom: 1px solid white;
         }
 
-        body > main > section:nth-child(7) > #m > #pencil{
+        body > main > section:nth-child(7) > #m > #pencil {
             width: 621px;
             height: 556px;
             position: absolute;
@@ -560,7 +831,7 @@
             background-size: cover;
         }
 
-        body > main > section:nth-child(7) > #m > #pencil > div{
+        body > main > section:nth-child(7) > #m > #pencil > div {
             position: absolute;
             top: 116px;
             left: 86px;
@@ -576,17 +847,17 @@
             position: absolute;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form >label{
+        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > label {
             color: white;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #last_name{
+        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #last_name {
             position: relative;
             bottom: 27px;
             left: 83px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > .input{
+        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > .input {
             overflow: visible;
             border-top-right-radius: 23px;
             border-bottom-left-radius: 23px;
@@ -595,20 +866,20 @@
             height: 27px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtPhoneNumber, #txtE-mailAddress, #txtMassage{
+        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtPhoneNumber, #txtE-mailAddress, #txtMassage {
             width: 512px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtE-mailAddress{
+        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtE-mailAddress {
             width: 512px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtMassage{
+        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtMassage {
             height: 162px;
             width: 512px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > button{
+        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > button {
             position: relative;
             left: 370px;
             height: 34px;
@@ -616,7 +887,7 @@
             background-color: goldenrod;
         }
 
-        .copyrights{
+        .copyrights {
             position: relative;
             top: 595px;
             color: white;
@@ -661,16 +932,23 @@
             <!--accounts-------->
             <section>
                 <div>
-                    <a href="mailto:rashindipaulusha837@gmail.com" target="_blank"><img alt="There was an error loading this image" src="assets/icon/icons8-gmail-100 (2).png" width="61%"></a>
+                    <a href="mailto:rashindipaulusha837@gmail.com" target="_blank"><img
+                            alt="There was an error loading this image" src="assets/icon/icons8-gmail-100 (2).png"
+                            width="61%"></a>
                 </div>
                 <div>
-                    <a href="tel:0787991075" target="_blank"><img alt="There was an error loading this image" src="assets/icon/icons8-whatsapp-100.png" width="61%"></a>
+                    <a href="tel:0787991075" target="_blank"><img alt="There was an error loading this image"
+                                                                  src="assets/icon/icons8-whatsapp-100.png" width="61%"></a>
                 </div>
                 <div>
-                    <a href="https://www.linkedin.com/in/rashindi-wijesinghe-580a1a225/" target="_blank"><img alt="There was an error loading this image" src="assets/icon/icons8-linkedin-2-100.png" width="61%"></a>
+                    <a href="https://www.linkedin.com/in/rashindi-wijesinghe-580a1a225/" target="_blank"><img
+                            alt="There was an error loading this image" src="assets/icon/icons8-linkedin-2-100.png"
+                            width="61%"></a>
                 </div>
                 <div>
-                    <a href="https://github.com/RashindiPaulusha99" target="_blank"><img alt="There was an error loading this image" src="assets/icon/icons8-github-64.png" width="61%"></a>
+                    <a href="https://github.com/RashindiPaulusha99" target="_blank"><img
+                            alt="There was an error loading this image" src="assets/icon/icons8-github-64.png"
+                            width="61%"></a>
                 </div>
             </section>
         </section>
@@ -689,7 +967,8 @@
             </div>
 
             <!--for arrows-------------------->
-        </section>-->
+        </section>
+        -->
     </section>
 
     <!-----------------About Page--------------------->
@@ -705,7 +984,7 @@
             <section>
                 <!--images--------->
                 <div>
-                    <img src="assets/images/me with frame.png" alt="There was an error loading this image">
+                    <img alt="There was an error loading this image" src="assets/images/me with frame.png">
                 </div>
 
                 <!--details------->
@@ -741,19 +1020,110 @@
             <!--for my story---------------------->
             <section class="last">
                 <h2>My Story</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos laboriosam minus<br>molestiae nisi nostrum odio officia, provident quasi quisquam quo sed tempore, vero?<br>Aliquam eligendi impedit sapiente sit voluptas!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos laboriosam minus<br>molestiae
+                    nisi nostrum odio officia, provident quasi quisquam quo sed tempore, vero?<br>Aliquam eligendi
+                    impedit sapiente sit voluptas!</p>
             </section>
-           <!--for download cv-->
+            <!--for download cv-->
             <section class="final">
-                <a href="assets/icon/cv" download="cv" style="color: white">Download CV</a>
+                <a download="cv" href="assets/icon/cv" style="color: white">Download CV</a>
             </section>
         </section>
 
     </section>
 
-    <section></section>
-    <section></section>
-    <section></section>
+    <!-----------------Education Page--------------------->
+    <section>
+        <div>
+            <h1>Education</h1>
+        </div>
+
+        <section>
+
+            <div></div>
+
+            <section>
+                <div>
+                    <h1>Bcs.Computer Science</h1>
+                    <h1>Institute Of Java and Software Engineering</h1>
+                    <h1>2020 Present</h1>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    <h1>Diploma Course In English</h1>
+                    <h1>BritishWay English Academy</h1>
+                    <h1>2020</h1>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    <h1>Certificate Course InEnglish</h1>
+                    <h1>Affiliated Institute Of Aquinas College</h1>
+                    <h1>2019</h1>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    <h1>Certificate Course In Information Technology</h1>
+                    <h1>Computer System (PVT) LTD</h1>
+                    <h1>2009</h1>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    <h1>Primary & Secondary Education</h1>
+                    <h1>Southlands College</h1>
+                    <h1>2005 - 2018</h1>
+                </div>
+            </section>
+        </section>
+
+
+    </section>
+
+    <!-----------------Skills Page--------------------->
+    <section>
+        <div>
+            <h1>Skills</h1>
+        </div>
+
+    </section>
+
+    <!-----------------Experience Page--------------------->
+    <section>
+        <div>
+            <h1>Experience</h1>
+        </div>
+
+        <section>
+            <section>
+                <section>
+                    <div></div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci atque culpa cumque, deleniti
+                        dignissimos dolor ducimus eaque earum fuga fugiat, fugit impedit laudantium nesciunt, nulla
+                        porro quam sint totam voluptatum.</p>
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <div></div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci atque culpa cumque, deleniti
+                            dignissimos dolor ducimus eaque earum fuga fugiat, fugit impedit laudantium nesciunt, nulla
+                            porro quam sint totam voluptatum.</p>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </section>
 
     <!-----------------Project Page--------------------->
     <section>
@@ -779,8 +1149,8 @@
         <div></div>
         <!--For Keyboard-->
         <div>
-            <form method="get" action="/index.html" target="_blank">
-                <button type="submit" >Show More</button>
+            <form action="/index.html" method="get" target="_blank">
+                <button type="submit">Show More</button>
             </form>
         </div>
 
@@ -810,23 +1180,24 @@
                 <div>
                     <figure>
                         <!--profile-->
-                        <img src="assets/icon/icons8-male-user-48.png" alt="" width="25">
+                        <img alt="" src="assets/icon/icons8-male-user-48.png" width="25">
                         <figcaption>
-                            Rashindi Paulusha Wijesinghe</figcaption>
+                            Rashindi Paulusha Wijesinghe
+                        </figcaption>
                     </figure>
                     <figure>
                         <!--mobile number-->
-                        <img src="assets/icon/icons8-phone-48.png" alt="" width="25">
+                        <img alt="" src="assets/icon/icons8-phone-48.png" width="25">
                         <figcaption>0787991075</figcaption>
                     </figure>
                     <figure>
                         <!--email-->
-                        <img src="assets/icon/icons8-email-64.png" alt="" width="25">
+                        <img alt="" src="assets/icon/icons8-email-64.png" width="25">
                         <figcaption>rashindipaulusha837@gmail.com</figcaption>
                     </figure>
                     <figure>
                         <!--location-->
-                        <img src="assets/icon/icons8-marker-50.png" alt="" width="25">
+                        <img alt="" src="assets/icon/icons8-marker-50.png" width="25">
                         <figcaption>No:4/2, Kovila Road , Dadalla , Galle , Sri Lanka</figcaption>
                     </figure>
                 </div>
@@ -839,19 +1210,19 @@
                     <br>
 
                     <label for="txtFirstName">First Name :</label><br>
-                    <input id="txtFirstName" class="input" type="text">
+                    <input class="input" id="txtFirstName" type="text">
 
                     <label for="txtLastName" id="last_name">Last Name :</label>
-                    <input id="txtLastName" type="text" class="input"><br><br>
+                    <input class="input" id="txtLastName" type="text"><br><br>
 
-                    <label for="txtPhoneNumber" class="input">Phone Number :</label><br>
-                    <input id="txtPhoneNumber" type="tel" class="input"><br><br>
+                    <label class="input" for="txtPhoneNumber">Phone Number :</label><br>
+                    <input class="input" id="txtPhoneNumber" type="tel"><br><br>
 
                     <label for="txtE-mailAddress">E-mail Address :</label><br>
-                    <input id="txtE-mailAddress" type="email" class="input"><br><br>
+                    <input class="input" id="txtE-mailAddress" type="email"><br><br>
 
                     <label for="txtMassage">Massage :</label><br>
-                    <textarea id="txtMassage" cols="30" rows="10" class="input"></textarea><br><br>
+                    <textarea class="input" cols="30" id="txtMassage" rows="10"></textarea><br><br>
 
                     <button>Send Massage</button>
 

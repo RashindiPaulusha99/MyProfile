@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+
+    <style>
+        body>section:nth-child(1){
+            background-color: red;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100%;
+            height: 600px;
+        }
+
+        body>section:nth-child(1)>section{
+            background-color: black;
+            position: absolute;
+            top: 99px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            width: 1000px;
+            height: 500px;
+        }
+
+        body>section:nth-child(1)>section>section{
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            width: 300px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body>section:nth-child(1)>section>section>section{
+            background-color: black;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            width: 500%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            /*animation-name: case1;*/
+            /*animation-direction: alternate;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;*/
+            animation:  3s both 1s infinite running case1;
+        }
+
+        @keyframes case1 {
+            0%{
+                transform: translateY(-10%);
+            }
+            25%{
+                transform: translateY(-20%);
+            }
+            50%{
+                transform: translateY(-40%);
+            }
+            75%{
+                transform: translateY(-60%);
+            }
+            100%{
+                transform: translateY(-80%);
+            }
+        }
+
+        body>section:nth-child(1)>section>section>section>div{
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+
+        body>section:nth-child(1)>section>section>section>div>img{
+            /*width: 255px;
+            height: 248px;*/
+            width: 150px;
+            height: 150px;
+        }
+
+        /*body>section:nth-child(1)>section>section>section>div:nth-child(1){
+           background: url("assets/logo/java.png");
+            background-size: 255px,248px;
+        }
+
+        body>section:nth-child(1)>section>section>section>div:nth-child(2){
+            background: url("assets/logo/MySQL.png");
+            background-size: 255px,248px;
+        }
+
+        body>section:nth-child(1)>section>section>section>div:nth-child(3){
+            background: url("assets/logo/CSS.png");
+            background-size: 255px,248px;
+        }
+
+        body>section:nth-child(1)>section>section>section>div:nth-child(4){
+            background: url("assets/logo/HTML.png");
+            background-size: 255px,248px;
+
+        }
+
+        body>section:nth-child(1)>section>section>section>div:nth-child(5){
+            background: url("assets/logo/hibernate .png");
+            background-size: 255px,248px;
+        }
+*/
+    </style>
+
+</head>
+<body>
+
+<section>
+    <section>
+
+        <section>
+            <section>
+                <div>
+                    <img src="assets/logo/java.png" alt="">
+                </div>
+                <div>
+                    <img src="assets/logo/MySQL.png" alt="">
+                </div>
+                <div>
+                    <img src="assets/logo/HTML.png" alt="">
+                </div>
+                <div>
+                    <img src="assets/logo/CSS.png" alt="">
+                </div>
+                <div>
+                    <img src="assets/logo/hibernate%20.png" alt="">
+                </div>
+            </section>
+        </section>
+
+    </section>
+
+</section>
+
+</body>
+</html>

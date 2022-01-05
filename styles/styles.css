@@ -1,0 +1,773 @@
+
+
+
+/*-------------------Header-------------------------------*/
+body > header {
+    position: fixed;
+    height: 80px;
+    width: 100vw;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+body > header > div {
+    background-color: fuchsia;
+    position: absolute;
+    height: 76%;
+    width: 35.5px;
+}
+
+body > header > div::before {
+    border-top: 25px solid fuchsia;
+    border-left: 17.5px solid transparent;
+    border-right: 17.5px solid transparent;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 60px;
+    width: 0;
+}
+
+body > header > div:nth-child(2) {
+    left: 36px;
+}
+
+body > header > div > h1 {
+    color: white;
+    font-size: 25px;
+}
+
+body > header > div:nth-child(1) > h1 {
+    text-align: right;
+}
+
+body > header > div:nth-child(2) > h1 {
+    text-align: left;
+}
+
+body > header > ul {
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    height: 30px;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    list-style: none;
+
+}
+
+body > header > ul > li {
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    margin-top: 10px;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+
+header > ul > li:hover {
+    border-bottom: 3px solid fuchsia;
+    cursor: pointer;
+    color: hotpink;
+}
+
+/*--------------------------------------------------*/
+
+body > main > section {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*----------------------Home Page---------------------------*/
+
+body > main > section:nth-child(1) {
+    background: url("assets/images/fabio-oyXis2kALVg-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body > main > section:nth-child(1) > section:nth-child(1) > div {
+    width: 225px;
+    height: 225px;
+    background-image: url("assets/images/me.png");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 13%;
+    margin: auto;
+    border-radius: 100%;
+    border: 15px solid #eeeeee;
+    z-index: 2;
+}
+
+body > main > section:nth-child(1) > section:nth-child(1) > div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -28px;
+    right: 0;
+    margin: auto;
+    border: 14px solid darkgrey;
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+}
+
+body > main > section:nth-child(1) > section:nth-child(1) > div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -40px;
+    right: 0;
+    margin: auto;
+    border: 14px solid dimgray;
+    border-radius: 100%;
+    width: 275px;
+    height: 275px;;
+
+}
+
+body > main > section:nth-child(1) > section:nth-child(1) > section {
+    width: 263px;
+    height: 76px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 56%;
+    bottom: 0;
+    left: 13.5%;
+    margin: auto;
+}
+
+body > main > section:nth-child(1) > section:nth-child(1) > section > div {
+    width: 73px;
+    height: 75px;
+    flex-grow: 1;
+}
+
+body > main > section:nth-child(1) > section:nth-child(2) {
+    width: 461px;
+    height: 348px;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    left: 237px;
+    right: 0;
+    margin: auto;
+}
+
+body > main > section:nth-child(1) > section:nth-child(2) > div {
+    color: white;
+    width: 100%;
+    height: 100%;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px cornflowerblue;
+}
+
+body > main > section:nth-child(1) > section:nth-child(1) > section > div:nth-child(1):hover {
+    color: pink;
+}
+
+body > main > section:nth-child(1) > section:nth-child(2) > div > h1:nth-child(1) {
+    padding-left: 10px;
+    font-size: 40px;
+}
+
+body > main > section:nth-child(1) > section:nth-child(2) > div > h1:nth-child(2) {
+    padding-left: 69px;
+    font-size: 40px;
+}
+
+body > main > section:nth-child(1) > section:nth-child(2) > div > pre {
+    padding-left: 126px;
+    font-size: 30px;
+}
+
+/*---------------------------------About Page---------------------------------------*/
+
+body > main > section:nth-child(2) {
+    background-color: #1D1631;
+    border-top: 1px solid white;
+}
+
+body > main > section:nth-child(2) > div {
+    height: 57px;
+    padding-left: 13px;
+    padding-top: 2px;
+}
+
+body > main > section:nth-child(2) > div > h1 {
+    color: white;
+    margin-bottom: 5px;
+    position: absolute;
+    border: 2px solid;
+    display: inline;
+    border-bottom-color: deeppink;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+body > main > section:nth-child(2) > section {
+    width: 1049px;
+    height: 601px;
+    position: relative;
+    top: -34px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+body > main > section:nth-child(2) > section > section:nth-child(1) {
+    position: absolute;
+}
+
+body > main > section:nth-child(2) > section > section:nth-child(1) > div {
+    position: absolute;
+    top: 137px;
+    left: 44px;
+    background-color: mediumvioletred;
+    width: 319px;
+    height: 335px;
+    box-shadow: 20px 20px 4px 1px maroon;
+}
+
+body > main > section:nth-child(2) > section > section:nth-child(1) > div > img {
+    border-style: none;
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    width: 278px;
+    height: 291px;
+}
+
+body > main > section:nth-child(2) > section > section:nth-child(1) > section {
+    position: absolute;
+    left: 424px;
+    top: 94px;
+    border: 2px solid deeppink;
+    color: white;
+    width: 616px;
+    height: 262px;
+}
+
+body > main > section:nth-child(2) > section > section:nth-child(2) {
+    border: 2px solid deeppink;
+    position: absolute;
+    left: 424px;
+    top: 386px;
+    width: 616px;
+}
+
+.heading {
+    padding-left: 24px;
+    padding-top: 7px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 24px;
+    font-size: 20px;
+    position: absolute;
+}
+
+.first {
+    top: 67px;
+}
+
+.second {
+    top: 67px;
+    left: 180px;
+}
+
+.third {
+    top: 67px;
+    left: 216px;
+}
+
+.last > h2 {
+    color: white;
+    padding-left: 24px;
+}
+
+.last > p {
+    color: white;
+    padding-left: 24px;
+    font-size: 16px;
+}
+
+.final {
+    background: linear-gradient(to right, #fed330, #ff9f43);
+    position: absolute;
+    width: 132px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 33px;
+    left: 424px;
+    top: 562px;
+}
+
+/*---------------------------------Education Page---------------------------------------*/
+
+body > main > section:nth-child(3) {
+    background-color: #1D1631;
+    border-top: 1px solid white;
+    position: relative;
+}
+
+body > main > section:nth-child(3) > div:nth-child(1) {
+    height: 57px;
+    padding-left: 13px;
+    padding-top: 2px;
+}
+
+body > main > section:nth-child(3) > div:nth-child(1) > h1 {
+    color: white;
+    margin-bottom: 5px;
+    position: absolute;
+    border: 2px solid;
+    display: inline;
+    border-bottom-color: deeppink;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+
+
+
+
+
+/*---------------------------------Skills Page---------------------------------------*/
+
+body > main > section:nth-child(4) {
+    background-color: #1D1631;
+    border-top: 1px solid white;
+    position: relative;
+}
+
+body > main > section:nth-child(4) > div:nth-child(1) {
+    height: 57px;
+    padding-left: 13px;
+    padding-top: 2px;
+}
+
+body > main > section:nth-child(4) > div:nth-child(1) > h1 {
+    color: white;
+    margin-bottom: 5px;
+    position: absolute;
+    border: 2px solid;
+    display: inline;
+    border-bottom-color: deeppink;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+/*---------------------------------Experience Page---------------------------------------*/
+
+body > main > section:nth-child(5) {
+    background-color: #1D1631;
+    border-top: 1px solid white;
+    position: relative;
+}
+
+body > main > section:nth-child(5) > div:nth-child(1) {
+    height: 57px;
+    padding-left: 13px;
+    padding-top: 2px;
+}
+
+body > main > section:nth-child(5) > div:nth-child(1) > h1 {
+    color: white;
+    margin-bottom: 5px;
+    position: absolute;
+    border: 2px solid;
+    display: inline;
+    border-bottom-color: deeppink;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+body > main > section:nth-child(5) > section {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    top: 125px;
+    display: flex;
+    flex-direction: column;
+}
+
+body > main > section:nth-child(5) > section > section {
+    width: 100%;
+    height: 100%;
+}
+
+body > main > section:nth-child(5) > section > section:nth-child(1) > section {
+    width: 42%;
+    height: 45%;
+    position: absolute;
+    left: 8px;
+    animation-name: RunToLeft;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 10s;
+}
+
+@keyframes RunToLeft {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+
+body > main > section:nth-child(5) > section > section:nth-child(1) > section > div:nth-child(1) {
+    width: 273px;
+    height: 157px;
+    background: url("assets/images/Experience1.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 34px;
+    left: 0;
+    box-shadow: 17px 20px 3px -5px darkslateblue;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 4px solid white;
+}
+
+body > main > section:nth-child(5) > section > section:nth-child(1) > section > div:nth-child(2) {
+    width: 310px;
+    height: 157px;
+    position: absolute;
+    top: 34px;
+    left: 310px;
+    border-top: 3px solid mediumvioletred;
+    border-bottom: 3px solid mediumvioletred;
+    color: ghostwhite;
+}
+
+body > main > section:nth-child(5) > section > section > section > div:nth-child(2) > p{
+    padding-top: 6px;
+    padding-left: 16px;
+    padding-right: 10px;
+}
+
+body > main > section:nth-child(5) > section > section:nth-child(2) > section {
+    width: 42%;
+    height: 45%;
+    position: absolute;
+    right: 8px;
+    animation-name: RunToRight;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 10s;
+}
+
+@keyframes RunToRight {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+body > main > section:nth-child(5) > section > section:nth-child(2) > section > div:nth-child(1) {
+    width: 273px;
+    height: 157px;
+    background: url(assets/images/Experience2.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    box-shadow: -17px 18px 3px -5px darkslateblue;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 4px solid white;
+}
+
+body > main > section:nth-child(5) > section > section:nth-child(2) > section > div:nth-child(2) {
+    width: 310px;
+    height: 157px;
+    position: absolute;
+    top: 35px;
+    right: 310px;
+    border-top: 3px solid mediumvioletred;
+    border-bottom: 3px solid mediumvioletred;
+    color: ghostwhite;
+}
+
+/*---------------------------------Projects Page---------------------------------------*/
+
+body > main > section:nth-child(6) {
+    background-color: #1D1631;
+    border-top: 1px solid white;
+    position: relative;
+}
+
+body > main > section:nth-child(6) > div:nth-child(1) {
+    height: 57px;
+    padding-left: 13px;
+    padding-top: 2px;
+}
+
+body > main > section:nth-child(6) > div:nth-child(1) > h1 {
+    color: white;
+    margin-bottom: 5px;
+    position: absolute;
+    border: 2px solid;
+    display: inline;
+    border-bottom-color: deeppink;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+body > main > section:nth-child(6) > section:nth-child(2) {
+    width: 447px;
+    height: 332px;
+    border: 13px solid white;
+    position: absolute;
+    top: 122px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+body > main > section:nth-child(6) > section:nth-child(2) > section {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    animation-name: case1;
+    animation-direction: alternate;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+body > main > section:nth-child(6) > section:nth-child(2) > section > div {
+    width: 100%;
+}
+
+body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(1) {
+    background-image: url("assets/images/HotelReservation.png");
+    background-size: cover;
+}
+
+body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(2) {
+    background-image: url("assets/images/CarParking.png");
+    background-size: cover;
+}
+
+body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(3) {
+    background-image: url("assets/images/ThogaKade.png");
+    background-size: cover;
+}
+
+body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(4) {
+    background-image: url("assets/images/SuperMarket.png");
+    background-size: cover;
+}
+
+body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(5) {
+    background-image: url("assets/images/TeaSupply.png");
+    background-size: cover;
+}
+
+@keyframes case1 {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-25%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(-75%);
+    }
+}
+
+body > main > section:nth-child(6) > div:nth-child(3) {
+    width: 200px;
+    height: 0;
+    border: 10px solid white;
+    position: absolute;
+    top: 479px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-bottom: 61px solid white;
+    border-left: 21px solid transparent;
+    border-right: 21px solid transparent;
+}
+
+body > main > section:nth-child(6) > div:nth-child(4) {
+    width: 479px;
+    height: 11px;
+    position: absolute;
+    top: 580px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-bottom: 72px solid white;
+    border-left: 21px solid transparent;
+    border-right: 21px solid transparent;
+}
+
+body > main > section:nth-child(6) > div:nth-child(4) > form > button {
+    position: absolute;
+    top: 84px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 106px;
+    height: 32px;
+    background-color: deeppink;
+    color: white;
+}
+
+body > main > section:nth-child(6) > div:nth-child(5) {
+    width: 598px;
+    height: 399px;
+    position: absolute;
+    top: 0;
+    bottom: 373px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: url("assets/images/illustration-pencils-paper-260nw-149366948-removebg-preview.png");
+    background-size: cover;
+}
+
+/*---------------------------------Contact Page---------------------------------------*/
+
+body > main > section:nth-child(7) {
+    border-top: 1px solid white;
+    background-color: #1D1631;
+    min-height: 100vh;
+}
+
+body > main > section:nth-child(7) > div {
+    height: 57px;
+    padding-left: 13px;
+    padding-top: 2px;
+}
+
+body > main > section:nth-child(7) > div > h1 {
+    color: white;
+    margin-bottom: 5px;
+    position: absolute;
+    border: 2px solid;
+    display: inline;
+    border-bottom-color: deeppink;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+body > main > section:nth-child(7) > div > h1:nth-child(2) {
+    left: 840px;
+}
+
+body > main > section:nth-child(7) > #m {
+    width: 93vw;
+    height: 650px;
+    position: absolute;
+    left: 36px;
+    border-bottom: 1px solid white;
+}
+
+body > main > section:nth-child(7) > #m > #pencil {
+    width: 621px;
+    height: 556px;
+    position: absolute;
+    background: url(assets/images/Paper-and-Pen-clipart-removebg-preview.png);
+    top: 70px;
+    left: 6px;
+    background-size: cover;
+}
+
+body > main > section:nth-child(7) > #m > #pencil > div {
+    position: absolute;
+    top: 116px;
+    left: 86px;
+    transform: rotate(-18deg);
+    font-size: 18px;
+}
+
+body > main > section:nth-child(7) > #m > section:nth-child(2) {
+    width: 521px;
+    height: 486px;
+    top: 91px;
+    left: 800px;
+    position: absolute;
+}
+
+body > main > section:nth-child(7) > #m > section:nth-child(2) > form > label {
+    color: white;
+}
+
+body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #last_name {
+    position: relative;
+    bottom: 27px;
+    left: 83px;
+}
+
+body > main > section:nth-child(7) > #m > section:nth-child(2) > form > .input {
+    overflow: visible;
+    border-top-right-radius: 23px;
+    border-bottom-left-radius: 23px;
+    border-color: white;
+    width: 209px;
+    height: 27px;
+}
+
+body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtPhoneNumber, #txtE-mailAddress, #txtMassage {
+    width: 512px;
+}
+
+body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtE-mailAddress {
+    width: 512px;
+}
+
+body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtMassage {
+    height: 162px;
+    width: 512px;
+}
+
+body > main > section:nth-child(7) > #m > section:nth-child(2) > form > button {
+    position: relative;
+    left: 370px;
+    height: 34px;
+    width: 150px;
+    background-color: goldenrod;
+}
+
+.copyrights {
+    position: relative;
+    top: 595px;
+    color: white;
+    left: 690px;
+    display: inline-table;
+    width: 139px;
+}
+
+/*---------------------------------------------------------------------------------*/
