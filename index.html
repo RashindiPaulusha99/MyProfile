@@ -363,9 +363,9 @@
         body > main > section:nth-child(3) > section{
             width: 80%;
             height: 80%;
-            background-color: pink;
-            top: 0;
-            right: 0;
+            position: absolute;
+            top: 30px;
+            right: 190px;
             left: 0;
             bottom: 0;
             margin: auto;
@@ -373,27 +373,23 @@
             flex-direction: column;
         }
 
-        body > main > section:nth-child(3) > section > div{
-            background: url("assets/images/lap girl.png");
-            background-size: cover;
-        }
-
         body > main > section:nth-child(3) > section > section{
             height: 100%;
             width: 100%;
-            border: 1px solid black;
         }
 
         body > main > section:nth-child(3) > section > section > div{
             height: 100px;
-            width: 309px;
-            background-color: cornflowerblue;
+            width: 350px;
+            border: 5px solid white;
+            border-left: 7px solid mediumvioletred;
+            border-right: 7px solid mediumvioletred;
         }
 
         body > main > section:nth-child(3) > section > section > div > h1{
             color: white;
             font-size: 15px;
-            padding-left: 8px;
+            padding-left: 15px;
         }
 
         body > main > section:nth-child(3) > section > section:nth-child(1) > div{
@@ -408,7 +404,7 @@
                 transform: translateX(0%);
             }
             to{
-                transform: translateX(300%);
+                transform: translateX(250%);
             }
         }
 
@@ -424,7 +420,7 @@
                 transform: translateX(0%);
             }
             to{
-                transform: translateX(250%);
+                transform: translateX(200%);
             }
         }
 
@@ -440,7 +436,7 @@
                 transform: translateX(0%);
             }
             to{
-                transform: translateX(200%);
+                transform: translateX(150%);
             }
         }
 
@@ -456,7 +452,7 @@
                 transform: translateX(0%);
             }
             to{
-                transform: translateX(150%);
+                transform: translateX(100%);
             }
         }
 
@@ -472,7 +468,7 @@
                 transform: translateX(0%);
             }
             to{
-                transform: translateX(100%);
+                transform: translateX(50%);
             }
         }
 
@@ -1040,10 +1036,8 @@
 
         <section>
 
-            <div></div>
-
             <section>
-                <div>
+                <div class="aaa">
                     <h1>Bcs.Computer Science</h1>
                     <h1>Institute Of Java and Software Engineering</h1>
                     <h1>2020 Present</h1>
@@ -1051,7 +1045,7 @@
             </section>
 
             <section>
-                <div>
+                <div class="bbb">
                     <h1>Diploma Course In English</h1>
                     <h1>BritishWay English Academy</h1>
                     <h1>2020</h1>
@@ -1059,7 +1053,7 @@
             </section>
 
             <section>
-                <div>
+                <div class="ccc">
                     <h1>Certificate Course InEnglish</h1>
                     <h1>Affiliated Institute Of Aquinas College</h1>
                     <h1>2019</h1>
@@ -1067,7 +1061,7 @@
             </section>
 
             <section>
-                <div>
+                <div class="ddd">
                     <h1>Certificate Course In Information Technology</h1>
                     <h1>Computer System (PVT) LTD</h1>
                     <h1>2009</h1>
@@ -1075,7 +1069,7 @@
             </section>
 
             <section>
-                <div>
+                <div class="fff">
                     <h1>Primary & Secondary Education</h1>
                     <h1>Southlands College</h1>
                     <h1>2005 - 2018</h1>
