@@ -472,6 +472,16 @@
             }
         }
 
+        body > main > section:nth-child(3) > section:nth-child(3){
+            background: url("assets/images/lap girl.png");
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            background-color: #ff9f43;
+            position: absolute;
+            right: 0;
+        }
+
         /*---------------------------------Skills Page---------------------------------------*/
 
         body > main > section:nth-child(4) {
@@ -498,6 +508,137 @@
             border-right-color: transparent;
         }
 
+        body > main > section:nth-child(4) > section:nth-child(2){
+            width: 70%;
+            height: 25%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            position: absolute;
+            left: 200px;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(3){
+            width: 50%;
+            height: 25%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            position: absolute;
+            left: 350px;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(4){
+            width: 25%;
+            height: 25%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            position: absolute;
+            left: 550px;
+        }
+
+        body > main > section:nth-child(4) > section > section {
+            height: 100%;
+            border: 4px solid white;
+            animation-name: skills;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes skills {
+            0%{
+                /*transform: rotate3d(5,5,5,50deg);*/
+                transform: rotatey(20deg);
+            }
+            20%{
+                /*transform: rotate3d(5,5,5,100deg);*/
+                transform: rotatey(40deg);
+            }
+            40%{
+                /*transform: rotate3d(5,5,5,150deg);*/
+                transform: rotatey(60deg);
+            }
+            60%{
+                /*transform: rotate3d(5,5,5,200deg);*/
+                transform: rotatey(-40deg);
+            }
+           /* 80%{
+                transform: rotate3d(5,5,5,250deg);
+            }*/
+            100%{
+               /* transform: rotate3d(5,5,5,300deg);*/
+                transform: rotatey(-20deg);
+            }
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(2){
+            top: 70px;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(2) > section{
+            width: 18%;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(2) > section:nth-child(1){
+            background: url("assets/icon/java.png");
+            background-size: cover;
+            box-shadow: 10px 15px 3px -5px darkslateblue;
+            background-color: lightpink;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(2) > section:nth-child(2){
+            background: url("assets/icon/MySQL.png");
+            background-size: cover;
+            background-color: lavender;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(2) > section:nth-child(3){
+            background: url("assets/icon/hibernate .png");
+            background-size: cover;
+            background-color: burlywood;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(2) > section:nth-child(4){
+            background: url("assets/icon/js.png");
+            background-size: cover;
+            background-color: palegoldenrod;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(3){
+            top: 260px;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(3) > section{
+            width:25%;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(3) > section:nth-child(1){
+            background: url("assets/icon/html (2).png");
+            background-size: cover;
+            background-color: lightsalmon;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(3) > section:nth-child(2){
+            background: url("assets/icon/css__2_-removebg-preview.png");
+            background-size: cover;
+            background-color: lightblue;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(4){
+            top: 450px;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(4) > section{
+            width:50%;
+        }
+
+        body > main > section:nth-child(4) > section:nth-child(4) > section:nth-child(1){
+            background: url("assets/icon/nodejs-icon-7.jpg");
+            background-size: cover;
+            background-color: lightgreen;
+        }
         /*---------------------------------Experience Page---------------------------------------*/
 
         body > main > section:nth-child(5) {
@@ -1075,8 +1216,10 @@
                     <h1>2005 - 2018</h1>
                 </div>
             </section>
+
         </section>
 
+        <section></section>
 
     </section>
 
@@ -1085,6 +1228,20 @@
         <div>
             <h1>Skills</h1>
         </div>
+
+        <section>
+            <section></section>
+            <section></section>
+            <section></section>
+            <section></section>
+        </section>
+        <section>
+            <section></section>
+            <section></section>
+        </section>
+        <section>
+            <section></section>
+        </section>
 
     </section>
 
