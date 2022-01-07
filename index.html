@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>My Profile</title>
 
-    <link href="assets/icon/icons8-person-90.png" rel="icon">
+    <link href="assets/images/me%20with%20frame.png" rel="icon">
 
     <link href="assets/resources/css/normalize.css" rel="stylesheet">
 
@@ -72,7 +72,7 @@
             font-family: 'Mea Culpa', cursive;
         }
 
-        body > header > ul {
+        body > header > ul{
             position: absolute;
             right: 30px;
             bottom: 0;
@@ -85,12 +85,16 @@
 
         }
 
-        body > header > ul > li {
+        body > header > ul > li{
             display: inline-block;
             padding: 0 10px 0 10px;
             margin-top: 10px;
-            color: white;
             border-bottom: 3px solid transparent;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
         }
 
         header > ul > li:hover {
@@ -433,8 +437,7 @@
             margin: auto;
             display: flex;
             flex-direction: column;
-            /*background: url("assets/images/upstair.jpg");
-            background-size: cover;*/
+
         }
 
         body > main > section:nth-child(3) > section > section{
@@ -1084,7 +1087,7 @@
             width: 500px;
             height: 500px;
             position: absolute;
-            top: 70px;
+            top: 100px;
             left: 50px;
             border-top: 10px solid white;
             border-left: 10px solid white;
@@ -1179,21 +1182,23 @@
     </div>
 
     <ul>
-        <li><a href=""></a>Home</li>
-        <li><a href=""></a>About</li>
-        <li><a href=""></a>Education</li>
-        <li><a href=""></a>Skills</li>
-        <li><a href=""></a>Experience</li>
-        <li><a href=""></a>Projects</li>
-        <li><a href=""></a>Contact</li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skill">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#project">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
 </header>
 <!------------------------------------------------------------------------->
 <main>
+
     <!-----------------Home Page--------------------->
     <section>
 
         <section>
+
             <section>
                 <section></section>
             </section>
@@ -1228,7 +1233,7 @@
 
         <section>
             <div>
-                <h1>Rashindi</h1>
+                <h1><dfn id="home">Rashindi</dfn></h1>
             </div>
             <div>
                 <h1>Paulusha</h1>
@@ -1252,9 +1257,8 @@
 
     <!-----------------About Page--------------------->
     <section>
-
         <div>
-            <h1>About Me</h1>
+            <h1><dfn id="about">About Me</dfn></h1>
         </div>
 
         <!--for personal information---------------------------->
@@ -1313,8 +1317,9 @@
 
     <!-----------------Education Page--------------------->
     <section>
+
         <div>
-            <h1>Education</h1>
+            <h1><dfn id="education">Education</dfn></h1>
         </div>
 
         <section>
@@ -1367,8 +1372,9 @@
 
     <!-----------------Skills Page--------------------->
     <section>
+
         <div>
-            <h1>Skills</h1>
+            <h1><dfn id="skill">Skills</dfn></h1>
         </div>
 
         <section>
@@ -1421,8 +1427,9 @@
 
     <!-----------------Experience Page--------------------->
     <section>
+
         <div>
-            <h1>Experience</h1>
+            <h1><dfn id="experience">Experience</dfn></h1>
         </div>
 
         <section>
@@ -1455,7 +1462,7 @@
 
         <!--For Heading-->
         <div>
-            <h1>Projects</h1>
+            <h1><dfn id="project">Projects</dfn></h1>
         </div>
 
         <!--For Computer-->
@@ -1497,8 +1504,8 @@
     <section>
 
         <div>
-            <h1>Contact Me</h1>
-            <h1>Get In Touch</h1>
+            <h1><dfn id="contact">Contact Me</dfn></h1>
+            <h1><i>Get In Touch</i></h1>
         </div>
 
         <!--for contact me section------------------------->
