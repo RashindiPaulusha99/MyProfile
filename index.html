@@ -19,7 +19,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 
     <link href="assets/resources/css/fonts/css/all.css" rel="stylesheet">
-    <!--<link rel="stylesheet" href="styles/styles.css">-->
 
     <meta content="width=device-width initial-scale=1" name="viewport">
     <meta content="blue" name="theme-color">
@@ -269,7 +268,7 @@
         /*---------------------------------About Page---------------------------------------*/
 
         body > main > section:nth-child(2) {
-            background-color: #1D1631;
+            background-color: dimgray;
             border-top: 1px solid white;
         }
 
@@ -310,10 +309,11 @@
             position: absolute;
             top: 137px;
             left: 44px;
-            background-color: mediumvioletred;
+            border-top: 10px solid mediumvioletred;
+            border-left: 10px solid mediumvioletred;
             width: 319px;
             height: 335px;
-            box-shadow: 20px 20px 4px 1px maroon;
+            box-shadow: 20px 20px 5px 1px lightcoral;
         }
 
         body > main > section:nth-child(2) > section > section:nth-child(1) > div > img {
@@ -329,18 +329,22 @@
             position: absolute;
             left: 424px;
             top: 94px;
-            border: 2px solid deeppink;
+            border: 4px solid deeppink;
+            border-top-right-radius:20px;
+            border-bottom-left-radius: 20px;
             color: white;
             width: 616px;
             height: 262px;
         }
 
         body > main > section:nth-child(2) > section > section:nth-child(2) {
-            border: 2px solid deeppink;
+            border: 4px solid deeppink;
             position: absolute;
             left: 424px;
             top: 386px;
             width: 616px;
+            border-top-left-radius:20px;
+            border-bottom-right-radius: 20px;
         }
 
         .heading {
@@ -395,7 +399,7 @@
         /*---------------------------------Education Page---------------------------------------*/
 
         body > main > section:nth-child(3) {
-            background-color: #1D1631;
+            background-color: dimgray;
             border-top: 1px solid white;
             position: relative;
         }
@@ -420,7 +424,7 @@
 
         body > main > section:nth-child(3) > section{
             width: 80%;
-            height: 80%;
+            height: 85%;
             position: absolute;
             top: 30px;
             right: 190px;
@@ -429,11 +433,14 @@
             margin: auto;
             display: flex;
             flex-direction: column;
+            /*background: url("assets/images/upstair.jpg");
+            background-size: cover;*/
         }
 
         body > main > section:nth-child(3) > section > section{
             height: 100%;
             width: 100%;
+            z-index: 1;
         }
 
         body > main > section:nth-child(3) > section > section > div{
@@ -442,6 +449,8 @@
             border: 5px solid white;
             border-left: 7px solid mediumvioletred;
             border-right: 7px solid mediumvioletred;
+            background: url("assets/images/wood.jpg");
+            background-size: cover;
         }
 
         body > main > section:nth-child(3) > section > section > div > h1{
@@ -530,7 +539,7 @@
             }
         }
 
-        body > main > section:nth-child(3) > section:nth-child(3){
+       /* body > main > section:nth-child(3) > section:nth-child(3){
             background: url("assets/images/lap girl.png");
             background-size: cover;
             width: 300px;
@@ -538,12 +547,12 @@
             background-color: #ff9f43;
             position: absolute;
             right: 0;
-        }
+        }*/
 
         /*---------------------------------Skills Page---------------------------------------*/
 
         body > main > section:nth-child(4) {
-            background-color: #1D1631;
+            background-color: dimgray;
             border-top: 1px solid white;
             position: relative;
         }
@@ -718,7 +727,7 @@
         /*---------------------------------Experience Page---------------------------------------*/
 
         body > main > section:nth-child(5) {
-            background-color: #1D1631;
+            background-color: dimgray;
             border-top: 1px solid white;
             position: relative;
         }
@@ -854,7 +863,7 @@
         /*---------------------------------Projects Page---------------------------------------*/
 
         body > main > section:nth-child(6) {
-            background-color: #1D1631;
+            background-color: dimgray;
             border-top: 1px solid white;
             position: relative;
         }
@@ -1000,7 +1009,7 @@
 
         body > main > section:nth-child(7) {
             border-top: 1px solid white;
-            background-color: #1D1631;
+            background-color: dimgray;
             min-height: 100vh;
         }
 
@@ -1125,7 +1134,7 @@
     </div>
 
     <ul>
-        <li><a href="" target="_parent"></a>Home</li>
+        <li><a href=""></a>Home</li>
         <li><a href=""></a>About</li>
         <li><a href=""></a>Education</li>
         <li><a href=""></a>Skills</li>
