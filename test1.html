@@ -25,7 +25,105 @@
 
     <style>
 
+        body{
+            background-color: #1D1631;
+        }
 
+        body > main > section:nth-child(1){
+            width: 500px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: white;
+        }
+
+        body > main > section > section:nth-child(1){
+            width: 447px;
+            height: 332px;
+            border: 13px solid black;
+            position: absolute;
+            top: 20px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        body > main > section > section > section{
+            width: 300%;
+            height: 100%;
+            display: flex;
+            animation-name: case1;
+            animation-direction: alternate;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+        }
+
+        body > main > section > section > section  >div{
+            width: 100%;
+        }
+
+        body > main > section > section > section  >div:nth-child(1){
+            background-image: url("assets/images/HotelReservation.png");
+            background-size: cover;
+        }
+
+        body > main > section > section > section  >div:nth-child(2){
+            background-image: url("assets/images/CarParking.png");
+            background-size: cover;
+        }
+
+        body > main > section > section > section  >div:nth-child(3){
+            background-image: url("assets/images/ThogaKade.png");
+            background-size: cover;
+        }
+
+        @keyframes case1 {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-25%);
+            }
+            50% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(-75%);
+            }
+        }
+
+        body > main > section:nth-child(2){
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 400px;
+            bottom: 0;
+            left: 0;
+            right: 500px;
+            margin: auto;
+            border: 25px solid white;
+            opacity: 70%;
+
+        }
+
+        body > main > section:nth-child(3){
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            bottom: 380px;
+            left: 870px;
+            margin: auto;
+            border: 25px solid white;
+            opacity: 70%;
+
+        }
 
     </style>
 
@@ -35,7 +133,21 @@
 
 <main>
 
+<section>
 
+    <section>
+        <section>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+
+    </section>
+
+</section>
+
+    <section></section>
+    <section></section>
 
 </main>
 
