@@ -42,8 +42,8 @@
         }
 
         body > main > section:nth-child(1) > div > div{
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background-color: white;
             border-radius: 100%;
             position: absolute;
@@ -55,21 +55,27 @@
             animation-name: drop;
             animation-direction: alternate;
             animation-iteration-count: infinite;
-            animation-duration: 20s;
+            animation-duration: 2s;
         }
 
         @keyframes drop {
-            from{
+            0%{
                 top: 0;
             }
-            to{
-                bottom: 0;
+            25%{
+                top: 20px;
+            }
+            50%{
+                top: 0;
+            }
+            100%{
+                top: -20px;
             }
         }
 
         body > main > section:nth-child(1) > div > div > div:nth-child(1){
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             border: 4px solid red;
             border-top-color: transparent;
             border-left-color: transparent;
@@ -83,8 +89,8 @@
         }
 
         body > main > section:nth-child(1) > div > div > div:nth-child(2){
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             border: 4px solid red;
             border-top-color: transparent;
             border-left-color: transparent;
@@ -111,11 +117,16 @@
         body > main > section:nth-child(2) > section:nth-child(1) > h1 {
             color: white;
             position: absolute;
-            top: 7px;
+            top: 31px;
             left: 204px;
             right: 0;
             margin: auto;
             font-size: 40px;
+        }
+
+        body > main > section:nth-child(2) > section:nth-child(1) > h1:hover {
+            color: #fed330;
+            cursor: pointer;
         }
 
         body > main > section:nth-child(2)  > section:nth-child(2){
@@ -133,25 +144,20 @@
         }
 
         body > main > section:nth-child(2)  > section:nth-child(2) > section{
-            border: 7px solid white;
             width: 25%;
-            border-top-right-radius: 100px;
-            border-bottom-left-radius: 100px;
+            border: 3px solid #ff6b81;
         }
 
-        body > main > section:nth-child(2)  > section:nth-child(2) > section:nth-child(1){
-            background: url("assets/images/HotelReservation.png");
-            background-size: cover;
+        body > main > section:nth-child(2)  > section:nth-child(2) > section:hover{
+            cursor: pointer;
+            border-color: #ff6b81;
+            background-color: #4b4b4b;
+            opacity: 80%;
         }
 
-        body > main > section:nth-child(2)  > section:nth-child(2) > section:nth-child(2){
-            background: url("assets/images/CarParking.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(2)  > section:nth-child(2) > section:nth-child(3){
-            background: url("assets/images/ThogaKade.png");
-            background-size: cover;
+        body > main > section  > section > section > img{
+            width: 100%;
+            height: 100%;
         }
 
         body > main > section:nth-child(2)  > section:nth-child(3){
@@ -170,26 +176,15 @@
         }
 
         body > main > section:nth-child(2)  > section:nth-child(3) > section{
-            border: 7px solid white;
             width: 25%;
-            border-top-right-radius: 100px;
-            border-bottom-left-radius: 100px;
-
+            border: 3px solid #ff6b81;
         }
 
-        body > main > section:nth-child(2)  > section:nth-child(3) > section:nth-child(1){
-            background: url("assets/images/SuperMarket.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(2)  > section:nth-child(3) > section:nth-child(2){
-            background: url("assets/images/TeaSupply.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(2)  > section:nth-child(3) > section:nth-child(3){
-            background: url("assets/images/StudentRegistrationSystem.png");
-            background-size: cover;
+        body > main > section:nth-child(2)  > section:nth-child(3) > section:hover{
+            cursor: pointer;
+            border-color: #ff6b81;
+            background-color: #4b4b4b;
+            opacity: 50%;
         }
 
         body > main > section:nth-child(3) {
@@ -213,6 +208,11 @@
             font-size: 40px;
         }
 
+        body > main > section:nth-child(3) > section:nth-child(1) > h1:hover{
+            color: #fed330;
+            cursor: pointer;
+        }
+
         body > main > section:nth-child(3)  > section:nth-child(2){
             width: 100%;
             height: 300px;
@@ -228,25 +228,15 @@
         }
 
         body > main > section:nth-child(3)  > section:nth-child(2) > section{
-            border: 7px solid white;
             width: 25%;
-            border-top-right-radius: 100px;
-            border-bottom-left-radius: 100px;
+            border: 3px solid #ff6b81;
         }
 
-        body > main > section:nth-child(3)  > section:nth-child(2) > section:nth-child(1){
-            background: url("assets/images/CSS_Assignment1.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(3)  > section:nth-child(2) > section:nth-child(2){
-            background: url("assets/images/TeaSupply.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(3)  > section:nth-child(2) > section:nth-child(2){
-            background: url("assets/images/TeaSupply.png");
-            background-size: cover;
+        body > main > section:nth-child(3)  > section:nth-child(2) > section:hover{
+            cursor: pointer;
+            border-color: #ff6b81;
+            background-color: #4b4b4b;
+            opacity: 50%;
         }
 
         body > main > section:nth-child(4) {
@@ -268,25 +258,14 @@
         }
 
         body > main > section:nth-child(4)  > section:nth-child(1) > section{
-            border: 7px solid white;
             width: 25%;
-            border-top-right-radius: 100px;
-            border-bottom-left-radius: 100px;
         }
 
-        body > main > section:nth-child(4)  > section:nth-child(1) > section:nth-child(1){
-            background: url("assets/images/CSS_Assignment1.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(4)  > section:nth-child(1) > section:nth-child(2){
-            background: url("assets/images/TeaSupply.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(4)  > section:nth-child(1) > section:nth-child(2){
-            background: url("assets/images/TeaSupply.png");
-            background-size: cover;
+        body > main > section:nth-child(4)  > section:nth-child(1) > section:hover{
+            cursor: pointer;
+            border-color: #ff6b81;
+            background-color: #4b4b4b;
+            opacity: 50%;
         }
 
         body > main > section:nth-child(4)  > section:nth-child(2){
@@ -304,26 +283,47 @@
         }
 
         body > main > section:nth-child(4)  > section:nth-child(2) > section{
-            border: 7px solid white;
             width: 25%;
-            border-top-right-radius: 100px;
-            border-bottom-left-radius: 100px;
+            border: 3px solid #ff6b81;
         }
 
-        body > main > section:nth-child(4)  > section:nth-child(2) > section:nth-child(1){
-            background: url("assets/images/CSS_Assignment1.png");
-            background-size: cover;
+        body > main > section:nth-child(4)  > section:nth-child(2) > section:hover{
+            cursor: pointer;
+            border-color: #ff6b81;
+            background-color: #4b4b4b;
+            opacity: 50%;
         }
 
-        body > main > section:nth-child(4)  > section:nth-child(2) > section:nth-child(2){
-            background: url("assets/images/TeaSupply.png");
-            background-size: cover;
+        body > main > section:nth-child(5){
+            position: relative;
         }
 
-        body > main > section:nth-child(4)  > section:nth-child(2) > section:nth-child(2){
-            background: url("assets/images/TeaSupply.png");
-            background-size: cover;
+        body > main > section:nth-child(5) > section {
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 100px;
+            right: 0;
+            left: 0;
+            bottom: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
         }
+
+        .end{
+            width: 25%;
+            border: 3px solid transparent;
+        }
+
+        body > main > section:nth-child(5)  > section >  .end:hover{
+            cursor: pointer;
+            border-color: #ff6b81;
+            background-color: #4b4b4b;
+            opacity: 50%;
+        }
+
 
     </style>
 
@@ -359,15 +359,27 @@
 
         <!--for projects-->
         <section>
-            <section></section>
-            <section></section>
-            <section></section>
+            <section>
+                <img src="assets/images/HotelReservation.png" alt="" >
+            </section>
+            <section>
+                <img src="assets/images/CarParking.png" alt="">
+            </section>
+            <section>
+                <img src="assets/images/ThogaKade.png" alt="">
+            </section>
         </section>
 
         <section>
-            <section></section>
-            <section></section>
-            <section></section>
+            <section>
+                <img src="assets/images/SuperMarket.png" alt="">
+            </section>
+            <section>
+                <img src="assets/images/TeaSupply.png" alt="">
+            </section>
+            <section>
+                <img src="assets/images/StudentRegistrationSystem.png" alt="">
+            </section>
         </section>
     </section>
 
@@ -379,9 +391,16 @@
         </section>
 
         <section>
-            <section></section>
-            <section></section>
-            <section></section>
+            <section>
+                <img src="assets/images/CSS_Assignment1.png" alt="">
+                <a href="myProjects/css/Layout/Assignment_1/index.html" target="_blank"></a>
+            </section>
+            <section>
+                <img src="assets/images/case2.png" alt="">
+            </section>
+            <section>
+                <img src="assets/images/case3.png" alt="">
+            </section>
         </section>
 
     </section>
@@ -389,15 +408,39 @@
     <!--For CSS Projects-->
     <section>
         <section>
-            <section></section>
-            <section></section>
-            <section></section>
+            <section>
+                <img src="assets/images/case4.png" alt="">
+            </section>
+            <section>
+                <img src="assets/images/case5.png" alt="">
+            </section>
+            <section>
+                <img src="assets/images/case6.png" alt="">
+            </section>
         </section>
 
         <section>
-            <section></section>
-            <section></section>
-            <section></section>
+            <section>
+                <img src="assets/images/case7.png" alt="">
+            </section>
+            <section>
+                <img src="assets/images/case8.png" alt="">
+            </section>
+            <section>
+                <img src="assets/images/case9.png" alt="">
+            </section>
+        </section>
+    </section>
+
+    <section>
+        <section>
+            <section class="end">
+                <img src="assets/images/case10.png" alt="">
+            </section>
+            <section class="end">
+                <img src="assets/images/case11.png" alt="">
+            </section>
+            <section class="end"></section>
         </section>
     </section>
 
