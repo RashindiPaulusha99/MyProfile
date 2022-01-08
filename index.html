@@ -902,105 +902,160 @@
             border-right-color: transparent;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) {
-            width: 447px;
-            height: 332px;
-            border: 13px solid white;
+        body > main > section:nth-child(6) > section:nth-child(1){
+            width: 1500px;
+            height: 600px;
             position: absolute;
-            top: 122px;
-            right: 0;
+            top: 0;
+            bottom: 0;
             left: 0;
+            right: 0;
             margin: auto;
-            overflow: hidden;
-            z-index: 1;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) > section {
-            width: 500%;
-            height: 100%;
-            display: flex;
-            animation-name: case1;
-            animation-direction: alternate;
-            animation-duration: 20s;
-            animation-iteration-count: infinite;
+        body > main > section:nth-child(6) > section > div{
+            border: 10px solid #4b4b4b;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div {
+        body > main > section:nth-child(6) > section > div > img{
             width: 100%;
+            height: 100%;
         }
 
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(1) {
-            background-image: url("assets/images/HotelReservation.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(2) {
-            background-image: url("assets/images/CarParking.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(3) {
-            background-image: url("assets/images/ThogaKade.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(4) {
-            background-image: url("assets/images/SuperMarket.png");
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(6) > section:nth-child(2) > section > div:nth-child(5) {
-            background-image: url("assets/images/TeaSupply.png");
-            background-size: cover;
-        }
-
-        @keyframes case1 {
-            0% {
-                transform: translateX(0);
-            }
-            25% {
-                transform: translateX(-25%);
-            }
-            50% {
-                transform: translateX(-50%);
-            }
-            100% {
-                transform: translateX(-75%);
-            }
-        }
-
-        body > main > section:nth-child(6) > div:nth-child(3) {
-            width: 200px;
-            height: 0;
-            border: 10px solid white;
+        body > main > section:nth-child(6) > section > div:nth-child(1){
+            width: 400px;
+            height: 400px;
             position: absolute;
-            top: 479px;
-            right: 0;
+            top: 0;
+            bottom: 0;
             left: 0;
-            margin: auto;
-            border-bottom: 61px solid white;
-            border-left: 21px solid transparent;
-            border-right: 21px solid transparent;
-            z-index: 1;
-        }
-
-        body > main > section:nth-child(6) > div:nth-child(4) {
-            width: 479px;
-            height: 11px;
-            position: absolute;
-            top: 580px;
             right: 0;
-            left: 0;
             margin: auto;
-            border-bottom: 72px solid white;
-            border-left: 21px solid transparent;
-            border-right: 21px solid transparent;
-            z-index: 1;
+            z-index: 2;
+            transition-property: width,height;
+            transition-duration: 2s;
         }
 
-        body > main > section:nth-child(6) > div:nth-child(4) > form > button {
+        body > main > section:nth-child(6) > section > div:nth-child(1):hover{
+            width: 425px;
+            height:425px;
+            transition-property: width,height;
+            transition-duration: 1s;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(2){
+            width: 350px;
+            height: 350px;
             position: absolute;
-            top: 84px;
+            top: 0;
+            bottom: 0;
+            left: 500px;
+            right: 0;
+            margin: auto;
+            z-index: 1;
+            transition-property: width,height;
+            transition-duration: 2s;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(2):hover{
+            width: 375px;
+            height:375px;
+            transition-property: width,height;
+            transition-duration: 1s;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(3){
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 500px;
+            margin: auto;
+            z-index: 1;
+            transition-property: width,height;
+            transition-duration: 2s;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(3):hover{
+            width: 375px;
+            height:375px;
+            transition-property: width,height;
+            transition-duration: 1s;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(4){
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 850px;
+            right: 0;
+            margin: auto;
+            transition-property: width,height;
+            transition-duration: 2s;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(4):hover{
+            width: 325px;
+            height:325px;
+            transition-property: width,height;
+            transition-duration: 1s;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(5){
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 850px;
+            margin: auto;
+            transition-property: width,height;
+            transition-duration: 2s;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(5):hover{
+            width: 325px;
+            height:325px;
+            transition-property: width,height;
+            transition-duration: 1s;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(6){
+            width: 25px;
+            height: 25px;
+            border: 10px solid whitesmoke;
+            transform: rotate(-45deg);
+            border-top: 5px solid transparent;
+            border-left: 5px solid transparent;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 50px;
+            margin: auto;
+        }
+
+        body > main > section:nth-child(6) > section > div:nth-child(7){
+            width: 25px;
+            height: 25px;
+            border: 10px solid whitesmoke;
+            transform: rotate(-45deg);
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid transparent;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            margin: auto;
+        }
+
+        body > main > section:nth-child(6) > div:nth-child(3) > form > button {
+            position: absolute;
+            top: 550px;
             left: 0;
             right: 0;
             bottom: 0;
@@ -1009,60 +1064,8 @@
             height: 32px;
             background-color: #FC427B;
             border-radius: 20px;
-            border:2px solid white;
+            border: 2px solid white;
             color: white;
-        }
-
-        body > main > section:nth-child(6) > div:nth-child(5) {
-            width: 100%;
-            height: 350px;
-            position: absolute;
-            top: 370px;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            background: url(assets/images/aditya-joshi-wG923J9naFQ-unsplash.jpg);
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(6) > div:nth-child(6) {
-            width: 400px;
-            height: 400px;
-            position: absolute;
-            top: -100px;
-            bottom: 0;
-            left: 900px;
-            right: 0;
-            margin: auto;
-            background: url(assets/images/flowevase.png);
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(6) > div:nth-child(7) {
-            width: 450px;
-            height: 300px;
-            position: absolute;
-            top: -119px;
-            bottom: 0;
-            left: 0;
-            right: 1000px;
-            margin: auto;
-            background: url(assets/images/bokks.png);
-            background-size: cover;
-        }
-
-        body > main > section:nth-child(6) > div:nth-child(8) {
-            width: 250px;
-            height: 200px;
-            position: absolute;
-            top: 350px;
-            bottom: 0;
-            left: 0;
-            right: 1000px;
-            margin: auto;
-            background: url(assets/images/cofee.png);
-            background-size: cover;
         }
 
         /*---------------------------------Contact Page---------------------------------------*/
@@ -1517,38 +1520,34 @@
             <h1><dfn id="project">Projects</dfn></h1>
         </div>
 
-        <!--For Computer-->
         <section>
-            <!--For slide-->
-            <section>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </section>
+            <div>
+                <img src="assets/images/StudentRegistrationSystem.png" alt="">
+            </div>
+            <div>
+                <img src="assets/images/TeaSupply.png" alt="">
+            </div>
+            <div>
+                <img src="assets/images/SuperMarket.png" alt="">
+            </div>
+            <div>
+                <img src="assets/images/HotelReservation.png" alt="">
+            </div>
+            <div>
+                <img src="assets/images/CarParking.png" alt="">
+            </div>
+
+            <div></div>
+            <div></div>
 
         </section>
-        <!--For computer stand-->
-        <div></div>
-        <!--For Keyboard-->
+
+        <!--For Button-->
         <div>
             <form action="projects.html" method="get" target="_blank">
                 <button type="submit">Show More</button>
             </form>
         </div>
-
-        <!--For Table-->
-        <div></div>
-
-        <!--For Flower Vase-->
-        <div></div>
-
-        <!--For Book-->
-        <div></div>
-
-        <!--For Coffee-->
-        <div></div>
 
     </section>
 
