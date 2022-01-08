@@ -24,25 +24,26 @@
     <meta content="blue" name="theme-color">
 
     <style>
+
         /*-------------------Header-------------------------------*/
         body > header {
             position: fixed;
             height: 80px;
-            width: 100vw;
+            width: 100%;
             background: rgb(0, 0, 0);
             background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
+            z-index: 3;
         }
 
         body > header > div {
-            background-color: fuchsia;
+            background-color: #FC427B;
             position: absolute;
             height: 76%;
             width: 35.5px;
         }
 
         body > header > div::before {
-            border-top: 25px solid fuchsia;
+            border-top: 25px solid #FC427B;
             border-left: 17.5px solid transparent;
             border-right: 17.5px solid transparent;
             content: "";
@@ -98,9 +99,12 @@
         }
 
         header > ul > li:hover {
-            border-bottom: 3px solid fuchsia;
+            border-bottom: 3px solid #FC427B;
             cursor: pointer;
-            color: hotpink;
+        }
+
+        a:hover{
+            color: #FC427B;
         }
 
         /*--------------------------------------------------*/
@@ -108,7 +112,7 @@
         body > main > section {
             display: flex;
             flex-direction: column;
-            width: 100vw;
+            width: 100%;
             height: 100vh;
         }
 
@@ -122,7 +126,7 @@
         body> main > section:nth-child(1) > section:nth-child(1){
             width: 850px;
             height: 100%;
-            background-color: dimgray;
+            background-color: #1e272e;
             position: absolute;
             top: 0;
             bottom: 0;
@@ -133,7 +137,7 @@
         body> main > section:nth-child(1) > section > section{
             width: 700px;
             height: 75%;
-            background-color: darkgrey;
+            background-color: #4b4b4b;
             border: 5px solid white;
             position: absolute;
             top: 0;
@@ -181,7 +185,7 @@
         }
 
         body > main > section:nth-child(1) > section:nth-child(3){
-            background-color: lightsalmon;
+            background-color: #FC427B;
             width: 450px;
             height: 300px;
             position: absolute;
@@ -274,7 +278,7 @@
         /*---------------------------------About Page---------------------------------------*/
 
         body > main > section:nth-child(2) {
-            background-color: #1D1631;
+            background-color: #3d3d3d;
         }
 
         body > main > section:nth-child(2) > div {
@@ -289,7 +293,7 @@
             position: absolute;
             border: 2px solid;
             display: inline;
-            border-bottom-color: deeppink;
+            border-bottom-color: #FC427B;
             border-top-color: transparent;
             border-left-color: transparent;
             border-right-color: transparent;
@@ -314,11 +318,12 @@
             position: absolute;
             top: 137px;
             left: 44px;
-            border-top: 10px solid mediumvioletred;
-            border-left: 10px solid mediumvioletred;
+            border-top: 10px solid #FC427B;
+            border-left: 10px solid #FC427B;
+            border-radius: 20px;
             width: 319px;
             height: 335px;
-            box-shadow: 20px 20px 5px 1px lightcoral;
+            box-shadow: 20px 20px 5px 1px #485460;
         }
 
         body > main > section:nth-child(2) > section > section:nth-child(1) > div > img {
@@ -334,7 +339,7 @@
             position: absolute;
             left: 424px;
             top: 94px;
-            border: 4px solid deeppink;
+            border: 4px solid #ff6b81;
             border-top-right-radius:20px;
             border-bottom-left-radius: 20px;
             color: white;
@@ -343,7 +348,7 @@
         }
 
         body > main > section:nth-child(2) > section > section:nth-child(2) {
-            border: 4px solid deeppink;
+            border: 4px solid #ff6b81;
             position: absolute;
             left: 424px;
             top: 386px;
@@ -390,7 +395,7 @@
         }
 
         .final {
-            background: linear-gradient(to right, #fed330, #ff9f43);
+            background: linear-gradient(to right, #cf6a87, #ff6b81);
             position: absolute;
             width: 132px;
             font-size: 20px;
@@ -399,12 +404,13 @@
             height: 33px;
             left: 424px;
             top: 562px;
+            border-radius: 15px;
         }
 
         /*---------------------------------Education Page---------------------------------------*/
 
         body > main > section:nth-child(3) {
-            background-color: #1D1631;
+            background-color: #2f3542;
             position: relative;
         }
 
@@ -420,7 +426,7 @@
             position: absolute;
             border: 2px solid;
             display: inline;
-            border-bottom-color: deeppink;
+            border-bottom-color: #FC427B;
             border-top-color: transparent;
             border-left-color: transparent;
             border-right-color: transparent;
@@ -450,8 +456,8 @@
             height: 100px;
             width: 350px;
             border: 5px solid white;
-            border-left: 7px solid mediumvioletred;
-            border-right: 7px solid mediumvioletred;
+            border-left: 7px solid #FC427B;
+            border-right: 7px solid #FC427B;
             background: url("assets/images/wood.jpg");
             background-size: cover;
         }
@@ -552,7 +558,7 @@
             left: 0;
             margin: auto;
             background-color: whitesmoke;
-             opacity: 20%;
+            opacity: 20%;
             background: url(assets/images/skill1-removebg-preview.png);
             background-size: cover;
         }
@@ -560,7 +566,7 @@
         /*---------------------------------Skills Page---------------------------------------*/
 
         body > main > section:nth-child(4) {
-            background-color: #1D1631;
+            background-color: #3d3d3d;
             position: relative;
         }
 
@@ -576,7 +582,7 @@
             position: absolute;
             border: 2px solid;
             display: inline;
-            border-bottom-color: deeppink;
+            border-bottom-color: #FC427B;
             border-top-color: transparent;
             border-left-color: transparent;
             border-right-color: transparent;
@@ -734,7 +740,7 @@
         /*---------------------------------Experience Page---------------------------------------*/
 
         body > main > section:nth-child(5) {
-            background-color: #1D1631;
+            background-color: #2f3542;
             position: relative;
         }
 
@@ -750,7 +756,7 @@
             position: absolute;
             border: 2px solid;
             display: inline;
-            border-bottom-color: deeppink;
+            border-bottom-color: #FC427B;
             border-top-color: transparent;
             border-left-color: transparent;
             border-right-color: transparent;
@@ -810,8 +816,8 @@
             position: absolute;
             top: 34px;
             left: 310px;
-            border-top: 3px solid mediumvioletred;
-            border-bottom: 3px solid mediumvioletred;
+            border-top: 3px solid #FC427B;
+            border-bottom: 3px solid #FC427B;
             color: ghostwhite;
         }
 
@@ -861,8 +867,8 @@
             position: absolute;
             top: 35px;
             right: 310px;
-            border-top: 3px solid mediumvioletred;
-            border-bottom: 3px solid mediumvioletred;
+            border-top: 3px solid #FC427B;
+            border-bottom: 3px solid #FC427B;
             color: ghostwhite;
         }
 
@@ -885,7 +891,7 @@
             position: absolute;
             border: 2px solid;
             display: inline;
-            border-bottom-color: deeppink;
+            border-bottom-color: #FC427B;
             border-top-color: transparent;
             border-left-color: transparent;
             border-right-color: transparent;
@@ -996,7 +1002,9 @@
             margin: auto;
             width: 106px;
             height: 32px;
-            background-color: deeppink;
+            background-color: #FC427B;
+            border-radius: 20px;
+            border:2px solid white;
             color: white;
         }
 
@@ -1054,53 +1062,52 @@
 
         /*---------------------------------Contact Page---------------------------------------*/
 
-        body > main > section:nth-child(7) {
-            background-color: #1D1631;
+        body > footer > section {
+            background-color: #3d3d3d;
             min-height: 100vh;
         }
 
-        body > main > section:nth-child(7) > div {
+        body > footer > section > div {
             height: 57px;
             padding-left: 13px;
             padding-top: 2px;
         }
 
-        body > main > section:nth-child(7) > div > h1 {
+        body > footer > section > div > h1 {
             color: white;
             margin-bottom: 5px;
             position: absolute;
             border: 2px solid;
             display: inline;
-            border-bottom-color: deeppink;
+            border-bottom-color: #FC427B;
             border-top-color: transparent;
             border-left-color: transparent;
             border-right-color: transparent;
         }
 
-        body > main > section:nth-child(7) > div > h1:nth-child(2) {
+        body > footer > section > div > h1:nth-child(2) {
             left: 840px;
         }
 
-        body > main > section:nth-child(7) > #m {
+        body > footer > section > #m {
             width: 93vw;
             height: 650px;
             position: absolute;
             left: 36px;
-            border-bottom: 1px solid white;
         }
 
-        body > main > section:nth-child(7) > #m > #pencil {
+        body > footer > section > #m > #pencil {
             width: 500px;
             height: 500px;
             position: absolute;
-            top: 100px;
+            top: 50px;
             left: 50px;
             border-top: 10px solid white;
             border-left: 10px solid white;
             border-radius: 30px;
         }
 
-        body > main > section:nth-child(7) > #m > #pencil > div {
+        body > footer > section > #m > #pencil > div {
             position: absolute;
             top: 65px;
             left: 30px;
@@ -1109,31 +1116,31 @@
             height: 350px;
             color: black;
             background-color: ghostwhite;
-            border-right: 20px solid deeppink;
-            border-bottom: 20px solid deeppink;
+            border-right: 20px solid #FC427B;
+            border-bottom: 20px solid #FC427B;
             opacity: 80%;
             border-radius: 30px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) {
+        body > footer > section > #m > section:nth-child(2) {
             width: 521px;
             height: 486px;
-            top: 91px;
+            top: 50px;
             left: 800px;
             position: absolute;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > label {
+        body > footer > section > #m > section:nth-child(2) > form > label {
             color: white;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #last_name {
+        body > footer > section > #m > section:nth-child(2) > form > #last_name {
             position: relative;
             bottom: 27px;
             left: 83px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > .input {
+        body > footer > section > #m > section:nth-child(2) > form > .input {
             overflow: visible;
             border-top-right-radius: 23px;
             border-bottom-left-radius: 23px;
@@ -1142,25 +1149,34 @@
             height: 27px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtPhoneNumber, #txtE-mailAddress, #txtMassage {
+        body > footer > section > #m > section:nth-child(2) > form > #txtPhoneNumber, #txtE-mailAddress, #txtMassage {
             width: 512px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtE-mailAddress {
+        body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
             width: 512px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > #txtMassage {
+        body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
             height: 162px;
             width: 512px;
         }
 
-        body > main > section:nth-child(7) > #m > section:nth-child(2) > form > button {
+        body > footer > section > #m > section:nth-child(2) > form > button {
             position: relative;
             left: 370px;
-            height: 34px;
+            height: 40px;
             width: 150px;
-            background-color: goldenrod;
+            background: linear-gradient(to right, #cf6a87, #ff6b81);
+            border-radius: 15px;
+            color: white;
+            font-size: 20px;
+            border: 3px solid #FC427B;
+        }
+
+        hr{
+            position: absolute;
+            top: 500px;
         }
 
         .copyrights {
@@ -1506,85 +1522,88 @@
 
     </section>
 
-    <!-----------------Contact Page--------------------->
+</main>
+
+<!-----------------Contact Page--------------------->
+<footer>
     <section>
+    <div>
+        <h1><dfn id="contact">Contact Me</dfn></h1>
+        <h1><i>Get In Touch</i></h1>
+    </div>
 
-        <div>
-            <h1><dfn id="contact">Contact Me</dfn></h1>
-            <h1><i>Get In Touch</i></h1>
-        </div>
+    <!--for contact me section------------------------->
+    <section id="m">
+        <!--for contact details-------------->
+        <section id="pencil">
+            <!--for pencil image-->
 
-        <!--for contact me section------------------------->
-        <section id="m">
-            <!--for contact details-------------->
-            <section id="pencil">
-                <!--for pencil image-->
-
-                <div>
-                    <figure>
-                        <!--profile-->
-                        <img alt="" src="assets/icon/icons8-male-user-48.png" width="25">
-                        <figcaption>
-                            Rashindi Paulusha Wijesinghe
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <!--mobile number-->
-                        <img alt="" src="assets/icon/icons8-phone-48.png" width="25">
-                        <figcaption>0787991075</figcaption>
-                    </figure>
-                    <figure>
-                        <!--email-->
-                        <img alt="" src="assets/icon/icons8-email-64.png" width="25">
-                        <figcaption>rashindipaulusha837@gmail.com</figcaption>
-                    </figure>
-                    <figure>
-                        <!--location-->
-                        <img alt="" src="assets/icon/icons8-marker-50.png" width="25">
-                        <figcaption>No:4/2, Kovila Road , Dadalla , Galle , Sri Lanka</figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <!--for massages--------------------->
-            <section>
-                <form action="mailto:rashindipaulusha837@gmail.com">
-                    <!--<fieldset>-->
-                    <br>
-
-                    <label for="txtFirstName">First Name :</label><br>
-                    <input class="input" id="txtFirstName" type="text">
-
-                    <label for="txtLastName" id="last_name">Last Name :</label>
-                    <input class="input" id="txtLastName" type="text"><br><br>
-
-                    <label class="input" for="txtPhoneNumber">Phone Number :</label><br>
-                    <input class="input" id="txtPhoneNumber" type="tel"><br><br>
-
-                    <label for="txtE-mailAddress">E-mail Address :</label><br>
-                    <input class="input" id="txtE-mailAddress" type="email"><br><br>
-
-                    <label for="txtMassage">Massage :</label><br>
-                    <textarea class="input" cols="30" id="txtMassage" rows="10"></textarea><br><br>
-
-                    <button type="submit">Send Massage</button>
-
-                    <!--</fieldset>-->
-                </form>
-            </section>
-
+            <div>
+                <figure>
+                    <!--profile-->
+                    <img alt="" src="assets/icon/icons8-male-user-48.png" width="25">
+                    <figcaption>
+                        Rashindi Paulusha Wijesinghe
+                    </figcaption>
+                </figure>
+                <figure>
+                    <!--mobile number-->
+                    <img alt="" src="assets/icon/icons8-phone-48.png" width="25">
+                    <figcaption>0787991075</figcaption>
+                </figure>
+                <figure>
+                    <!--email-->
+                    <img alt="" src="assets/icon/icons8-email-64.png" width="25">
+                    <figcaption>rashindipaulusha837@gmail.com</figcaption>
+                </figure>
+                <figure>
+                    <!--location-->
+                    <img alt="" src="assets/icon/icons8-marker-50.png" width="25">
+                    <figcaption>No:4/2, Kovila Road , Dadalla , Galle , Sri Lanka</figcaption>
+                </figure>
+            </div>
         </section>
 
-        <!--for copyright information----------------------->
-        <section class="copyrights">
-            <small>@ Copyright 2021</small>
-            <br>
-            <small>All Rights Reserved</small>
+        <!--for massages--------------------->
+        <section>
+            <form action="mailto:rashindipaulusha837@gmail.com">
+                <!--<fieldset>-->
+                <br>
+
+                <label for="txtFirstName">First Name :</label><br>
+                <input class="input" id="txtFirstName" type="text">
+
+                <label for="txtLastName" id="last_name">Last Name :</label>
+                <input class="input" id="txtLastName" type="text"><br><br>
+
+                <label class="input" for="txtPhoneNumber">Phone Number :</label><br>
+                <input class="input" id="txtPhoneNumber" type="tel"><br><br>
+
+                <label for="txtE-mailAddress">E-mail Address :</label><br>
+                <input class="input" id="txtE-mailAddress" type="email"><br><br>
+
+                <label for="txtMassage">Massage :</label><br>
+                <textarea class="input" cols="30" id="txtMassage" rows="10"></textarea><br><br>
+
+                <button type="submit">Send Massage</button>
+
+                <!--</fieldset>-->
+            </form>
         </section>
 
     </section>
 
-</main>
+        <hr>
+
+    <!--for copyright information----------------------->
+    <section class="copyrights">
+        <small>@ Copyright 2021</small>
+        <br>
+        <small>All Rights Reserved</small>
+    </section>
+
+    </section>
+</footer>
 
 </body>
 </html>
