@@ -12,15 +12,13 @@
 
     <style>
 
-        body{
-            background: linear-gradient(to right, mediumvioletred , cornflowerblue);
-        }
-
         body > main > section{
             display: flex;
             flex-direction: column;
             width: 100%;
             height: 100vh;
+            background: url("assets/images/tom-morel-ktVazL5c7FM-unsplash.jpg");
+            background-size: cover;
         }
 
         body > main > section:nth-child(1){
@@ -111,7 +109,7 @@
         }
 
         body > main > section:nth-child(2) > section:nth-child(1) > h1 {
-            color: black;
+            color: white;
             position: absolute;
             top: 7px;
             left: 204px;
@@ -168,6 +166,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            z-index: 1;
         }
 
         body > main > section:nth-child(2)  > section:nth-child(3) > section{
@@ -205,7 +204,7 @@
         }
 
         body > main > section:nth-child(3) > section:nth-child(1) > h1{
-            color: black;
+            color: white;
             position: absolute;
             top: 7px;
             left: 204px;

@@ -278,7 +278,7 @@
         /*---------------------------------About Page---------------------------------------*/
 
         body > main > section:nth-child(2) {
-            background-color: #3d3d3d;
+            background-color: #2f3542;
         }
 
         body > main > section:nth-child(2) > div {
@@ -340,8 +340,7 @@
             left: 424px;
             top: 94px;
             border: 4px solid #ff6b81;
-            border-top-right-radius:20px;
-            border-bottom-left-radius: 20px;
+            border-radius: 10px;
             color: white;
             width: 616px;
             height: 262px;
@@ -353,8 +352,7 @@
             left: 424px;
             top: 386px;
             width: 616px;
-            border-top-left-radius:20px;
-            border-bottom-right-radius: 20px;
+            border-radius: 10px;
         }
 
         .heading {
@@ -407,11 +405,15 @@
             border-radius: 15px;
         }
 
+        .final:hover{
+            background: #4b4b4b;
+        }
+
         /*---------------------------------Education Page---------------------------------------*/
 
         body > main > section:nth-child(3) {
-            background-color: #2f3542;
             position: relative;
+            background-color: #353b48;
         }
 
         body > main > section:nth-child(3) > div:nth-child(1) {
@@ -566,7 +568,7 @@
         /*---------------------------------Skills Page---------------------------------------*/
 
         body > main > section:nth-child(4) {
-            background-color: #3d3d3d;
+            background-color: #2f3542;
             position: relative;
         }
 
@@ -740,7 +742,7 @@
         /*---------------------------------Experience Page---------------------------------------*/
 
         body > main > section:nth-child(5) {
-            background-color: #2f3542;
+            background-color: #353b48;
             position: relative;
         }
 
@@ -875,8 +877,9 @@
         /*---------------------------------Projects Page---------------------------------------*/
 
         body > main > section:nth-child(6) {
-            background-color: #1D1631;
             position: relative;
+            background: url("assets/images/tom-morel-ktVazL5c7FM-unsplash.jpg");
+            background-size: cover;
         }
 
         body > main > section:nth-child(6) > div:nth-child(1) {
@@ -1063,8 +1066,9 @@
         /*---------------------------------Contact Page---------------------------------------*/
 
         body > footer > section {
-            background-color: #3d3d3d;
+            background-color: #2f3542;
             min-height: 100vh;
+            position: relative;
         }
 
         body > footer > section > div {
@@ -1105,21 +1109,22 @@
             border-top: 10px solid white;
             border-left: 10px solid white;
             border-radius: 30px;
+            background: url("assets/images/background-kupi-contact-form.png");
+            background-size: cover;
         }
 
         body > footer > section > #m > #pencil > div {
+            background: url("assets/images/background-kupi-contact-form.png");
+            background-size: cover;
             position: absolute;
             top: 65px;
             left: 30px;
             font-size: 18px;
             width: 440px;
             height: 350px;
-            color: black;
-            background-color: ghostwhite;
-            border-right: 20px solid #FC427B;
-            border-bottom: 20px solid #FC427B;
-            opacity: 80%;
             border-radius: 30px;
+            border: 10px solid #FC427B;
+            color: white;
         }
 
         body > footer > section > #m > section:nth-child(2) {
@@ -1132,6 +1137,7 @@
 
         body > footer > section > #m > section:nth-child(2) > form > label {
             color: white;
+            border: 1px solid transparent;
         }
 
         body > footer > section > #m > section:nth-child(2) > form > #last_name {
@@ -1144,22 +1150,29 @@
             overflow: visible;
             border-top-right-radius: 23px;
             border-bottom-left-radius: 23px;
-            border-color: white;
-            width: 209px;
-            height: 27px;
+            border: 2px solid #FC427B;
+            background-color: transparent;
+            width: 202px;
+            height: 30px;
+            color: white;
         }
 
-        body > footer > section > #m > section:nth-child(2) > form > #txtPhoneNumber, #txtE-mailAddress, #txtMassage {
-            width: 512px;
+        body > footer > section > #m > section:nth-child(2) > form > .input:hover{
+            background-color: black;
+            opacity: 50%;
+        }
+
+        body > footer > section > #m > section:nth-child(2) > form > #txtPhoneNumber {
+            width: 500px;
         }
 
         body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
-            width: 512px;
+            width: 500px;
         }
 
         body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
             height: 162px;
-            width: 512px;
+            width: 500px;
         }
 
         body > footer > section > #m > section:nth-child(2) > form > button {
@@ -1174,10 +1187,23 @@
             border: 3px solid #FC427B;
         }
 
-        hr{
-            position: absolute;
-            top: 500px;
+        body > footer > section > #m > section:nth-child(2) > form > button:hover{
+            background: #ff6b81;
+            color: black;
         }
+
+        #break{
+            width: 95vw;
+            height: 0.3px;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 550px;
+            bottom: 0;
+            margin: auto;
+
+            }
 
         .copyrights {
             position: relative;
@@ -1576,7 +1602,7 @@
                 <label for="txtLastName" id="last_name">Last Name :</label>
                 <input class="input" id="txtLastName" type="text"><br><br>
 
-                <label class="input" for="txtPhoneNumber">Phone Number :</label><br>
+                <label class="txtFirstName" id="phone_Number">Phone Number :</label><br>
                 <input class="input" id="txtPhoneNumber" type="tel"><br><br>
 
                 <label for="txtE-mailAddress">E-mail Address :</label><br>
@@ -1593,7 +1619,7 @@
 
     </section>
 
-        <hr>
+        <div id="break"></div>
 
     <!--for copyright information----------------------->
     <section class="copyrights">

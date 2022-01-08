@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Water Drop Animation</title>
+
+    <style>
+
+        body{
+            background-color: lightblue;
+        }
+
+        body > main > section{
+            width: 0;
+            height: 0;
+            border-radius: 100%;
+            border: 5px solid cornflowerblue;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            animation-name: water;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            animation-direction: normal;
+        }
+
+        @keyframes water {
+            0%{
+                width: 5px;
+                height: 5px;
+            }
+            10%{
+                width: 10px;
+                height: 10px;
+            }
+            20%{
+                width: 25px;
+                height: 25px;
+            }
+            30%{
+                width: 50px;
+                height: 50px;
+            }
+            40%{
+                width: 75px;
+                height: 75px;
+            }
+            50%{
+                width: 100px;
+                height: 100px;
+            }
+            60%{
+                width: 125px;
+                height: 125px;
+            }
+            70%{
+                width: 150px;
+                height: 150px;
+            }
+            80%{
+                width: 175px;
+                height: 175px;
+            }
+            90%{
+                width: 200px;
+                height: 200px;
+            }
+            100%{
+                width: 225px;
+                height: 225px;
+                border-color: transparent;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<main>
+    <section>
+
+    </section>
+</main>
+
+</body>
+</html>
