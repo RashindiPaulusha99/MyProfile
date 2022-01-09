@@ -12,7 +12,7 @@ This is a professional documentation that provides proof of my accomplishments o
 This is a great way to demonstrate my competencies. During a job Search, this profile showcase my work to the potential employers.
 It presents evidence of my relevant skills and abilities.
 
-# *Information*
+# *Details*
 
 Below you can see the languages , tools I used and some links of my Profile.
 
