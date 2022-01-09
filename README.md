@@ -6,16 +6,16 @@ This is my **Personal Profile**.
 I'm Rashindi Paulusha Wijesinghe and I am passionate software engineer based in Sri Lanka.
 This is a professional documentation that provides proof of my accomplishments of my work.
 
-#*Importance*
+# *Importance*
 
 This is a great way to demonstrate my competencies. During a job Search, this profile showcase my work to the potential employers.
 It presents evidence of my relevant skills and abilities.
 
-#*Information*
+# *Information*
 
 Below you can see the languages , tools I used and some links of my Profile.
 
-##Images
+## Images
 ![Image of About](assets/images/about.png)
 
 ![Image of Education](assets/images/education.png)
@@ -28,9 +28,9 @@ Below you can see the languages , tools I used and some links of my Profile.
 
 ![Image of Contact](assets/images/contact.png)
 
-##Assignments
+## Assignments
 
-1. ###Layout
+1. ### Layout
     * Case 1- http://localhost:63342/MyProfile/myProjects/css/Layout/Case1/index.html
 ![Image of assignment](assets/images/CSS_Assignment1.png)
     * Case 2- http://localhost:63342/MyProfile/myProjects/css/Layout/Case2/index.html
@@ -40,17 +40,17 @@ Below you can see the languages , tools I used and some links of my Profile.
     * Case 4- http://localhost:63342/MyProfile/myProjects/css/Layout/Case4/index.html
 ![Image of assignment](assets/images/case4.png)
     
-2. ###Responsive
+2. ### Responsive
     * Case 1- http://localhost:63342/MyProfile/myProjects/css/Responsive/Case1/index.html
 ![Image of assignment](assets/images/case5.png)
         
-3. ###Transition
+3. ### Transition
     * Case 1- http://localhost:63342/MyProfile/myProjects/css/Transition/Case1/index.html
 ![Image of assignment](assets/images/case6.png)
     * Case 2- http://localhost:63342/MyProfile/myProjects/css/Transition/Case2/index.html
 ![Image of assignment](assets/images/case7.png)
     
-4. ###Animation
+4. ### Animation
     * Case 1- http://localhost:63342/MyProfile/myProjects/css/Animation/Case1/index.html
 ![Image of assignment](assets/images/case8.png)
     * Case 2- http://localhost:63342/MyProfile/myProjects/css/Animation/Case2/index.html
@@ -60,17 +60,17 @@ Below you can see the languages , tools I used and some links of my Profile.
     * Case 4- http://localhost:63342/MyProfile/myProjects/css/Animation/Case4/index.html
 ![Image of assignment](assets/images/case11.png)   
 
-##Languages
+## Languages
 
 ![Image of CSS](assets/logo/css__2_-removebg-preview.png)
 ![Image of HTML](assets/logo/html%20(2).png)
 
-##Tools
+## Tools
 
 ![Image of Intellij](assets/logo/IntelliJ_IDEA_Icon.svg-removebg-preview.png)
 ![Image of Figma](assets/logo/figma-removebg-preview.png)
 
-##Links
+## Links
 
 * **SiteMap URL-** https://www.gloomaps.com/Jc9afdjkC6
 
