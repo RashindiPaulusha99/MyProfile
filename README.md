@@ -1,4 +1,5 @@
 # *About*
+
 This is my **Personal Profile**.
 
 ![Image of Book](assets/images/home.png) 
@@ -31,33 +32,55 @@ Below you can see the languages , tools I used and some links of my Profile.
 ## Assignments
 
 1. ### Layout
+
     * Case 1- http://localhost:63342/MyProfile/myProjects/css/Layout/Case1/index.html
+    
 ![Image of assignment](assets/images/CSS_Assignment1.png)
-    * Case 2- http://localhost:63342/MyProfile/myProjects/css/Layout/Case2/index.html
+   
+   * Case 2- http://localhost:63342/MyProfile/myProjects/css/Layout/Case2/index.html
+   
 ![Image of assignment](assets/images/case2.png)
-    * Case 3- http://localhost:63342/MyProfile/myProjects/css/Layout/Case3/index.html
+   
+   * Case 3- http://localhost:63342/MyProfile/myProjects/css/Layout/Case3/index.html
+   
 ![Image of assignment](assets/images/case3.png)
-    * Case 4- http://localhost:63342/MyProfile/myProjects/css/Layout/Case4/index.html
+
+   * Case 4- http://localhost:63342/MyProfile/myProjects/css/Layout/Case4/index.html
+    
 ![Image of assignment](assets/images/case4.png)
     
 2. ### Responsive
+
     * Case 1- http://localhost:63342/MyProfile/myProjects/css/Responsive/Case1/index.html
+    
 ![Image of assignment](assets/images/case5.png)
         
 3. ### Transition
+
     * Case 1- http://localhost:63342/MyProfile/myProjects/css/Transition/Case1/index.html
+    
 ![Image of assignment](assets/images/case6.png)
-    * Case 2- http://localhost:63342/MyProfile/myProjects/css/Transition/Case2/index.html
+
+   * Case 2- http://localhost:63342/MyProfile/myProjects/css/Transition/Case2/index.html
+   
 ![Image of assignment](assets/images/case7.png)
     
 4. ### Animation
+
     * Case 1- http://localhost:63342/MyProfile/myProjects/css/Animation/Case1/index.html
+    
 ![Image of assignment](assets/images/case8.png)
-    * Case 2- http://localhost:63342/MyProfile/myProjects/css/Animation/Case2/index.html
+
+   * Case 2- http://localhost:63342/MyProfile/myProjects/css/Animation/Case2/index.html
+   
 ![Image of assignment](assets/images/case9.png)
-    * Case 3- http://localhost:63342/MyProfile/myProjects/css/Animation/Case3/index.html
+
+   * Case 3- http://localhost:63342/MyProfile/myProjects/css/Animation/Case3/index.html
+   
 ![Image of assignment](assets/images/case10.png)
-    * Case 4- http://localhost:63342/MyProfile/myProjects/css/Animation/Case4/index.html
+
+   * Case 4- http://localhost:63342/MyProfile/myProjects/css/Animation/Case4/index.html
+   
 ![Image of assignment](assets/images/case11.png)   
 
 ## Languages
