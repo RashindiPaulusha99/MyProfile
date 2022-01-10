@@ -29,7 +29,6 @@
             position: fixed;
             height: 80px;
             width: 100%;
-            background: rgb(0, 0, 0);
             background: rgba(0, 0, 0, 0.5);
             z-index: 3;
         }
@@ -189,7 +188,7 @@
         body> main > section:nth-child(1) > section:nth-child(1){
             width: 850px;
             height: 100%;
-            background-color: #1e272e;
+            background-image: radial-gradient(circle at top,lightblue,#000);
             position: absolute;
             top: 0;
             bottom: 0;
@@ -200,8 +199,7 @@
         body> main > section:nth-child(1) > section > section{
             width: 700px;
             height: 75%;
-            background-color: #4b4b4b;
-            border: 5px solid white;
+            background-image: radial-gradient(circle at top,slategrey,#4b4b4b);
             position: absolute;
             top: 0;
             bottom: 0;
@@ -213,7 +211,6 @@
         body> main > section:nth-child(1) > section > section > section:nth-child(1){
             width: 350px;
             height: 100%;
-            background-color: whitesmoke;
             position: absolute;
             top: 0;
             bottom: 0;
@@ -236,10 +233,10 @@
             width: 60px;
             height: 240px;
             position: absolute;
+            background: none;
             left: 520px;
             display: flex;
             flex-direction: column;
-            background-color: #2C263D;
         }
 
         body > main > section:nth-child(1) > section > section:nth-child(3) > div{
@@ -248,7 +245,7 @@
         }
 
         body > main > section:nth-child(1) > section:nth-child(3){
-            background-color: #FC427B;
+            background-image: radial-gradient(circle at top,#FC427B,#000);
             width: 450px;
             height: 300px;
             position: absolute;
@@ -257,13 +254,14 @@
             top: 0;
             bottom: 0;
             margin: auto;
+            border: 0 solid transparent;
+            box-shadow: 19px 18px 8px 3px #000;
             border-top-right-radius: 50px;
             border-bottom-left-radius: 50px;
             transform: rotate(-20deg);
         }
 
         body > main > section:nth-child(1) > section:nth-child(3) >div:nth-child(1){
-            background-color: black;
             width: 380px;
             height: 250px;
             position: absolute;
@@ -450,7 +448,7 @@
         /*---------------------------------About Page---------------------------------------*/
 
         body > main > section:nth-child(2) {
-            background-color: #2f3542;
+            background-image: radial-gradient(circle at top,lightpink,#000);
         }
 
         body > main > section:nth-child(2) > div {
@@ -574,7 +572,6 @@
             height: 33px;
             left: 424px;
             top: 562px;
-            border-radius: 15px;
         }
 
         .final:hover{
@@ -691,7 +688,7 @@
 
         body > main > section:nth-child(3) {
             position: relative;
-            background-color: #1e272e;
+            background-image: radial-gradient(circle at top,slategrey,#000);
         }
 
         body > main > section:nth-child(3) > div:nth-child(1) {
@@ -723,7 +720,6 @@
             margin: auto;
             display: flex;
             flex-direction: column;
-
         }
 
         body > main > section:nth-child(3) > section > section{
@@ -915,7 +911,7 @@
         /*---------------------------------Skills Page---------------------------------------*/
 
         body > main > section:nth-child(4) {
-            background-color: #2f3542;
+            background-image: radial-gradient(circle at top,slategrey,#000);
             position: relative;
         }
 
@@ -1221,7 +1217,7 @@
         /*---------------------------------Experience Page---------------------------------------*/
 
         body > main > section:nth-child(5) {
-            background-color: #1e272e;
+            background-image: radial-gradient(circle at top,slategrey,#000);
             position: relative;
         }
 
@@ -1432,8 +1428,7 @@
 
         body > main > section:nth-child(6) {
             position: relative;
-            background: url("assets/images/tom-morel-ktVazL5c7FM-unsplash.jpg");
-            background-size: cover;
+            background-image: radial-gradient(circle at top,steelblue,#000);
         }
 
         body > main > section:nth-child(6) > div:nth-child(1) {
@@ -1615,8 +1610,7 @@
             width: 106px;
             height: 32px;
             background-color: #FC427B;
-            border-radius: 20px;
-            border: 2px solid white;
+            border: 1px solid transparent;
             color: white;
         }
 
@@ -1756,7 +1750,7 @@
         /*---------------------------------Contact Page---------------------------------------*/
 
         body > footer > section {
-            background-color: #2f3542;
+            background-image: radial-gradient(circle at top,slategrey,#000);
             min-height: 100vh;
             position: relative;
         }
@@ -1792,13 +1786,13 @@
 
         body > footer > section > #m > #pencil {
             width: 500px;
-            height: 500px;
+            height: 450px;
             position: absolute;
             top: 50px;
             left: 50px;
-            border-top: 10px solid white;
-            border-left: 10px solid white;
-            border-radius: 30px;
+            border-top: 5px solid white;
+            border-left: 5px solid white;
+            border-radius: 5px;
             background: url("assets/images/background-kupi-contact-form.png");
             background-size: cover;
         }
@@ -1812,8 +1806,9 @@
             font-size: 18px;
             width: 440px;
             height: 350px;
-            border-radius: 30px;
-            border: 10px solid #FC427B;
+            border-radius: 5px;
+            border-bottom: 5px solid #FC427B;
+            border-right: 5px solid #FC427B;
             color: white;
         }
 
@@ -1871,11 +1866,10 @@
             left: 370px;
             height: 40px;
             width: 150px;
-            background: linear-gradient(to right, #cf6a87, #ff6b81);
-            border-radius: 15px;
+            background: #ff6b81;
             color: white;
             font-size: 20px;
-            border: 3px solid #FC427B;
+            border: 1px solid transparent;
         }
 
         body > footer > section > #m > section:nth-child(2) > form > button:hover{
