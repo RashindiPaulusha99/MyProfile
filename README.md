@@ -2,7 +2,7 @@
 
 This is my **Personal Profile**.
 
-![Image of Book](assets/images/home.png) 
+![Image of Book](assets/images/home1.png) 
 
 I'm Rashindi Paulusha Wijesinghe and I am passionate software engineer based in Sri Lanka.
 This is a professional documentation that provides proof of my accomplishments of my work.
@@ -17,17 +17,17 @@ It presents evidence of my relevant skills and abilities.
 Below you can see the languages , tools I used and some links of my Profile.
 
 ## Images
-![Image of About](assets/images/about.png)
+![Image of About](assets/images/about1.png)
 
-![Image of Education](assets/images/education.png)
+![Image of Education](assets/images/education1.png)
 
-![Image of Skills](assets/images/skills.png)
+![Image of Skills](assets/images/skills1.png)
 
-![Image of Experience](assets/images/experience.png)
+![Image of Experience](assets/images/experience1.png)
 
-![Image of Projects](assets/images/projects.png)
+![Image of Projects](assets/images/project1.png)
 
-![Image of Contact](assets/images/contact.png)
+![Image of Contact](assets/images/contact1.png)
 
 ## Assignments
 
