@@ -61,23 +61,17 @@
             right: 0;
             margin: auto;
             animation-name: drop;
-            animation-direction: alternate;
+            animation-direction: alternate-reverse;
             animation-iteration-count: infinite;
-            animation-duration: 2s;
+            animation-duration: 1s;
         }
 
         @keyframes drop {
             0%{
                 top: 0;
             }
-            25%{
-                top: 20px;
-            }
-            50%{
-                top: 0;
-            }
             100%{
-                top: -20px;
+                top: -50px;
             }
         }
 
