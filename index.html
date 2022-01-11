@@ -218,9 +218,47 @@
 
         @media all and (min-width: 768px) and (max-width: 1023px){
 
+            body > header {
+                width: 100vw;
+                height: 77px;
+            }
+
+            body > header > ul {
+                right: 60px;
+                height: 11px;
+                font-size: 20px;
+            }
+
+            body > header > ul > li {
+                padding: 0 12px 0 12px;
+            }
+
+            body > header > div {
+                height: 61%;
+                width: 29.5px;
+            }
+
+            body > header > div::before {
+                border-left: 15.5px solid transparent;
+                border-right: 15.5px solid transparent;
+                left: -1px;
+                top: 46px;
+            }
+
+            body > header > div:nth-child(2) {
+                left: 30px;
+            }
+
+            body > header > div > h1 {
+                font-size: 21px;
+            }
         }
 
         @media all and (min-width: 1024px) and (max-width: 1440px){
+
+        }
+
+        @media all and (max-width: 1441px){
 
         }
 
@@ -539,19 +577,6 @@
                 left: 86px;
             }
 
-            body> main > section:nth-child(1) > section > section {
-                display: none;
-            }
-
-            body > main > section:nth-child(1) > section:nth-child(3) {
-                width: 171px;
-                height: 139px;
-                left: 75px;
-                top: 234px;
-                background: none;
-                margin: unset;
-            }
-
             body > main > section:nth-child(1) > section:nth-child(3) >div:nth-child(1) {
                 background: none;
                 transform: none;
@@ -582,12 +607,13 @@
                 bottom: 0;
                 margin: auto;
                 opacity: 40%;
+                display: none;
             }
 
             body > main > section:nth-child(1) > section > section:nth-child(3) {
-                width: 149px;
+                width: 173px;
                 height: 24px;
-                left: 93px;
+                left: 104px;
                 flex-direction: row;
                 top: 451px;
                 background-color: transparent;
@@ -599,16 +625,6 @@
                 top: -75px;
                 position: absolute;
                 left: 109px;
-            }
-
-            body > main > section:nth-child(1) > section > section:nth-child(3) {
-                width: 149px;
-                height: 24px;
-                left: 118px;
-                flex-direction: row;
-                top: 451px;
-                background-color: transparent;
-                border-color: transparent;
             }
 
             body > main > section:nth-child(1) > section:nth-child(3) {
@@ -629,6 +645,7 @@
         }
 
         @media all and (min-width: 425px) and (max-width: 767px){
+
             body> main > section:nth-child(1) > section:nth-child(2) {
                 width: 105px;
                 height: 109px;
@@ -640,14 +657,14 @@
             }
 
             body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(2) > h1 {
-                font-size: 22px;
+                font-size: 26px;
                 position: absolute;
                 top: 42px;
-                left: 77px;
+                left: 78px;
             }
 
             body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(3) > h1 {
-                font-size: 22px;
+                font-size: 26px;
                 position: absolute;
                 left: 86px;
             }
@@ -657,10 +674,10 @@
             }
 
             body > main > section:nth-child(1) > section:nth-child(3) {
-                width: 171px;
-                height: 139px;
-                left: 75px;
-                top: 234px;
+                width: 207px;
+                height: 173px;
+                left: 87px;
+                top: 203px;
                 background: none;
                 margin: unset;
             }
@@ -675,7 +692,7 @@
             body > main > section:nth-child(1) > section:nth-child(3) >div:nth-child(2) > h1 {
                 font-size: 56px;
                 top: 30px;
-                left: 13px;
+                left: 19px;
                 transform: rotate(19deg);
             }
 
@@ -698,9 +715,9 @@
             }
 
             body > main > section:nth-child(1) > section > section:nth-child(3) {
-                width: 149px;
+                width: 189px;
                 height: 24px;
-                left: 93px;
+                left: 120px;
                 flex-direction: row;
                 top: 451px;
                 background-color: transparent;
@@ -708,44 +725,111 @@
             }
 
             body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(1) > h1 {
-                font-size: 28px;
-                top: -75px;
+                font-size: 34px;
+                top: -97px;
                 position: absolute;
-                left: 109px;
-            }
-
-            body > main > section:nth-child(1) > section > section:nth-child(3) {
-                width: 149px;
-                height: 24px;
-                left: 118px;
-                flex-direction: row;
-                top: 451px;
-                background-color: transparent;
-                border-color: transparent;
-            }
-
-            body > main > section:nth-child(1) > section:nth-child(3) {
-                width: 190px;
-                height: 156px;
-                left: 75px;
-                top: 215px;
-                background: none;
-                margin: unset;
+                left: 122px;
             }
 
             body > main > section:nth-child(1)> section:nth-child(3) >div:nth-child(1) > h1 {
                 font-size: 56px;
-                left: -9px;
-                top: -6px;
+                left: 13px;
+                top: -12px;
                 transform: rotate(19deg);
             }
         }
 
         @media all and (min-width: 768px) and (max-width: 1023px){
 
+            body> main > section:nth-child(1) > section:nth-child(1) {
+                width: 495px;
+            }
+
+            body> main > section:nth-child(1) > section > section > section:nth-child(1) {
+                width: 350px;
+                height: 100%;
+                left: -386px;
+            }
+
+            body> main > section:nth-child(1) > section > section {
+                width: 335px;
+                height: 66%;
+                top: 25px;
+                left: 318px;
+            }
+
+            body > main > section:nth-child(1) > section > section:nth-child(3) {
+                width: 51px;
+                height: 186px;
+                left: 331px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(1) > h1 {
+                font-size: 31px;
+            }
+
+            body> main > section:nth-child(1) > section:nth-child(2) {
+                width: 146px;
+                height: 124px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(2) {
+                width: 263px;
+                top: 292px;
+                left: 48px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(2) > h1 {
+                font-size: 27px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(3) > h1 {
+                font-size: 29px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(3) {
+                top: 337px;
+                left: 66px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(3) {
+                width: 237px;
+                height: 178px;
+                left: 299px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(3) {
+                width: 237px;
+                height: 178px;
+                left: 403px;
+                top: 182px;
+                margin: unset;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(3) >div:nth-child(1) {
+                width: 256px;
+                height: 240px;
+                left: -19px;
+            }
+
+            body > main > section:nth-child(1)> section:nth-child(3) >div:nth-child(1) > h1 {
+                font-size: 60px;
+                top: -2px;
+                left: 34px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(3) >div:nth-child(2) > h1 {
+                font-size: 60px;
+                top: 30px;
+                left: 36px;
+            }
         }
 
         @media all and (min-width: 1024px) and (max-width: 1440px){
+
+        }
+
+        @media all and (max-width: 1441px){
 
         }
 
@@ -1094,7 +1178,7 @@
 
             body > main > section:nth-child(2) > section > section:nth-child(1) > div {
                 top: 48px;
-                left: 96px;
+                left: 120px;
                 width: 175px;
                 height: 170px;
                 box-shadow: 7px 5px 5px 1px #485460;
@@ -1112,7 +1196,7 @@
             body > main > section:nth-child(2) > section > section:nth-child(1) > section {
                 left: 10px;
                 top: 244px;
-                width: 353px;
+                width: 403px;
                 height: 122px;
                 border: 1px solid #ff6b81;
                 border-radius: 0;
@@ -1122,26 +1206,26 @@
                 padding-left: 12px;
                 padding-top: 0;
                 margin-top: 2px;
-                font-size: 15px;
+                font-size: 18px;
             }
 
             .first {
-                top: 26px;
+                top: 19px;
             }
 
             ul {
                 padding-left: 12px;
-                font-size: 11px;
+                font-size: 12px;
             }
 
             .second {
-                top: 26px;
-                left: 99px;
+                top: 18px;
+                left: 109px;
             }
 
             .third {
-                top: 26px;
-                left: 116px;
+                top: 19px;
+                left: 127px;
             }
 
             body > main > section:nth-child(2) > section > section:nth-child(2) {
@@ -1149,26 +1233,26 @@
                 position: absolute;
                 left: 10px;
                 top: 376px;
-                width: 353px;
+                width: 403px;
                 border-radius: 0;
             }
 
             .last > h2 {
                 padding-left: 13px;
-                font-size: 15px;
+                font-size: 18px;
                 margin-top: 5px;
             }
 
             .last > p {
                 padding-left: 13px;
-                font-size: 10px;
+                font-size: 11px;
             }
 
             .final {
                 width: 103px;
                 font-size: 16px;
                 height: 25px;
-                left: 125px;
+                left: 151px;
                 top: 500px;
                 border-radius: 0;
             }
@@ -1176,9 +1260,88 @@
 
         @media all and (min-width: 768px) and (max-width: 1023px){
 
+            body > main > section:nth-child(2) > section > section:nth-child(1) > div {
+                top: 136px;
+                left: 44px;
+                width: 181px;
+                height: 178px;
+            }
+
+            body > main > section:nth-child(2) > section > section:nth-child(1) > div > img {
+                left: 9px;
+                top: 7px;
+                width: 162px;
+                height: 161px;
+            }
+
+            body > main > section:nth-child(2) > section > section:nth-child(1) > section {
+                left: 272px;
+                top: 56px;
+                width: 453px;
+                height: 183px;
+            }
+
+            .heading {
+                padding-left: 16px;
+                margin-top: 4px;
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 17px;
+                font-size: 15px;
+                position: absolute;
+            }
+
+            .second {
+                top: 45px;
+                left: 137px;
+            }
+
+            .third {
+                top: 46px;
+                left: 161px;
+            }
+
+            body > main > section:nth-child(2) > section > section:nth-child(2) {
+                border: 4px solid #ff6b81;
+                position: absolute;
+                left: 270px;
+                top: 258px;
+                width: 456px;
+                border-radius: 10px;
+            }
+
+            .first {
+                top: 46px;
+            }
+
+            .last > h2 {
+                padding-left: 16px;
+                margin-top: 13px;
+            }
+
+            .last > p {
+                padding-left: 15px;
+                font-size: 13px;
+            }
+
+            .final {
+                width: 117px;
+                font-size: 18px;
+                padding-left: 10px;
+                padding-top: 10px;
+                height: 27px;
+                left: 272px;
+                top: 434px;
+            }
         }
 
         @media all and (min-width: 1024px) and (max-width: 1440px){
+
+        }
+
+        @media all and (max-width: 1441px){
 
         }
 
@@ -1456,6 +1619,7 @@
         }
 
         @media all and (min-width: 425px) and (max-width: 767px){
+
             body > main > section:nth-child(3) > div:nth-child(1) > h1 {
                 font-size: 25px;
             }
@@ -1467,13 +1631,14 @@
 
             body > main > section:nth-child(3) > section > section > div > h1 {
                 color: white;
-                font-size: 14px;
+                font-size: 16px;
                 padding-left: 13px;
+                margin-top: 1px;
             }
 
             body > main > section:nth-child(3) > section > section > div {
                 height: 79px;
-                width: 288px;
+                width: 332px;
                 border: 4px solid white;
                 border-left: 4px solid #FC427B;
                 border-right: 7px solid #FC427B;
@@ -1510,6 +1675,10 @@
         }
 
         @media all and (min-width: 1024px) and (max-width: 1440px){
+
+        }
+
+        @media all and (max-width: 1441px){
 
         }
 
@@ -2003,10 +2172,11 @@
         }
 
         @media all and (min-width: 425px) and (max-width: 767px){
+
             body > main > section:nth-child(4) > section {
-                width: 300px;
-                height: 461px;
-                top: 50px;
+                width: 381px;
+                height: 494px;
+                top: 38px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(1) {
@@ -2023,17 +2193,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(1) > img {
-                top: -23px;
-                left: -130px;
-                width: 207px;
-                height: 164px;
+                top: -18px;
+                left: -113px;
+                width: 218px;
+                height: 179px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(1) > div > img {
-                left: -61px;
-                top: 7px;
-                width: 71px;
-                height: 74px;
+                left: -43px;
+                top: 12px;
+                width: 82px;
+                height: 84px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(2) {
@@ -2042,17 +2212,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(2) > img {
-                width: 199px;
-                height: 157px;
-                top: -19px;
-                left: 8px;
+                width: 218px;
+                height: 179px;
+                top: -14px;
+                left: 55px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(2) > div > img {
-                width: 71px;
-                height: 74px;
-                top: 8px;
-                left: 74px;
+                width: 79px;
+                height: 78px;
+                top: 22px;
+                left: 128px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(3) {
@@ -2061,17 +2231,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(3) > img {
-                width: 207px;
-                height: 164px;
-                top: 63px;
-                left: -40px;
+                width: 218px;
+                height: 179px;
+                top: 81px;
+                left: -21px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(3) > div > img {
-                width: 86px;
-                height: 84px;
-                top: 86px;
-                left: 23px;
+                width: 99px;
+                height: 93px;
+                top: 107px;
+                left: 42px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(4) {
@@ -2080,17 +2250,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(4) > img {
-                width: 199px;
-                height: 164px;
-                top: 3px;
-                left: 6px;
+                width: 218px;
+                height: 179px;
+                top: 21px;
+                left: 58px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(4) > div > img {
-                width: 67px;
-                height: 64px;
-                top: 40px;
-                left: 74px;
+                width: 74px;
+                height: 69px;
+                top: 61px;
+                left: 134px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(5) {
@@ -2099,17 +2269,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(5) > img {
-                width: 207px;
-                height: 164px;
-                top: -3px;
-                left: -39px;
+                width: 218px;
+                height: 179px;
+                top: 26px;
+                left: -19px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(5) > div > img {
-                width: 71px;
-                height: 74px;
-                top: 28px;
-                left: 34px;
+                width: 83px;
+                height: 84px;
+                top: 59px;
+                left: 51px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(6) {
@@ -2118,17 +2288,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(6) > img {
-                width: 199px;
-                height: 164px;
-                top: -5px;
-                left: 4px;
+                width: 218px;
+                height: 179px;
+                top: 26px;
+                left: 56px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(6) > div > img {
-                width: 71px;
-                height: 74px;
-                top: 25px;
-                left: 70px;
+                width: 88px;
+                height: 84px;
+                top: 56px;
+                left: 124px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(7) {
@@ -2137,17 +2307,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(7) > img {
-                width: 207px;
-                height: 164px;
-                top: 4px;
-                left: -19px;
+                width: 218px;
+                height: 179px;
+                top: 39px;
+                left: 16px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(7) > div > img {
-                width: 59px;
-                height: 61px;
-                top: 40px;
-                left: 57px;
+                width: 66px;
+                height: 72px;
+                top: 76px;
+                left: 95px;
             }
         }
 
@@ -2156,6 +2326,10 @@
         }
 
         @media all and (min-width: 1024px) and (max-width: 1440px){
+
+        }
+
+        @media all and (max-width: 1441px){
 
         }
 
@@ -2483,6 +2657,10 @@
         }
 
         @media all and (min-width: 1024px) and (max-width: 1440px){
+
+        }
+
+        @media all and (max-width: 1441px){
 
         }
 
@@ -2930,6 +3108,7 @@
         }
 
         @media all and (min-width: 425px) and (max-width: 767px){
+
             body > main > section:nth-child(6) > section > div {
                 border: 10px solid #4b4b4b;
             }
@@ -2937,10 +3116,10 @@
             body > main > section:nth-child(6) > section > div:nth-child(1) {
                 width: 176px;
                 height: 169px;
-                top: 165px;
+                top: 158px;
                 bottom: 0;
                 left: 0;
-                right: 109px;
+                right: 77px;
                 transition-property: width,height;
                 transition-duration: 1s;
             }
@@ -2955,9 +3134,9 @@
             body > main > section:nth-child(6) > section > div:nth-child(3) {
                 width: 176px;
                 height: 169px;
-                top: 124px;
+                top: 111px;
                 bottom: 0;
-                left: 35px;
+                left: 107px;
                 right: 500px;
                 transition-property: width,height;
                 transition-duration: 1s;
@@ -2973,9 +3152,9 @@
             body > main > section:nth-child(6) > section > div:nth-child(2) {
                 width: 176px;
                 height: 169px;
-                top: 75px;
+                top: 63px;
                 bottom: 0;
-                left: -15px;
+                left: 39px;
                 right: 0;
                 transition-property: width,height;
                 transition-duration: 1s;
@@ -2991,9 +3170,9 @@
             body > main > section:nth-child(6) > section > div:nth-child(5) {
                 width: 176px;
                 height: 169px;
-                top: 23px;
+                top: 12px;
                 bottom: 0;
-                left: 33px;
+                left: 97px;
                 right: 0;
                 transition-property: width,height;
                 transition-duration: 1s;
@@ -3009,9 +3188,9 @@
             body > main > section:nth-child(6) > section > div:nth-child(4) {
                 width: 176px;
                 height: 169px;
-                top: -16px;
+                top: -42px;
                 bottom: 0;
-                left: 84px;
+                left: 160px;
                 right: 0;
                 transition-property: width,height;
                 transition-duration: 1s;
@@ -3048,6 +3227,10 @@
         }
 
         @media all and (min-width: 1024px) and (max-width: 1440px){
+
+        }
+
+        @media all and (max-width: 1441px){
 
         }
 
@@ -3469,6 +3652,7 @@
             body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
                 position: absolute;
                 top: 131px;
+                width: 349px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > #email {
@@ -3490,10 +3674,6 @@
                 width: 349px;
                 position: absolute;
                 top: 83px;
-            }
-
-            body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
-                width: 349px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
@@ -3535,13 +3715,14 @@
         }
 
         @media all and (min-width: 425px) and (max-width: 767px){
+
             body > footer > section > #m {
                 height: 518px;
                 left: 18px;
             }
 
             body > footer > section > #m > #pencil {
-                width: 300px;
+                width: 379px;
                 height: 197px;
                 top: 4px;
                 left: 7px;
@@ -3554,10 +3735,10 @@
             }
 
             body > footer > section > #m > #pencil > div {
-                top: 1px;
-                left: 33px;
-                font-size: 11px;
-                width: 249px;
+                top: 2px;
+                left: 14px;
+                font-size: 12px;
+                width: 323px;
                 height: 151px;
                 border-radius: 0;
                 background: none;
@@ -3596,73 +3777,67 @@
 
             body > footer > section > #m > section:nth-child(2) {
                 height: 273px;
-                top: 159px;
+                top: 162px;
                 left: -8px;
-                width: 358px;
+                width: 406px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > label {
-                font-size: 10px;
+                font-size: 12px;
                 color: darkgray;
                 border: none;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > .input {
                 border-radius: 0;
-                width: 143px;
-                height: 20px;
+                width: 163px;
+                height: 22px;
                 border: 1px solid slategray;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > #phone_Number {
                 position: absolute;
-                top: 68px;
+                top: 72px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
                 position: absolute;
-                top: 131px;
+                top: 138px;
+                width: 398px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > #email {
                 position: absolute;
-                top: 117px;
+                top: 123px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
                 position: absolute;
-                top: 179px;
+                top: 188px;
+                height: 47px;
+                width: 400px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > #massage {
                 position: absolute;
-                top: 165px;
+                top: 173px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > #txtPhoneNumber {
-                width: 349px;
+                width: 398px;
                 position: absolute;
-                top: 83px;
-            }
-
-            body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
-                width: 349px;
-            }
-
-            body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
-                height: 41px;
-                width: 348px;
+                top: 87px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > #last_name {
-                bottom: 21px;
-                left: 56px;
+                bottom: 22px;
+                left: 63px;
             }
 
             body > footer > section > #m > section:nth-child(2) > form > button {
                 position: absolute;
-                left: 262px;
-                top: 246px;
+                left: 314px;
+                top: 254px;
                 height: 27px;
                 width: 90px;
                 background: #ff6b81;
@@ -3681,7 +3856,7 @@
                 position: absolute;
                 top: 541px;
                 color: darkgray;
-                left: 148px;
+                left: 176px;
                 width: 139px;
                 font-size: 11px;
             }
@@ -3692,6 +3867,10 @@
         }
 
         @media all and (min-width: 1024px) and (max-width: 1440px){
+
+        }
+
+        @media all and (max-width: 1441px){
 
         }
 
