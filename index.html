@@ -383,6 +383,26 @@
             border-top-right-radius: 50px;
             border-bottom-left-radius: 50px;
             transform: rotate(-20deg);
+
+            animation-name: move;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes move {
+            0%{
+                border-top-right-radius: 50px;
+                border-bottom-left-radius: 50px;
+                border-top-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            100%{
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+            }
         }
 
         body > main > section:nth-child(1) > section:nth-child(3) >div:nth-child(1){
