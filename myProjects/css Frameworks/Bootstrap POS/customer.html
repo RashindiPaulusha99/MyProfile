@@ -13,13 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
-<body class="bg-image" style="background-image: url(assets/images/customers.jpg);background-size: cover">
+<body class="bg-image" style="background-image: radial-gradient(circle at top,lightblue,#000);">
 
-<main style="background-color: rgba(0, 0, 0, 0.8);width: 100vw; height: 100vh" >
+<main style="width: 100vw; height: 100vh;" >
 
     <!--navigation bar-->
     <section>
-        <nav class="navbar navbar-expand-lg navbar-light shadow  p-2 mb-2 bg-body rounded bg-light" >
+        <nav class="navbar navbar-expand-lg navbar-light p-2 mb-2 " style="background: rgba(255,255,255,0.8);box-shadow: -1px 1px 20px 10px black">
             <div class="container-fluid">
 
 
@@ -34,7 +34,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item me-3">
                             <a class="nav-link active" aria-current="page" href="#">
-                                <i class="fas fa-home fa-2x "></i>
+                                <i class="fas fa-home fa-2x"></i>
                             </a>
                         </li>
                         <li class="nav-item  me-3">
@@ -66,8 +66,8 @@
                     </ul>
                 </div>
 
-                <a class="nav-link active" aria-current="page" href="#">
-                    <i class="fas fa-sign-out-alt"></i>
+                <a class="nav-link active" aria-current="page" href="#" style="color: black">
+                    <i class="fas fa-sign-out-alt" style="color: black"></i>
                     Logout
                 </a>
 
@@ -83,27 +83,27 @@
         </h2>
     </div>
 
-    <section class="container-fluid w-75  rounded shadow mt-0 mb-4"  style="background-color: rgba(255, 255, 255, 0.6);">
+    <section class="container-fluid w-75  rounded  mt-0 mb-4"  style="background:transparent; box-shadow: -1px 1px 50px 10px black">
 
         <!--buttons-->
         <div class="row mb-4">
             <form>
                 <!--Search-->
                 <input class="form-control-sm me-0 mt-2 w-50 border border-white" type="search" placeholder="Input NIC/Name/Phone Number Here" aria-label="Search" />
-                <button class="btn btn-primary btn-sm ms-0 " type="submit" >
+                <button class="btn btn-primary btn-sm ms-0 " type="submit" style="box-shadow: -1px 1px 30px 5px white">
                     <i class="fas fa-search"></i>
                 </button>
 
-                <!-- Add New button -->
-                <button type="button" class="btn  btn-sm  float-end mt-2" style="background-color: #2ed573">
-                    <i class="fas fa-house-user"></i>
-                     New Customer
-                </button>
-
                 <!-- view customer button -->
-                <button type="button" class="btn btn-warning btn-sm  me-2 mt-2 float-end">
+                <button type="button" class="btn btn-warning btn-sm mt-2 float-end shadow">
                     <i class="fas fa-user-friends"></i>
                     View Customers
+                </button>
+
+                <!-- Add New button -->
+                <button type="button" class="btn  btn-sm me-2 float-end mt-2 float-end shadow" style="background-color: #2ed573;">
+                    <i class="fas fa-house-user"></i>
+                     New Customer
                 </button>
             </form>
 
@@ -116,21 +116,21 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <input type="text" id="form6Example1" class="form-control form-control-sm mt-3" placeholder="CXXX" />
+                            <input type="text" id="form6Example1" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="CXXX" />
                             <label class="form-label text-white" for="form6Example1">ID</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="form6Example2" class="form-control form-control-sm mt-3" placeholder="xxxxx" />
+                            <input type="text" id="form6Example2" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
                             <label class="form-label text-white" for="form6Example2">First name</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="form6Example3" class="form-control form-control-sm mt-3" placeholder="xxxxx" />
+                            <input type="text" id="form6Example3" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
                             <label class="form-label text-white" for="form6Example3">Last name</label>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
                     <div class="col">
                         <!-- Age -->
                         <div class="form-outline ">
-                            <input type="number" id="form6Example5" class="form-control form-control-sm" placeholder="xx"/>
+                            <input type="number" id="form6Example5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xx"/>
                             <label class="form-label text-white" for="form6Example5">Age</label>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                     <div class="col">
                         <!-- Phone Number -->
                         <div class="form-outline ">
-                            <input type="number" id="form6Example8" class="form-control form-control-sm" placeholder="0xx-xxxxxxx"/>
+                            <input type="number" id="form6Example8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="0xx-xxxxxxx"/>
                             <label class="form-label text-white" for="form6Example8">Phone Number</label>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
                     <div class="col">
                         <!-- NIC -->
                         <div class="form-outline">
-                            <input type="text" id="form6Example7" class="form-control form-control-sm" placeholder="xxxxxxxxxV"/>
+                            <input type="text" id="form6Example7" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxxxxxxxxV"/>
                             <label class="form-label text-white" for="form6Example7">NIC</label>
                         </div>
                     </div>
@@ -166,7 +166,7 @@
                     <div class="col">
                         <!-- Address -->
                         <div class="form-outline ">
-                            <input type="text" id="form6Example4" class="form-control form-control-sm" placeholder="xxxxxxxxx"/>
+                            <input type="text" id="form6Example4" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxxxxxxxx"/>
                             <label class="form-label text-white " for="form6Example4">Address</label>
                         </div>
                     </div>
@@ -174,26 +174,26 @@
                     <div class="col">
                      <!--Email -->
                         <div class="form-outline">
-                            <input type="email" id="form6Example6" class="form-control form-control-sm" placeholder="email@example.com"/>
+                            <input type="email" id="form6Example6" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="email@example.com"/>
                             <label class="form-label text-white" for="form6Example6">Email</label>
                         </div>
                     </div>
                 </div>
 
                 <!-- Save button -->
-                <button type="submit" class="btn btn-info btn-sm btn-block mb-4">
+                <button type="submit" class="btn btn-info btn-sm btn-block mb-4 shadow">
                     <i class="fas fa-plus-square"></i>
                     Save
                 </button>
 
                 <!-- Edit button -->
-                <button type="submit" class="btn btn-sm btn-block mb-4" style="background-color: #e056fd">
+                <button type="submit" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd">
                     <i class="fas fa-edit"></i>
                     Edit
                 </button>
 
                 <!-- Delete button -->
-                <button type="submit" class="btn  btn-sm btn-block mb-4" style="background-color: #ff6b6b">
+                <button type="submit" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b">
                     <i class="fas fa-trash-alt"></i>
                     Clear
                 </button>
@@ -202,8 +202,8 @@
 
         <!--table-->
         <div class="bg-white  mt-2 row ms-1 me-1 mb-2">
-            <table class="table table-hover table-responsive table-sm table-striped table-bordered border-white table">
-                <thead  style="background-color: #22a6b3; color: white">
+            <table class="table table-hover  table-sm table-striped table-bordered border-white table shadow">
+                <thead  style="background-color: #a29bfe; color: white">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">First_Name</th>
@@ -217,7 +217,7 @@
                     <th scope="col">Delete</th>
                 </tr>
                 </thead>
-                <tbody  style="background-color:#c7ecee ">
+                <tbody  style="background-color:white ">
                 <tr>
                     <td>C001</td>
                     <td>Mark</td>
