@@ -13,63 +13,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body class="bg-info bg-opacity-10">
 
-<section>
-    <nav class="navbar navbar-expand-lg navbar-light shadow" style="background-color: #e3f2fd" >
-        <div class="container-fluid">
+<main>
 
-
-            <img src="assets/images/cart.png" alt="" style="width: 50px">
-            <a class="navbar-brand " style="font-family: 'Courgette', cursive;" href="#">RP POS System</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!--navigation bar-->
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light shadow bg-light" >
+            <div class="container-fluid">
 
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
-                        <i class="fas fa-home"></i>
-                        Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                        <i class="fas fa-users"></i>
-                        Customers
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                        <i class="fas fa-boxes"></i>
-                        Items
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-list-alt"></i>
-                            Other
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action1</a></li>
-                            <li><a class="dropdown-item" href="#">Action2</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <img src="assets/images/cart.png" alt="" style="width: 50px">
+                <a class="navbar-brand " style="font-family: 'Courgette', cursive;" href="#">RP POS System</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class="fas fa-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-users"></i>
+                                Customers
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-boxes"></i>
+                                Items
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-list-alt"></i>
+                                Other
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action1</a></li>
+                                <li><a class="dropdown-item" href="#">Action2</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <a class="nav-link active" aria-current="page" href="#">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+
             </div>
+        </nav>
+    </section>
 
-            <a class="nav-link active" aria-current="page" href="#">
-                <i class="fas fa-sign-out-alt"></i>
-                Logout
-            </a>
+    <!--Customer-->
+    <section>
 
-        </div>
-    </nav>
-</section>
+    </section>
+
+</main>
 
 </body>
 </html>
