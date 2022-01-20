@@ -15,7 +15,7 @@
 </head>
 <body class="bg-image" style="background-image: url(assets/images/customers.jpg);background-size: cover">
 
-<main style="background-color: rgba(0, 0, 0, 0.8);width: 100vw; height: 100vh">
+<main style="background-color: rgba(0, 0, 0, 0.8);width: 100vw; height: 100vh" >
 
     <!--navigation bar-->
     <section>
@@ -76,16 +76,50 @@
     </section>
 
     <!--Customer-->
-    <div class="container-fluid  mt-1 shadow p-2 mb-5  rounded-circle d-flex justify-content-center align-items-center w-25 ">
+    <div class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle d-flex justify-content-center align-items-center w-25 ">
         <h2 class="text-white mb-0">
             <i class="fas fa-users"></i>
             Customer
         </h2>
     </div>
 
-    <section class="container-fluid w-25 border border-white border-5 rounded shadow">
+    <section class="container-fluid w-75  rounded shadow mt-0"  style="background-color: rgba(255, 255, 255, 0.6)">
 
-        <div>
+        <!--buttons-->
+        <div class="row">
+            <form>
+                <!--Search-->
+                <input class="form-control-sm me-2 mt-2 w-50" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary btn-sm" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <!-- Add New button -->
+                <button type="button" class="btn btn-primary btn-sm ">
+                    <i class="fas fa-house-user"></i>
+                     New Customer
+                </button>
+
+                <!-- view customer button -->
+                <button type="button" class="btn btn-warning btn-sm ms-2 gap-5">
+                    <i class="fas fa-user-friends"></i>
+                    View Customers
+                </button>
+            </form>
+
+           <!-- <div class="input-group w-100">
+                <div class="form-outline">
+                    <input type="search" id="form1" class="form-control " placeholder="Search" aria-label="Search"/>
+                </div>
+                <button type="button" class="btn btn-primary ms-5">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>-->
+
+        </div>
+
+        <!--input fields-->
+        <div class="row">
             <form>
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="form row ">
@@ -99,15 +133,16 @@
                     <div class="col">
                         <div class="form-outline">
                             <input type="text" id="form6Example2" class="form-control form-control-sm mt-3" placeholder="xxxxx" />
-                            <label class="form-label text-white" for="form6Example2">Last name</label>
+                            <label class="form-label text-white" for="form6Example2">Middle name</label>
                         </div>
                     </div>
-                </div>
 
-                <!-- Address -->
-                <div class="form-outline ">
-                    <input type="text" id="form6Example4" class="form-control form-control-sm" placeholder="xxxxxxxxx"/>
-                    <label class="form-label text-white " for="form6Example4">Address</label>
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="form6Example3" class="form-control form-control-sm mt-3" placeholder="xxxxx" />
+                            <label class="form-label text-white" for="form6Example3">Last name</label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form row ">
@@ -126,33 +161,85 @@
                             <label class="form-label text-white" for="form6Example8">Phone Number</label>
                         </div>
                     </div>
+
+                    <div class="col">
+                        <!-- NIC -->
+                        <div class="form-outline">
+                            <input type="text" id="form6Example7" class="form-control form-control-sm" placeholder="xxxxxxxxxV"/>
+                            <label class="form-label text-white" for="form6Example7">NIC</label>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- NIC -->
-                <div class="form-outline">
-                    <input type="text" id="form6Example7" class="form-control form-control-sm" placeholder="xxxxxxxxxV"/>
-                    <label class="form-label text-white" for="form6Example7">NIC</label>
+                <div class="form row ">
+                    <div class="col">
+                        <!-- Address -->
+                        <div class="form-outline ">
+                            <input type="text" id="form6Example4" class="form-control form-control-sm" placeholder="xxxxxxxxx"/>
+                            <label class="form-label text-white " for="form6Example4">Address</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                     <!--Email -->
+                        <div class="form-outline">
+                            <input type="email" id="form6Example6" class="form-control form-control-sm" placeholder="email@example.com"/>
+                            <label class="form-label text-white" for="form6Example6">Email</label>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Email -->
-                <div class="form-outline">
-                    <input type="email" id="form6Example6" class="form-control form-control-sm" placeholder="email@example.com"/>
-                    <label class="form-label text-white" for="form6Example6">Email</label>
-                </div>
-
-                <!-- Add button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Add</button>
+                <!-- Save button -->
+                <button type="submit" class="btn btn-info btn-sm btn-block mb-4">
+                    <i class="fas fa-user-plus"></i>
+                    Save
+                </button>
 
                 <!-- Edit button -->
-                <button type="submit" class="btn btn-dark btn-block mb-4">Edit</button>
+                <button type="submit" class="btn btn-success btn-sm btn-block mb-4">
+                    <i class="fas fa-user-edit"></i>
+                    Edit
+                </button>
 
                 <!-- Delete button -->
-                <button type="submit" class="btn btn-danger btn-block mb-4">Delete</button>
+                <button type="submit" class="btn btn-danger btn-sm btn-block mb-4">
+                    <i class="fas fa-user-times"></i>
+                    Delete
+                </button>
             </form>
         </div>
 
-        <div>
-
+        <!--table-->
+        <div class="bg-white  mt-2 row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
     </section>
