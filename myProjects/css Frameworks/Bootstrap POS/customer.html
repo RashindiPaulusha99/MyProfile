@@ -83,38 +83,29 @@
         </h2>
     </div>
 
-    <section class="container-fluid w-75  rounded shadow mt-0"  style="background-color: rgba(255, 255, 255, 0.6)">
+    <section class="container-fluid w-75  rounded shadow mt-0 mb-4"  style="background-color: rgba(255, 255, 255, 0.6)">
 
         <!--buttons-->
         <div class="row mb-4">
             <form>
                 <!--Search-->
                 <input class="form-control-sm me-0 mt-2 w-50 border border-white" type="search" placeholder="Input NIC/Name/Phone Number Here" aria-label="Search" />
-                <button class="btn btn-primary btn-sm ms-0 me-5" type="submit" >
+                <button class="btn btn-primary btn-sm ms-0 " type="submit" >
                     <i class="fas fa-search"></i>
                 </button>
 
                 <!-- Add New button -->
-                <button type="button" class="btn  btn-sm ms-5" style="background-color: #2ed573">
+                <button type="button" class="btn  btn-sm  float-end mt-2" style="background-color: #2ed573">
                     <i class="fas fa-house-user"></i>
                      New Customer
                 </button>
 
                 <!-- view customer button -->
-                <button type="button" class="btn btn-warning btn-sm ms-2">
+                <button type="button" class="btn btn-warning btn-sm  me-2 mt-2 float-end">
                     <i class="fas fa-user-friends"></i>
                     View Customers
                 </button>
             </form>
-
-           <!-- <div class="input-group w-100">
-                <div class="form-outline">
-                    <input type="search" id="form1" class="form-control " placeholder="Search" aria-label="Search"/>
-                </div>
-                <button type="button" class="btn btn-primary ms-5">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>-->
 
         </div>
 
@@ -210,33 +201,58 @@
         </div>
 
         <!--table-->
-        <div class="bg-white  mt-2 row">
-            <table class="table">
-                <thead>
+        <div class="bg-white  mt-2 row ms-1 me-1 mb-2">
+            <table class="table table-hover table-responsive table-sm table-striped table-bordered border-secondary table">
+                <thead  style="background-color: #20c997">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">First_Name</th>
+                    <th scope="col">Last_Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Phone_Number</th>
+                    <th scope="col">NIC</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody  style="background-color: #b6d4fe">
                 <tr>
-                    <th scope="row">1</th>
+                    <td>C001</td>
                     <td>Mark</td>
                     <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>20</td>
+                    <td>078-7991075</td>
+                    <td>995371286V</td>
+                    <td>Galle</td>
+                    <td>mo@gmail.com</td>
+                    <td><i class="far fa-edit fa-1x" aria-hidden="true" style="color: #e056fd"></i></td>
+                    <td><i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i></td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+                    <td>C002</td>
+                    <td>Peter</td>
+                    <td>Pronto</td>
+                    <td>21</td>
+                    <td>078-7991077</td>
+                    <td>995371266V</td>
+                    <td>Colombo</td>
+                    <td>pe@gmail.com</td>
+                    <td><i class="far fa-edit fa-1x" aria-hidden="true" style="color: #e056fd"></i></td>
+                    <td><i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i></td>
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
+                    <td>C003</td>
+                    <td>Maria</td>
+                    <td>Mary</td>
+                    <td>22</td>
+                    <td>078-7991078</td>
+                    <td>995371283V</td>
+                    <td>Panadura</td>
+                    <td>mm@gmail.com</td>
+                    <td><i class="far fa-edit fa-1x" aria-hidden="true" style="color: #e056fd"></i></td>
+                    <td><i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i></td>
                 </tr>
                 </tbody>
             </table>
