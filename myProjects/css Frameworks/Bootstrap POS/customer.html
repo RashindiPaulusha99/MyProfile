@@ -35,25 +35,26 @@
                         <li class="nav-item me-3">
                             <a class="nav-link active" aria-current="page" href="#">
                                 <i class="fas fa-home fa-2x "></i>
-                                <!--Home-->
                             </a>
                         </li>
                         <li class="nav-item  me-3">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-users fa-2x"></i>
-                                <!--Customers-->
                             </a>
                         </li>
                         <li class="nav-item me-3">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-boxes fa-2x "></i>
-                                <!--Items-->
+                            </a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-cart-plus fa-2x"></i>
                             </a>
                         </li>
                         <li class="nav-item dropdown me-3">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-list-alt fa-2x"></i>
-                                <!--Other-->
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Action1</a></li>
@@ -82,7 +83,7 @@
         </h2>
     </div>
 
-    <section class="container-fluid w-25 ">
+    <section class="container-fluid w-25 border border-white border-5 rounded shadow">
 
         <div>
             <form>
@@ -90,14 +91,14 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <input type="text" id="form6Example1" class="form-control form-control-sm" placeholder="xxxxx" />
+                            <input type="text" id="form6Example1" class="form-control form-control-sm mt-3" placeholder="xxxxx" />
                             <label class="form-label text-white" for="form6Example1">First name</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="form6Example2" class="form-control form-control-sm" placeholder="xxxxx" />
+                            <input type="text" id="form6Example2" class="form-control form-control-sm mt-3" placeholder="xxxxx" />
                             <label class="form-label text-white" for="form6Example2">Last name</label>
                         </div>
                     </div>
@@ -109,28 +110,34 @@
                     <label class="form-label text-white " for="form6Example4">Address</label>
                 </div>
 
-                <!-- Age -->
-                <div class="form-outline ">
-                    <input type="number" id="form6Example5" class="form-control form-control-sm" placeholder="xx"/>
-                    <label class="form-label text-white" for="form6Example5">Age</label>
+                <div class="form row ">
+                    <div class="col">
+                        <!-- Age -->
+                        <div class="form-outline ">
+                            <input type="number" id="form6Example5" class="form-control form-control-sm" placeholder="xx"/>
+                            <label class="form-label text-white" for="form6Example5">Age</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- Phone Number -->
+                        <div class="form-outline ">
+                            <input type="number" id="form6Example8" class="form-control form-control-sm" placeholder="0xx-xxxxxxx"/>
+                            <label class="form-label text-white" for="form6Example8">Phone Number</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NIC -->
+                <div class="form-outline">
+                    <input type="text" id="form6Example7" class="form-control form-control-sm" placeholder="xxxxxxxxxV"/>
+                    <label class="form-label text-white" for="form6Example7">NIC</label>
                 </div>
 
                 <!-- Email -->
                 <div class="form-outline">
                     <input type="email" id="form6Example6" class="form-control form-control-sm" placeholder="email@example.com"/>
                     <label class="form-label text-white" for="form6Example6">Email</label>
-                </div>
-
-                <!-- NIC -->
-                <div class="form-outline">
-                    <input type="text" id="form6Example7" class="form-control form-control-sm" placeholder="NIC"/>
-                    <label class="form-label text-white" for="form6Example7">NIC</label>
-                </div>
-
-                <!-- Phone Number -->
-                <div class="form-outline ">
-                    <input type="number" id="form6Example8" class="form-control form-control-sm" placeholder="0xx-xxxxxxx"/>
-                    <label class="form-label text-white" for="form6Example8">Phone Number</label>
                 </div>
 
                 <!-- Add button -->
