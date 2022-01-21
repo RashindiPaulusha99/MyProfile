@@ -14,10 +14,10 @@
 </head>
 <body class="bg-image" style="background-image: radial-gradient(circle at top,lightblue,#000);">
 
-<main  style="width: 100vw; height: 100vh;">
+<main  style="width: 100vw; height: 100vh;" >
 
     <!--navigation bar-->
-    <section>
+    <section style="width: 100%;">
         <nav class="navbar navbar-expand-lg navbar-light p-2 mb-2 " style="background: rgba(255,255,255,0.8);box-shadow: -1px 1px 20px 10px black">
             <div class="container-fluid">
 
@@ -82,36 +82,45 @@
         </h2>
     </div>
 
-    <section class="container-fluid w-75  rounded  mt-0 mb-4"  style="background:transparent; box-shadow: -1px 1px 50px 10px black">
+    <section class="container-fluid  rounded  mt-0 mb-4"  style="background:transparent; box-shadow: -1px 1px 50px 10px black">
 
-        <!--buttons-->
-        <div class="row mb-4">
-            <form>
-                <!--Search-->
-                <input class="form-control-sm me-0 mt-2 w-50 border border-white" type="search" placeholder="Input Code/Name Here" aria-label="Search" />
-                <button class="btn btn-primary btn-sm ms-0 " type="submit" style="box-shadow: -1px 1px 30px 5px white">
-                    <i class="fas fa-search"></i>
-                </button>
+        <!--3 section-->
+        <div class="row">
 
-                <!-- view order button -->
-                <button type="button" class="btn btn-warning btn-sm mt-2 float-end shadow">
-                    <i class="fas fa-boxes"></i>
-                    View Items
-                </button>
+            <!--Customer details-->
+            <div class="col w-25 bg-white me-3 ms-3">
+               <div class="row bg-info">
+                   <h4>Invoice Details</h4>
+               </div>
 
-                <!-- Add New button -->
-                <button type="button" class="btn  btn-sm me-2 float-end mt-2 float-end shadow" style="background-color: #2ed573;">
-                    <i class="fas fa-dolly-flatbed"></i>
-                    New Item
-                </button>
-            </form>
+                hello
+            </div>
+
+            <!--choose items-->
+            <div class="col w-25 bg-white me-3 ms-3">
+                <div class="row bg-info">
+                    <h4>Item Selection</h4>
+                </div>
+
+                hello
+            </div>
+
+            <!--total price details-->
+            <div class="col w-25 bg-white me-3 ms-3">
+                <div class="row bg-info">
+                    <h4>Final Total</h4>
+                </div>
+                hello
+            </div>
 
         </div>
 
-        <!--input fields-->
+
+        <!--&lt;!&ndash;input fields&ndash;&gt;
         <div class="row">
+
             <form>
-                <!-- 2 column grid layout with text inputs for code and name -->
+                &lt;!&ndash; 3 column grid layout with text inputs for code and name and kind &ndash;&gt;
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
@@ -143,7 +152,7 @@
 
                 <div class="form row ">
                     <div class="col">
-                        <!-- Qty -->
+                        &lt;!&ndash; Qty &ndash;&gt;
                         <div class="form-outline ">
                             <input type="number" id="form6Example5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxx"/>
                             <label class="form-label text-white" for="form6Example5">Quantity</label>
@@ -151,7 +160,7 @@
                     </div>
 
                     <div class="col">
-                        <!-- Price -->
+                        &lt;!&ndash; Price &ndash;&gt;
                         <div class="form-outline ">
                             <input type="number" id="form6Example8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="00.00"/>
                             <label class="form-label text-white" for="form6Example8">Unit Price</label>
@@ -160,25 +169,25 @@
 
                 </div>
 
-                <!-- Save button -->
+                &lt;!&ndash; Save button &ndash;&gt;
                 <button type="submit" class="btn btn-info btn-sm btn-block mb-4 shadow">
                     <i class="fas fa-plus-square"></i>
                     Save
                 </button>
 
-                <!-- Edit button -->
+                &lt;!&ndash; Edit button &ndash;&gt;
                 <button type="submit" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd">
                     <i class="fas fa-edit"></i>
                     Edit
                 </button>
 
-                <!-- Delete button -->
+                &lt;!&ndash; Delete button &ndash;&gt;
                 <button type="submit" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b">
                     <i class="fas fa-trash-alt"></i>
                     Clear
                 </button>
             </form>
-        </div>
+        </div>-->
 
         <!--table-->
         <div class="bg-white  mt-2 row ms-1 me-1 mb-2">
