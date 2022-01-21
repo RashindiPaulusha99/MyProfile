@@ -74,6 +74,188 @@
         </nav>
     </section>
 
+    <!--Order-->
+    <div class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle d-flex justify-content-center align-items-center w-25 ">
+        <h2 class="text-white mb-0">
+            <i class="fas fa-cart-plus"></i>
+            Place Order
+        </h2>
+    </div>
+
+    <section class="container-fluid w-75  rounded  mt-0 mb-4"  style="background:transparent; box-shadow: -1px 1px 50px 10px black">
+
+        <!--buttons-->
+        <div class="row mb-4">
+            <form>
+                <!--Search-->
+                <input class="form-control-sm me-0 mt-2 w-50 border border-white" type="search" placeholder="Input Code/Name Here" aria-label="Search" />
+                <button class="btn btn-primary btn-sm ms-0 " type="submit" style="box-shadow: -1px 1px 30px 5px white">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <!-- view order button -->
+                <button type="button" class="btn btn-warning btn-sm mt-2 float-end shadow">
+                    <i class="fas fa-boxes"></i>
+                    View Items
+                </button>
+
+                <!-- Add New button -->
+                <button type="button" class="btn  btn-sm me-2 float-end mt-2 float-end shadow" style="background-color: #2ed573;">
+                    <i class="fas fa-dolly-flatbed"></i>
+                    New Item
+                </button>
+            </form>
+
+        </div>
+
+        <!--input fields-->
+        <div class="row">
+            <form>
+                <!-- 2 column grid layout with text inputs for code and name -->
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <input type="text" id="form6Example1" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="IXXX" />
+                            <label class="form-label text-white" for="form6Example1">Item Code</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <select class="form-select form-select-sm rounded rounded-pill shadow mt-3" id="form6Example2" >
+                                <option selected>xxxxx</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <label class="form-label text-white" for="form6Example2">Kind</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="form6Example3" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
+                            <label class="form-label text-white" for="form6Example3">Item Name</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <!-- Qty -->
+                        <div class="form-outline ">
+                            <input type="number" id="form6Example5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxx"/>
+                            <label class="form-label text-white" for="form6Example5">Quantity</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- Price -->
+                        <div class="form-outline ">
+                            <input type="number" id="form6Example8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="00.00"/>
+                            <label class="form-label text-white" for="form6Example8">Unit Price</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Save button -->
+                <button type="submit" class="btn btn-info btn-sm btn-block mb-4 shadow">
+                    <i class="fas fa-plus-square"></i>
+                    Save
+                </button>
+
+                <!-- Edit button -->
+                <button type="submit" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                </button>
+
+                <!-- Delete button -->
+                <button type="submit" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b">
+                    <i class="fas fa-trash-alt"></i>
+                    Clear
+                </button>
+            </form>
+        </div>
+
+        <!--table-->
+        <div class="bg-white  mt-2 row ms-1 me-1 mb-2">
+            <table class="table table-hover  table-sm table-striped table-bordered border-white table shadow">
+                <thead  style="background-color: #a29bfe; color: white">
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Kind</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col" >Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody  style="background-color:white ">
+                <tr>
+                    <td>I001</td>
+                    <td>Kind1</td>
+                    <td>Name1</td>
+                    <td>2</td>
+                    <td>100.00</td>
+                    <td>200.00</td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-edit fa-1x" aria-hidden="true" style="color: #e056fd;"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>I002</td>
+                    <td>Kind2</td>
+                    <td>Name2</td>
+                    <td>1</td>
+                    <td>120.00</td>
+                    <td>120.00</td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-edit fa-1x " aria-hidden="true" style="color: #e056fd" ></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>I003</td>
+                    <td>Kind3</td>
+                    <td>Name3</td>
+                    <td>3</td>
+                    <td>80.00</td>
+                    <td>240.00</td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-edit fa-1x" aria-hidden="true" style="color: #e056fd"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
 </main>
 
 </body>

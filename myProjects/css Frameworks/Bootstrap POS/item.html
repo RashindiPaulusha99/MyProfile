@@ -76,7 +76,7 @@
         </nav>
     </section>
 
-    <!--Customer-->
+    <!--Item-->
     <div class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle d-flex justify-content-center align-items-center w-25 ">
         <h2 class="text-white mb-0">
             <i class="fas fa-box"></i>
@@ -95,7 +95,7 @@
                     <i class="fas fa-search"></i>
                 </button>
 
-                <!-- view customer button -->
+                <!-- view item button -->
                 <button type="button" class="btn btn-warning btn-sm mt-2 float-end shadow">
                     <i class="fas fa-boxes"></i>
                     View Items
@@ -113,7 +113,7 @@
         <!--input fields-->
         <div class="row">
             <form>
-                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <!-- 2 column grid layout with text inputs for code and name -->
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
@@ -124,8 +124,6 @@
 
                     <div class="col">
                         <div class="form-outline">
-                            <!--<input type="text" id="form6Example2" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
-                            <label class="form-label text-white" for="form6Example2">Kind</label>-->
                             <select class="form-select form-select-sm rounded rounded-pill shadow mt-3" id="form6Example2" >
                                 <option selected>xxxxx</option>
                                 <option value="1">One</option>
@@ -147,7 +145,7 @@
 
                 <div class="form row ">
                     <div class="col">
-                        <!-- Age -->
+                        <!-- Qty -->
                         <div class="form-outline ">
                             <input type="number" id="form6Example5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxx"/>
                             <label class="form-label text-white" for="form6Example5">Quantity</label>
@@ -155,7 +153,7 @@
                     </div>
 
                     <div class="col">
-                        <!-- Phone Number -->
+                        <!-- Price -->
                         <div class="form-outline ">
                             <input type="number" id="form6Example8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="00.00"/>
                             <label class="form-label text-white" for="form6Example8">Unit Price</label>
@@ -190,7 +188,8 @@
                 <thead  style="background-color: #a29bfe; color: white">
                 <tr>
                     <th scope="col">Code</th>
-                    <th scope="col">Description</th>
+                    <th scope="col">Kind</th>
+                    <th scope="col">Item Name</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Unit Price</th>
                     <th scope="col" >Edit</th>
@@ -200,7 +199,8 @@
                 <tbody  style="background-color:white ">
                 <tr>
                     <td>I001</td>
-                    <td>Description1</td>
+                    <td>Kind1</td>
+                    <td>Name1</td>
                     <td>500</td>
                     <td>100.00</td>
                     <td>
@@ -216,7 +216,8 @@
                 </tr>
                 <tr>
                     <td>I002</td>
-                    <td>Description2</td>
+                    <td>Kind2</td>
+                    <td>Name2</td>
                     <td>600</td>
                     <td>120.00</td>
                     <td>
@@ -232,7 +233,8 @@
                 </tr>
                 <tr>
                     <td>I003</td>
-                    <td>Description3</td>
+                    <td>Kind3</td>
+                    <td>Name3</td>
                     <td>1000</td>
                     <td>80.00</td>
                     <td>
