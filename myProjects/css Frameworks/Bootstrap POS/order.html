@@ -50,7 +50,7 @@
                         </li>
                         <li class="nav-item me-3">
                             <a class="nav-link" href="#">
-                                <i class="fas fa-cart-plus fa-2x"></i>
+                                <i class="fas fa-shopping-cart fa-2x"></i>
                             </a>
                         </li>
                         <li class="nav-item dropdown me-3">
@@ -79,7 +79,7 @@
     <!--Order-->
     <div class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle d-flex justify-content-center align-items-center w-25 ">
         <h2 class="text-white mb-0">
-            <i class="fas fa-cart-plus"></i>
+            <i class="fas fa-shopping-cart"></i>
             Place Order
         </h2>
     </div>
@@ -90,7 +90,8 @@
         <div class="row">
 
             <!--Customer details-->
-            <div class="col w-25 bg-white me-3 ms-3">
+            <div class="col w-25 bg-warning me-3 ms-3 mb-2 ">
+
                <div class="row bg-info">
                    <h4>Invoice Details</h4>
                </div>
@@ -110,23 +111,20 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form row ">
                     <div class="col">
-                        <div class="form-outline">
-                            <label class="form-label text-black mb-0" for="form6Example3">Customer ID</label>
-                            <div class="dropdown ">
-                                <button type="button" id="form6Example3" class="form-control form-control-sm shadow mb-2 btn dropdown-toggle btn-sm " data-bs-toggle="dropdown" aria-expanded="false"  >
-
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="#">Action1</a></li>
-                                    <li><a class="dropdown-item" href="#">Action2</a></li>
-                                    <li><a class="dropdown-item" href="#">Action3</a></li>
-                                </ul>
-                            </div>
-
+                        <label class="form-label text-black mb-0 " >Customer ID</label>
+                        <div class="dropdown " style="background-color: white; height: 50%;border-radius: 3px">
+                            <button class="btn bg-white dropdown-toggle btn-sm float-end" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <!--Customer Idshdnfhfhkskfifhfg-->
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">C001</a></li>
+                                <li><a class="dropdown-item" href="#">C002</a></li>
+                                <li><a class="dropdown-item" href="#">C003</a></li>
+                            </ul>
                         </div>
-
                     </div>
 
                     <div class="col">
@@ -141,14 +139,14 @@
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0" for="form6Example5">Contact</label>
-                            <input type="tel" id="form6Example5" class="form-control form-control-sm shadow mb-2" placeholder="CXXX" />
+                            <input type="tel" id="form6Example5" class="form-control form-control-sm shadow mb-2" placeholder="0xx-xxxxxxx" />
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0" for="form6Example6">NIC</label>
-                            <input type="text" id="form6Example6" class="form-control form-control-sm shadow mb-2" placeholder="xxxxx" />
+                            <input type="text" id="form6Example6" class="form-control form-control-sm shadow mb-2" placeholder="xxxxxxxxxV" />
                         </div>
                     </div>
                 </div>
@@ -157,107 +155,94 @@
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0" for="form6Example7">Address</label>
-                            <input type="text" id="form6Example7" class="form-control form-control-sm shadow mb-2" placeholder="CXXX" />
+                            <input type="text" id="form6Example7" class="form-control form-control-sm shadow mb-3" placeholder="xxxxx" />
                         </div>
                     </div>
-
                 </div>
-
 
             </div>
 
             <!--choose items-->
-            <div class="col w-25 bg-white me-3 ms-3">
+            <div class="col w-25 bg-warning me-3 ms-3 mb-2">
                 <div class="row bg-info">
                     <h4>Item Selection</h4>
                 </div>
 
-                hello
+                <div class="form row ">
+                    <div class="col">
+                        <label class="form-label text-black mb-0 " >Item Code</label>
+                        <div class="dropdown" style="background-color: white; height: 50%; border-radius: 3px">
+                            <button class="btn bg-white dropdown-toggle btn-sm float-end" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="true" >
+
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"><li><a class="dropdown-item" href="#">I001</a></li>
+                                <li><a class="dropdown-item" href="#">I002</a></li>
+                                <li><a class="dropdown-item" href="#">I003</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6Example9">Item Name</label>
+                            <input type="text" id="form6Example9" class="form-control form-control-sm shadow mb-2" placeholder="xxxx" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6Example10">Kind</label>
+                            <input type="text" id="form6Example10" class="form-control form-control-sm shadow mb-2" placeholder="xxxx" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6Example11">Unit Price</label>
+                            <input type="number" id="form6Example11" class="form-control form-control-sm shadow mb-2" placeholder="00.00" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6Example12">Quantity On Hand</label>
+                            <input type="number" id="form6Example12" class="form-control form-control-sm shadow mb-2" placeholder="xx" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6Example13">Order Quantity</label>
+                            <input type="number" id="form6Example13" class="form-control form-control-sm shadow mb-2" placeholder="xx" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <form>
+                        <button type="submit" class="btn btn-success btn-sm btn-block shadow float-end mt-4 mb-3">
+                            <i class="fas fa-cart-plus"></i>
+                            Add cart
+                        </button>
+                    </form>
+
+                </div>
             </div>
 
-            <!--total price details-->
-            <div class="col w-25 bg-white me-3 ms-3">
-                <div class="row bg-info">
-                    <h4>Final Total</h4>
+                <!--total price details-->
+                <div class="col w-25 bg-white me-3 ms-3 mb-2">
+                    <div class="row bg-info">
+                        <h4>Final Total</h4>
+                    </div>
+                    hello
                 </div>
-                hello
-            </div>
 
         </div>
-
-
-        <!--&lt;!&ndash;input fields&ndash;&gt;
-        <div class="row">
-
-            <form>
-                &lt;!&ndash; 3 column grid layout with text inputs for code and name and kind &ndash;&gt;
-                <div class="form row ">
-                    <div class="col">
-                        <div class="form-outline ">
-                            <input type="text" id="form6Example1" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="IXXX" />
-                            <label class="form-label text-white" for="form6Example1">Item Code</label>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-outline">
-                            <select class="form-select form-select-sm rounded rounded-pill shadow mt-3" id="form6Example2" >
-                                <option selected>xxxxx</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <label class="form-label text-white" for="form6Example2">Kind</label>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="form-outline">
-                            <input type="text" id="form6Example3" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
-                            <label class="form-label text-white" for="form6Example3">Item Name</label>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="form row ">
-                    <div class="col">
-                        &lt;!&ndash; Qty &ndash;&gt;
-                        <div class="form-outline ">
-                            <input type="number" id="form6Example5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxx"/>
-                            <label class="form-label text-white" for="form6Example5">Quantity</label>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        &lt;!&ndash; Price &ndash;&gt;
-                        <div class="form-outline ">
-                            <input type="number" id="form6Example8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="00.00"/>
-                            <label class="form-label text-white" for="form6Example8">Unit Price</label>
-                        </div>
-                    </div>
-
-                </div>
-
-                &lt;!&ndash; Save button &ndash;&gt;
-                <button type="submit" class="btn btn-info btn-sm btn-block mb-4 shadow">
-                    <i class="fas fa-plus-square"></i>
-                    Save
-                </button>
-
-                &lt;!&ndash; Edit button &ndash;&gt;
-                <button type="submit" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd">
-                    <i class="fas fa-edit"></i>
-                    Edit
-                </button>
-
-                &lt;!&ndash; Delete button &ndash;&gt;
-                <button type="submit" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b">
-                    <i class="fas fa-trash-alt"></i>
-                    Clear
-                </button>
-            </form>
-        </div>-->
 
         <!--table-->
         <div class="bg-white  mt-2 row ms-1 me-1 mb-2">
