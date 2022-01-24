@@ -17,7 +17,7 @@
 <main style="width: 100vw; height: 100vh;">
 
     <!--navigation bar-->
-    <section style="width: 100%;">
+    <section style="width: 100%; position: fixed;z-index: 1">
         <nav class="navbar navbar-expand-lg navbar-light p-2 mb-2 " style="background: rgba(255,255,255,0.8);box-shadow: -1px 1px 20px 10px black">
             <div class="container-fluid">
 
@@ -74,27 +74,24 @@
         </nav>
     </section>
 
-    <section style=" background-color: black;" class="w-100 h-75">
+    <section  class="w-100 h-75">
 
-        <div id="carouselExampleControls" class="carousel slide  " data-bs-ride="carousel" style="width: 100vw; height: 100%;">
-            <div class="carousel-inner ">
-                <div class="carousel-item active" style="/*width: 100vw; height: 100vh;*/background: rgba(0, 0, 0, 0.5);">
-                    <img src="assets/images/1.jpg" class="d-block" alt="error loading" style="width: 100vw; height: 100%;">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width: 100vw;height: 100%">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="width: 100vw;height: 100vh">
+                    <img src="assets/images/vegetables-fresh.jpg" class="d-block w-100 h-100" alt="error loading" >
                 </div>
-                <div class="carousel-item" style="width: 100vw; height: 635px;">
-                    <img src="assets/images/vegetables-fresh.jpg" class="d-block " alt="error loading" style="width: 100vw; height: 100%;background: rgba(0, 0, 0, 0.5);">
+                <div class="carousel-item" style="width: 100vw;height: 100vh">
+                    <img src="assets/images/fruites.jpg" class="d-block w-100 h-100" alt="error loading">
                 </div>
-                <div class="carousel-item" style="width: 100vw; height: 635px;">
-                    <img src="assets/images/fruites.jpg" class="d-block " alt="error loading" style="width: 100vw; height: 100%;">
+                <div class="carousel-item" style="width: 100vw;height: 100vh">
+                    <img src="assets/images/drinks.jpg" class="d-block w-100 h-100" alt="error loading" >
                 </div>
-                <div class="carousel-item" style="width: 100vw; height: 635px;">
-                    <img src="assets/images/drinks.jpg" class="d-block " alt="error loading" style="width: 100vw; height: 100%;">
+                <div class="carousel-item" style="width: 100vw;height: 100vh">
+                    <img src="assets/images/cofees.jpg" class="d-block w-100 h-100" alt="error loading">
                 </div>
-                <div class="carousel-item" style="width: 100vw; height: 635px;">
-                    <img src="assets/images/snacks.jpg" class="d-block " alt="error loading" style="width: 100vw; height: 100%;">
-                </div>
-                <div class="carousel-item" style="width: 100vw; height: 635px;">
-                    <img src="assets/images/cofees.jpg" class="d-block" alt="error loading" style="width: 100vw; height: 100%;">
+                <div class="carousel-item" style="width: 100vw;height: 100vh">
+                    <img src="assets/images/snacks.jpg" class="d-block w-100 h-100" alt="error loading">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -109,7 +106,7 @@
 
     </section>
 
-    <section style="position: absolute;right: 0;left: 0;bottom: 0;top: 60px;margin: auto;background: rgba(0, 0, 0, 0.7);width: 800px;height: 550px;box-shadow: -1px 1px 8px 5px black" class="container-fluid">
+    <section style="position: absolute;right: 0;left: 0;bottom: 0;top: 0;margin: auto;background: rgba(0, 0, 0, 0.7);width: 800px;height: 550px;box-shadow: -1px 1px 8px 5px black" class="container-fluid">
         <div class="row mt-3 mb-3 ">
            <div class="col me-5 ms-5 mb-5 mt-5 " style="border-radius: 20px;background-image: radial-gradient(ellipse at center,#b6d4fe,black);">
                <i class="fas fa-users fa-3x text-white"></i>
