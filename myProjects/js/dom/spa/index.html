@@ -11,6 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet">
 
+    <style>
+
+        #customerSec{
+            display: none;
+        }
+
+        #itemSec{
+            display: none;
+        }
+    </style>
+
 </head>
 <body class="bg-image" style="background-image: radial-gradient(circle at top,lightblue,#000);" >
 
@@ -29,7 +40,7 @@
 
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item me-3">
+                        <li class="nav-item me-3" id="home">
                             <a class="nav-link active" aria-current="page" href="#" >
                                 <i class="fas fa-home fa-2x"></i>
                             </a>
@@ -39,12 +50,12 @@
                                 <i class="fas fa-users fa-2x"></i>
                             </a>
                         </li>
-                        <li class="nav-item me-3">
+                        <li class="nav-item me-3" id="item">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-box fa-2x"></i>
                             </a>
                         </li>
-                        <li class="nav-item me-3">
+                        <li class="nav-item me-3" id="order">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-shopping-cart fa-2x"></i>
                             </a>
@@ -157,7 +168,7 @@
     </h1>
 
     <!--Customer-->
-    <div id="customerName" class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle d-flex justify-content-center align-items-center w-25 ">
+    <div id="customerName" class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle d-flex justify-content-center w-25 " style="display: none">
         <h2 class="text-white mb-0">
             <i class="fas fa-users"></i>
             Customer
@@ -197,15 +208,15 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <input type="text" id="form6Example1" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="CXXX" />
-                            <label class="form-label text-white" for="form6Example1">ID</label>
+                            <input type="text" id="form6ExampleC1" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="CXXX" />
+                            <label class="form-label text-white" for="form6ExampleC1">ID</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="form6Example2" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx xxxxx xxxxx" />
-                            <label class="form-label text-white" for="form6Example2">Name</label>
+                            <input type="text" id="form6ExampleC2" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx xxxxx xxxxx" />
+                            <label class="form-label text-white" for="form6ExampleC2">Name</label>
                         </div>
                     </div>
 
@@ -215,24 +226,24 @@
                     <div class="col">
                         <!-- Age -->
                         <div class="form-outline ">
-                            <input type="number" id="form6Example5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xx.xx.19xx"/>
-                            <label class="form-label text-white" for="form6Example5">DOB</label>
+                            <input type="number" id="form6ExampleC5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xx.xx.19xx"/>
+                            <label class="form-label text-white" for="form6ExampleC5">DOB</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- Phone Number -->
                         <div class="form-outline ">
-                            <input type="tel" id="form6Example8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="0xx-xxxxxxx"/>
-                            <label class="form-label text-white" for="form6Example8">Contact</label>
+                            <input type="tel" id="form6ExampleC8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="0xx-xxxxxxx"/>
+                            <label class="form-label text-white" for="form6ExampleC8">Contact</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- NIC -->
                         <div class="form-outline">
-                            <input type="text" id="form6Example7" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxxxxxxxxV"/>
-                            <label class="form-label text-white" for="form6Example7">NIC</label>
+                            <input type="text" id="form6ExampleC7" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxxxxxxxxV"/>
+                            <label class="form-label text-white" for="form6ExampleC7">NIC</label>
                         </div>
                     </div>
                 </div>
@@ -401,27 +412,27 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <input type="text" id="form6Example1" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="IXXX" />
-                            <label class="form-label text-white" for="form6Example1">Item Code</label>
+                            <input type="text" id="form6ExampleI1" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="IXXX" />
+                            <label class="form-label text-white" for="form6ExampleI1">Item Code</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <select class="form-select form-select-sm rounded rounded-pill shadow mt-3" id="form6Example2" >
+                            <select class="form-select form-select-sm rounded rounded-pill shadow mt-3" id="form6ExampleI2" >
                                 <option selected>xxxxx</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
-                            <label class="form-label text-white" for="form6Example2">Kind</label>
+                            <label class="form-label text-white" for="form6ExampleI2">Kind</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="form6Example3" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
-                            <label class="form-label text-white" for="form6Example3">Item Name</label>
+                            <input type="text" id="form6ExampleI3" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
+                            <label class="form-label text-white" for="form6ExampleI3">Item Name</label>
                         </div>
                     </div>
 
@@ -431,16 +442,16 @@
                     <div class="col">
                         <!-- Qty -->
                         <div class="form-outline ">
-                            <input type="number" id="form6Example5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxx"/>
-                            <label class="form-label text-white" for="form6Example5">Quantity</label>
+                            <input type="number" id="form6ExampleI5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxx"/>
+                            <label class="form-label text-white" for="form6ExampleI5">Quantity</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- Price -->
                         <div class="form-outline ">
-                            <input type="number" id="form6Example8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="00.00"/>
-                            <label class="form-label text-white" for="form6Example8">Unit Price</label>
+                            <input type="number" id="form6ExampleI8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="00.00"/>
+                            <label class="form-label text-white" for="form6ExampleI8">Unit Price</label>
                         </div>
                     </div>
 
@@ -543,9 +554,30 @@
 
 <script>
     document.getElementById("customer").addEventListener("click",function () {
-        document.getElementById("homeSec").remove();
-        document.getElementById("name").remove();
+        document.getElementById("homeSec").style.display="none";
+        document.getElementById("itemSec").style.display="none";
+        document.getElementById("itemName").style.display="none";
+        document.getElementById("name").style.display="none";
+        document.getElementById("customerSec").style.display="block";
     });
+
+    document.getElementById("item").addEventListener("click",function () {
+        document.getElementById("homeSec").style.display="none";
+        document.getElementById("customerSec").style.display="none";
+        document.getElementById("customerName").style.display="none";
+        document.getElementById("name").style.display="none";
+        document.getElementById("itemSec").style.display="block";
+    });
+
+    document.getElementById("home").addEventListener("click",function () {
+        document.getElementById("itemSec").style.display="none";
+        document.getElementById("itemName").style.display="none";
+        document.getElementById("customerSec").style.display="none";
+        document.getElementById("customerName").style.display="none";
+        document.getElementById("name").style.display="block";
+        document.getElementById("homeSec").style.display="block";
+    });
+
 </script>
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
