@@ -16,8 +16,19 @@
         #customerSec{
             display: none;
         }
-
+        #customerName{
+            display: none;
+        }
         #itemSec{
+            display: none;
+        }
+        #itemName{
+            display: none;
+        }
+        #orderSec{
+            display: none;
+        }
+        #orderName{
             display: none;
         }
     </style>
@@ -60,7 +71,7 @@
                                 <i class="fas fa-shopping-cart fa-2x"></i>
                             </a>
                         </li>
-                        <li class="nav-item dropdown me-3">
+                        <li class="nav-item dropdown me-3" id="other">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-list-alt fa-2x"></i>
                             </a>
@@ -168,8 +179,8 @@
     </h1>
 
     <!--Customer-->
-    <div id="customerName" class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle d-flex justify-content-center w-25 " style="display: none">
-        <h2 class="text-white mb-0">
+    <div id="customerName" class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle  w-25 " style="display: none">
+        <h2 class="text-white mb-0 d-flex justify-content-center">
             <i class="fas fa-users"></i>
             Customer
         </h2>
@@ -372,8 +383,8 @@
     </section>
 
     <!--Item-->
-    <div id="itemName" class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle d-flex justify-content-center align-items-center w-25 ">
-        <h2 class="text-white mb-0">
+    <div id="itemName" class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle w-25 ">
+        <h2 class="text-white mb-0 d-flex justify-content-center">
             <i class="fas fa-box"></i>
             Item
         </h2>
@@ -549,6 +560,312 @@
 
     </section>
 
+    <!--Order-->
+    <div id="orderName" class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle w-25 ">
+        <h2 class="text-white mb-0 d-flex justify-content-center">
+            <i class="fas fa-shopping-cart"></i>
+            Place Order
+        </h2>
+    </div>
+
+    <section id="orderSec" class="container-fluid  rounded  mt-0 mb-4 "  style="background:transparent; box-shadow: -1px 1px 50px 10px black">
+
+        <!--3 section-->
+        <div class="row ">
+
+            <!--Customer details-->
+            <div class="col w-25 me-3 ms-3 mb-2 mt-2 border border-5 border-white shadow" style="background-color: #b6d4fe">
+
+                <div class="row bg-info">
+                    <h4>Invoice Details</h4>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0 mt-3" for="form6Example1">Order ID</label>
+                            <input type="text" id="form6Example1" class="form-control form-control-sm shadow mb-2" placeholder="OXXX" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0 mt-3" for="form6Example2">Order Date</label>
+                            <input type="date" id="form6Example2" class="form-control form-control-sm shadow mb-2"  />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <label class="form-label text-black mb-0 " >Customer ID</label>
+                        <div class="dropdown " style="background-color: white; height: 50%;border-radius: 3px">
+                            <button class="btn bg-white dropdown-toggle btn-sm float-end" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <!--Customer Idshdnfhfhkskfifhfg-->
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">C001</a></li>
+                                <li><a class="dropdown-item" href="#">C002</a></li>
+                                <li><a class="dropdown-item" href="#">C003</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6ExampleO4">Name</label>
+                            <input type="text" id="form6ExampleO4" class="form-control form-control-sm shadow mb-2" placeholder="xxxxx" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6ExampleO5">Contact</label>
+                            <input type="tel" id="form6ExampleO5" class="form-control form-control-sm shadow mb-2" placeholder="0xx-xxxxxxx" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6ExampleO6">NIC</label>
+                            <input type="text" id="form6ExampleO6" class="form-control form-control-sm shadow mb-2" placeholder="xxxxxxxxxV" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6ExampleO7">Address</label>
+                            <input type="text" id="form6ExampleO7" class="form-control form-control-sm shadow mb-3" placeholder="xxxxx" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--choose items-->
+            <div class="col w-25 me-3 ms-3 mb-2 border border-5 border-white mt-2 shadow" style="background-color: #20c997">
+                <div class="row " style="background-color: darkcyan">
+                    <h4>Item Selection</h4>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <label class="form-label text-black mb-0 mt-3" >Item Code</label>
+                        <div class="dropdown" style="background-color: white; height: 40%; border-radius: 3px">
+                            <button class="btn bg-white dropdown-toggle btn-sm float-end" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="true" >
+
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"><li><a class="dropdown-item" href="#">I001</a></li>
+                                <li><a class="dropdown-item" href="#">I002</a></li>
+                                <li><a class="dropdown-item" href="#">I003</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0 mt-3" for="form6ExampleO9">Item Name</label>
+                            <input type="text" id="form6ExampleO9" class="form-control form-control-sm shadow mb-2" placeholder="xxxx" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6ExampleO10">Kind</label>
+                            <input type="text" id="form6ExampleO10" class="form-control form-control-sm shadow mb-2" placeholder="xxxx" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6ExampleO11">Unit Price</label>
+                            <input type="number" id="form6ExampleO11" class="form-control form-control-sm shadow mb-2" placeholder="00.00" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6ExampleO12">Quantity On Hand</label>
+                            <input type="number" id="form6ExampleO12" class="form-control form-control-sm shadow mb-2" placeholder="xx" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6ExampleO13">Order Quantity</label>
+                            <input type="number" id="form6ExampleO13" class="form-control form-control-sm shadow mb-2" placeholder="xx" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <form>
+                        <button type="submit" class="btn btn-success btn-sm btn-block shadow float-end mt-4 mb-3">
+                            <i class="fas fa-cart-plus"></i>
+                            Add cart
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!--total price details-->
+            <div class="col w-25 me-3 ms-3 mb-2 mt-2 border border-5 border-white shadow" style="background-color: #f5c2c7">
+                <div class="row" style="background-color: #cf6a87">
+                    <h4>Final Total</h4>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-primary mb-0 mt-3" for="gross">Gross Amount :</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <input type="number" id="gross" class="form-control form-control-sm shadow mb-2 mt-3 text-primary" placeholder="00.00" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-danger mb-0 mt-1" for="net">Net Amount :</label>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <input type="number" id="net" class="form-control form-control-sm shadow mb-2 mt-1 text-danger" placeholder="00.00" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0 mt-2" for="form6ExampleO14">Cash</label>
+                            <input type="number" id="form6ExampleO14" class="form-control form-control-sm shadow mb-2" placeholder="00.00" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0 mt-2" for="form6ExampleO15">Discount</label>
+                            <input type="number" id="form6ExampleO15" class="form-control form-control-sm shadow mb-2 " placeholder="00.00" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="form6ExampleO16">Balance</label>
+                            <input type="number" id="form6ExampleO16" class="form-control form-control-sm shadow mb-2" placeholder="00.00" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form row ">
+                    <form class="text-center">
+                        <button type="submit" class="btn btn-danger btn-sm btn-block shadow  mt-2 mb-3 rounded-pill">
+                            <i class="fas fa-coins"></i>
+                            Purchase
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--table-->
+        <div class="bg-white  mt-2 row ms-1 me-1 mb-2">
+            <table class="table table-hover  table-sm table-striped table-bordered border-white table shadow">
+                <thead  style="background-color: #a29bfe; color: white">
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Kind</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col" >Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody  style="background-color:white ">
+                <tr>
+                    <td>I001</td>
+                    <td>Kind1</td>
+                    <td>Name1</td>
+                    <td>2</td>
+                    <td>100.00</td>
+                    <td>200.00</td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-edit fa-1x" aria-hidden="true" style="color: #e056fd;"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>I002</td>
+                    <td>Kind2</td>
+                    <td>Name2</td>
+                    <td>1</td>
+                    <td>120.00</td>
+                    <td>120.00</td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-edit fa-1x " aria-hidden="true" style="color: #e056fd" ></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>I003</td>
+                    <td>Kind3</td>
+                    <td>Name3</td>
+                    <td>3</td>
+                    <td>80.00</td>
+                    <td>240.00</td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-edit fa-1x" aria-hidden="true" style="color: #e056fd"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
 </main>
 
 
@@ -558,7 +875,10 @@
         document.getElementById("itemSec").style.display="none";
         document.getElementById("itemName").style.display="none";
         document.getElementById("name").style.display="none";
+        document.getElementById("orderSec").style.display="none";
+        document.getElementById("orderName").style.display="none";
         document.getElementById("customerSec").style.display="block";
+        document.getElementById("customerName").style.display="block";
     });
 
     document.getElementById("item").addEventListener("click",function () {
@@ -566,7 +886,10 @@
         document.getElementById("customerSec").style.display="none";
         document.getElementById("customerName").style.display="none";
         document.getElementById("name").style.display="none";
+        document.getElementById("orderSec").style.display="none";
+        document.getElementById("orderName").style.display="none";
         document.getElementById("itemSec").style.display="block";
+        document.getElementById("itemName").style.display="block";
     });
 
     document.getElementById("home").addEventListener("click",function () {
@@ -574,13 +897,25 @@
         document.getElementById("itemName").style.display="none";
         document.getElementById("customerSec").style.display="none";
         document.getElementById("customerName").style.display="none";
+        document.getElementById("orderSec").style.display="none";
+        document.getElementById("orderName").style.display="none";
         document.getElementById("name").style.display="block";
         document.getElementById("homeSec").style.display="block";
     });
 
+    document.getElementById("order").addEventListener("click",function () {
+        document.getElementById("itemSec").style.display="none";
+        document.getElementById("itemName").style.display="none";
+        document.getElementById("customerSec").style.display="none";
+        document.getElementById("customerName").style.display="none";
+        document.getElementById("name").style.display="none";
+        document.getElementById("homeSec").style.display="none";
+        document.getElementById("orderSec").style.display="block";
+        document.getElementById("orderName").style.display="block";
+    });
+
 </script>
 
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>
