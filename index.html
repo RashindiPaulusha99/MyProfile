@@ -3432,7 +3432,9 @@
         }
 
         .wrapper{
-            position: relative;
+            position: absolute;
+            top: 50px;
+            left: 600px;
             width: 320px;
             margin: 150px auto;
             perspective: 1000px;
@@ -3662,7 +3664,7 @@
 
         @media all and (max-width: 320px) and (max-width: 374px){
 
-            body > main > section:nth-child(6) > section > div {
+            /*body > main > section:nth-child(6) > section > div {
                 border: 10px solid #4b4b4b;
             }
 
@@ -3808,6 +3810,55 @@
 
             body > main > section:nth-child(6) > section > div:nth-child(6) {
                 display: none;
+            }*/
+
+            .wrapper{
+                position: absolute;
+                left: 0;
+                margin: 136px auto;
+                top: 18px;
+                width: 318px;
+            }
+
+            body > main > section:nth-child(6) > section:nth-child(1){
+                width: 500px;
+                height: 600px;
+            }
+
+            .single_img{
+                width: 123px;
+                height: 95px;
+                top: 107px;
+                left: 91px;
+            }
+
+            .single_img img{
+                width: 123px;
+                height: 95px;
+                border: 10px inset white;
+            }
+
+            .single_img.img1{
+                transform: rotateY(0deg) translateX(50px);
+            }
+            .single_img.img2{
+                transform: rotateY(60deg) translateX(50px);
+            }
+            .single_img.img3{
+                transform: rotateY(120deg) translateX(50px);
+            }
+            .single_img.img4{
+                transform: rotateY(180deg) translateX(50px);
+            }
+            .single_img.img5{
+                transform: rotateY(240deg) translateX(50px);
+            }
+            .single_img.img6{
+                transform: rotateY(300deg) translateX(50px);
+            }
+
+            body > main > section:nth-child(6) > div:nth-child(3) > form > button {
+                top: 454px;
             }
 
         }
