@@ -366,27 +366,22 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <input type="text" id="form6ExampleI1" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="IXXX" />
-                            <label class="form-label text-black" for="form6ExampleI1">Item Code</label>
+                            <input type="text" id="itemCode" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="IXXX" />
+                            <label class="form-label text-black" for="itemCode">Item Code</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <select class="form-select form-select-sm rounded rounded-pill shadow mt-3" id="form6ExampleI2" >
-                                <option selected>xxxxx</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <label class="form-label text-black" for="form6ExampleI2">Kind</label>
+                            <input type="text" id="kind" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxx" />
+                            <label class="form-label text-black" for="kind">Kind</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="form6ExampleI3" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
-                            <label class="form-label text-black" for="form6ExampleI3">Item Name</label>
+                            <input type="text" id="nameOfItem" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
+                            <label class="form-label text-black" for="nameOfItem">Item Name</label>
                         </div>
                     </div>
 
@@ -396,37 +391,37 @@
                     <div class="col">
                         <!-- Qty -->
                         <div class="form-outline ">
-                            <input type="number" id="form6ExampleI5" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxx"/>
-                            <label class="form-label text-black" for="form6ExampleI5">Quantity</label>
+                            <input type="number" id="qty" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxx"/>
+                            <label class="form-label text-black" for="qty">Quantity</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- Price -->
                         <div class="form-outline ">
-                            <input type="number" id="form6ExampleI8" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="00.00"/>
-                            <label class="form-label text-black" for="form6ExampleI8">Unit Price</label>
+                            <input type="number" id="unitPrice" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="00.00"/>
+                            <label class="form-label text-black" for="unitPrice">Unit Price</label>
                         </div>
                     </div>
 
                 </div>
 
                 <!-- Save button -->
-                <button type="submit" class="btn btn-info btn-sm btn-block mb-4 shadow">
+                <button type="submit" class="btn btn-info btn-sm btn-block mb-4 shadow" id="btnSaveItem">
                     <i class="fas fa-plus-square"></i>
                     Save
                 </button>
 
                 <!-- Edit button -->
-                <button type="submit" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd">
+                <button type="submit" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd" id="btnEditItem">
                     <i class="fas fa-edit"></i>
                     Edit
                 </button>
 
                 <!-- Delete button -->
-                <button type="submit" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b">
+                <button type="submit" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b" id="btnDeleteItem">
                     <i class="fas fa-trash-alt"></i>
-                    Clear
+                    Delete
                 </button>
             </form>
         </div>
