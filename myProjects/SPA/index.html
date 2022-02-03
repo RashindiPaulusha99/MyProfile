@@ -883,15 +883,25 @@
 
     $("#btnSaveCustomer").click(function () {
 
-        var cusId = $("#customerId").val();
-        var cusName = $("#nameOfCustomer").val();
-        var cusDOB = $("#dob").val();
-        var cusContact = $("#contact").val();
-        var cusNIC = $("#nic").val();
-        var cusAddress = $("#address").val();
-        var cusEmail = $("#email").val();
+        let cusId = $("#customerId").val();
+        let cusName = $("#nameOfCustomer").val();
+        let cusDOB = $("#dob").val();
+        let cusContact = $("#contact").val();
+        let cusNIC = $("#nic").val();
+        let cusAddress = $("#address").val();
+        let cusEmail = $("#email").val();
         $("#tblCustomer tbody").append(`<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusDOB} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`);
 
+    });
+
+    $("#btnSaveItem").click(function () {
+
+        let itemCode = $("#itemCode").val();
+        let kind = $("#kind").val();
+        let itemName = $("#nameOfItem").val();
+        let qty = $("#qty").val();
+        let unitPrice = $("#unitPrice").val();
+        $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
     });
 
 </script>
