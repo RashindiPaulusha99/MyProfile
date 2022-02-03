@@ -881,6 +881,19 @@
         $("#name").css('display','none');
     });
 
+    $("#btnSaveCustomer").click(function () {
+
+        var cusId = $("#customerId").val();
+        var cusName = $("#nameOfCustomer").val();
+        var cusDOB = $("#dob").val();
+        var cusContact = $("#contact").val();
+        var cusNIC = $("#nic").val();
+        var cusAddress = $("#address").val();
+        var cusEmail = $("#email").val();
+        $("#tblCustomer tbody").append(`<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusDOB} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`);
+
+    });
+
 </script>
 
 
