@@ -904,6 +904,17 @@
         $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
     });
 
+    $("#tblCustomer tbody > tr").click(function () {
+
+        $("#customerId").val($(this).children(':nth-child(1)').text());
+        $("#nameOfCustomer").val($(this).children(':nth-child(2)').text());
+        $("#dob").val($(this).children(':nth-child(3)').text());
+        $("#contact").val($(this).children(':nth-child(4)').text());
+        $("#nic").val($(this).children(':nth-child(5)').text());
+        $("#address").val($(this).children(':nth-child(6)').text());
+        $("#email").val($(this).children(':nth-child(7)').text());
+    });
+
 </script>
 
 
