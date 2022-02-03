@@ -214,10 +214,10 @@
 
                 <div class="form row ">
                     <div class="col">
-                        <!-- Age -->
+                        <!-- Gender -->
                         <div class="form-outline ">
-                            <input type="number" id="dob" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xx.xx.19xx"/>
-                            <label class="form-label text-black" for="dob">DOB</label>
+                            <input type="text" id="gender" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xx"/>
+                            <label class="form-label text-black" for="gender">Gender</label>
                         </div>
                     </div>
 
@@ -278,7 +278,7 @@
 
         <!--table-->
         <div class=" mt-2 row ms-1 me-1 mb-2 " style="background: white;overflow: scroll; display: block; height: 150px">
-            <table id="tblCustomer" class="table table-hover  table-sm table-striped table-bordered border-white table shadow">
+            <table id="tblCustomer" class="table table-hover  table-sm table-striped table-bordered border-white table shadow" >
                 <thead  style="background-color: #a29bfe; color: white">
                 <tr>
                     <th scope="col" id="colId">ID</th>
@@ -294,7 +294,7 @@
                 <tr>
                     <td>C001</td>
                     <td>Mark</td>
-                    <td>20.02.1999</td>
+                    <td>Male</td>
                     <td>078-7991075</td>
                     <td>995371286V</td>
                     <td>Galle</td>
@@ -303,7 +303,7 @@
                 <tr>
                     <td>C002</td>
                     <td>Peter</td>
-                    <td>22.03.1998</td>
+                    <td>Male</td>
                     <td>078-7991077</td>
                     <td>995371266V</td>
                     <td>Colombo</td>
@@ -312,7 +312,7 @@
                 <tr>
                     <td>C003</td>
                     <td>Maria</td>
-                    <td>20.05.1997</td>
+                    <td>Female</td>
                     <td>078-7991078</td>
                     <td>995371283V</td>
                     <td>Panadura</td>
@@ -885,12 +885,12 @@
 
         let cusId = $("#customerId").val();
         let cusName = $("#nameOfCustomer").val();
-        let cusDOB = $("#dob").val();
+        let cusGender = $("#gender").val();
         let cusContact = $("#contact").val();
         let cusNIC = $("#nic").val();
         let cusAddress = $("#address").val();
         let cusEmail = $("#email").val();
-        $("#tblCustomer tbody").append(`<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusDOB} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`);
+        $("#tblCustomer tbody").append(`<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`);
 
     });
 
@@ -908,7 +908,7 @@
 
         $("#customerId").val($(this).children(':nth-child(1)').text());
         $("#nameOfCustomer").val($(this).children(':nth-child(2)').text());
-        $("#dob").val($(this).children(':nth-child(3)').text());
+        $("#gender").val($(this).children(':nth-child(3)').text());
         $("#contact").val($(this).children(':nth-child(4)').text());
         $("#nic").val($(this).children(':nth-child(5)').text());
         $("#address").val($(this).children(':nth-child(6)').text());
