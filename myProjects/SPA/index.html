@@ -279,20 +279,20 @@
         </div>
 
         <!--table-->
-        <div class=" mt-2 row ms-1 me-1 mb-2 " style="background: white;overflow: scroll; display: block; height: 150px">
-            <table id="tblCustomer" class="table table-hover  table-sm table-striped table-bordered border-white table shadow" >
+        <div class=" mt-2 row ms-1 me-1 mb-2 " style="/*background: white;*//*overflow: scroll;*/ /*display: block;*/ /*height: 150px*/">
+            <table id="tblCustomer" class="table table-hover" >
                 <thead  style="background-color: #a29bfe; color: white">
                 <tr>
                     <th scope="col" id="colId">ID</th>
                     <th scope="col" id="colName">Name</th>
-                    <th scope="col" id="colDOB">DOB</th>
+                    <th scope="col" id="colGender">Gender</th>
                     <th scope="col" id="colContact">Contact</th>
                     <th scope="col" id="colNIC">NIC</th>
                     <th scope="col" id="colAddress">Address</th>
                     <th scope="col" id="colEmail">E-mail</th>
                 </tr>
                 </thead>
-                <tbody id="body" style="background-color:white;  overflow: scroll; height: 100px;collapse: 7" class="overflow-scroll">
+                <tbody id="body" style="background-color: white;" >
 
                 </tbody>
             </table>
@@ -403,8 +403,8 @@
         </div>
 
         <!--table-->
-        <div class="mt-2 row ms-1 me-1 mb-2" style="background: white;overflow: scroll; display: block; height: 150px">
-            <table class="table table-hover  table-sm table-striped table-bordered border-white table shadow" id="tblItem">
+        <div class="mt-2 row ms-1 me-1 mb-2" style="/*background: white;*//*overflow: scroll;*/ /*display: block;*/ /*height: 150px*/">
+            <table class="table table-hover " id="tblItem">
                 <thead  style="background-color: #a29bfe; color: white">
                 <tr>
                     <th scope="col">Code</th>
@@ -792,6 +792,8 @@
 
     $("#btnSaveCustomer").click(function () {
 
+        $("#tblCustomer tbody > tr").off("click");
+
         let cusId = $("#customerId").val();
         let cusName = $("#nameOfCustomer").val();
         let cusGender = $("#gender").val();
@@ -799,9 +801,8 @@
         let cusNIC = $("#nic").val();
         let cusAddress = $("#address").val();
         let cusEmail = $("#email").val();
-        $("#tblCustomer tbody").append(`<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`);
-
-        $("#tblCustomer tbody > tr").off("click");
+        let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
+        $("#tblCustomer tbody").append(raw);
 
         $("#tblCustomer tbody > tr").click(function () {
 
@@ -814,6 +815,57 @@
             $("#email").val($(this).children(':nth-child(7)').text());
         });
 
+    });
+
+    $("#customerId").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#nameOfCustomer").focus();
+            // $("#btnSaveCustomer").off();
+        }
+    });
+    $("#nameOfCustomer").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#gender").focus();
+
+        }
+    });
+    $("#gender").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#contact").focus();
+
+        }
+    });
+    $("#contact").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#nic").focus();
+
+        }
+    });
+    $("#nic").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#address").focus();
+
+        }
+    });
+    $("#address").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#email").focus();
+
+        }
+    });
+    $("#email").keydown(function (event) {
+        if (event.key=="Enter"){
+            let cusId = $("#customerId").val();
+            let cusName = $("#nameOfCustomer").val();
+            let cusGender = $("#gender").val();
+            let cusContact = $("#contact").val();
+            let cusNIC = $("#nic").val();
+            let cusAddress = $("#address").val();
+            let cusEmail = $("#email").val();
+            let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
+            $("#tblCustomer tbody").append(raw);
+            /*$("#btnSaveCustomer").on("click");*/
+        }
     });
 
     $("#btnSaveItem").click(function () {
@@ -836,6 +888,37 @@
             $("#unitPrice").val($(this).children(':nth-child(5)').text());
         });
 
+    });
+
+    $("#itemCode").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#kind").focus();
+
+        }
+    });
+    $("#kind").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#nameOfItem").focus();
+
+        }
+    });
+    $("#nameOfItem").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#qty").focus();
+
+        }
+    });
+    $("#qty").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#unitPrice").focus();
+
+        }
+    });
+    $("#unitPrice").keydown(function (event) {
+        if (event.key=="Enter"){
+            /*$("#unitPrice").focus();*/
+
+        }
     });
 
 
