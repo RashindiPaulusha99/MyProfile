@@ -173,7 +173,7 @@
         <div class="row mb-4" style="background: #706fd3">
             <form >
                 <!--Search-->
-                <input class="form-control-sm me-0 mt-2 mb-2 w-50 border border-white" type="search" placeholder="Input NIC/Name/Phone Number Here" aria-label="Search" />
+                <input class="form-control-sm me-0 mt-2 mb-2 w-50 border border-white" type="search" placeholder="Input NIC/Name/Phone Number Here" aria-label="Search" id="searchCustomer" />
                 <button class="btn btn-primary btn-sm ms-0 " type="submit" style="box-shadow: -1px 1px 30px 5px white">
                     <i class="fas fa-search"></i>
                 </button>
@@ -751,6 +751,8 @@
         $("#orderSec").css('display','none');
         $("#homeSec").css('display','none');
         $("#name").css('display','none');
+
+        $("#customerId").focus();
     });
 
     $("#item").click(function () {
@@ -762,6 +764,8 @@
         $("#orderSec").css('display','none');
         $("#homeSec").css('display','none');
         $("#name").css('display','none');
+
+        $("#itemCode").focus();
     });
 
     $("#home").click(function () {
