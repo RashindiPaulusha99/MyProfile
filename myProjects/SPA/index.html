@@ -792,6 +792,10 @@
 
     $("#btnSaveCustomer").click(function () {
 
+        if ($("#btnSaveCustomer").off()){
+            $("#btnSaveCustomer").on("click");
+        }
+
         $("#tblCustomer tbody > tr").off("click");
 
         let cusId = $("#customerId").val();
@@ -820,7 +824,7 @@
     $("#customerId").keydown(function (event) {
         if (event.key=="Enter"){
             $("#nameOfCustomer").focus();
-            // $("#btnSaveCustomer").off();
+            $("#btnSaveCustomer").off();
         }
     });
     $("#nameOfCustomer").keydown(function (event) {
@@ -864,9 +868,11 @@
             let cusEmail = $("#email").val();
             let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
             $("#tblCustomer tbody").append(raw);
-            /*$("#btnSaveCustomer").on("click");*/
         }
     });
+    /*if ($("#btnSaveCustomer").off()){
+        $("#btnSaveCustomer").on("click");
+    }*/
 
     $("#btnSaveItem").click(function () {
 

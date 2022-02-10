@@ -1,0 +1,50 @@
+<!--/**
+* @author : Sanu Vithanage
+* @since : 0.1.0
+**/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events</title>
+    <style>
+        div {
+            background: red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body id="body">
+<h1 id="hello">Hello IJSE...!</h1>
+<div id="firstDiv">
+
+</div>
+
+
+<script src="assets/jquery/jquery-3.6.0.min.js"></script>
+<script>
+
+    $("#body").mousemove(function (event) {
+        var x=event.pageX;
+        var y=event.pageY;
+        $("#hello").css('position','absolute');
+        $("#hello").css('left',x);
+        $("#hello").css('top',y);
+
+    });
+
+    /*$("div").mouseup(function () {
+        console.log("Mouse Up")
+    });
+
+    $("div").mousedown(function () {
+        console.log("Mouse Down")
+    });
+
+    $("div").mousemove(function () {
+        console.log("Mouse Move")
+    });*/
+</script>
+</body>
+</html>
