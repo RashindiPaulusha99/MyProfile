@@ -293,33 +293,7 @@
                 </tr>
                 </thead>
                 <tbody id="body" style="background-color:white;  overflow: scroll; height: 100px;collapse: 7" class="overflow-scroll">
-                <tr>
-                    <td>C001</td>
-                    <td>Mark</td>
-                    <td>Male</td>
-                    <td>078-7991075</td>
-                    <td>995371286V</td>
-                    <td>Galle</td>
-                    <td>mo@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>C002</td>
-                    <td>Peter</td>
-                    <td>Male</td>
-                    <td>078-7991077</td>
-                    <td>995371266V</td>
-                    <td>Colombo</td>
-                    <td>pe@gmail.com</td>
-                </tr>
-                <tr>
-                    <td>C003</td>
-                    <td>Maria</td>
-                    <td>Female</td>
-                    <td>078-7991078</td>
-                    <td>995371283V</td>
-                    <td>Panadura</td>
-                    <td>mm@gmail.com</td>
-                </tr>
+
                 </tbody>
             </table>
 
@@ -441,27 +415,7 @@
                 </tr>
                 </thead>
                 <tbody  style="background-color:white ">
-                <tr>
-                    <td>I001</td>
-                    <td>Kind1</td>
-                    <td>Name1</td>
-                    <td>500</td>
-                    <td>100.00</td>
-                </tr>
-                <tr>
-                    <td>I002</td>
-                    <td>Kind2</td>
-                    <td>Name2</td>
-                    <td>600</td>
-                    <td>120.00</td>
-                </tr>
-                <tr>
-                    <td>I003</td>
-                    <td>Kind3</td>
-                    <td>Name3</td>
-                    <td>1000</td>
-                    <td>80.00</td>
-                </tr>
+
                 </tbody>
             </table>
         </div>
@@ -780,12 +734,6 @@
 <script src="assets/jquery/jquery-3.6.0.min.js"></script>
 
 <script>
-    /*document.getElementById("customerName").style.display="none";
-    document.getElementById("customerSec").style.display="none";
-    document.getElementById("itemName").style.display="none";
-    document.getElementById("itemSec").style.display="none";
-    document.getElementById("orderName").style.display="none";
-    document.getElementById("orderSec").style.display="none";*/
 
     $("#customerName").css('display','none');
     $("#customerSec").css('display','none');
@@ -793,18 +741,6 @@
     $("#itemSec").css('display','none');
     $("#orderName").css('display','none');
     $("#orderSec").css('display','none');
-
-
-    /*document.getElementById("customer").addEventListener("click",function () {
-        document.getElementById("homeSec").style.display="none";
-        document.getElementById("itemSec").style.display="none";
-        document.getElementById("itemName").style.display="none";
-        document.getElementById("name").style.display="none";
-        document.getElementById("orderSec").style.display="none";
-        document.getElementById("orderName").style.display="none";
-        document.getElementById("customerSec").style.display="block";
-        document.getElementById("customerName").style.display="block";
-    });*/
 
     $("#customer").click(function () {
         $("#customerName").css('display','block');
@@ -817,17 +753,6 @@
         $("#name").css('display','none');
     });
 
-    /*document.getElementById("item").addEventListener("click",function () {
-        document.getElementById("homeSec").style.display="none";
-        document.getElementById("customerSec").style.display="none";
-        document.getElementById("customerName").style.display="none";
-        document.getElementById("name").style.display="none";
-        document.getElementById("orderSec").style.display="none";
-        document.getElementById("orderName").style.display="none";
-        document.getElementById("itemSec").style.display="block";
-        document.getElementById("itemName").style.display="block";
-    });*/
-
     $("#item").click(function () {
         $("#customerName").css('display','none');
         $("#customerSec").css('display','none');
@@ -839,17 +764,6 @@
         $("#name").css('display','none');
     });
 
-    /*document.getElementById("home").addEventListener("click",function () {
-        document.getElementById("itemSec").style.display="none";
-        document.getElementById("itemName").style.display="none";
-        document.getElementById("customerSec").style.display="none";
-        document.getElementById("customerName").style.display="none";
-        document.getElementById("orderSec").style.display="none";
-        document.getElementById("orderName").style.display="none";
-        document.getElementById("name").style.display="block";
-        document.getElementById("homeSec").style.display="block";
-    });*/
-
     $("#home").click(function () {
         $("#customerName").css('display','none');
         $("#customerSec").css('display','none');
@@ -860,17 +774,6 @@
         $("#homeSec").css('display','block');
         $("#name").css('display','block');
     });
-
-    /*document.getElementById("order").addEventListener("click",function () {
-        document.getElementById("itemSec").style.display="none";
-        document.getElementById("itemName").style.display="none";
-        document.getElementById("customerSec").style.display="none";
-        document.getElementById("customerName").style.display="none";
-        document.getElementById("name").style.display="none";
-        document.getElementById("homeSec").style.display="none";
-        document.getElementById("orderSec").style.display="block";
-        document.getElementById("orderName").style.display="block";
-    });*/
 
     $("#order").click(function () {
         $("#customerName").css('display','none');
@@ -894,6 +797,19 @@
         let cusEmail = $("#email").val();
         $("#tblCustomer tbody").append(`<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`);
 
+        $("#tblCustomer tbody > tr").off("click");
+
+        $("#tblCustomer tbody > tr").click(function () {
+
+            $("#customerId").val($(this).children(':nth-child(1)').text());
+            $("#nameOfCustomer").val($(this).children(':nth-child(2)').text());
+            $("#gender").val($(this).children(':nth-child(3)').text());
+            $("#contact").val($(this).children(':nth-child(4)').text());
+            $("#nic").val($(this).children(':nth-child(5)').text());
+            $("#address").val($(this).children(':nth-child(6)').text());
+            $("#email").val($(this).children(':nth-child(7)').text());
+        });
+
     });
 
     $("#btnSaveItem").click(function () {
@@ -904,29 +820,20 @@
         let qty = $("#qty").val();
         let unitPrice = $("#unitPrice").val();
         $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
+
+        $("#tblItem tbody > tr").off("click");
+
+        $("#tblItem tbody > tr").click(function () {
+
+            $("#itemCode").val($(this).children(':nth-child(1)').text());
+            $("#kind").val($(this).children(':nth-child(2)').text());
+            $("#nameOfItem").val($(this).children(':nth-child(3)').text());
+            $("#qty").val($(this).children(':nth-child(4)').text());
+            $("#unitPrice").val($(this).children(':nth-child(5)').text());
+        });
+
     });
 
-    $("#tblCustomer tbody > tr").click(function () {
-
-        $("#customerId").val($(this).children(':nth-child(1)').text());
-        $("#nameOfCustomer").val($(this).children(':nth-child(2)').text());
-        $("#gender").val($(this).children(':nth-child(3)').text());
-        $("#contact").val($(this).children(':nth-child(4)').text());
-        $("#nic").val($(this).children(':nth-child(5)').text());
-        $("#address").val($(this).children(':nth-child(6)').text());
-        $("#email").val($(this).children(':nth-child(7)').text());
-    });
-    
-    $("#tblItem tbody > tr").off("click");
-
-    $("#tblItem tbody > tr").click(function () {
-
-        $("#itemCode").val($(this).children(':nth-child(1)').text());
-        $("#kind").val($(this).children(':nth-child(2)').text());
-        $("#nameOfItem").val($(this).children(':nth-child(3)').text());
-        $("#qty").val($(this).children(':nth-child(4)').text());
-        $("#unitPrice").val($(this).children(':nth-child(5)').text());
-    });
 
 </script>
 
