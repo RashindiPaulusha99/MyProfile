@@ -824,7 +824,7 @@
     $("#customerId").keydown(function (event) {
         if (event.key=="Enter"){
             $("#nameOfCustomer").focus();
-            $("#btnSaveCustomer").off();
+            /*$("#btnSaveCustomer").off();*/
         }
     });
     $("#nameOfCustomer").keydown(function (event) {
@@ -870,9 +870,6 @@
             $("#tblCustomer tbody").append(raw);
         }
     });
-    /*if ($("#btnSaveCustomer").off()){
-        $("#btnSaveCustomer").on("click");
-    }*/
 
     $("#btnSaveItem").click(function () {
 
