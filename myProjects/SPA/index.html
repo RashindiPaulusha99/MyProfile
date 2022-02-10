@@ -200,7 +200,7 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <input type="text" id="customerId" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="CXXX" />
+                            <input type="text" id="customerId" class="form-control  mt-3 rounded rounded-pill shadow" placeholder="CXXX" />
                             <label class="form-label text-black" for="customerId">ID</label>
                         </div>
                     </div>
@@ -259,19 +259,19 @@
                 </div>
 
                 <!-- Save button -->
-                <button type="submit" class="btn btn-info btn-sm btn-block mb-4 shadow" id="btnSaveCustomer">
+                <button  class="btn btn-info btn-sm btn-block mb-4 shadow" id="btnSaveCustomer" type="button">
                     <i class="fas fa-plus-square"></i>
                     Save
                 </button>
 
                 <!-- Edit button -->
-                <button id="btnEditCustomer " type="submit" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd">
+                <button id="btnEditCustomer " type="button" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd">
                     <i class="fas fa-edit"></i>
                     Edit
                 </button>
 
                 <!-- Delete button -->
-                <button id="btnClearCustomer" type="submit" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b">
+                <button id="btnClearCustomer" type="button" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b">
                     <i class="fas fa-trash-alt"></i>
                     Delete
                 </button>
@@ -383,19 +383,19 @@
                 </div>
 
                 <!-- Save button -->
-                <button type="submit" class="btn btn-info btn-sm btn-block mb-4 shadow" id="btnSaveItem">
+                <button class="btn btn-info btn-sm btn-block mb-4 shadow" id="btnSaveItem" type="button">
                     <i class="fas fa-plus-square"></i>
                     Save
                 </button>
 
                 <!-- Edit button -->
-                <button type="submit" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd" id="btnEditItem">
+                <button class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd" id="btnEditItem" type="button">
                     <i class="fas fa-edit"></i>
                     Edit
                 </button>
 
                 <!-- Delete button -->
-                <button type="submit" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b" id="btnDeleteItem">
+                <button class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b" id="btnDeleteItem" type="button">
                     <i class="fas fa-trash-alt"></i>
                     Delete
                 </button>
@@ -790,11 +790,51 @@
         $("#name").css('display','none');
     });
 
-    $("#btnSaveCustomer").click(function () {
-
-        if ($("#btnSaveCustomer").off()){
-            $("#btnSaveCustomer").on("click");
+    $("#customerId").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#nameOfCustomer").focus();
         }
+    });
+    $("#nameOfCustomer").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#gender").focus();
+        }
+    });
+    $("#gender").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#contact").focus();
+        }
+    });
+    $("#contact").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#nic").focus();
+        }
+    });
+    $("#nic").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#address").focus();
+        }
+    });
+    $("#address").keydown(function (event) {
+        if (event.key=="Enter"){
+            $("#email").focus();
+        }
+    });
+    $("#email").keydown(function (event) {
+        if (event.key=="Enter"){
+            let cusId = $("#customerId").val();
+            let cusName = $("#nameOfCustomer").val();
+            let cusGender = $("#gender").val();
+            let cusContact = $("#contact").val();
+            let cusNIC = $("#nic").val();
+            let cusAddress = $("#address").val();
+            let cusEmail = $("#email").val();
+            let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
+            $("#tblCustomer tbody").append(raw);
+        }
+    });
+
+    $("#btnSaveCustomer").click(function (event) {
 
         $("#tblCustomer tbody > tr").off("click");
 
@@ -821,53 +861,34 @@
 
     });
 
-    $("#customerId").keydown(function (event) {
+    $("#itemCode").keydown(function (event) {
         if (event.key=="Enter"){
-            $("#nameOfCustomer").focus();
-            /*$("#btnSaveCustomer").off();*/
+            $("#kind").focus();
         }
     });
-    $("#nameOfCustomer").keydown(function (event) {
+    $("#kind").keydown(function (event) {
         if (event.key=="Enter"){
-            $("#gender").focus();
-
+            $("#nameOfItem").focus();
         }
     });
-    $("#gender").keydown(function (event) {
+    $("#nameOfItem").keydown(function (event) {
         if (event.key=="Enter"){
-            $("#contact").focus();
-
+            $("#qty").focus();
         }
     });
-    $("#contact").keydown(function (event) {
-        if (event.key=="Enter"){
-            $("#nic").focus();
-
+    $("#qty").keydown(function (event) {
+        if (event.key=="Enter") {
+            $("#unitPrice").focus();
         }
     });
-    $("#nic").keydown(function (event) {
+    $("#unitPrice").keydown(function (event) {
         if (event.key=="Enter"){
-            $("#address").focus();
-
-        }
-    });
-    $("#address").keydown(function (event) {
-        if (event.key=="Enter"){
-            $("#email").focus();
-
-        }
-    });
-    $("#email").keydown(function (event) {
-        if (event.key=="Enter"){
-            let cusId = $("#customerId").val();
-            let cusName = $("#nameOfCustomer").val();
-            let cusGender = $("#gender").val();
-            let cusContact = $("#contact").val();
-            let cusNIC = $("#nic").val();
-            let cusAddress = $("#address").val();
-            let cusEmail = $("#email").val();
-            let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
-            $("#tblCustomer tbody").append(raw);
+            let itemCode = $("#itemCode").val();
+            let kind = $("#kind").val();
+            let itemName = $("#nameOfItem").val();
+            let qty = $("#qty").val();
+            let unitPrice = $("#unitPrice").val();
+            $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
         }
     });
 
@@ -891,37 +912,6 @@
             $("#unitPrice").val($(this).children(':nth-child(5)').text());
         });
 
-    });
-
-    $("#itemCode").keydown(function (event) {
-        if (event.key=="Enter"){
-            $("#kind").focus();
-
-        }
-    });
-    $("#kind").keydown(function (event) {
-        if (event.key=="Enter"){
-            $("#nameOfItem").focus();
-
-        }
-    });
-    $("#nameOfItem").keydown(function (event) {
-        if (event.key=="Enter"){
-            $("#qty").focus();
-
-        }
-    });
-    $("#qty").keydown(function (event) {
-        if (event.key=="Enter"){
-            $("#unitPrice").focus();
-
-        }
-    });
-    $("#unitPrice").keydown(function (event) {
-        if (event.key=="Enter"){
-            /*$("#unitPrice").focus();*/
-
-        }
     });
 
 
