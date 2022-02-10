@@ -916,6 +916,8 @@
         $("#address").val($(this).children(':nth-child(6)').text());
         $("#email").val($(this).children(':nth-child(7)').text());
     });
+    
+    $("#tblItem tbody > tr").off("click");
 
     $("#tblItem tbody > tr").click(function () {
 
