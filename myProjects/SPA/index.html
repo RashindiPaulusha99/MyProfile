@@ -200,7 +200,7 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <input type="text" id="customerId" class="form-control  mt-3 rounded rounded-pill shadow" placeholder="CXXX" />
+                            <input type="text" id="customerId" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="CXXX" />
                             <label class="form-label text-black" for="customerId">ID</label>
                         </div>
                     </div>
@@ -217,10 +217,17 @@
                 <div class="form row ">
                     <div class="col">
                         <!-- Gender -->
-                        <div class="form-outline ">
+                        <div class="form-outline">
                             <input type="text" id="gender" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xx"/>
+                            <!--<select name="select" class="form-control form-control-sm rounded rounded-pill shadow" id="gender" >
+                                <option value="valor1" >Valor 1</option>
+                                <option value="valor2">Valor 2</option>
+                                <option value="valor3">Valor 3</option>
+                            </select>-->
                             <label class="form-label text-black" for="gender">Gender</label>
                         </div>
+
+
                     </div>
 
                     <div class="col">
@@ -271,9 +278,15 @@
                 </button>
 
                 <!-- Delete button -->
-                <button id="btnClearCustomer" type="button" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b">
+                <button id="btnDeleteCustomer" type="button" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b">
                     <i class="fas fa-trash-alt"></i>
                     Delete
+                </button>
+
+                <!-- Clear button -->
+                <button id="btnClearCustomer" type="button" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ffdd59">
+                    <i class="fas fa-eraser"></i>
+                    Clear
                 </button>
             </form>
         </div>
@@ -398,6 +411,12 @@
                 <button class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ff6b6b" id="btnDeleteItem" type="button">
                     <i class="fas fa-trash-alt"></i>
                     Delete
+                </button>
+
+                <!-- Clear button -->
+                <button id="btnClearItem" type="button" class="btn  btn-sm btn-block mb-4 shadow" style="background-color: #ffdd59">
+                    <i class="fas fa-eraser"></i>
+                    Clear
                 </button>
             </form>
         </div>
@@ -653,8 +672,8 @@
         </div>
 
         <!--table-->
-        <div class="bg-white  mt-2 row ms-1 me-1 mb-2">
-            <table class="table table-hover  table-sm table-striped table-bordered border-white table shadow">
+        <div class="  mt-2 row ms-1 me-1 mb-2">
+            <table class="table table-hover">
                 <thead  style="background-color: #a29bfe; color: white">
                 <tr>
                     <th scope="col">Code</th>
@@ -663,65 +682,10 @@
                     <th scope="col">Quantity</th>
                     <th scope="col">Unit Price</th>
                     <th scope="col">Total</th>
-                    <th scope="col" >Edit</th>
-                    <th scope="col">Delete</th>
                 </tr>
                 </thead>
-                <tbody  style="background-color:white ">
-                <tr>
-                    <td>I001</td>
-                    <td>Kind1</td>
-                    <td>Name1</td>
-                    <td>2</td>
-                    <td>100.00</td>
-                    <td>200.00</td>
-                    <td>
-                        <a href="#">
-                            <i class="far fa-edit fa-1x" aria-hidden="true" style="color: #e056fd;"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>I002</td>
-                    <td>Kind2</td>
-                    <td>Name2</td>
-                    <td>1</td>
-                    <td>120.00</td>
-                    <td>120.00</td>
-                    <td>
-                        <a href="#">
-                            <i class="far fa-edit fa-1x " aria-hidden="true" style="color: #e056fd" ></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>I003</td>
-                    <td>Kind3</td>
-                    <td>Name3</td>
-                    <td>3</td>
-                    <td>80.00</td>
-                    <td>240.00</td>
-                    <td>
-                        <a href="#">
-                            <i class="far fa-edit fa-1x" aria-hidden="true" style="color: #e056fd"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="#">
-                            <i class="far fa-trash-alt fa-1x " aria-hidden="true" style="color: #ff4757"></i>
-                        </a>
-                    </td>
-                </tr>
+                <tbody  style="background-color:white " id="tblOrder">
+
                 </tbody>
             </table>
         </div>
@@ -790,37 +754,64 @@
         $("#name").css('display','none');
     });
 
-    $("#customerId").keydown(function (event) {
-        if (event.key=="Enter"){
-            $("#nameOfCustomer").focus();
+    var regExCusID=/^(C00-)[0-9]{3,4}$/;
+    var regExCusName=/^[A-Z/a-z/ ]{3,20}$/;
+    var regExCusGender=/^(female)$/;
+
+    $("#customerId").keyup(function (event) {
+
+        let id = $("#customerId").val();
+        if (regExCusID.test(id)){
+            $("#customerId").css('border','2px solid green');
+            if (event.key=="Enter"){
+                $("#nameOfCustomer").focus();
+            }
+        }else {
+            $("#customerId").css('border','2px solid red');
         }
     });
-    $("#nameOfCustomer").keydown(function (event) {
-        if (event.key=="Enter"){
-            $("#gender").focus();
+
+    $("#nameOfCustomer").keyup(function (event) {
+
+        let name = $("#nameOfCustomer").val();
+        if (regExCusName.test(name)){
+            $("#nameOfCustomer").css('border','2px solid green');
+            if (event.key=="Enter"){
+                $("#gender").focus();
+            }
+        }else {
+            $("#nameOfCustomer").css('border','2px solid red');
         }
     });
-    $("#gender").keydown(function (event) {
-        if (event.key=="Enter"){
-            $("#contact").focus();
+
+    $("#gender").keyup(function (event) {
+
+        let gender = $("#gender").val();
+        if (regExCusGender.test(gender)){
+            $("#gender").css('border','2px solid green');
+            if (event.key=="Enter"){
+                $("#contact").focus();
+            }
+        }else {
+            $("#gender").css('border','2px solid red');
         }
     });
-    $("#contact").keydown(function (event) {
+    $("#contact").keyup(function (event) {
         if (event.key=="Enter"){
             $("#nic").focus();
         }
     });
-    $("#nic").keydown(function (event) {
+    $("#nic").keyup(function (event) {
         if (event.key=="Enter"){
             $("#address").focus();
         }
     });
-    $("#address").keydown(function (event) {
+    $("#address").keyup(function (event) {
         if (event.key=="Enter"){
             $("#email").focus();
         }
     });
-    $("#email").keydown(function (event) {
+    $("#email").keyup(function (event) {
         if (event.key=="Enter"){
             let cusId = $("#customerId").val();
             let cusName = $("#nameOfCustomer").val();
@@ -837,6 +828,7 @@
     $("#btnSaveCustomer").click(function (event) {
 
         $("#tblCustomer tbody > tr").off("click");
+        $("#tblCustomer tbody > tr").off("dblclick");
 
         let cusId = $("#customerId").val();
         let cusName = $("#nameOfCustomer").val();
@@ -859,29 +851,33 @@
             $("#email").val($(this).children(':nth-child(7)').text());
         });
 
+        $("#tblCustomer tbody > tr").dblclick(function () {
+            $(this).remove();
+        });
+
     });
 
-    $("#itemCode").keydown(function (event) {
+    $("#itemCode").keyup(function (event) {
         if (event.key=="Enter"){
             $("#kind").focus();
         }
     });
-    $("#kind").keydown(function (event) {
+    $("#kind").keyup(function (event) {
         if (event.key=="Enter"){
             $("#nameOfItem").focus();
         }
     });
-    $("#nameOfItem").keydown(function (event) {
+    $("#nameOfItem").keyup(function (event) {
         if (event.key=="Enter"){
             $("#qty").focus();
         }
     });
-    $("#qty").keydown(function (event) {
+    $("#qty").keyup(function (event) {
         if (event.key=="Enter") {
             $("#unitPrice").focus();
         }
     });
-    $("#unitPrice").keydown(function (event) {
+    $("#unitPrice").keyup(function (event) {
         if (event.key=="Enter"){
             let itemCode = $("#itemCode").val();
             let kind = $("#kind").val();
@@ -894,14 +890,15 @@
 
     $("#btnSaveItem").click(function () {
 
+        $("#tblItem tbody > tr").off("click");
+        $("#tblItem tbody > tr").off("dblclick");
+
         let itemCode = $("#itemCode").val();
         let kind = $("#kind").val();
         let itemName = $("#nameOfItem").val();
         let qty = $("#qty").val();
         let unitPrice = $("#unitPrice").val();
         $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
-
-        $("#tblItem tbody > tr").off("click");
 
         $("#tblItem tbody > tr").click(function () {
 
@@ -910,6 +907,10 @@
             $("#nameOfItem").val($(this).children(':nth-child(3)').text());
             $("#qty").val($(this).children(':nth-child(4)').text());
             $("#unitPrice").val($(this).children(':nth-child(5)').text());
+        });
+
+        $("#tblItem tbody > tr").dblclick(function () {
+            $(this).remove();
         });
 
     });

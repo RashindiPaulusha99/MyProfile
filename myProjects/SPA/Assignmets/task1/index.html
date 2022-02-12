@@ -25,7 +25,7 @@
 <script src="assets/jquery/jquery-3.6.0.min.js"></script>
 <script>
 
-    $("#body").mousemove(function (event) {
+    $(window).mousemove(function (event) {
         var x=event.pageX;
         var y=event.pageY;
         $("#hello").css('position','absolute');
@@ -34,17 +34,6 @@
 
     });
 
-    /*$("div").mouseup(function () {
-        console.log("Mouse Up")
-    });
-
-    $("div").mousedown(function () {
-        console.log("Mouse Down")
-    });
-
-    $("div").mousemove(function () {
-        console.log("Mouse Move")
-    });*/
 </script>
 </body>
 </html>
