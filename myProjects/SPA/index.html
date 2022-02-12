@@ -325,7 +325,7 @@
     <section id="itemSec" class="container-fluid w-75  rounded  mt-0 mb-4"  style="background:#20c997; box-shadow: -1px 1px 50px 10px black;border: 5px solid white">
 
         <!--buttons-->
-        <div class="row mb-4" style="background: darkcyan">
+        <div class="row mb-2" style="background: darkcyan">
             <form>
                 <!--Search-->
                 <input class="form-control-sm me-0 mt-2 mb-2 w-50 border border-white" type="search" placeholder="Input Code/Name Here" aria-label="Search" />
@@ -355,22 +355,22 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <input type="text" id="itemCode" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="IXXX" />
-                            <label class="form-label text-black" for="itemCode">Item Code</label>
+                            <label class="form-label text-black mt-1" for="itemCode">Item Code</label>
+                            <input type="text" id="itemCode" class="form-control form-control-sm mt-0 mb-2 rounded rounded-pill shadow" placeholder="IXXX" />
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="kind" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxx" />
-                            <label class="form-label text-black" for="kind">Kind</label>
+                            <label class="form-label text-black mt-1" for="kind">Kind</label>
+                            <input type="text" id="kind" class="form-control form-control-sm mt-0 mb-2 rounded rounded-pill shadow" placeholder="xxxx" />
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="nameOfItem" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx" />
-                            <label class="form-label text-black" for="nameOfItem">Item Name</label>
+                            <label class="form-label text-black mt-1" for="nameOfItem">Item Name</label>
+                            <input type="text" id="nameOfItem" class="form-control form-control-sm mt-0 mb-2 rounded rounded-pill shadow" placeholder="xxxxx" />
                         </div>
                     </div>
 
@@ -380,16 +380,16 @@
                     <div class="col">
                         <!-- Qty -->
                         <div class="form-outline ">
-                            <input type="number" id="qty" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxx"/>
-                            <label class="form-label text-black" for="qty">Quantity</label>
+                            <label class="form-label text-black mt-1" for="qty">Quantity</label>
+                            <input type="number" id="qty" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-3" placeholder="xxx"/>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- Price -->
                         <div class="form-outline ">
-                            <input type="number" id="unitPrice" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="00.00"/>
-                            <label class="form-label text-black" for="unitPrice">Unit Price</label>
+                            <label class="form-label text-black mt-1" for="unitPrice">Unit Price</label>
+                            <input type="number" id="unitPrice" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-3" placeholder="00.00"/>
                         </div>
                     </div>
 
@@ -893,34 +893,79 @@
 
     });
 
+    var regExItemID=/^(I00-)[0-9]{3,4}$/;
+    var regExKind=/^[A-Z|a-z\s]{3,20}$/;
+    var regExItemName=/^[A-Z|a-z\s]{3,20}$/;
+    var regExQuantity=/^[0-9]{3,20}$/;
+    var regExUnitPrice=/^[0-9]{1,10}(.00)$/;
+
     $("#itemCode").keyup(function (event) {
-        if (event.key=="Enter"){
-            $("#kind").focus();
+
+        let itemCode = $("#itemCode").val();
+        if (regExItemID.test(itemCode)){
+            $("#itemCode").css('border','2px solid green');
+            if (event.key=="Enter"){
+                $("#kind").focus();
+            }
+        }else {
+            $("#itemCode").css('border','2px solid red');
         }
     });
+
     $("#kind").keyup(function (event) {
-        if (event.key=="Enter"){
-            $("#nameOfItem").focus();
+
+        let kind = $("#kind").val();
+        if (regExKind.test(kind)){
+            $("#kind").css('border','2px solid green');
+            if (event.key=="Enter"){
+                $("#nameOfItem").focus();
+            }
+        }else {
+            $("#kind").css('border','2px solid red');
         }
     });
+
     $("#nameOfItem").keyup(function (event) {
-        if (event.key=="Enter"){
-            $("#qty").focus();
+
+        let itemName = $("#nameOfItem").val();
+        if (regExItemName.test(itemName)){
+            $("#nameOfItem").css('border','2px solid green');
+            if (event.key=="Enter"){
+                $("#qty").focus();
+            }
+        }else {
+            $("#nameOfItem").css('border','2px solid red');
         }
     });
+
     $("#qty").keyup(function (event) {
-        if (event.key=="Enter") {
-            $("#unitPrice").focus();
+
+        let qty = $("#qty").val();
+        if (regExQuantity.test(qty)){
+            $("#qty").css('border','2px solid green');
+            if (event.key=="Enter") {
+                $("#unitPrice").focus();
+            }
+        }else {
+            $("#qty").css('border','2px solid red');
         }
     });
+
     $("#unitPrice").keyup(function (event) {
-        if (event.key=="Enter"){
-            let itemCode = $("#itemCode").val();
-            let kind = $("#kind").val();
-            let itemName = $("#nameOfItem").val();
-            let qty = $("#qty").val();
-            let unitPrice = $("#unitPrice").val();
-            $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
+
+        let unitPrice = $("#unitPrice").val();
+        if (regExUnitPrice.test(unitPrice)){
+            $("#unitPrice").css('border','2px solid green');
+            if (event.key=="Enter"){
+                let itemCode = $("#itemCode").val();
+                let kind = $("#kind").val();
+                let itemName = $("#nameOfItem").val();
+                let qty = $("#qty").val();
+                let unitPrice = $("#unitPrice").val();
+                $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
+            }
+        }else {
+            $("#unitPrice").css('border','2px solid red');
         }
     });
 
