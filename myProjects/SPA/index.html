@@ -221,7 +221,7 @@
                         <!-- Gender -->
                         <div class="form-outline">
                             <label class="form-label text-black mt-0" for="gender">Gender</label>
-                            <input type="text" id="gender" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xx"/>
+                            <input type="text" id="gender" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xxxx"/>
                             <p><small id="errorGender" class="text-danger pl-1 mt-0 mb-0"></small></p>
                             <!--<select name="select" class="form-control form-control-sm rounded rounded-pill shadow" id="gender" >
                                 <option value="valor1" >Valor 1</option>
@@ -865,18 +865,23 @@
         if (regExCusEmail.test(email)){
             $("#email").css('border','2px solid green');
             $("#errorEmail").text("");
-            if (event.key=="Enter"){
-                alert("Do you really want to save this Customer?");
 
-                let cusId = $("#customerId").val();
-                let cusName = $("#nameOfCustomer").val();
-                let cusGender = $("#gender").val();
-                let cusContact = $("#contact").val();
-                let cusNIC = $("#nic").val();
-                let cusAddress = $("#address").val();
-                let cusEmail = $("#email").val();
-                let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
-                $("#tblCustomer tbody").append(raw);
+            if (event.key=="Enter"){
+
+                let text = "Do you really want to save this Customer?";
+                if (confirm(text) == true) {
+                    let cusId = $("#customerId").val();
+                    let cusName = $("#nameOfCustomer").val();
+                    let cusGender = $("#gender").val();
+                    let cusContact = $("#contact").val();
+                    let cusNIC = $("#nic").val();
+                    let cusAddress = $("#address").val();
+                    let cusEmail = $("#email").val();
+                    let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
+                    $("#tblCustomer tbody").append(raw);
+                } else {
+
+                }
             }
         }else {
             $("#email").css('border','2px solid red');
@@ -889,15 +894,30 @@
         $("#tblCustomer tbody > tr").off("click");
         $("#tblCustomer tbody > tr").off("dblclick");
 
-        let cusId = $("#customerId").val();
-        let cusName = $("#nameOfCustomer").val();
-        let cusGender = $("#gender").val();
-        let cusContact = $("#contact").val();
-        let cusNIC = $("#nic").val();
-        let cusAddress = $("#address").val();
-        let cusEmail = $("#email").val();
-        let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
-        $("#tblCustomer tbody").append(raw);
+        let text = "Do you really want to save this Customer?";
+        if (confirm(text) == true) {
+            let cusId = $("#customerId").val();
+            let cusName = $("#nameOfCustomer").val();
+            let cusGender = $("#gender").val();
+            let cusContact = $("#contact").val();
+            let cusNIC = $("#nic").val();
+            let cusAddress = $("#address").val();
+            let cusEmail = $("#email").val();
+            let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
+            $("#tblCustomer tbody").append(raw);
+
+            $("#customerId").val("");
+            $("#customerId").val("");
+            $("#nameOfCustomer").val("");
+            $("#gender").val("");
+            $("#contact").val("");
+            $("#nic").val("");
+            $("#address").val("");
+            $("#email").val("");
+
+        } else {
+
+        }
 
         $("#tblCustomer tbody > tr").click(function () {
 
@@ -914,6 +934,17 @@
             $(this).remove();
         });
 
+    });
+
+    $("btnClearCustomer").click(function () {
+        $("#customerId").val("");
+        $("#customerId").val("");
+        $("#nameOfCustomer").val("");
+        $("#gender").val("");
+        $("#contact").val("");
+        $("#nic").val("");
+        $("#address").val("");
+        $("#email").val("");
     });
 
     var regExItemID=/^(I00-)[0-9]{3,4}$/;
@@ -1017,6 +1048,14 @@
             $(this).remove();
         });
 
+    });
+
+    $("btnClearItem").click(function () {
+        $("#itemCode").val("");
+        $("#kind").val("");
+        $("#nameOfItem").val("");
+        $("#qty").val("");
+        $("#unitPrice").val("");
     });
 
 
