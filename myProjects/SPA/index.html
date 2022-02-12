@@ -201,7 +201,7 @@
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mt-1" for="customerId">Customer ID</label>
-                            <input type="text" id="customerId" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="CXXX" />
+                            <input type="text" id="customerId" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="C00-xxx" />
                             <p><small id="errorId" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -363,7 +363,7 @@
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mt-1" for="itemCode">Item Code</label>
-                            <input type="text" id="itemCode" class="form-control form-control-sm mt-0 mb-0 rounded rounded-pill shadow" placeholder="IXXX" />
+                            <input type="text" id="itemCode" class="form-control form-control-sm mt-0 mb-0 rounded rounded-pill shadow" placeholder="I00-xxx" />
                             <p><small id="errorCode" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -389,20 +389,21 @@
                 <div class="form row ">
                     <div class="col">
                         <!-- Qty -->
-                        <div class="form-outline ">
+                        <div class="form-outline">
                             <label class="form-label text-black mt-0" for="qty">Quantity</label>
-                            <input type="number" id="qty" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xxx"/>
+                            <input type="text" id="qty" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xx" />
                             <p><small id="errorQty" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- Price -->
-                        <div class="form-outline ">
+                        <div class="form-outline">
                             <label class="form-label text-black mt-0" for="unitPrice">Unit Price</label>
-                            <input type="number" id="unitPrice" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="00.00"/>
+                            <input type="text" id="unitPrice" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="00.00" />
                             <p><small id="errorPrice" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
+
                     </div>
 
                 </div>
@@ -884,6 +885,22 @@
                     let cusEmail = $("#email").val();
                     let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
                     $("#tblCustomer tbody").append(raw);
+
+                    $("#customerId").val("");
+                    $("#nameOfCustomer").val("");
+                    $("#gender").val("");
+                    $("#contact").val("");
+                    $("#nic").val("");
+                    $("#address").val("");
+                    $("#email").val("");
+
+                    $("#customerId").css('border','2px solid transparent');
+                    $("#nameOfCustomer").css('border','2px solid transparent');
+                    $("#gender").css('border','2px solid transparent');
+                    $("#contact").css('border','2px solid transparent');
+                    $("#nic").css('border','2px solid transparent');
+                    $("#address").css('border','2px solid transparent');
+                    $("#email").css('border','2px solid transparent');
                 } else {
 
                 }
@@ -894,12 +911,13 @@
         }
     });
 
-    $("#btnSaveCustomer").click(function (event) {
+    $("#btnSaveCustomer").click(function () {
 
         $("#tblCustomer tbody > tr").off("click");
         $("#tblCustomer tbody > tr").off("dblclick");
 
         let text = "Do you really want to save this Customer?";
+
         if (confirm(text) == true) {
             let cusId = $("#customerId").val();
             let cusName = $("#nameOfCustomer").val();
@@ -918,6 +936,14 @@
             $("#nic").val("");
             $("#address").val("");
             $("#email").val("");
+
+            $("#customerId").css('border','2px solid transparent');
+            $("#nameOfCustomer").css('border','2px solid transparent');
+            $("#gender").css('border','2px solid transparent');
+            $("#contact").css('border','2px solid transparent');
+            $("#nic").css('border','2px solid transparent');
+            $("#address").css('border','2px solid transparent');
+            $("#email").css('border','2px solid transparent');
 
         } else {
 
@@ -962,13 +988,13 @@
     var regExKind=/^[A-Z|a-z\s]{3,20}$/;
     var regExItemName=/^[A-Z|a-z\s]{3,20}$/;
     var regExQuantity=/^[0-9]{2,20}$/;
-    var regExUnitPrice=/^[0-9]{1,10}(.00)$/;
+    var regExUnitPrice=/^[0-9]{1,10}(.)[0-9]{2}$/;
 
     $("#itemCode").keyup(function (event) {
 
         let itemCode = $("#itemCode").val();
         if (regExItemID.test(itemCode)){
-            $("#itemCode").css('border','2px solid green');
+            $("#itemCode").css('border','2px solid blue');
             $("#errorCode").text("");
             if (event.key=="Enter"){
                 $("#kind").focus();
@@ -983,7 +1009,7 @@
 
         let kind = $("#kind").val();
         if (regExKind.test(kind)){
-            $("#kind").css('border','2px solid green');
+            $("#kind").css('border','2px solid blue');
             $("#errorKind").text("");
             if (event.key=="Enter"){
                 $("#nameOfItem").focus();
@@ -998,7 +1024,7 @@
 
         let itemName = $("#nameOfItem").val();
         if (regExItemName.test(itemName)){
-            $("#nameOfItem").css('border','2px solid green');
+            $("#nameOfItem").css('border','2px solid blue');
             $("#errorItemName").text("");
             if (event.key=="Enter"){
                 $("#qty").focus();
@@ -1013,7 +1039,7 @@
 
         let qty = $("#qty").val();
         if (regExQuantity.test(qty)){
-            $("#qty").css('border','2px solid green');
+            $("#qty").css('border','2px solid blue');
             $("#errorQty").text("");
             if (event.key=="Enter") {
                 $("#unitPrice").focus();
@@ -1028,7 +1054,7 @@
 
         let unitPrice = $("#unitPrice").val();
         if (regExUnitPrice.test(unitPrice)){
-            $("#unitPrice").css('border','2px solid green');
+            $("#unitPrice").css('border','2px solid blue');
             $("#errorPrice").text("");
 
             if (event.key=="Enter"){
@@ -1040,7 +1066,20 @@
                     let itemName = $("#nameOfItem").val();
                     let qty = $("#qty").val();
                     let unitPrice = $("#unitPrice").val();
-                    $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
+                    let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`;
+                    $("#tblItem tbody").append(raw);
+
+                    $("#itemCode").val("");
+                    $("#kind").val("");
+                    $("#nameOfItem").val("");
+                    $("#qty").val("");
+                    $("#unitPrice").val("");
+
+                    $("#itemCode").css('border','2px solid transparent');
+                    $("#kind").css('border','2px solid transparent');
+                    $("#nameOfItem").css('border','2px solid transparent');
+                    $("#qty").css('border','2px solid transparent');
+                    $("#unitPrice").css('border','2px solid transparent');
                 } else {
 
                 }
@@ -1064,13 +1103,20 @@
             let itemName = $("#nameOfItem").val();
             let qty = $("#qty").val();
             let unitPrice = $("#unitPrice").val();
-            $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
+            let row= `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`;
+            $("#tblItem tbody").append(row);
 
             $("#itemCode").val("");
             $("#kind").val("");
             $("#nameOfItem").val("");
             $("#qty").val("");
             $("#unitPrice").val("");
+
+            $("#itemCode").css('border','2px solid transparent');
+            $("#kind").css('border','2px solid transparent');
+            $("#nameOfItem").css('border','2px solid transparent');
+            $("#qty").css('border','2px solid transparent');
+            $("#unitPrice").css('border','2px solid transparent');
 
         } else {
 
