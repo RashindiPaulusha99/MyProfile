@@ -364,6 +364,7 @@
                         <div class="form-outline ">
                             <label class="form-label text-black mt-1" for="itemCode">Item Code</label>
                             <input type="text" id="itemCode" class="form-control form-control-sm mt-0 mb-2 rounded rounded-pill shadow" placeholder="IXXX" />
+                            <p><small id="errorCode" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
 
@@ -371,6 +372,7 @@
                         <div class="form-outline">
                             <label class="form-label text-black mt-1" for="kind">Kind</label>
                             <input type="text" id="kind" class="form-control form-control-sm mt-0 mb-2 rounded rounded-pill shadow" placeholder="xxxx" />
+                            <p><small id="errorKind" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
 
@@ -378,6 +380,7 @@
                         <div class="form-outline">
                             <label class="form-label text-black mt-1" for="nameOfItem">Item Name</label>
                             <input type="text" id="nameOfItem" class="form-control form-control-sm mt-0 mb-2 rounded rounded-pill shadow" placeholder="xxxxx" />
+                            <p><small id="errorItemName" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
 
@@ -389,6 +392,7 @@
                         <div class="form-outline ">
                             <label class="form-label text-black mt-1" for="qty">Quantity</label>
                             <input type="number" id="qty" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-3" placeholder="xxx"/>
+                            <p><small id="errorQty" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
 
@@ -397,6 +401,7 @@
                         <div class="form-outline ">
                             <label class="form-label text-black mt-1" for="unitPrice">Unit Price</label>
                             <input type="number" id="unitPrice" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-3" placeholder="00.00"/>
+                            <p><small id="errorPrice" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
 
@@ -907,7 +912,6 @@
             $("#tblCustomer tbody").append(raw);
 
             $("#customerId").val("");
-            $("#customerId").val("");
             $("#nameOfCustomer").val("");
             $("#gender").val("");
             $("#contact").val("");
@@ -936,8 +940,7 @@
 
     });
 
-    $("btnClearCustomer").click(function () {
-        $("#customerId").val("");
+    $("#btnClearCustomer").click(function () {
         $("#customerId").val("");
         $("#nameOfCustomer").val("");
         $("#gender").val("");
@@ -958,11 +961,13 @@
         let itemCode = $("#itemCode").val();
         if (regExItemID.test(itemCode)){
             $("#itemCode").css('border','2px solid green');
+            $("#errorCode").text("");
             if (event.key=="Enter"){
                 $("#kind").focus();
             }
         }else {
             $("#itemCode").css('border','2px solid red');
+            $("#errorCode").text("Item Code is a required field: Pattern I00-000");
         }
     });
 
@@ -971,11 +976,13 @@
         let kind = $("#kind").val();
         if (regExKind.test(kind)){
             $("#kind").css('border','2px solid green');
+            $("#errorKind").text("");
             if (event.key=="Enter"){
                 $("#nameOfItem").focus();
             }
         }else {
             $("#kind").css('border','2px solid red');
+            $("#errorKind").text("Kind is a required field: Min 5");
         }
     });
 
@@ -984,11 +991,13 @@
         let itemName = $("#nameOfItem").val();
         if (regExItemName.test(itemName)){
             $("#nameOfItem").css('border','2px solid green');
+            $("#errorItemName").text("");
             if (event.key=="Enter"){
                 $("#qty").focus();
             }
         }else {
             $("#nameOfItem").css('border','2px solid red');
+            $("#errorItemName").text("Item Name is a required field: Min 3");
         }
     });
 
@@ -997,11 +1006,13 @@
         let qty = $("#qty").val();
         if (regExQuantity.test(qty)){
             $("#qty").css('border','2px solid green');
+            $("#errorQty").text("");
             if (event.key=="Enter") {
                 $("#unitPrice").focus();
             }
         }else {
             $("#qty").css('border','2px solid red');
+            $("#errorQty").text("Quantity is a required field: Pattern 00");
         }
     });
 
@@ -1010,16 +1021,25 @@
         let unitPrice = $("#unitPrice").val();
         if (regExUnitPrice.test(unitPrice)){
             $("#unitPrice").css('border','2px solid green');
+            $("#errorPrice").text("");
+
             if (event.key=="Enter"){
-                let itemCode = $("#itemCode").val();
-                let kind = $("#kind").val();
-                let itemName = $("#nameOfItem").val();
-                let qty = $("#qty").val();
-                let unitPrice = $("#unitPrice").val();
-                $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
+
+                let text = "Do you really want to save this Item?";
+                if (confirm(text) == true) {
+                    let itemCode = $("#itemCode").val();
+                    let kind = $("#kind").val();
+                    let itemName = $("#nameOfItem").val();
+                    let qty = $("#qty").val();
+                    let unitPrice = $("#unitPrice").val();
+                    $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
+                } else {
+
+                }
             }
         }else {
             $("#unitPrice").css('border','2px solid red');
+            $("#errorPrice").text("Unit Price is a required field: Pattern 00.00");
         }
     });
 
@@ -1028,12 +1048,25 @@
         $("#tblItem tbody > tr").off("click");
         $("#tblItem tbody > tr").off("dblclick");
 
-        let itemCode = $("#itemCode").val();
-        let kind = $("#kind").val();
-        let itemName = $("#nameOfItem").val();
-        let qty = $("#qty").val();
-        let unitPrice = $("#unitPrice").val();
-        $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
+        let text = "Do you really want to save this Item?";
+
+        if (confirm(text) == true) {
+            let itemCode = $("#itemCode").val();
+            let kind = $("#kind").val();
+            let itemName = $("#nameOfItem").val();
+            let qty = $("#qty").val();
+            let unitPrice = $("#unitPrice").val();
+            $("#tblItem tbody").append(`<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`);
+
+            $("#itemCode").val("");
+            $("#kind").val("");
+            $("#nameOfItem").val("");
+            $("#qty").val("");
+            $("#unitPrice").val("");
+
+        } else {
+
+        }
 
         $("#tblItem tbody > tr").click(function () {
 
@@ -1050,7 +1083,7 @@
 
     });
 
-    $("btnClearItem").click(function () {
+    $("#btnClearItem").click(function () {
         $("#itemCode").val("");
         $("#kind").val("");
         $("#nameOfItem").val("");
