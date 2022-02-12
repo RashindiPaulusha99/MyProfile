@@ -363,7 +363,7 @@
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mt-1" for="itemCode">Item Code</label>
-                            <input type="text" id="itemCode" class="form-control form-control-sm mt-0 mb-2 rounded rounded-pill shadow" placeholder="IXXX" />
+                            <input type="text" id="itemCode" class="form-control form-control-sm mt-0 mb-0 rounded rounded-pill shadow" placeholder="IXXX" />
                             <p><small id="errorCode" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -371,7 +371,7 @@
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label text-black mt-1" for="kind">Kind</label>
-                            <input type="text" id="kind" class="form-control form-control-sm mt-0 mb-2 rounded rounded-pill shadow" placeholder="xxxx" />
+                            <input type="text" id="kind" class="form-control form-control-sm mt-0 mb-0 rounded rounded-pill shadow" placeholder="xxxx" />
                             <p><small id="errorKind" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -379,7 +379,7 @@
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label text-black mt-1" for="nameOfItem">Item Name</label>
-                            <input type="text" id="nameOfItem" class="form-control form-control-sm mt-0 mb-2 rounded rounded-pill shadow" placeholder="xxxxx" />
+                            <input type="text" id="nameOfItem" class="form-control form-control-sm mt-0 mb-0 rounded rounded-pill shadow" placeholder="xxxxx" />
                             <p><small id="errorItemName" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -390,8 +390,8 @@
                     <div class="col">
                         <!-- Qty -->
                         <div class="form-outline ">
-                            <label class="form-label text-black mt-1" for="qty">Quantity</label>
-                            <input type="number" id="qty" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-3" placeholder="xxx"/>
+                            <label class="form-label text-black mt-0" for="qty">Quantity</label>
+                            <input type="number" id="qty" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xxx"/>
                             <p><small id="errorQty" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -399,8 +399,8 @@
                     <div class="col">
                         <!-- Price -->
                         <div class="form-outline ">
-                            <label class="form-label text-black mt-1" for="unitPrice">Unit Price</label>
-                            <input type="number" id="unitPrice" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-3" placeholder="00.00"/>
+                            <label class="form-label text-black mt-0" for="unitPrice">Unit Price</label>
+                            <input type="number" id="unitPrice" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="00.00"/>
                             <p><small id="errorPrice" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -772,7 +772,7 @@
     var regExCusContact=/^(071-|077-|075-|078-|)[0-9]{7}$/;
     var regExCusNIC=/^[0-9]{9}(v)$/;
     var regExCusAddress=/^[0-9A-Z a-z,/:]{4,50}$/;
-    var regExCusEmail=/^[0-9A-Z a-z$&#]{3,10}(@gmail.com)$/;
+    var regExCusEmail=/^[0-9A-Z a-z$&#]{3,10}(@gmail.com)|(@yahoo.com)$/;
 
     $("#customerId").keyup(function (event) {
 
@@ -936,6 +936,14 @@
 
         $("#tblCustomer tbody > tr").dblclick(function () {
             $(this).remove();
+
+            $("#customerId").val("");
+            $("#nameOfCustomer").val("");
+            $("#gender").val("");
+            $("#contact").val("");
+            $("#nic").val("");
+            $("#address").val("");
+            $("#email").val("");
         });
 
     });
@@ -1079,6 +1087,12 @@
 
         $("#tblItem tbody > tr").dblclick(function () {
             $(this).remove();
+
+            $("#itemCode").val("");
+            $("#kind").val("");
+            $("#nameOfItem").val("");
+            $("#qty").val("");
+            $("#unitPrice").val("");
         });
 
     });
