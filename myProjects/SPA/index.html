@@ -911,6 +911,8 @@
         }
     });
 
+    var tblCustomerRow;
+
     $("#btnSaveCustomer").click(function () {
 
         $("#tblCustomer tbody > tr").off("click");
@@ -951,6 +953,8 @@
 
         $("#tblCustomer tbody > tr").click(function () {
 
+            tblCustomerRow=$(this);
+
             $("#customerId").val($(this).children(':nth-child(1)').text());
             $("#nameOfCustomer").val($(this).children(':nth-child(2)').text());
             $("#gender").val($(this).children(':nth-child(3)').text());
@@ -982,6 +986,25 @@
         $("#nic").val("");
         $("#address").val("");
         $("#email").val("");
+    });
+
+    $("#btnDeleteCustomer").click(function () {
+
+        let text = "Are you sure you want to delete this Customer?";
+        if (confirm(text) == true) {
+            tblCustomerRow.remove();
+
+            $("#customerId").val("");
+            $("#nameOfCustomer").val("");
+            $("#gender").val("");
+            $("#contact").val("");
+            $("#nic").val("");
+            $("#address").val("");
+            $("#email").val("");
+        }else {
+
+        }
+
     });
 
     var regExItemID=/^(I00-)[0-9]{3,4}$/;
@@ -1090,6 +1113,8 @@
         }
     });
 
+    var tblItemRow;
+
     $("#btnSaveItem").click(function () {
 
         $("#tblItem tbody > tr").off("click");
@@ -1124,6 +1149,8 @@
 
         $("#tblItem tbody > tr").click(function () {
 
+            tblItemRow=$(this);
+
             $("#itemCode").val($(this).children(':nth-child(1)').text());
             $("#kind").val($(this).children(':nth-child(2)').text());
             $("#nameOfItem").val($(this).children(':nth-child(3)').text());
@@ -1149,6 +1176,23 @@
         $("#nameOfItem").val("");
         $("#qty").val("");
         $("#unitPrice").val("");
+    });
+
+    $("#btnDeleteItem").click(function () {
+
+        let text = "Are you sure you want to delete this Item?";
+        if (confirm(text) == true) {
+            tblItemRow.remove();
+
+            $("#itemCode").val("");
+            $("#kind").val("");
+            $("#nameOfItem").val("");
+            $("#qty").val("");
+            $("#unitPrice").val("");
+        }else {
+
+        }
+
     });
 
 
