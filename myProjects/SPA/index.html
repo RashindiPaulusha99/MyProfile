@@ -200,15 +200,15 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
+                            <label class="form-label text-black" for="customerId">Customer ID</label>
                             <input type="text" id="customerId" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="CXXX" />
-                            <label class="form-label text-black" for="customerId">ID</label>
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="nameOfCustomer" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx xxxxx xxxxx" />
                             <label class="form-label text-black" for="nameOfCustomer">Name</label>
+                            <input type="text" id="nameOfCustomer" class="form-control form-control-sm mt-3 rounded rounded-pill shadow" placeholder="xxxxx xxxxx xxxxx" />
                         </div>
                     </div>
 
@@ -218,13 +218,13 @@
                     <div class="col">
                         <!-- Gender -->
                         <div class="form-outline">
+                            <label class="form-label text-black" for="gender">Gender</label>
                             <input type="text" id="gender" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xx"/>
                             <!--<select name="select" class="form-control form-control-sm rounded rounded-pill shadow" id="gender" >
                                 <option value="valor1" >Valor 1</option>
                                 <option value="valor2">Valor 2</option>
                                 <option value="valor3">Valor 3</option>
                             </select>-->
-                            <label class="form-label text-black" for="gender">Gender</label>
                         </div>
 
 
@@ -233,8 +233,8 @@
                     <div class="col">
                         <!-- Phone Number -->
                         <div class="form-outline ">
-                            <input type="tel" id="contact" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="0xx-xxxxxxx"/>
                             <label class="form-label text-black" for="contact">Contact</label>
+                            <input type="tel" id="contact" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="0xx-xxxxxxx"/>
                         </div>
                     </div>
 
@@ -251,16 +251,16 @@
                     <div class="col">
                         <!-- Address -->
                         <div class="form-outline ">
-                            <input type="text" id="address" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxxxxxxxx"/>
                             <label class="form-label text-black " for="address">Address</label>
+                            <input type="text" id="address" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="xxxxxxxxx"/>
                         </div>
                     </div>
 
                     <div class="col">
                         <!--Email -->
                         <div class="form-outline">
-                            <input type="email" id="email" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="email@example.com"/>
                             <label class="form-label text-black" for="email">Email</label>
+                            <input type="email" id="email" class="form-control form-control-sm rounded rounded-pill shadow" placeholder="email@example.com"/>
                         </div>
                     </div>
                 </div>
@@ -755,8 +755,12 @@
     });
 
     var regExCusID=/^(C00-)[0-9]{3,4}$/;
-    var regExCusName=/^[A-Z/a-z/ ]{3,20}$/;
-    var regExCusGender=/^(female)$/;
+    var regExCusName=/^[A-Z|a-z\s]{3,20}$/;
+    var regExCusGender=/^(female)|(male)|(Female)|(Male)$/;
+    var regExCusContact=/^(071|077|075|078|)[0-9]{7}$/;
+    var regExCusNIC=/^[0-9]{9}(v)$/;
+    var regExCusAddress=/^[0-9A-Z a-z,/:]{3,50}$/;
+    var regExCusEmail=/^[0-9A-Z a-z$&#]{3,10}(@gmail.com)$/;
 
     $("#customerId").keyup(function (event) {
 
@@ -796,32 +800,64 @@
             $("#gender").css('border','2px solid red');
         }
     });
+
     $("#contact").keyup(function (event) {
-        if (event.key=="Enter"){
-            $("#nic").focus();
+
+        let contact = $("#contact").val();
+        if (regExCusContact.test(contact)){
+            $("#contact").css('border','2px solid green');
+            if (event.key=="Enter"){
+                $("#nic").focus();
+            }
+        }else {
+            $("#contact").css('border','2px solid red');
         }
     });
+
     $("#nic").keyup(function (event) {
-        if (event.key=="Enter"){
-            $("#address").focus();
+
+        let nic = $("#nic").val();
+        if (regExCusNIC.test(nic)){
+            $("#nic").css('border','2px solid green');
+            if (event.key=="Enter"){
+                $("#address").focus();
+            }
+        }else {
+            $("#nic").css('border','2px solid red');
         }
     });
+
     $("#address").keyup(function (event) {
-        if (event.key=="Enter"){
-            $("#email").focus();
+
+        let address = $("#address").val();
+        if (regExCusAddress.test(address)){
+            $("#address").css('border','2px solid green');
+            if (event.key=="Enter"){
+                $("#email").focus();
+            }
+        }else {
+            $("#address").css('border','2px solid red');
         }
     });
+
     $("#email").keyup(function (event) {
-        if (event.key=="Enter"){
-            let cusId = $("#customerId").val();
-            let cusName = $("#nameOfCustomer").val();
-            let cusGender = $("#gender").val();
-            let cusContact = $("#contact").val();
-            let cusNIC = $("#nic").val();
-            let cusAddress = $("#address").val();
-            let cusEmail = $("#email").val();
-            let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
-            $("#tblCustomer tbody").append(raw);
+
+        let email = $("#email").val();
+        if (regExCusEmail.test(email)){
+            $("#email").css('border','2px solid green');
+            if (event.key=="Enter"){
+                let cusId = $("#customerId").val();
+                let cusName = $("#nameOfCustomer").val();
+                let cusGender = $("#gender").val();
+                let cusContact = $("#contact").val();
+                let cusNIC = $("#nic").val();
+                let cusAddress = $("#address").val();
+                let cusEmail = $("#email").val();
+                let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
+                $("#tblCustomer tbody").append(raw);
+            }
+        }else {
+            $("#email").css('border','2px solid red');
         }
     });
 
