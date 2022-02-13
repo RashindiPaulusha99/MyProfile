@@ -775,6 +775,8 @@
     var regExCusAddress=/^[0-9A-Z a-z,/:]{4,50}$/;
     var regExCusEmail=/^[0-9A-Z a-z$&#]{3,10}(@gmail.com)|(@yahoo.com)$/;
 
+    var idcolor;
+
     $("#customerId").keyup(function (event) {
 
         let id = $("#customerId").val();
@@ -786,9 +788,12 @@
             }
         }else {
             $("#customerId").css('border','2px solid red');
+            idcolor=true;
             $("#errorId").text("Customer Id is a required field: Pattern C00-000");
         }
     });
+
+    var namecuscolor;
 
     $("#nameOfCustomer").keyup(function (event) {
 
@@ -801,9 +806,12 @@
             }
         }else {
             $("#nameOfCustomer").css('border','2px solid red');
+            namecuscolor=true;
             $("#errorName").text("Customer Name is a required field: Min 3, Max 20, Spaces Allowed.");
         }
     });
+
+    var gendercolor;
 
     $("#gender").keyup(function (event) {
 
@@ -816,9 +824,12 @@
             }
         }else {
             $("#gender").css('border','2px solid red');
+            gendercolor=true;
             $("#errorGender").text("Gender is a required field: Female or Male");
         }
     });
+
+    var contactcolor;
 
     $("#contact").keyup(function (event) {
 
@@ -831,9 +842,12 @@
             }
         }else {
             $("#contact").css('border','2px solid red');
+            contactcolor=true
             $("#errorContact").text("Contact is a required field: Pattern 07x-xxxxxxx");
         }
     });
+
+    var niccolor;
 
     $("#nic").keyup(function (event) {
 
@@ -846,9 +860,12 @@
             }
         }else {
             $("#nic").css('border','2px solid red');
+            niccolor=true;
             $("#errorNIC").text("NIC is a required field: 9 Digit and v");
         }
     });
+
+    var addresscolor;
 
     $("#address").keyup(function (event) {
 
@@ -861,9 +878,12 @@
             }
         }else {
             $("#address").css('border','2px solid red');
+            addresscolor=true;
             $("#errorAddress").text("Address is a required field: Min 4");
         }
     });
+
+    var emailcolor;
 
     $("#email").keyup(function (event) {
 
@@ -907,6 +927,7 @@
             }
         }else {
             $("#email").css('border','2px solid red');
+            emailcolor=true;
             $("#errorEmail").text("Email is a required field: At least 6 characters with symbols");
         }
     });
@@ -918,7 +939,44 @@
         $("#tblCustomer tbody > tr").off("click");
         $("#tblCustomer tbody > tr").off("dblclick");
 
-        let text = "Do you really want to save this Customer?";
+        if(idcolor==true||namecuscolor==true||gendercolor==true||contactcolor==true||niccolor==true||addresscolor==true||emailcolor==true){
+            $("#btnSaveCustomer").disable();
+        }else {
+            let text = "Do you really want to save this Customer?";
+
+            if (confirm(text) == true) {
+                let cusId = $("#customerId").val();
+                let cusName = $("#nameOfCustomer").val();
+                let cusGender = $("#gender").val();
+                let cusContact = $("#contact").val();
+                let cusNIC = $("#nic").val();
+                let cusAddress = $("#address").val();
+                let cusEmail = $("#email").val();
+                let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
+                $("#tblCustomer tbody").append(raw);
+
+                $("#customerId").val("");
+                $("#nameOfCustomer").val("");
+                $("#gender").val("");
+                $("#contact").val("");
+                $("#nic").val("");
+                $("#address").val("");
+                $("#email").val("");
+
+                $("#customerId").css('border','2px solid transparent');
+                $("#nameOfCustomer").css('border','2px solid transparent');
+                $("#gender").css('border','2px solid transparent');
+                $("#contact").css('border','2px solid transparent');
+                $("#nic").css('border','2px solid transparent');
+                $("#address").css('border','2px solid transparent');
+                $("#email").css('border','2px solid transparent');
+
+            } else {
+
+            }
+        }
+
+        /*let text = "Do you really want to save this Customer?";
 
         if (confirm(text) == true) {
             let cusId = $("#customerId").val();
@@ -949,7 +1007,7 @@
 
         } else {
 
-        }
+        }*/
 
         $("#tblCustomer tbody > tr").click(function () {
 
