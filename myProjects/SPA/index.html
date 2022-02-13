@@ -279,7 +279,7 @@
                 </button>
 
                 <!-- Edit button -->
-                <button id="btnEditCustomer " type="button" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd">
+                <button id="btnEditCustomer" type="button" class="btn btn-sm btn-block mb-4 shadow" style="background-color: #e056fd">
                     <i class="fas fa-edit"></i>
                     Edit
                 </button>
@@ -1007,6 +1007,48 @@
 
     });
 
+    $("#btnEditCustomer").click(function () {
+
+        let text = "Do you really want to update this Customer?";
+
+        if (confirm(text) == true) {
+            let cusId = $("#customerId").val();
+            let cusName = $("#nameOfCustomer").val();
+            let cusGender = $("#gender").val();
+            let cusContact = $("#contact").val();
+            let cusNIC = $("#nic").val();
+            let cusAddress = $("#address").val();
+            let cusEmail = $("#email").val();
+
+            $(tblCustomerRow).children(':nth-child(1)').text(cusId);
+            $(tblCustomerRow).children(':nth-child(2)').text(cusName);
+            $(tblCustomerRow).children(':nth-child(3)').text(cusGender);
+            $(tblCustomerRow).children(':nth-child(4)').text(cusContact);
+            $(tblCustomerRow).children(':nth-child(5)').text(cusNIC);
+            $(tblCustomerRow).children(':nth-child(6)').text(cusAddress);
+            $(tblCustomerRow).children(':nth-child(7)').text(cusEmail);
+
+            $("#customerId").val("");
+            $("#nameOfCustomer").val("");
+            $("#gender").val("");
+            $("#contact").val("");
+            $("#nic").val("");
+            $("#address").val("");
+            $("#email").val("");
+
+            $("#customerId").css('border','2px solid transparent');
+            $("#nameOfCustomer").css('border','2px solid transparent');
+            $("#gender").css('border','2px solid transparent');
+            $("#contact").css('border','2px solid transparent');
+            $("#nic").css('border','2px solid transparent');
+            $("#address").css('border','2px solid transparent');
+            $("#email").css('border','2px solid transparent');
+
+        } else {
+
+        }
+    });
+
     var regExItemID=/^(I00-)[0-9]{3,4}$/;
     var regExKind=/^[A-Z|a-z\s]{3,20}$/;
     var regExItemName=/^[A-Z|a-z\s]{3,20}$/;
@@ -1190,6 +1232,41 @@
             $("#qty").val("");
             $("#unitPrice").val("");
         }else {
+
+        }
+
+    });
+
+    $("#btnEditItem").click(function () {
+
+        let text = "Do you really want to update this Item?";
+
+        if (confirm(text) == true) {
+            let itemCode = $("#itemCode").val();
+            let kind = $("#kind").val();
+            let itemName = $("#nameOfItem").val();
+            let qty = $("#qty").val();
+            let unitPrice = $("#unitPrice").val();
+
+            $(tblItemRow).children(':nth-child(1)').text(itemCode);
+            $(tblItemRow).children(':nth-child(2)').text(kind);
+            $(tblItemRow).children(':nth-child(3)').text(itemName);
+            $(tblItemRow).children(':nth-child(4)').text(qty);
+            $(tblItemRow).children(':nth-child(5)').text(unitPrice);
+
+            $("#itemCode").val("");
+            $("#kind").val("");
+            $("#nameOfItem").val("");
+            $("#qty").val("");
+            $("#unitPrice").val("");
+
+            $("#itemCode").css('border','2px solid transparent');
+            $("#kind").css('border','2px solid transparent');
+            $("#nameOfItem").css('border','2px solid transparent');
+            $("#qty").css('border','2px solid transparent');
+            $("#unitPrice").css('border','2px solid transparent');
+
+        } else {
 
         }
 
