@@ -708,6 +708,7 @@
 </main>
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="db/DB.js"></script>
 <script src="assets/jquery/jquery-3.6.0.min.js"></script>
 
 <script>
@@ -919,12 +920,15 @@
         $("#tblCustomer tbody > tr").off("dblclick");
 
         if($("#errorId").text()!=""||$("#errorName").text()!=""||$("#errorGender").text()!=""||$("#errorContact").text()!=""||$("#errorNIC").text()!=""||$("#errorAddress").text()!=""||$("#errorEmail").text()!=""||
-            $("#customerId").val()==""||$("#nameOfCustomer").val()==""||$("#gender").val()==""||$("#contact").val()==""||$("#nic").val()==""||$("#address").val()==""||$("#email").val()==""){
+            $("#customerId").val()==""||$("#nameOfCustomer").val()==""||$("#gender").val()==""||$("#contact").val()==""||$("#nic").val()==""||$("#address").val()==""||$("#email").val()=="") {
             $("#btnSaveCustomer").disable();
+
         }else {
+
             let text = "Do you really want to save this Customer?";
 
             if (confirm(text) == true) {
+
                 let cusId = $("#customerId").val();
                 let cusName = $("#nameOfCustomer").val();
                 let cusGender = $("#gender").val();
@@ -932,24 +936,55 @@
                 let cusNIC = $("#nic").val();
                 let cusAddress = $("#address").val();
                 let cusEmail = $("#email").val();
-                let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
-                $("#tblCustomer tbody").append(raw);
 
-                $("#customerId").empty();
-                $("#nameOfCustomer").val("");
-                $("#gender").val("");
-                $("#contact").val("");
-                $("#nic").val("");
-                $("#address").val("");
-                $("#email").val("");
+                var cusDetails={
+                    id:cusId,
+                    name:cusName,
+                    gender:cusGender,
+                    contact:cusContact,
+                    nic:cusNIC,
+                    address:cusAddress,
+                    email:cusEmail
+                }
 
-                $("#customerId").css('border','2px solid transparent');
-                $("#nameOfCustomer").css('border','2px solid transparent');
-                $("#gender").css('border','2px solid transparent');
-                $("#contact").css('border','2px solid transparent');
-                $("#nic").css('border','2px solid transparent');
-                $("#address").css('border','2px solid transparent');
-                $("#email").css('border','2px solid transparent');
+                var ifDuplicate=false;
+
+                for (var j = 0; j < customerDB.length; j++) {
+                    if ($("#customerId").val() == customerDB[j].id){
+                        ifDuplicate = true;
+                    }else {
+                        ifDuplicate = false;
+                    }
+                }
+
+                if (ifDuplicate == false){
+                    customerDB.push(cusDetails);
+                    $("#tblCustomer tbody").empty();
+
+                    for (var i = 0; i < customerDB.length; i++) {
+                        let raw = `<tr><td> ${customerDB[i].id} </td><td> ${customerDB[i].name} </td><td> ${customerDB[i].gender} </td><td> ${customerDB[i].contact} </td><td> ${customerDB[i].nic} </td><td> ${customerDB[i].address} </td><td> ${customerDB[i].email} </td></tr>`;
+                        $("#tblCustomer tbody").append(raw);
+                    }
+
+                    $("#customerId").val("");
+                    $("#nameOfCustomer").val("");
+                    $("#gender").val("");
+                    $("#contact").val("");
+                    $("#nic").val("");
+                    $("#address").val("");
+                    $("#email").val("");
+
+                    $("#customerId").css('border','2px solid transparent');
+                    $("#nameOfCustomer").css('border','2px solid transparent');
+                    $("#gender").css('border','2px solid transparent');
+                    $("#contact").css('border','2px solid transparent');
+                    $("#nic").css('border','2px solid transparent');
+                    $("#address").css('border','2px solid transparent');
+                    $("#email").css('border','2px solid transparent');
+                }else {
+                    alert("Already Exists");
+                }
+
 
             } else {
 
