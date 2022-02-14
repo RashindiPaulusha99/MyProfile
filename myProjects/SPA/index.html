@@ -174,7 +174,7 @@
             <form >
                 <!--Search-->
                 <input class="form-control-sm me-0 mt-2 mb-2 w-50 border border-white" type="search" placeholder="Input NIC/Name/Phone Number Here" aria-label="Search" id="searchCustomer" />
-                <button class="btn btn-primary btn-sm ms-0 " type="submit" style="box-shadow: -1px 1px 30px 5px white">
+                <button class="btn btn-primary btn-sm ms-0 " type="button" style="box-shadow: -1px 1px 30px 5px white" id="btnSearchCustomer">
                     <i class="fas fa-search"></i>
                 </button>
 
@@ -335,8 +335,8 @@
         <div class="row mb-2" style="background: darkcyan">
             <form>
                 <!--Search-->
-                <input class="form-control-sm me-0 mt-2 mb-2 w-50 border border-white" type="search" placeholder="Input Code/Name Here" aria-label="Search" />
-                <button class="btn btn-primary btn-sm ms-0 " type="submit" style="box-shadow: -1px 1px 30px 5px white">
+                <input class="form-control-sm me-0 mt-2 mb-2 w-50 border border-white" type="search" placeholder="Input Code/Name Here" aria-label="Search" id="searchItem"/>
+                <button class="btn btn-primary btn-sm ms-0 " type="submit" style="box-shadow: -1px 1px 30px 5px white" id="btnSearchItem">
                     <i class="fas fa-search"></i>
                 </button>
 
@@ -913,6 +913,12 @@
         }
     });
 
+    $('#customerId,#nameOfCustomer,#gender,#contact,#nic,#address,#email').keydown(function (e) {
+        if (e.key=="Tab"){
+            e.preventDefault();
+        }
+    });
+
     var tblCustomerRow;
 
     $("#btnSaveCustomer").click(function () {
@@ -982,6 +988,7 @@
                     $("#nic").css('border','2px solid transparent');
                     $("#address").css('border','2px solid transparent');
                     $("#email").css('border','2px solid transparent');
+
                 }else {
                     alert("Already Exists");
                 }
@@ -1026,6 +1033,7 @@
         $("#nic").val("");
         $("#address").val("");
         $("#email").val("");
+        $("#searchCustomer").val("");
     });
 
     $("#btnDeleteCustomer").click(function () {
@@ -1097,6 +1105,22 @@
 
             } else {
 
+            }
+        }
+    });
+
+    $("#btnSearchCustomer").click(function () {
+        for (var i = 0; i < customerDB.length; i++) {
+            if ($("#searchCustomer").val()==customerDB[i].id){
+                $("#customerId").val(customerDB[i].id);
+                $("#nameOfCustomer").val(customerDB[i].name);
+                $("#gender").val(customerDB[i].gender);
+                $("#contact").val(customerDB[i].contact);
+                $("#nic").val(customerDB[i].nic);
+                $("#address").val(customerDB[i].address());
+                $("#email").val(customerDB[i].email);
+            }else {
+                alert("No Such Customer");
             }
         }
     });
@@ -1207,6 +1231,12 @@
         }
     });
 
+    $('#itemCode,#kind,#nameOfItem,#qty,#unitPrice').keydown(function (e) {
+        if (e.key=="Tab"){
+            e.preventDefault();
+        }
+    });
+
     var tblItemRow;
 
     $("#btnSaveItem").click(function () {
@@ -1306,6 +1336,7 @@
         $("#nameOfItem").val("");
         $("#qty").val("");
         $("#unitPrice").val("");
+        $("#searchItem").val("");
     });
 
     $("#btnDeleteItem").click(function () {
@@ -1370,6 +1401,20 @@
             }
         }
 
+    });
+
+    $("#btnSearchItem").click(function () {
+        for (var i = 0; i < itemDB.length; i++) {
+            if ($("#searchItem").val()==itemDB[i].code){
+                $("#itemCode").val(itemDB[i].code);
+                $("#nameOfItem").val(itemDB[i].name);
+                $("#kind").val(itemDB[i].kind);
+                $("#qty").val(itemDB[i].qty);
+                $("#unitPrice").val(itemDB[i].price);
+            }else {
+                alert("No Such Item");
+            }
+        }
     });
 
 
