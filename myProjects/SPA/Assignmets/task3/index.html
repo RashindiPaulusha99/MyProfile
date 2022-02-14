@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knight Rider</title>
+
+    <style>
+        body{
+            background-color: #4f5050;
+        }
+
+        body>div{
+            width: 800px;
+            height: 80px;
+            border-top: 2px solid white;
+            border-bottom:2px solid white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        body>div>div{
+            width: 130px;
+            height: 50px;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        body>div>div:nth-child(1){
+            background-color:#e056fd;
+            right:  560px;
+            left: 0;
+        }
+
+        body>div>div:nth-child(2){
+            background-color: red;
+            right:280px;
+            left: 0;
+        }
+
+        body>div>div:nth-child(3){
+            background-color: black;
+            right: 0;
+            left: 0;
+        }
+
+        body>div>div:nth-child(4){
+            background-color: green;
+            right: 0;
+            left: 280px;
+        }
+
+        body>div>div:nth-child(5){
+            background-color: blue;
+            right: 0;
+            left: 560px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div>
+    <div id="purpleBox"></div>
+    <div id="redBox"></div>
+    <div id="greenBox"></div>
+    <div id="blueBox"></div>
+    <div id="blackBox"></div>
+</div>
+
+<script src="assets/jquery/jquery-3.6.0.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>
