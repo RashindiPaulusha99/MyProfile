@@ -46,7 +46,7 @@
         }
 
         body>div:nth-child(2)>div:nth-child(1){
-            background-color: #706fd3;
+            background-color:#e056fd;
             right: 330px;
             left: 0;
         }
@@ -72,7 +72,7 @@
         body>div:nth-child(3){
             width: 100px;
             height: 50px;
-            background-color:#ffdd59;
+            background-color:yellow;
             border-radius: 5px;
             position: absolute;
             top: 180px;
@@ -85,18 +85,99 @@
     </style>
 
 </head>
-<body>
+<body >
 
-<div></div>
+<div id="pinkBox"></div>
 <div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div id="purpleBox"></div>
+    <div id="redBox"></div>
+    <div id="greenBox"></div>
+    <div id="blueBox"></div>
 </div>
-<div></div>
+<div id="yellowBox"></div>
 
 
 <script src="assets/jquery/jquery-3.6.0.min.js"></script>
+<script>
+
+    var array=["yellow","#f5c2c7","#e056fd","red","green","blue"];
+    var position=0;
+    function changeColorPink() {
+
+        $("#pinkBox").css('background-color',array[position]);
+        position++;
+
+        if (position==array.length){
+            position=0;
+        }
+    }
+    setInterval(changeColorPink,1000);
+
+    var array1=["#f5c2c7","#e056fd","red","green","blue","yellow"];
+    var position1=0;
+    function changeColorPurple() {
+
+        $("#purpleBox").css('background-color',array1[position1]);
+        position1++;
+
+        if (position1==array1.length){
+            position1=0;
+        }
+    }
+    setInterval(changeColorPurple,1000);
+
+    var array2=["#e056fd","red","green","blue","yellow","#f5c2c7"];
+    var position2=0;
+    function changeColorRed() {
+
+        $("#redBox").css('background-color',array2[position2]);
+        position2++;
+
+        if (position2==array2.length){
+            position2=0;
+        }
+    }
+    setInterval(changeColorRed,1000);
+
+    var array3=["red","green","blue","yellow","#f5c2c7","#e056fd"];
+    var position3=0;
+    function changeColorGreen() {
+
+        $("#greenBox").css('background-color',array3[position3]);
+        position3++;
+
+        if (position3==array3.length){
+            position3=0;
+        }
+    }
+    setInterval(changeColorGreen,1000);
+
+    var array4=["green","blue","yellow","#f5c2c7","#e056fd","red"];
+    var position4=0;
+    function changeColorBlue() {
+
+        $("#blueBox").css('background-color',array4[position4]);
+        position4++;
+
+        if (position4==array4.length){
+            position4=0;
+        }
+    }
+    setInterval(changeColorBlue,1000);
+
+    var array5=["blue","yellow","#f5c2c7","#e056fd","red","green",];
+    var position5=0;
+    function changeColorYellow() {
+
+        $("#yellowBox").css('background-color',array5[position5]);
+        position5++;
+
+        if (position5==array5.length){
+            position5=0;
+        }
+    }
+    setInterval(changeColorYellow,1000);
+
+</script>
 </body>
 </html>
