@@ -709,6 +709,7 @@
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="db/DB.js"></script>
+<script src="db/ItemDB.js"></script>
 <script src="assets/jquery/jquery-3.6.0.min.js"></script>
 
 <script>
@@ -985,7 +986,6 @@
                     alert("Already Exists");
                 }
 
-
             } else {
 
             }
@@ -1227,20 +1227,50 @@
                 let itemName = $("#nameOfItem").val();
                 let qty = $("#qty").val();
                 let unitPrice = $("#unitPrice").val();
-                let row = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${qty} </td><td> ${unitPrice} </td></tr>`;
-                $("#tblItem tbody").append(row);
 
-                $("#itemCode").val("");
-                $("#kind").val("");
-                $("#nameOfItem").val("");
-                $("#qty").val("");
-                $("#unitPrice").val("");
+                var itemDetails={
+                    code:itemCode,
+                    kind:kind,
+                    name:itemName,
+                    qty:qty,
+                    price:unitPrice
+                }
 
-                $("#itemCode").css('border', '2px solid transparent');
-                $("#kind").css('border', '2px solid transparent');
-                $("#nameOfItem").css('border', '2px solid transparent');
-                $("#qty").css('border', '2px solid transparent');
-                $("#unitPrice").css('border', '2px solid transparent');
+                var ifDuplicate=false;
+
+                for (var j = 0; j < itemDB.length; j++) {
+                    if ($("#itemCode").val() == itemDB[j].code){
+                        ifDuplicate = true;
+                        console.log(ifDuplicate);
+                    }else {
+                        ifDuplicate = false;
+                    }
+                }
+
+                if (ifDuplicate == false){
+                    console.log(itemDetails);
+                    itemDB.push(itemDetails);
+                    $("#tblItem tbody").empty();
+
+                    for (var i = 0; i < itemDB.length; i++) {
+                        let raw = `<tr><td> ${itemDB[i].code} </td><td> ${itemDB[i].kind} </td><td> ${itemDB[i].name} </td><td> ${itemDB[i].qty} </td><td> ${itemDB[i].price} </td></tr>`;
+                        $("#tblItem tbody").append(raw);
+                    }
+
+                    $("#itemCode").val("");
+                    $("#kind").val("");
+                    $("#nameOfItem").val("");
+                    $("#qty").val("");
+                    $("#unitPrice").val("");
+
+                    $("#itemCode").css('border', '2px solid transparent');
+                    $("#kind").css('border', '2px solid transparent');
+                    $("#nameOfItem").css('border', '2px solid transparent');
+                    $("#qty").css('border', '2px solid transparent');
+                    $("#unitPrice").css('border', '2px solid transparent');
+                }else {
+                    alert("Already Exists");
+                }
 
             } else {
 
