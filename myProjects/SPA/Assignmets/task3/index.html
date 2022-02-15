@@ -116,7 +116,7 @@
     var interval3;
     var interval4;
     $("#btnStart").click(function () {
-        clearInterval(interval);
+        /*clearInterval(interval);
         interval = setInterval(changeFifthBox,500);
         //changeFifthBox();
 
@@ -134,8 +134,14 @@
 
         clearInterval(interval4);
         interval4 = setInterval(changeFirstBox,500);
-        //changeFirstBox();
+        //changeFirstBox();*/
     });
+
+    interval = setInterval(changeFifthBox,500);
+    interval1 = setInterval(changeForthBox,500);
+    interval2 = setInterval(changeThirdBox,500);
+    interval3 = setInterval(changeSecondBox,500);
+    interval4 = setInterval(changeFirstBox,500);
 
     $("#btnEnd").click(function () {
         clearInterval(interval);
@@ -151,7 +157,7 @@
         clearInterval(intervalAgain4);
     });
 
-    var color1=["red","#bb2d3b","brown","indianred","#dfc2c4","white","white","white","white","white"];
+    var color1=["red","#bb2d3b","brown","indianred","#dfc2c4","white","white","white","white"];
     var fade1 = 0;
     var intervalAgain;
     function changeFifthBox() {
@@ -172,15 +178,15 @@
         blur1++;
 
         if (blur1==color5.length){
-            blur1=0;
+            blur1=1;
+            clearInterval(intervalAgain);
             setInterval(changeFifthBox,500);
-            //clearInterval(intervalAgain);
         }
     }
 
     /*------------------------------------------------------------------*/
 
-    var color2=["white","red","#bb2d3b","brown","indianred","#dfc2c4","white","white","white","white"];
+    var color2=["white","red","#bb2d3b","brown","indianred","#dfc2c4","white","white","white"];
     var fade2 = 0;
     var intervalAgain1;
     function changeForthBox() {
@@ -200,15 +206,15 @@
         blur2++;
 
         if (blur2==color4.length){
-            blur2=0;
+            blur2=1;
+            clearInterval(intervalAgain1);
             setInterval(changeForthBox,500);
-            //clearInterval(intervalAgain1);
         }
     }
 
     /*-------------------------------------------------------------------*/
 
-    var color3=["white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white","white","white"];
+    var color3=["white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white","white"];
     var fade3 = 0;
     var intervalAgain2;
     function changeThirdBox() {
@@ -228,15 +234,15 @@
         blur3++;
 
         if (blur3==color3.length){
-            blur3=0;
+            blur3=1;
             setInterval(changeThirdBox,500);
-            //clearInterval(intervalAgain2);
+            clearInterval(intervalAgain2);
         }
     }
 
     /*----------------------------------------------------------------*/
 
-    var color4=["white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white","white"];
+    var color4=["white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
     var fade4 = 0;
     var intervalAgain3;
     function changeSecondBox() {
@@ -246,7 +252,7 @@
 
        if (fade4==color4.length){
             fade4=0;
-           clearInterval(interval3);
+            clearInterval(interval3);
             intervalAgain3 = setInterval(changeSecondBoxAgain,500);
         }
     }
@@ -258,15 +264,15 @@
         blur4++;
 
         if (blur4==color2.length){
-            blur4=0;
+            blur4=1;
+            clearInterval(intervalAgain3);
             setInterval(changeSecondBox,500);
-            //clearInterval(intervalAgain3);
         }
     }
 
     /*------------------------------------------------------------------------------*/
 
-    var color5=["white","white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
+    var color5=["white","white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4"];
     var fade5 = 0;
     var intervalAgain4;
     function changeFirstBox() {
@@ -288,9 +294,9 @@
         blur5++;
 
         if (blur5==color1.length){
-            blur5=0;
+            blur5=1;
+            clearInterval(intervalAgain4);
             setInterval(changeFirstBox,500);
-            //clearInterval(intervalAgain4);
         }
     }
 
