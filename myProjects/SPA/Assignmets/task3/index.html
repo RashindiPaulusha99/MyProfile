@@ -25,7 +25,8 @@
         body>div>div{
             width: 130px;
             height: 50px;
-            border-radius: 5px;
+            border-radius: 3px;
+            border: 2px solid black;
             position: absolute;
             top: 0;
             bottom: 0;
@@ -33,33 +34,33 @@
         }
 
         body>div>div:nth-child(1){
-            background-color:#e056fd;
-            right:  560px;
+            background-color:white;
+            right:  520px;
             left: 0;
         }
 
         body>div>div:nth-child(2){
-            background-color: red;
-            right:280px;
+            background-color: white;
+            right:260px;
             left: 0;
         }
 
         body>div>div:nth-child(3){
-            background-color: black;
+            background-color: white;
             right: 0;
             left: 0;
         }
 
         body>div>div:nth-child(4){
-            background-color: green;
+            background-color: white;
             right: 0;
-            left: 280px;
+            left: 260px;
         }
 
         body>div>div:nth-child(5){
-            background-color: blue;
+            background-color: white;
             right: 0;
-            left: 560px;
+            left: 520px;
         }
 
     </style>
@@ -68,15 +69,75 @@
 <body>
 
 <div>
-    <div id="purpleBox"></div>
-    <div id="redBox"></div>
-    <div id="greenBox"></div>
-    <div id="blueBox"></div>
-    <div id="blackBox"></div>
+    <div id="firstBox"></div>
+    <div id="secondBox"></div>
+    <div id="thirdBox"></div>
+    <div id="forthBox"></div>
+    <div id="fifthBox"></div>
 </div>
 
 <script src="assets/jquery/jquery-3.6.0.min.js"></script>
 <script>
+
+    var color=["red","#bb2d3b","brown","indianred","#dfc2c4","white"];
+    fade1 = 0;
+    function changeFifthBox() {
+         $("#fifthBox").css('background-color',color[fade1]);
+         fade1++;
+
+         if (fade1==color.length){
+             fade1=0;
+         }
+    }
+    setInterval(changeFifthBox,500);
+
+    var color1=["white","red","#bb2d3b","brown","indianred","#dfc2c4"];
+    fade2 = 0;
+    function changeForthBox() {
+        $("#forthBox").css('background-color',color1[fade2]);
+        fade2++;
+
+        if (fade2==color1.length){
+            fade2=0;
+        }
+    }
+    setInterval(changeForthBox,500);
+
+    var color3=["white","white","red","#bb2d3b","brown","indianred","#dfc2c4"];
+    fade3 = 0;
+    function changeThirdBox() {
+        $("#thirdBox").css('background-color',color3[fade3]);
+        fade3++;
+
+        if (fade3==color3.length){
+            fade3=0;
+        }
+    }
+    setInterval(changeThirdBox,500);
+
+    var color4=["white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4"];
+    fade4 = 0;
+    function changeSecondBox() {
+        $("#secondBox").css('background-color',color4[fade4]);
+        fade4++;
+
+        if (fade4==color4.length){
+            fade4=0;
+        }
+    }
+    setInterval(changeSecondBox,500);
+
+    var color5=["white","white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4"];
+    fade5 = 0;
+    function changeFirstBox() {
+        $("#secondBox").css('background-color',color5[fade5]);
+        fade5++;
+
+        if (fade5==color5.length){
+            fade5=0;
+        }
+    }
+    setInterval(changeFirstBox,500);
 
 </script>
 </body>
