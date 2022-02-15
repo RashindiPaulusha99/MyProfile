@@ -79,6 +79,7 @@
             width: 60px;
             height: 30px;
             color: white;
+            border: 2px solid white;
         }
 
         #btnEnd{
@@ -86,6 +87,7 @@
             width: 60px;
             height: 30px;
             color: white;
+            border: 2px solid white;
         }
 
     </style>
@@ -108,31 +110,55 @@
 <script src="assets/jquery/jquery-3.6.0.min.js"></script>
 <script>
 
-    var color=["red","#bb2d3b","brown","indianred","#dfc2c4","white"];
+    var color1=["red","#bb2d3b","brown","indianred","#dfc2c4","white"];
     fade1 = 0;
     function changeFifthBox() {
-         $("#fifthBox").css('background-color',color[fade1]);
+         $("#fifthBox").css('background-color',color1[fade1]);
          fade1++;
 
-         if (fade1==color.length){
+         /*if (fade5==color1.length){
              fade1=0;
-             clearInterval(interval);
-         }
+             changeFifthBoxAgain();
+         }*/
     }
     let interval = setInterval(changeFifthBox,500);
 
-    var color1=["white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
-    fade2 = 0;
-    function changeForthBox() {
-        $("#forthBox").css('background-color',color1[fade2]);
-        fade2++;
+    function changeFifthBoxAgain() {
+        $("#fifthBox").css('background-color',color5[fade1]);
+        fade1++;
 
-        if (fade2==color1.length){
-            fade2=0;
-            clearInterval(interval1);
+        if (fade5==color5.length){
+            fade1=0;
+            changeFifthBox();
         }
     }
+
+    /*------------------------------------------------------------------*/
+
+    var color2=["white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
+    fade2 = 0;
+    function changeForthBox() {
+        $("#forthBox").css('background-color',color2[fade2]);
+        fade2++;
+
+        /*if (fade2==color2.length){
+            fade2=0;
+            changeForthBoxAgain();
+        }*/
+    }
     let interval1 = setInterval(changeForthBox,500);
+
+    function changeForthBoxAgain() {
+        $("#forthBox").css('background-color',color4[fade2]);
+        fade2++;
+
+        if (fade2==color4.length){
+            fade2=0;
+            changeForthBox();
+        }
+    }
+
+    /*-------------------------------------------------------------------*/
 
     var color3=["white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
     fade3 = 0;
@@ -142,10 +168,12 @@
 
         if (fade3==color3.length){
             fade3=0;
-            clearInterval(interval2);
+            
         }
     }
     let interval2 = setInterval(changeThirdBox,500);
+
+    /*----------------------------------------------------------------*/
 
     var color4=["white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
     fade4 = 0;
@@ -155,10 +183,22 @@
 
         if (fade4==color4.length){
             fade4=0;
-            clearInterval(interval3);
+            changeSecondBoxAgain();
         }
     }
     let interval3 = setInterval(changeSecondBox,500);
+
+    function changeSecondBoxAgain() {
+        $("#secondBox").css('background-color',color2[fade4]);
+        fade4++;
+
+        if (fade4==color2.length){
+            fade4=0;
+            changeSecondBox();
+        }
+    }
+
+    /*------------------------------------------------------------------------------*/
 
     var color5=["white","white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
     fade5 = 0;
@@ -168,10 +208,21 @@
 
         if (fade5==color5.length){
             fade5=0;
-            clearInterval(interval4);
+            changeFirstBoxAgain();
         }
     }
     let interval4 = setInterval(changeFirstBox,500);
+
+    function changeFirstBoxAgain() {
+        $("#firstBox").css('background-color',color1[fade5]);
+        fade5++;
+
+        if (fade5==color1.length){
+            fade5=0;
+            changeFirstBox();
+        }
+    }
+
 
 </script>
 </body>
