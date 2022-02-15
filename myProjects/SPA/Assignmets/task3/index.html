@@ -178,7 +178,7 @@
         blur1++;
 
         if (blur1==color5.length){
-            blur1=1;
+            blur1=0;
             clearInterval(intervalAgain);
             setInterval(changeFifthBox,500);
         }
@@ -206,7 +206,7 @@
         blur2++;
 
         if (blur2==color4.length){
-            blur2=1;
+            blur2=0;
             clearInterval(intervalAgain1);
             setInterval(changeForthBox,500);
         }
@@ -234,7 +234,7 @@
         blur3++;
 
         if (blur3==color3.length){
-            blur3=1;
+            blur3=0;
             setInterval(changeThirdBox,500);
             clearInterval(intervalAgain2);
         }
@@ -251,7 +251,7 @@
         fade4++;
 
        if (fade4==color4.length){
-            fade4=0;
+            fade4=-1;
             clearInterval(interval3);
             intervalAgain3 = setInterval(changeSecondBoxAgain,500);
         }
@@ -264,7 +264,7 @@
         blur4++;
 
         if (blur4==color2.length){
-            blur4=1;
+            blur4=0;
             clearInterval(intervalAgain3);
             setInterval(changeSecondBox,500);
         }
@@ -294,7 +294,7 @@
         blur5++;
 
         if (blur5==color1.length){
-            blur5=1;
+            blur5=0;
             clearInterval(intervalAgain4);
             setInterval(changeFirstBox,500);
         }
