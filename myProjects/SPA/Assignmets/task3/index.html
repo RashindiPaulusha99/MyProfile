@@ -9,7 +9,7 @@
             background-color: #4f5050;
         }
 
-        body>div{
+        body>div:nth-child(1){
             width: 800px;
             height: 80px;
             border-top: 2px solid white;
@@ -22,7 +22,7 @@
             margin: auto;
         }
 
-        body>div>div{
+        body>div:nth-child(1)>div{
             width: 130px;
             height: 50px;
             border-radius: 3px;
@@ -33,34 +33,59 @@
             margin: auto;
         }
 
-        body>div>div:nth-child(1){
+        body>div:nth-child(1)>div:nth-child(1){
             background-color:white;
             right:  520px;
             left: 0;
         }
 
-        body>div>div:nth-child(2){
+        body>div:nth-child(1)>div:nth-child(2){
             background-color: white;
             right:260px;
             left: 0;
         }
 
-        body>div>div:nth-child(3){
+        body>div:nth-child(1)>div:nth-child(3){
             background-color: white;
             right: 0;
             left: 0;
         }
 
-        body>div>div:nth-child(4){
+        body>div:nth-child(1)>div:nth-child(4){
             background-color: white;
             right: 0;
             left: 260px;
         }
 
-        body>div>div:nth-child(5){
+        body>div:nth-child(1)>div:nth-child(5){
             background-color: white;
             right: 0;
             left: 520px;
+        }
+
+        body>div:nth-child(2){
+            position: absolute;
+            top: 200px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 130px;
+            height: 40px;
+        }
+
+        #btnStart{
+            background-color: #706fd3;
+            width: 60px;
+            height: 30px;
+            color: white;
+        }
+
+        #btnEnd{
+            background-color: #dc3545;
+            width: 60px;
+            height: 30px;
+            color: white;
         }
 
     </style>
@@ -75,6 +100,10 @@
     <div id="forthBox"></div>
     <div id="fifthBox"></div>
 </div>
+<div>
+    <button id="btnStart">Start</button>
+    <button id="btnEnd">End</button>
+</div>
 
 <script src="assets/jquery/jquery-3.6.0.min.js"></script>
 <script>
@@ -87,11 +116,12 @@
 
          if (fade1==color.length){
              fade1=0;
+             clearInterval(interval);
          }
     }
-    setInterval(changeFifthBox,500);
+    let interval = setInterval(changeFifthBox,500);
 
-    var color1=["white","red","#bb2d3b","brown","indianred","#dfc2c4"];
+    var color1=["white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
     fade2 = 0;
     function changeForthBox() {
         $("#forthBox").css('background-color',color1[fade2]);
@@ -99,11 +129,12 @@
 
         if (fade2==color1.length){
             fade2=0;
+            clearInterval(interval1);
         }
     }
-    setInterval(changeForthBox,500);
+    let interval1 = setInterval(changeForthBox,500);
 
-    var color3=["white","white","red","#bb2d3b","brown","indianred","#dfc2c4"];
+    var color3=["white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
     fade3 = 0;
     function changeThirdBox() {
         $("#thirdBox").css('background-color',color3[fade3]);
@@ -111,11 +142,12 @@
 
         if (fade3==color3.length){
             fade3=0;
+            clearInterval(interval2);
         }
     }
-    setInterval(changeThirdBox,500);
+    let interval2 = setInterval(changeThirdBox,500);
 
-    var color4=["white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4"];
+    var color4=["white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
     fade4 = 0;
     function changeSecondBox() {
         $("#secondBox").css('background-color',color4[fade4]);
@@ -123,21 +155,23 @@
 
         if (fade4==color4.length){
             fade4=0;
+            clearInterval(interval3);
         }
     }
-    setInterval(changeSecondBox,500);
+    let interval3 = setInterval(changeSecondBox,500);
 
-    var color5=["white","white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4"];
+    var color5=["white","white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];
     fade5 = 0;
     function changeFirstBox() {
-        $("#secondBox").css('background-color',color5[fade5]);
+        $("#firstBox").css('background-color',color5[fade5]);
         fade5++;
 
         if (fade5==color5.length){
             fade5=0;
+            clearInterval(interval4);
         }
     }
-    setInterval(changeFirstBox,500);
+    let interval4 = setInterval(changeFirstBox,500);
 
 </script>
 </body>
