@@ -116,32 +116,32 @@
     var interval3;
     var interval4;
     $("#btnStart").click(function () {
-        /*clearInterval(interval);
+        clearInterval(interval);
         interval = setInterval(changeFifthBox,500);
-        //changeFifthBox();
+        changeFifthBox();
 
         clearInterval(interval1);
         interval1 = setInterval(changeForthBox,500);
-        //changeForthBox();
+        changeForthBox();
 
         clearInterval(interval2);
         interval2 = setInterval(changeThirdBox,500);
-        //changeThirdBox();
+        changeThirdBox();
 
         clearInterval(interval3);
         interval3 = setInterval(changeSecondBox,500);
-        //changeSecondBox();
+        changeSecondBox();
 
         clearInterval(interval4);
         interval4 = setInterval(changeFirstBox,500);
-        //changeFirstBox();*/
+        changeFirstBox();
     });
 
-    interval = setInterval(changeFifthBox,500);
+    /*interval = setInterval(changeFifthBox,500);
     interval1 = setInterval(changeForthBox,500);
     interval2 = setInterval(changeThirdBox,500);
     interval3 = setInterval(changeSecondBox,500);
-    interval4 = setInterval(changeFirstBox,500);
+    interval4 = setInterval(changeFirstBox,500);*/
 
     $("#btnEnd").click(function () {
         clearInterval(interval);
@@ -150,11 +150,11 @@
         clearInterval(interval3);
         clearInterval(interval4);
 
-        clearInterval(intervalAgain);
+        /*clearInterval(intervalAgain);
         clearInterval(intervalAgain1);
         clearInterval(intervalAgain2);
         clearInterval(intervalAgain3);
-        clearInterval(intervalAgain4);
+        clearInterval(intervalAgain4);*/
     });
 
     var color1=["red","#bb2d3b","brown","indianred","#dfc2c4","white","white","white","white"];
@@ -167,11 +167,12 @@
 
          if (fade1==color1.length){
              fade1=0;
-             clearInterval(interval);
              intervalAgain = setInterval(changeFifthBoxAgain,500);
+             clearInterval(interval);
          }
     }
 
+    /*var color5Again=["white","white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4"];*/
     var blur1=0;
     function changeFifthBoxAgain() {
         $("#fifthBox").css('background-color',color5[blur1]);
@@ -179,8 +180,8 @@
 
         if (blur1==color5.length){
             blur1=0;
-            clearInterval(intervalAgain);
             setInterval(changeFifthBox,500);
+            clearInterval(intervalAgain);
         }
     }
 
@@ -195,11 +196,12 @@
 
         if (fade2==color2.length){
             fade2=0;
-            clearInterval(interval1);
             intervalAgain1 = setInterval(changeForthBoxAgain,500);
+            clearInterval(interval1);
         }
     }
 
+    /*var color4Again=["white","white","white","red","#bb2d3b","brown","indianred","#dfc2c4","white"];*/
     var blur2=0;
     function changeForthBoxAgain() {
         $("#forthBox").css('background-color',color4[blur2]);
@@ -207,8 +209,8 @@
 
         if (blur2==color4.length){
             blur2=0;
-            clearInterval(intervalAgain1);
             setInterval(changeForthBox,500);
+            clearInterval(intervalAgain1);
         }
     }
 
@@ -223,12 +225,12 @@
 
         if (fade3==color3.length){
             fade3=0;
-            clearInterval(interval2);
-            intervalAgain2 = setInterval(changeThirdBoxAgain,500);
+            /*intervalAgain2 = setInterval(changeThirdBoxAgain,500);
+            clearInterval(interval2);*/
         }
     }
 
-    var blur3 = 0;
+    /*var blur3 = 0;
     function changeThirdBoxAgain() {
         $("#thirdBox").css('background-color',color3[blur3]);
         blur3++;
@@ -238,7 +240,7 @@
             setInterval(changeThirdBox,500);
             clearInterval(intervalAgain2);
         }
-    }
+    }*/
 
     /*----------------------------------------------------------------*/
 
@@ -251,12 +253,13 @@
         fade4++;
 
        if (fade4==color4.length){
-            fade4=-1;
-            clearInterval(interval3);
+            fade4=0;
             intervalAgain3 = setInterval(changeSecondBoxAgain,500);
+            clearInterval(interval3);
         }
     }
 
+    /*var color2Again=["white","red","#bb2d3b","brown","indianred","#dfc2c4","white","white","white"];*/
     var blur4=0;
     function changeSecondBoxAgain() {
 
@@ -265,8 +268,8 @@
 
         if (blur4==color2.length){
             blur4=0;
-            clearInterval(intervalAgain3);
             setInterval(changeSecondBox,500);
+            clearInterval(intervalAgain3);
         }
     }
 
@@ -282,11 +285,12 @@
 
        if (fade5==color5.length){
            fade5=0;
-           clearInterval(interval4);
            intervalAgain4 = setInterval(changeFirstBoxAgain,500);
+           clearInterval(interval4);
         }
     }
 
+    /*var color1Again=["red","#bb2d3b","brown","indianred","#dfc2c4","white","white","white","white"];*/
     var blur5=0;
     function changeFirstBoxAgain() {
 
@@ -295,8 +299,8 @@
 
         if (blur5==color1.length){
             blur5=0;
-            clearInterval(intervalAgain4);
             setInterval(changeFirstBox,500);
+            clearInterval(intervalAgain4);
         }
     }
 
