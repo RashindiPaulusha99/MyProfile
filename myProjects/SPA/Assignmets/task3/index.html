@@ -118,23 +118,23 @@
 
     $("#btnStart").click(function () {
         clearInterval(interval);
-        interval = setInterval(changeFifthBox,500);
+        interval = setInterval(changeFifthBox,100);
         changeFifthBox();
 
         clearInterval(interval1);
-        interval1 = setInterval(changeForthBox,500);
+        interval1 = setInterval(changeForthBox,100);
         changeForthBox();
 
         clearInterval(interval2);
-        interval2 = setInterval(changeThirdBox,500);
+        interval2 = setInterval(changeThirdBox,100);
         changeThirdBox();
 
         clearInterval(interval3);
-        interval3 = setInterval(changeSecondBox,500);
+        interval3 = setInterval(changeSecondBox,100);
         changeSecondBox();
 
         clearInterval(interval4);
-        interval4 = setInterval(changeFirstBox,500);
+        interval4 = setInterval(changeFirstBox,100);
         changeFirstBox();
     });
 
