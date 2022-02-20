@@ -890,7 +890,7 @@
             if (event.key=="Enter"){
 
                 let text = "Do you really want to save this Customer?";
-                if (confirm(text) == true) {
+                /*if (confirm(text) == true) {
                     let cusId = $("#customerId").val();
                     let cusName = $("#nameOfCustomer").val();
                     let cusGender = $("#gender").val();
@@ -918,12 +918,100 @@
                     $("#email").css('border','2px solid transparent');
                 } else {
 
+                }*/
+                if (confirm(text) == true) {
+
+                    let cusId = $("#customerId").val();
+                    let cusName = $("#nameOfCustomer").val();
+                    let cusGender = $("#gender").val();
+                    let cusContact = $("#contact").val();
+                    let cusNIC = $("#nic").val();
+                    let cusAddress = $("#address").val();
+                    let cusEmail = $("#email").val();
+
+                    var cusDetails={
+                        id:cusId,
+                        name:cusName,
+                        gender:cusGender,
+                        contact:cusContact,
+                        nic:cusNIC,
+                        address:cusAddress,
+                        email:cusEmail
+                    }
+
+                    var ifDuplicate=false;
+
+                    for (var j = 0; j < customerDB.length; j++) {
+                        if ($("#customerId").val() == customerDB[j].id){
+                            ifDuplicate = true;
+                        }else {
+                            ifDuplicate = false;
+                        }
+                    }
+
+                    if (ifDuplicate == false){
+                        customerDB.push(cusDetails);
+                        $("#tblCustomer tbody").empty();
+
+                        for (var i = 0; i < customerDB.length; i++) {
+                            let raw = `<tr><td> ${customerDB[i].id} </td><td> ${customerDB[i].name} </td><td> ${customerDB[i].gender} </td><td> ${customerDB[i].contact} </td><td> ${customerDB[i].nic} </td><td> ${customerDB[i].address} </td><td> ${customerDB[i].email} </td></tr>`;
+                            $("#tblCustomer tbody").append(raw);
+                        }
+
+                        $("#customerId").val("");
+                        $("#nameOfCustomer").val("");
+                        $("#gender").val("");
+                        $("#contact").val("");
+                        $("#nic").val("");
+                        $("#address").val("");
+                        $("#email").val("");
+
+                        $("#customerId").css('border','2px solid transparent');
+                        $("#nameOfCustomer").css('border','2px solid transparent');
+                        $("#gender").css('border','2px solid transparent');
+                        $("#contact").css('border','2px solid transparent');
+                        $("#nic").css('border','2px solid transparent');
+                        $("#address").css('border','2px solid transparent');
+                        $("#email").css('border','2px solid transparent');
+
+                    }else {
+                        alert("Already Exists");
+                    }
+
+                } else {
+
                 }
             }
         }else {
             $("#email").css('border','2px solid red');
             $("#errorEmail").text("Email is a required field: At least 6 characters with symbols");
         }
+
+        $("#tblCustomer tbody > tr").click(function () {
+
+            tblCustomerRow=$(this);
+
+            $("#customerId").val($(this).children(':nth-child(1)').text());
+            $("#nameOfCustomer").val($(this).children(':nth-child(2)').text());
+            $("#gender").val($(this).children(':nth-child(3)').text());
+            $("#contact").val($(this).children(':nth-child(4)').text());
+            $("#nic").val($(this).children(':nth-child(5)').text());
+            $("#address").val($(this).children(':nth-child(6)').text());
+            $("#email").val($(this).children(':nth-child(7)').text());
+
+        });
+
+        $("#tblCustomer tbody > tr").dblclick(function () {
+            $(this).remove();
+
+            $("#customerId").val("");
+            $("#nameOfCustomer").val("");
+            $("#gender").val("");
+            $("#contact").val("");
+            $("#nic").val("");
+            $("#address").val("");
+            $("#email").val("");
+        });
     });
 
     $('#customerId,#nameOfCustomer,#gender,#contact,#nic,#address,#email').keydown(function (e) {
@@ -1250,13 +1338,13 @@
 
             tblCustomerRow=$(this);
 
-            $("#customerId").val($(this).children(':nth-child(1)').text());
-            $("#nameOfCustomer").val($(this).children(':nth-child(2)').text());
-            $("#gender").val($(this).children(':nth-child(3)').text());
-            $("#contact").val($(this).children(':nth-child(4)').text());
-            $("#nic").val($(this).children(':nth-child(5)').text());
-            $("#address").val($(this).children(':nth-child(6)').text());
-            $("#email").val($(this).children(':nth-child(7)').text());
+            $("#customerId").val(tblCustomerRow.children(':nth-child(1)').text());
+            $("#nameOfCustomer").val(tblCustomerRow.children(':nth-child(2)').text());
+            $("#gender").val(tblCustomerRow.children(':nth-child(3)').text());
+            $("#contact").val(tblCustomerRow.children(':nth-child(4)').text());
+            $("#nic").val(tblCustomerRow.children(':nth-child(5)').text());
+            $("#address").val(tblCustomerRow.children(':nth-child(6)').text());
+            $("#email").val(tblCustomerRow.children(':nth-child(7)').text());
 
         });
 
@@ -1352,26 +1440,24 @@
                 $(tblCustomerRow).children(':nth-child(6)').text(cusAddress);
                 $(tblCustomerRow).children(':nth-child(7)').text(cusEmail);
 
-                var index=-1;
+                //edit();
+
+                var count=-1;
                 for (var i = 0; i < customerDB.length; i++) {
-                    if ($("#customerId").val()==customerDB[i].id){
-                        index=i;
-                        customerDB[index].id=cusId;
-                        customerDB[index].name=cusName;
-                        customerDB[index].gender=cusGender;
-                        customerDB[index].contact=cusContact;
-                        customerDB[index].nic=cusNIC;
-                        customerDB[index].address=cusAddress;
-                        customerDB[index].email=cusEmail;
+
+                    var id=$("#customerId").val();
+                    var trim=$.trim(id);
+
+                    if (trim == customerDB[i].id){
+                        customerDB[i].id=cusId;
+                        customerDB[i].name=cusName;
+                        customerDB[i].gender=cusGender;
+                        customerDB[i].contact=cusContact;
+                        customerDB[i].nic=cusNIC;
+                        customerDB[i].address=cusAddress;
+                        customerDB[i].email=cusEmail;
                     }
                 }
-                /*customerDB[index].id=cusId;
-                customerDB[index].name=cusName;
-                customerDB[index].gender=cusGender;
-                customerDB[index].contact=cusContact;
-                customerDB[index].nic=cusNIC;
-                customerDB[index].address=cusAddress;
-                customerDB[index].email=cusEmail;*/
 
                 $("#customerId").val("");
                 $("#nameOfCustomer").val("");
@@ -1410,6 +1496,37 @@
             }
         }
     });
+
+    function edit() {
+        var count=-1;
+        for (var i = 0; i < customerDB.length; i++) {
+            if ($("#customerId").val()==customerDB[i].id){
+                count=i;
+                console.log(i);
+            }
+        }
+        var cus={
+            id:$("#customerId").val(),
+            name:$("#nameOfCustomer").val(),
+            gender:$("#gender").val(),
+            contact:contact=$("#contact").val(),
+            nic:$("#nic").val(),
+            address:$("#address").val(),
+            email:$("#email").val()
+        }
+
+        customerDB.splice(count,1);
+        customerDB
+
+        customerDB[count].id=cus.id;
+        customerDB[count].name=cus.name;
+        console.log(cus.name);
+        customerDB[count].gender=cus.gender;
+        customerDB[count].contact=cus.contact;
+        customerDB[count].nic=cus.nic;
+        customerDB[count].address=cus.address;
+        customerDB[count].email=cus.email;
+    }
 
     var regExItemID=/^(I00-)[0-9]{3,4}$/;
     var regExKind=/^[A-Z|a-z\s]{3,20}$/;
