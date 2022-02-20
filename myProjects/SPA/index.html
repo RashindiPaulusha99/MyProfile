@@ -1393,8 +1393,11 @@
                 tblCustomerRow.remove();
 
                 var index=-1;
+                var id=$("#customerId").val();
+                var trim=$.trim(id);
+
                 for (var i = 0; i < customerDB.length; i++) {
-                    if ($("#customerId").val()==customerDB[i].id){
+                    if (trim==customerDB[i].id){
                         index=i;
                     }
                 }
@@ -1496,37 +1499,6 @@
             }
         }
     });
-
-    function edit() {
-        var count=-1;
-        for (var i = 0; i < customerDB.length; i++) {
-            if ($("#customerId").val()==customerDB[i].id){
-                count=i;
-                console.log(i);
-            }
-        }
-        var cus={
-            id:$("#customerId").val(),
-            name:$("#nameOfCustomer").val(),
-            gender:$("#gender").val(),
-            contact:contact=$("#contact").val(),
-            nic:$("#nic").val(),
-            address:$("#address").val(),
-            email:$("#email").val()
-        }
-
-        customerDB.splice(count,1);
-        customerDB
-
-        customerDB[count].id=cus.id;
-        customerDB[count].name=cus.name;
-        console.log(cus.name);
-        customerDB[count].gender=cus.gender;
-        customerDB[count].contact=cus.contact;
-        customerDB[count].nic=cus.nic;
-        customerDB[count].address=cus.address;
-        customerDB[count].email=cus.email;
-    }
 
     var regExItemID=/^(I00-)[0-9]{3,4}$/;
     var regExKind=/^[A-Z|a-z\s]{3,20}$/;
@@ -1760,8 +1732,11 @@
                 tblItemRow.remove();
 
                 var index=-1;
+                var code=$("#itemCode").val();
+                var trim=$.trim(code);
+
                 for (var i = 0; i < itemDB.length; i++) {
-                    if ($("#itemCode").val()==itemDB[i].code){
+                    if (trim == itemDB[i].code){
                         index=i;
                     }
                 }
