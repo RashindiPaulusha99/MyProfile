@@ -1443,8 +1443,6 @@
                 $(tblCustomerRow).children(':nth-child(6)').text(cusAddress);
                 $(tblCustomerRow).children(':nth-child(7)').text(cusEmail);
 
-                //edit();
-
                 var count=-1;
                 for (var i = 0; i < customerDB.length; i++) {
 
@@ -1775,6 +1773,21 @@
                 $(tblItemRow).children(':nth-child(3)').text(itemName);
                 $(tblItemRow).children(':nth-child(4)').text(qty);
                 $(tblItemRow).children(':nth-child(5)').text(unitPrice);
+
+                var count=-1;
+                for (var i = 0; i < itemDB.length; i++) {
+
+                    var code=$("#itemCode").val();
+                    var trim=$.trim(code);
+
+                    if (trim == itemDB[i].code){
+                        itemDB[i].code=itemCode;
+                        itemDB[i].kind=kind;
+                        itemDB[i].name=itemName;
+                        itemDB[i].qty=qty;
+                        itemDB[i].price=unitPrice;
+                    }
+                }
 
                 $("#itemCode").val("");
                 $("#kind").val("");
