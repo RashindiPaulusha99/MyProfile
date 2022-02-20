@@ -941,8 +941,11 @@
 
                     var ifDuplicate=false;
 
+                    var id=$("#customerId").val();
+                    var trim = $.trim(id);
+
                     for (var j = 0; j < customerDB.length; j++) {
-                        if ($("#customerId").val() == customerDB[j].id){
+                        if (trim == customerDB[j].id){
                             ifDuplicate = true;
                         }else {
                             ifDuplicate = false;
@@ -1292,8 +1295,11 @@
 
                 var ifDuplicate=false;
 
+                var id=$("#customerId").val();
+                var trim = $.trim(id);
+
                 for (var j = 0; j < customerDB.length; j++) {
-                    if ($("#customerId").val() == customerDB[j].id){
+                    if (trim == customerDB[j].id){
                         ifDuplicate = true;
                     }else {
                         ifDuplicate = false;
@@ -1591,8 +1597,11 @@
 
                     var ifDuplicate=false;
 
+                    var code=$("#itemCode").val();
+                    var trim = $.trim(code);
+
                     for (var j = 0; j < itemDB.length; j++) {
-                        if ($("#itemCode").val() == itemDB[j].code){
+                        if (trim == itemDB[j].code){
                             ifDuplicate = true;
                         }else {
                             ifDuplicate = false;
@@ -1670,8 +1679,11 @@
 
                 var ifDuplicate=false;
 
+                var code=$("#itemCode").val();
+                var trim = $.trim(code);
+
                 for (var j = 0; j < itemDB.length; j++) {
-                    if ($("#itemCode").val() == itemDB[j].code){
+                    if (trim == itemDB[j].code){
                         ifDuplicate = true;
                     }else {
                         ifDuplicate = false;
