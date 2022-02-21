@@ -500,8 +500,8 @@
 
                     <div class="col">
                         <div class="form-outline ">
-                            <label class="form-label text-black mb-0" for="form6ExampleO4">Name</label>
-                            <input type="text" id="form6ExampleO4" class="form-control form-control-sm shadow mb-2" placeholder="xxxxx" />
+                            <label class="form-label text-black mb-0" for="orderCusName">Name</label>
+                            <input type="text" id="orderCusName" class="form-control form-control-sm shadow mb-2" placeholder="xxxxx" />
                         </div>
                     </div>
                 </div>
@@ -509,15 +509,15 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <label class="form-label text-black mb-0" for="form6ExampleO5">Contact</label>
-                            <input type="tel" id="form6ExampleO5" class="form-control form-control-sm shadow mb-2" placeholder="0xx-xxxxxxx" />
+                            <label class="form-label text-black mb-0" for="orderCusContact">Contact</label>
+                            <input type="tel" id="orderCusContact" class="form-control form-control-sm shadow mb-2" placeholder="0xx-xxxxxxx" />
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="form-outline ">
-                            <label class="form-label text-black mb-0" for="form6ExampleO6">NIC</label>
-                            <input type="text" id="form6ExampleO6" class="form-control form-control-sm shadow mb-2" placeholder="xxxxxxxxxV" />
+                            <label class="form-label text-black mb-0" for="orderCusNIC">NIC</label>
+                            <input type="text" id="orderCusNIC" class="form-control form-control-sm shadow mb-2" placeholder="xxxxxxxxxV" />
                         </div>
                     </div>
                 </div>
@@ -525,8 +525,8 @@
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
-                            <label class="form-label text-black mb-0" for="form6ExampleO7">Address</label>
-                            <input type="text" id="form6ExampleO7" class="form-control form-control-sm shadow mb-3" placeholder="xxxxx" />
+                            <label class="form-label text-black mb-0" for="orderCusAddress">Address</label>
+                            <input type="text" id="orderCusAddress" class="form-control form-control-sm shadow mb-3" placeholder="xxxxx" />
                         </div>
                     </div>
                 </div>
@@ -1302,7 +1302,6 @@
                     for (var i = 0; i < customerDB.length; i++) {
                         let raw = `<tr><td> ${customerDB[i].id} </td><td> ${customerDB[i].name} </td><td> ${customerDB[i].gender} </td><td> ${customerDB[i].contact} </td><td> ${customerDB[i].nic} </td><td> ${customerDB[i].address} </td><td> ${customerDB[i].email} </td></tr>`;
                         $("#tblCustomer tbody").append(raw);
-                        console.log(raw);
                     }
 
                     $("#customerId").val("");
@@ -1885,25 +1884,24 @@
 
     function loadCustomerIds() {
         for (var i = 0; i <customerDB.length ; i++) {
+            if (){
+
+            }
             $("#ids").append($("<option></option>").attr("value", i).text(customerDB[i].id));
         }
     }
 
-    /*$("#ids").click(function () {
+    $("#ids").click(function (event) {
+
         for (var i = 0; i < customerDB.length; i++) {
-            if ($("#searchCustomer").val()==customerDB[i].id){
-                $("#customerId").val(customerDB[i].id);
-                $("#nameOfCustomer").val(customerDB[i].name);
-                $("#gender").val(customerDB[i].gender);
-                $("#contact").val(customerDB[i].contact);
-                $("#nic").val(customerDB[i].nic);
-                $("#address").val(customerDB[i].address());
-                $("#email").val(customerDB[i].email);
-            }else {
-                alert("No Such Customer");
+            if ($("#ids option:selected").text()==customerDB[i].id){
+                $("#orderCusName").val(customerDB[i].name);
+                $("#orderCusContact").val(customerDB[i].contact);
+                $("#orderCusNIC").val(customerDB[i].nic);
+                $("#orderCusAddress").val(customerDB[i].address());
             }
         }
-    });*/
+    });
 
     /*-------------------Item Sec-----------------------*/
 
