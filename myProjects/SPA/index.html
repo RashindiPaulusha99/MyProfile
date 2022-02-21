@@ -495,9 +495,9 @@
                         <label class="form-label text-black mb-0" >Customer ID</label>
                         <select aria-label="Default select example" class="form-select shadow" style="height: 32px" id="ids">
                             <option selected></option>
-                            <option value="1">1</option>
+                            <!--<option value="1" id="op1">1</option>
                             <option value="2">2</option>
-                            <option value="3">3</option>
+                            <option value="3">3</option>-->
                         </select>
                     </div>
 
@@ -760,6 +760,9 @@
         $("#orderSec").css('display','block');
         $("#homeSec").css('display','none');
         $("#name").css('display','none');
+
+       loadCustomerIds();
+       loadItemCode();
     });
 
     /*----------------------------------------------Customer------------------------------------------------*/
@@ -1886,9 +1889,28 @@
 
     /*-------------------Customer Sec-----------------------*/
 
-    $("#ids").click(function () {
+    function loadCustomerIds() {
+        for (var i = 0; i <customerDB.length ; i++) {
+            //$("#op1").text(customerDB[i].id);
+            $("#ids").append($("<option></option>").attr("value", i).text(customerDB[i].id));
+        }
+    }
 
-    });
+    /*$("#ids").click(function () {
+        for (var i = 0; i < customerDB.length; i++) {
+            if ($("#searchCustomer").val()==customerDB[i].id){
+                $("#customerId").val(customerDB[i].id);
+                $("#nameOfCustomer").val(customerDB[i].name);
+                $("#gender").val(customerDB[i].gender);
+                $("#contact").val(customerDB[i].contact);
+                $("#nic").val(customerDB[i].nic);
+                $("#address").val(customerDB[i].address());
+                $("#email").val(customerDB[i].email);
+            }else {
+                alert("No Such Customer");
+            }
+        }
+    });*/
 
 
 </script>
