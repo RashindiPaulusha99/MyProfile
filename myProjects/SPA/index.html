@@ -1305,6 +1305,7 @@
                     for (var i = 0; i < customerDB.length; i++) {
                         let raw = `<tr><td> ${customerDB[i].id} </td><td> ${customerDB[i].name} </td><td> ${customerDB[i].gender} </td><td> ${customerDB[i].contact} </td><td> ${customerDB[i].nic} </td><td> ${customerDB[i].address} </td><td> ${customerDB[i].email} </td></tr>`;
                         $("#tblCustomer tbody").append(raw);
+                        console.log(raw);
                     }
 
                     $("#customerId").val("");
@@ -1336,13 +1337,28 @@
 
             tblCustomerRow=$(this);
 
-            $("#customerId").val(tblCustomerRow.children(':nth-child(1)').text());
-            $("#nameOfCustomer").val(tblCustomerRow.children(':nth-child(2)').text());
-            $("#gender").val(tblCustomerRow.children(':nth-child(3)').text());
-            $("#contact").val(tblCustomerRow.children(':nth-child(4)').text());
-            $("#nic").val(tblCustomerRow.children(':nth-child(5)').text());
-            $("#address").val(tblCustomerRow.children(':nth-child(6)').text());
-            $("#email").val(tblCustomerRow.children(':nth-child(7)').text());
+            var id=tblCustomerRow.children(':nth-child(1)').text();
+            var trim1 = $.trim(id);
+            var name=tblCustomerRow.children(':nth-child(2)').text();
+            var trim2 = $.trim(name);
+            var gender=tblCustomerRow.children(':nth-child(3)').text();
+            var trim3 = $.trim(gender);
+            var contact=tblCustomerRow.children(':nth-child(4)').text();
+            var trim4 = $.trim(contact);
+            var nic=tblCustomerRow.children(':nth-child(5)').text();
+            var trim5 = $.trim(nic);
+            var address=tblCustomerRow.children(':nth-child(6)').text();
+            var trim6 = $.trim(address);
+            var email=tblCustomerRow.children(':nth-child(7)').text();
+            var trim7 = $.trim(email);
+
+            $("#customerId").val(trim1);
+            $("#nameOfCustomer").val(trim2);
+            $("#gender").val(trim3);
+            $("#contact").val(trim4);
+            $("#nic").val(trim5);
+            $("#address").val(trim6);
+            $("#email").val(trim7);
 
         });
 
@@ -1717,11 +1733,22 @@
 
             tblItemRow=$(this);
 
-            $("#itemCode").val($(this).children(':nth-child(1)').text());
-            $("#kind").val($(this).children(':nth-child(2)').text());
-            $("#nameOfItem").val($(this).children(':nth-child(3)').text());
-            $("#qty").val($(this).children(':nth-child(4)').text());
-            $("#unitPrice").val($(this).children(':nth-child(5)').text());
+            var code=tblItemRow.children(':nth-child(1)').text();
+            var trim1 = $.trim(code);
+            var kind=tblItemRow.children(':nth-child(2)').text();
+            var trim2 = $.trim(kind);
+            var iName=tblItemRow.children(':nth-child(3)').text();
+            var trim3 = $.trim(iName);
+            var qty=tblItemRow.children(':nth-child(4)').text();
+            var trim4 = $.trim(qty);
+            var price=tblItemRow.children(':nth-child(5)').text();
+            var trim5 = $.trim(price);
+
+            $("#itemCode").val(trim1);
+            $("#kind").val(trim2);
+            $("#nameOfItem").val(trim3);
+            $("#qty").val(trim4);
+            $("#unitPrice").val(trim5);
         });
 
         $("#tblItem tbody > tr").dblclick(function () {
