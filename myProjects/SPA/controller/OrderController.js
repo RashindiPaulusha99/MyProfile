@@ -22,8 +22,9 @@ $("#ids").click(function () {
 /*-------------------Item Sec-----------------------*/
 
 var regExSellQuantity=/^[0-9]{2,20}$/;
+var regExDiscount=/^[0-9]{1,2}$/;
 
-$("#sellQty").keyup(function (event) {
+$("#sellQty").keyup(function () {
 
     let sellQty = $("#sellQty").val();
     if (regExSellQuantity.test(sellQty)){
@@ -32,6 +33,18 @@ $("#sellQty").keyup(function (event) {
     }else {
         $("#sellQty").css('border','2px solid red');
         $("#errorSellQty").text("Quantity is a required field: Pattern 00");
+    }
+});
+
+$("#itemDiscount").keyup(function () {
+
+    let itemDiscount = $("#itemDiscount").val();
+    if (regExDiscount.test(itemDiscount)){
+        $("#itemDiscount").css('border','2px solid blue');
+        $("#errordiscount").text("");
+    }else {
+        $("#itemDiscount").css('border','2px solid red');
+        $("#errordiscount").text("Quantity is a required field: Pattern 0");
     }
 });
 
@@ -61,7 +74,7 @@ $("#btnAddCart").click(function () {
     $("#tblItem tbody > tr").off("click");
     //$("#tblItem tbody > tr").off("dblclick");
 
-    if($("#errorSellQty").text()!=""||$("#ids option:selected").val()==""||$("#codes option:selected").val()==""||$("#sellQty").val()==""||
+    if($("#errorSellQty").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||$("#codes option:selected").val()==""||$("#sellQty").val()==""||
         $("#gross").val()==""||$("#net").val()==""||$("#cash").val()==""||$("#discount").val()==""||$("#balance").val()==""){
         $("#btnAddCart").disable();
     }else {
@@ -69,7 +82,7 @@ $("#btnAddCart").click(function () {
         let text = "Do you really want to add to cart this Item?";
 
         if (confirm(text) == true) {
-            let orderId = $("#o").val();
+            let orderId = $("#orderId").val();
             let itemCode = $("#codes option:selected").val();
             let kind = $("#orderKind").val();
             let itemName = $("#orderItemName").val();
@@ -86,6 +99,11 @@ $("#btnAddCart").click(function () {
                 sellQty:sellQty,
                 total:total
             }
+
+            let idOfOrder = $("#orderId").val();
+            let orderDate = $("#orderDate").val();
+            let cusIds = $("#ids option:selected").val();
+            let netAmount = $("#ids").val();
 
             var ifDuplicate=false;
 
