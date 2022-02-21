@@ -93,8 +93,8 @@ $("#btnAddCart").click(function () {
     //$("#tblItem tbody > tr").off("click");
     //$("#tblItem tbody > tr").off("dblclick");
 
-    if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||$("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""
-        /*$("#gross").val()==""||$("#net").val()==""||$("#cash").val()==""||$("#discount").val()==""||$("#balance").val()==""*/){
+    if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
+        $("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""){
         $("#btnAddCart").disable();
     }else {
 
