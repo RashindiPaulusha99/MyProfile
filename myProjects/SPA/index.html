@@ -495,9 +495,6 @@
                         <label class="form-label text-black mb-0" >Customer ID</label>
                         <select aria-label="Default select example" class="form-select shadow" style="height: 32px" id="ids">
                             <option selected></option>
-                            <!--<option value="1" id="op1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>-->
                         </select>
                     </div>
 
@@ -547,9 +544,6 @@
                         <label class="form-label text-black mb-0 mt-3" >Item Code</label>
                         <select aria-label="Default select example" class="form-select shadow" style="height: 32px" id="codes">
                             <option selected></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
                         </select>
                     </div>
 
@@ -762,7 +756,7 @@
         $("#name").css('display','none');
 
        loadCustomerIds();
-       loadItemCode();
+       loadItemCodes();
     });
 
     /*----------------------------------------------Customer------------------------------------------------*/
@@ -1891,7 +1885,6 @@
 
     function loadCustomerIds() {
         for (var i = 0; i <customerDB.length ; i++) {
-            //$("#op1").text(customerDB[i].id);
             $("#ids").append($("<option></option>").attr("value", i).text(customerDB[i].id));
         }
     }
@@ -1911,6 +1904,14 @@
             }
         }
     });*/
+
+    /*-------------------Item Sec-----------------------*/
+
+    function loadItemCodes() {
+        for (var i = 0; i <itemDB.length ; i++) {
+            $("#codes").append($("<option></option>").attr("value", i).text(itemDB[i].code));
+        }
+    }
 
 
 </script>
