@@ -492,17 +492,13 @@
 
                 <div class="form row ">
                     <div class="col">
-                        <label class="form-label text-black mb-0 " >Customer ID</label>
-                        <div class="dropdown " style="background-color: white; height: 50%;border-radius: 3px">
-                            <button class="btn bg-white dropdown-toggle btn-sm float-end" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <!--Customer Idshdnfhfhkskfifhfg-->
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">C001</a></li>
-                                <li><a class="dropdown-item" href="#">C002</a></li>
-                                <li><a class="dropdown-item" href="#">C003</a></li>
-                            </ul>
-                        </div>
+                        <label class="form-label text-black mb-0" >Customer ID</label>
+                        <select aria-label="Default select example" class="form-select shadow" style="height: 32px" id="ids">
+                            <option selected></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
                     </div>
 
                     <div class="col">
@@ -549,15 +545,12 @@
                 <div class="form row ">
                     <div class="col">
                         <label class="form-label text-black mb-0 mt-3" >Item Code</label>
-                        <div class="dropdown" style="background-color: white; height: 40%; border-radius: 3px">
-                            <button class="btn bg-white dropdown-toggle btn-sm float-end" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="true" >
-
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1"><li><a class="dropdown-item" href="#">I001</a></li>
-                                <li><a class="dropdown-item" href="#">I002</a></li>
-                                <li><a class="dropdown-item" href="#">I003</a></li>
-                            </ul>
-                        </div>
+                        <select aria-label="Default select example" class="form-select shadow" style="height: 32px" id="codes">
+                            <option selected></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
                     </div>
 
                     <div class="col">
@@ -769,6 +762,8 @@
         $("#name").css('display','none');
     });
 
+    /*----------------------------------------------Customer------------------------------------------------*/
+
     var regExCusID=/^(C00-)[0-9]{3,4}$/;
     var regExCusName=/^[A-Z|a-z\s]{3,20}$/;
     var regExCusGender=/^[^0-9](female)|(male)|(Female)|(Male)$/;
@@ -879,8 +874,6 @@
     });
 
     $("#email").keyup(function (event) {
-
-        //focus(event);
 
         let email = $("#email").val();
         if (regExCusEmail.test(email)){
@@ -1022,7 +1015,6 @@
             e.preventDefault();
         }
     });
-
 
     /*function validation() {
         let id = $("#customerId").val();
@@ -1504,6 +1496,8 @@
         }
     });
 
+    /*----------------------------------------------Item------------------------------------------------*/
+
     var regExItemID=/^(I00-)[0-9]{3,4}$/;
     var regExKind=/^[A-Z|a-z\s]{3,20}$/;
     var regExItemName=/^[A-Z|a-z\s]{3,20}$/;
@@ -1859,6 +1853,14 @@
                 alert("No Such Item");
             }
         }
+    });
+
+    /*----------------------------------------------Order------------------------------------------------*/
+
+    /*-------------------Customer Sec-----------------------*/
+
+    $("#ids").click(function () {
+
     });
 
 
