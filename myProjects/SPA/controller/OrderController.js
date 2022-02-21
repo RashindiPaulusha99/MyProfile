@@ -61,35 +61,39 @@ $("#btnAddCart").click(function () {
     $("#tblItem tbody > tr").off("click");
     //$("#tblItem tbody > tr").off("dblclick");
 
-    if($("#errorCode").text()!=""||$("#errorKind").text()!=""||$("#errorItemName").text()!=""||$("#errorQty").text()!=""||$("#errorPrice").text()!=""||
-        $("#itemCode").val()==""||$("#nameOfItem").val()==""||$("#kind").val()==""||$("#qty").val()==""||$("#unitPrice").val()==""){
-        $("#btnSaveItem").disable();
+    if($("#errorSellQty").text()!=""||$("#ids option:selected").val()==""||$("#codes option:selected").val()==""||$("#sellQty").val()==""||
+        $("#gross").val()==""||$("#net").val()==""||$("#cash").val()==""||$("#discount").val()==""||$("#balance").val()==""){
+        $("#btnAddCart").disable();
     }else {
 
-        let text = "Do you really want to save this Item?";
+        let text = "Do you really want to add to cart this Item?";
 
         if (confirm(text) == true) {
-            let itemCode = $("#itemCode").val();
-            let kind = $("#kind").val();
-            let itemName = $("#nameOfItem").val();
-            let qty = $("#qty").val();
-            let unitPrice = $("#unitPrice").val();
+            let orderId = $("#o").val();
+            let itemCode = $("#codes option:selected").val();
+            let kind = $("#orderKind").val();
+            let itemName = $("#orderItemName").val();
+            let unitPrice = $("#orderPrice").val();
+            let sellQty = $("#sellQty").val();
+            let total = sellQty*unitPrice;
 
-            var itemDetails={
+            var orderDetails={
+                orderId:orderId,
                 code:itemCode,
                 kind:kind,
                 name:itemName,
-                qty:qty,
-                price:unitPrice
+                price:unitPrice,
+                sellQty:sellQty,
+                total:total
             }
 
             var ifDuplicate=false;
 
-            var code=$("#itemCode").val();
+            var code=$("#codes option:selected").val();
             var trim = $.trim(code);
 
-            for (var j = 0; j < itemDB.length; j++) {
-                if (trim == itemDB[j].code){
+            for (var j = 0; j < orderDB.length; j++) {
+                if (trim == orderDB[j].code){
                     ifDuplicate = true;
                 }else {
                     ifDuplicate = false;
@@ -97,12 +101,12 @@ $("#btnAddCart").click(function () {
             }
 
             if (ifDuplicate == false){
-                itemDB.push(itemDetails);
-                $("#tblItem tbody").empty();
+                orderDB.push(orderDetails);
+                $("#tblOrder tbody").empty();
 
-                for (var i = 0; i < itemDB.length; i++) {
-                    let raw = `<tr><td> ${itemDB[i].code} </td><td> ${itemDB[i].kind} </td><td> ${itemDB[i].name} </td><td> ${itemDB[i].qty} </td><td> ${itemDB[i].price} </td></tr>`;
-                    $("#tblItem tbody").append(raw);
+                for (var i = 0; i < orderDB.length; i++) {
+                    let raw = `<tr><td> ${orderDB[i].code} </td><td> ${orderDB[i].kind} </td><td> ${orderDB[i].name} </td><td> ${orderDB[i].sellQty} </td><td> ${orderDB[i].price} </td><td> ${orderDB[i].total} </td></tr>`;
+                    $("#tblCustomer tbody").append(raw);
                 }
 
                 $("#itemCode").val("");
