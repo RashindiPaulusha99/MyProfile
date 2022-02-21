@@ -1883,7 +1883,7 @@
     /*-------------------Customer Sec-----------------------*/
 
     function loadCustomerIds() {
-        $("#ids option").empty();
+        $("#ids").empty();
         for (var i = 0; i <customerDB.length ; i++) {
             $("#ids").append($("<option></option>").attr("value", i).text(customerDB[i].id));
         }
@@ -1904,6 +1904,7 @@
     /*-------------------Item Sec-----------------------*/
 
     function loadItemCodes() {
+        $("#codes").empty();
         for (var i = 0; i <itemDB.length ; i++) {
             $("#codes").append($("<option></option>").attr("value", i).text(itemDB[i].code));
         }
