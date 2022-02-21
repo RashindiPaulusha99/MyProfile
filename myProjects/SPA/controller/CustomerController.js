@@ -568,7 +568,7 @@ $("#btnSaveCustomer").click(function () {
     });
 
     $("#tblCustomer tbody > tr").dblclick(function () {
-        
+
         let text = "Are you sure you want to delete this Customer?";
         if (confirm(text) == true) {
             tblCustomerRow.remove();

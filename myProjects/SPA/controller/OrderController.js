@@ -153,13 +153,11 @@ $("#btnAddCart").click(function () {
 
             $("#orderId").val("");
             $("#orderDate").val("");
-            $("#ids option:selected").text("");
             $("#orderCusName").val("");
             $("#orderCusNIC").val("");
             $("#orderCusAddress").val("");
             $("#orderCusContact").val("");
 
-            $("#codes option:selected").text("");
             $("#orderItemName").val("");
             $("#orderKind").val("");
             $("#orderQty").val("");
@@ -236,6 +234,9 @@ $("#btnAddCart").click(function () {
         $("#sellQty").val(trim4);
         $("#orderPrice").val(trim5);
         $("#net").val(trim6);
+
+        
+
     });
 
     /*$("#tblItem tbody > tr").dblclick(function () {
