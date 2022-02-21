@@ -21,15 +21,34 @@ $("#ids").click(function () {
 
 /*-------------------Item Sec-----------------------*/
 
-var regExSellQuantity=/^[0-9]{2,20}$/;
+var regExOrderID=/^(O00-)[0-9]{3,4}$/;
+var regExSellQuantity=/^[0-9]{1,20}$/;
 var regExDiscount=/^[0-9]{1,2}$/;
 
-$("#sellQty").keyup(function () {
+$("#orderId").keyup(function (event) {
+
+    let orderId = $("#orderId").val();
+    if (regExOrderID.test(orderId)){
+        $("#orderId").css('border','2px solid blue');
+        $("#errorOrderId").text("");
+        if (event.key=="Enter"){
+            $("#orderDate").focus();
+        }
+    }else {
+        $("#orderId").css('border','2px solid red');
+        $("#errorOrderId").text("OrderId is a required field: Pattern O00-000");
+    }
+});
+
+$("#sellQty").keyup(function (event) {
 
     let sellQty = $("#sellQty").val();
     if (regExSellQuantity.test(sellQty)){
         $("#sellQty").css('border','2px solid blue');
         $("#errorSellQty").text("");
+        if (event.key=="Enter"){
+            $("#itemDiscount").focus();
+        }
     }else {
         $("#sellQty").css('border','2px solid red');
         $("#errorSellQty").text("Quantity is a required field: Pattern 00");
@@ -71,11 +90,11 @@ $("#codes").click(function (event) {
 
 $("#btnAddCart").click(function () {
 
-    $("#tblItem tbody > tr").off("click");
+    //$("#tblItem tbody > tr").off("click");
     //$("#tblItem tbody > tr").off("dblclick");
 
-    if($("#errorSellQty").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||$("#codes option:selected").val()==""||$("#sellQty").val()==""||
-        $("#gross").val()==""||$("#net").val()==""||$("#cash").val()==""||$("#discount").val()==""||$("#balance").val()==""){
+    if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||$("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""
+        /*$("#gross").val()==""||$("#net").val()==""||$("#cash").val()==""||$("#discount").val()==""||$("#balance").val()==""*/){
         $("#btnAddCart").disable();
     }else {
 
@@ -83,12 +102,26 @@ $("#btnAddCart").click(function () {
 
         if (confirm(text) == true) {
             let orderId = $("#orderId").val();
-            let itemCode = $("#codes option:selected").val();
+            let itemCode = $("#codes option:selected").text();
             let kind = $("#orderKind").val();
             let itemName = $("#orderItemName").val();
             let unitPrice = $("#orderPrice").val();
             let sellQty = $("#sellQty").val();
-            let total = sellQty*unitPrice;
+            let gross = sellQty*unitPrice;
+            let net = gross-(gross*$("#itemDiscount").val()/100);
+
+            let orderDate = $("#orderDate").val();
+            let cusIds = $("#ids option:selected").text();
+
+            $("#gross").val(gross);
+            $("#net").val(net);
+
+            var order={
+                orderId:orderId,
+                orderDate:orderDate,
+                cusIds:cusIds,
+                total:net
+            }
 
             var orderDetails={
                 orderId:orderId,
@@ -96,22 +129,25 @@ $("#btnAddCart").click(function () {
                 kind:kind,
                 name:itemName,
                 price:unitPrice,
-                sellQty:sellQty,
-                total:total
+                sellQty:sellQty
             }
 
-            let idOfOrder = $("#orderId").val();
-            let orderDate = $("#orderDate").val();
-            let cusIds = $("#ids option:selected").val();
-            let netAmount = $("#ids").val();
+            orderDetailsDB.push(orderDetails);
+            orderDB.push(order);
+            $("#tblOrder tbody").empty();
 
-            var ifDuplicate=false;
+            for (var i = 0; i < orderDetailsDB.length; i++) {
+                let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${net} </td></tr>`;
+                $("#tblOrder tbody").append(raw);
+            }
+
+            /*var ifDuplicate=false;
 
             var code=$("#codes option:selected").val();
             var trim = $.trim(code);
 
-            for (var j = 0; j < orderDB.length; j++) {
-                if (trim == orderDB[j].code){
+            for (var j = 0; j < orderDetailsDB.length; j++) {
+                if (trim == orderDetailsDB[j].code){
                     ifDuplicate = true;
                 }else {
                     ifDuplicate = false;
@@ -119,35 +155,35 @@ $("#btnAddCart").click(function () {
             }
 
             if (ifDuplicate == false){
-                orderDB.push(orderDetails);
+                orderDetailsDB.push(orderDetails);
                 $("#tblOrder tbody").empty();
 
-                for (var i = 0; i < orderDB.length; i++) {
-                    let raw = `<tr><td> ${orderDB[i].code} </td><td> ${orderDB[i].kind} </td><td> ${orderDB[i].name} </td><td> ${orderDB[i].sellQty} </td><td> ${orderDB[i].price} </td><td> ${orderDB[i].total} </td></tr>`;
+                for (var i = 0; i < orderDetailsDB.length; i++) {
+                    let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDB[i].total} </td></tr>`;
                     $("#tblCustomer tbody").append(raw);
                 }
 
-                $("#itemCode").val("");
+                /!*$("#itemCode").val("");
                 $("#kind").val("");
                 $("#nameOfItem").val("");
                 $("#qty").val("");
-                $("#unitPrice").val("");
+                $("#unitPrice").val("");*!/
 
-                $("#itemCode").css('border', '2px solid transparent');
+                /!*$("#itemCode").css('border', '2px solid transparent');
                 $("#kind").css('border', '2px solid transparent');
                 $("#nameOfItem").css('border', '2px solid transparent');
                 $("#qty").css('border', '2px solid transparent');
-                $("#unitPrice").css('border', '2px solid transparent');
+                $("#unitPrice").css('border', '2px solid transparent');*!/
             }else {
                 alert("Already Exists");
-            }
+            }*/
 
         } else {
 
         }
     }
 
-    $("#tblItem tbody > tr").click(function () {
+    /*$("#tblItem tbody > tr").click(function () {
 
         tblItemRow=$(this);
 
@@ -167,7 +203,7 @@ $("#btnAddCart").click(function () {
         $("#nameOfItem").val(trim3);
         $("#qty").val(trim4);
         $("#unitPrice").val(trim5);
-    });
+    });*/
 
     /*$("#tblItem tbody > tr").dblclick(function () {
         $(this).remove();

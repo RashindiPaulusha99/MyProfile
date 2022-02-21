@@ -117,35 +117,7 @@ $("#email").keyup(function (event) {
         if (event.key=="Enter"){
 
             let text = "Do you really want to save this Customer?";
-            /*if (confirm(text) == true) {
-                let cusId = $("#customerId").val();
-                let cusName = $("#nameOfCustomer").val();
-                let cusGender = $("#gender").val();
-                let cusContact = $("#contact").val();
-                let cusNIC = $("#nic").val();
-                let cusAddress = $("#address").val();
-                let cusEmail = $("#email").val();
-                let raw = `<tr><td> ${cusId} </td><td> ${cusName} </td><td> ${cusGender} </td><td> ${cusContact} </td><td> ${cusNIC} </td><td> ${cusAddress} </td><td> ${cusEmail} </td></tr>`;
-                $("#tblCustomer tbody").append(raw);
 
-                $("#customerId").val("");
-                $("#nameOfCustomer").val("");
-                $("#gender").val("");
-                $("#contact").val("");
-                $("#nic").val("");
-                $("#address").val("");
-                $("#email").val("");
-
-                $("#customerId").css('border','2px solid transparent');
-                $("#nameOfCustomer").css('border','2px solid transparent');
-                $("#gender").css('border','2px solid transparent');
-                $("#contact").css('border','2px solid transparent');
-                $("#nic").css('border','2px solid transparent');
-                $("#address").css('border','2px solid transparent');
-                $("#email").css('border','2px solid transparent');
-            } else {
-
-            }*/
             if (confirm(text) == true) {
 
                 let cusId = $("#customerId").val();
