@@ -568,15 +568,32 @@ $("#btnSaveCustomer").click(function () {
     });
 
     $("#tblCustomer tbody > tr").dblclick(function () {
-        $(this).remove();
+        
+        let text = "Are you sure you want to delete this Customer?";
+        if (confirm(text) == true) {
+            tblCustomerRow.remove();
 
-        $("#customerId").val("");
-        $("#nameOfCustomer").val("");
-        $("#gender").val("");
-        $("#contact").val("");
-        $("#nic").val("");
-        $("#address").val("");
-        $("#email").val("");
+            var index=-1;
+            var id=$("#customerId").val();
+            var trim=$.trim(id);
+
+            for (var i = 0; i < customerDB.length; i++) {
+                if (trim==customerDB[i].id){
+                    index=i;
+                }
+            }
+            customerDB.splice(index,1);
+
+            $("#customerId").val("");
+            $("#nameOfCustomer").val("");
+            $("#gender").val("");
+            $("#contact").val("");
+            $("#nic").val("");
+            $("#address").val("");
+            $("#email").val("");
+        } else {
+
+        }
     });
 
 });

@@ -236,13 +236,30 @@ $("#btnSaveItem").click(function () {
     });
 
     $("#tblItem tbody > tr").dblclick(function () {
-        $(this).remove();
 
-        $("#itemCode").val("");
-        $("#kind").val("");
-        $("#nameOfItem").val("");
-        $("#qty").val("");
-        $("#unitPrice").val("");
+        let text = "Are you sure you want to delete this Item?";
+        if (confirm(text) == true) {
+            tblItemRow.remove();
+
+            var index=-1;
+            var code=$("#itemCode").val();
+            var trim=$.trim(code);
+
+            for (var i = 0; i < itemDB.length; i++) {
+                if (trim == itemDB[i].code){
+                    index=i;
+                }
+            }
+            itemDB.splice(index,1);
+
+            $("#itemCode").val("");
+            $("#kind").val("");
+            $("#nameOfItem").val("");
+            $("#qty").val("");
+            $("#unitPrice").val("");
+        } else {
+
+        }
     });
 
 });

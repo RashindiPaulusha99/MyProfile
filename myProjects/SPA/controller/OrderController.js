@@ -90,7 +90,7 @@ $("#codes").click(function (event) {
 
 $("#btnAddCart").click(function () {
 
-    //$("#tblItem tbody > tr").off("click");
+    $("#tblItem tbody > tr").off("click");
     //$("#tblItem tbody > tr").off("dblclick");
 
     if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
@@ -113,9 +113,18 @@ $("#btnAddCart").click(function () {
             let orderDate = $("#orderDate").val();
             let cusIds = $("#ids option:selected").text();
 
+            /*something error*/
             $("#gross").val(gross);
             $("#net").val(net);
 
+            var netAmount=0;
+            netAmount=netAmount+net;
+
+            /*for (var j = 0; j < orderDetailsDB.length; j++) {
+                if ($("#codes").text())
+            }*/
+
+            /*something error*/
             var order={
                 orderId:orderId,
                 orderDate:orderDate,
@@ -129,7 +138,8 @@ $("#btnAddCart").click(function () {
                 kind:kind,
                 name:itemName,
                 price:unitPrice,
-                sellQty:sellQty
+                sellQty:sellQty,
+                total:netAmount
             }
 
             orderDetailsDB.push(orderDetails);
@@ -137,9 +147,29 @@ $("#btnAddCart").click(function () {
             $("#tblOrder tbody").empty();
 
             for (var i = 0; i < orderDetailsDB.length; i++) {
-                let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${net} </td></tr>`;
+                let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDetailsDB[i].total} </td></tr>`;
                 $("#tblOrder tbody").append(raw);
             }
+
+            $("#orderId").val("");
+            $("#orderDate").val("");
+            $("#ids option:selected").text("");
+            $("#orderCusName").val("");
+            $("#orderCusNIC").val("");
+            $("#orderCusAddress").val("");
+            $("#orderCusContact").val("");
+
+            $("#codes option:selected").text("");
+            $("#orderItemName").val("");
+            $("#orderKind").val("");
+            $("#orderQty").val("");
+            $("#orderPrice").val("");
+            $("#sellQty").val("");
+            $("#itemDiscount").val("");
+
+            $("#orderId").css('border', '2px solid transparent');
+            $("#sellQty").css('border', '2px solid transparent');
+            $("#itemDiscount").css('border', '2px solid transparent');
 
             /*var ifDuplicate=false;
 
@@ -183,27 +213,30 @@ $("#btnAddCart").click(function () {
         }
     }
 
-    /*$("#tblItem tbody > tr").click(function () {
+    $("#tblOrder tbody > tr").click(function () {
 
-        tblItemRow=$(this);
+        tblOrderRow=$(this);
 
-        var code=tblItemRow.children(':nth-child(1)').text();
+        var code=tblOrderRow.children(':nth-child(1)').text();
         var trim1 = $.trim(code);
-        var kind=tblItemRow.children(':nth-child(2)').text();
+        var kind=tblOrderRow.children(':nth-child(2)').text();
         var trim2 = $.trim(kind);
-        var iName=tblItemRow.children(':nth-child(3)').text();
+        var iName=tblOrderRow.children(':nth-child(3)').text();
         var trim3 = $.trim(iName);
-        var qty=tblItemRow.children(':nth-child(4)').text();
-        var trim4 = $.trim(qty);
-        var price=tblItemRow.children(':nth-child(5)').text();
+        var sellqty=tblOrderRow.children(':nth-child(4)').text();
+        var trim4 = $.trim(sellqty);
+        var price=tblOrderRow.children(':nth-child(5)').text();
         var trim5 = $.trim(price);
+        var total=tblOrderRow.children(':nth-child(6)').text();
+        var trim6 = $.trim(total);
 
-        $("#itemCode").val(trim1);
-        $("#kind").val(trim2);
-        $("#nameOfItem").val(trim3);
-        $("#qty").val(trim4);
-        $("#unitPrice").val(trim5);
-    });*/
+        $("#codes").val(trim1);
+        $("#orderKind").val(trim2);
+        $("#orderItemName").val(trim3);
+        $("#sellQty").val(trim4);
+        $("#orderPrice").val(trim5);
+        $("#net").val(trim6);
+    });
 
     /*$("#tblItem tbody > tr").dblclick(function () {
         $(this).remove();
