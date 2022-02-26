@@ -223,11 +223,6 @@
                             <label class="form-label text-black mt-0" for="gender">Gender</label>
                             <input type="text" id="gender" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xxxx"/>
                             <p><small id="errorGender" class="text-danger pl-1 mt-0 mb-0"></small></p>
-                            <!--<select name="select" class="form-control form-control-sm rounded rounded-pill shadow" id="gender" >
-                                <option value="valor1" >Valor 1</option>
-                                <option value="valor2">Valor 2</option>
-                                <option value="valor3">Valor 3</option>
-                            </select>-->
                         </div>
 
 
@@ -600,9 +595,16 @@
 
                 <div class="form row ">
                     <form>
-                        <button type="button" class="btn btn-success btn-sm btn-block shadow float-end mt-4 mb-3" id="btnAddCart">
+                        <!-- Add cart button -->
+                        <button type="button" class="btn btn-success btn-sm btn-block shadow float-end mt-4 mb-3 ms-2" id="btnAddCart">
                             <i class="fas fa-cart-plus"></i>
                             Add cart
+                        </button>
+
+                        <!-- clear Cart button -->
+                        <button type="button" class="btn btn-secondary btn-sm btn-block shadow float-end mt-4 mb-3 ms-2" id="btnClearCart">
+                            <i class="fas fa-eraser"></i>
+                            clear
                         </button>
                     </form>
                 </div>

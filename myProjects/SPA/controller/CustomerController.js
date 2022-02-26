@@ -6,15 +6,10 @@ var regExCusNIC=/^[0-9]{9}(v)$/;
 var regExCusAddress=/^[0-9A-Z a-z,/:]{4,50}$/;
 var regExCusEmail=/^[0-9A-Z a-z$&#]{3,10}(@gmail.com)|(@yahoo.com)$/;
 
-/*$('#customerId,#nameOfCustomer,#gender,#contact,#nic,#address,#email').on('keyup',function () {
-    validation();
-});*/
-
 $("#customerId").keyup(function (event) {
 
     let id = $("#customerId").val();
 
-    //focus(event);
     if (regExCusID.test(id)){
         $("#customerId").css('border','2px solid green');
         $("#errorId").text("");
@@ -29,7 +24,6 @@ $("#customerId").keyup(function (event) {
 
 $("#nameOfCustomer").keyup(function (event) {
 
-    //focus(event);
     let name = $("#nameOfCustomer").val();
     if (regExCusName.test(name)){
         $("#nameOfCustomer").css('border','2px solid green');
@@ -45,7 +39,6 @@ $("#nameOfCustomer").keyup(function (event) {
 
 $("#gender").keyup(function (event) {
 
-    //focus(event);
     let gender = $("#gender").val();
     if (regExCusGender.test(gender)){
         $("#gender").css('border','2px solid green');
@@ -61,7 +54,6 @@ $("#gender").keyup(function (event) {
 
 $("#contact").keyup(function (event) {
 
-    //focus(event);
     let contact = $("#contact").val();
     if (regExCusContact.test(contact)){
         $("#contact").css('border','2px solid green');
@@ -77,7 +69,6 @@ $("#contact").keyup(function (event) {
 
 $("#nic").keyup(function (event) {
 
-    //focus(event);
     let nic = $("#nic").val();
     if (regExCusNIC.test(nic)){
         $("#nic").css('border','2px solid green');
@@ -93,7 +84,6 @@ $("#nic").keyup(function (event) {
 
 $("#address").keyup(function (event) {
 
-    focus(event);
     let address = $("#address").val();
     if (regExCusAddress.test(address)){
         $("#address").css('border','2px solid green');
@@ -204,15 +194,32 @@ $("#email").keyup(function (event) {
     });
 
     $("#tblCustomer tbody > tr").dblclick(function () {
-        $(this).remove();
 
-        $("#customerId").val("");
-        $("#nameOfCustomer").val("");
-        $("#gender").val("");
-        $("#contact").val("");
-        $("#nic").val("");
-        $("#address").val("");
-        $("#email").val("");
+        let text = "Are you sure you want to delete this Customer?";
+        if (confirm(text) == true) {
+            tblCustomerRow.remove();
+
+            var index=-1;
+            var id=$("#customerId").val();
+            var trim=$.trim(id);
+
+            for (var i = 0; i < customerDB.length; i++) {
+                if (trim == customerDB[i].id){
+                    index=i;
+                }
+            }
+            customerDB.splice(index,1);
+
+            $("#customerId").val("");
+            $("#nameOfCustomer").val("");
+            $("#gender").val("");
+            $("#contact").val("");
+            $("#nic").val("");
+            $("#address").val("");
+            $("#email").val("");
+        } else {
+
+        }
     });
 });
 
