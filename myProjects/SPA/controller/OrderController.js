@@ -89,10 +89,12 @@ $("#codes").click(function (event) {
 /*-------------------Order Table-----------------------*/
 
 function getQty(sellqty){
+    var votevalue = parseInt(sellqty);
     for (var j = 0; j < orderDetailsDB.length; j++) {
-        if ($("#codes").text() == orderDetailsDB[j].code){
-            var qty=orderDetailsDB[j].qty;
-            qty+=sellqty;
+        if ($("#codes option:selected").text() == orderDetailsDB[j].code){
+            var qty = parseInt(orderDetailsDB[j].sellQty);
+            qty+=votevalue;
+
         }
     }
     return qty;
@@ -100,9 +102,9 @@ function getQty(sellqty){
 
 function getAmount(net){
     for (var j = 0; j < orderDetailsDB.length; j++) {
-        if ($("#codes").text() == orderDetailsDB[j].code){
+        if ($("#codes option:selected").text() == orderDetailsDB[j].code){
             var amount=orderDetailsDB[j].total;
-            amount+=net;
+            amount=orderDetailsDB[j].total+net;
         }
     }
     return amount;
@@ -126,10 +128,10 @@ $("#btnAddCart").click(function () {
             let kind = $("#orderKind").val();
             let itemName = $("#orderItemName").val();
             let unitPrice = $("#orderPrice").val();
-            let sellQty = $("#sellQty").val();
+            var sellQty = $("#sellQty").val();
             let gross = sellQty*unitPrice;
-            let discount = (gross*$("#itemDiscount").val()/100);
-            let net = gross-discount;
+            let discount = $("#itemDiscount").val();
+            let net = gross-(gross*$("#itemDiscount").val()/100);
 
             let orderDate = $("#orderDate").val();
             let cusIds = $("#ids option:selected").text();
@@ -163,7 +165,7 @@ $("#btnAddCart").click(function () {
             var ifDuplicate=false;
 
             for (var j = 0; j < orderDetailsDB.length; j++) {
-                if ($("#codes").text() == orderDetailsDB[j].code){
+                if ($("#codes option:selected").text() == orderDetailsDB[j].code){
                     ifDuplicate = true;
                 }else {
                     ifDuplicate = false;
@@ -197,7 +199,7 @@ $("#btnAddCart").click(function () {
                 var amount = getAmount(net);
 
                 for (var i = 0; i < orderDetailsDB.length; i++) {
-                    if ($("#codes").text() == orderDetailsDB[i].code){
+                    if ($("#codes option:selected").text() == orderDetailsDB[i].code){
 
                         orderDetailsDB[i].orderId=orderId;
                         orderDetailsDB[i].code=itemCode;
@@ -216,44 +218,17 @@ $("#btnAddCart").click(function () {
                     $("#tblOrder tbody").append(raw);
                 }
 
+                $("#orderItemName").val("");
+                $("#orderKind").val("");
+                $("#orderQty").val("");
+                $("#orderPrice").val("");
+                $("#sellQty").val("");
+                $("#itemDiscount").val("");
+
+                $("#sellQty").css('border', '2px solid transparent');
+                $("#itemDiscount").css('border', '2px solid transparent');
+
             }
-
-            /*var ifDuplicate=false;
-
-            var code=$("#codes option:selected").val();
-            var trim = $.trim(code);
-
-            for (var j = 0; j < orderDetailsDB.length; j++) {
-                if (trim == orderDetailsDB[j].code){
-                    ifDuplicate = true;
-                }else {
-                    ifDuplicate = false;
-                }
-            }
-
-            if (ifDuplicate == false){
-                orderDetailsDB.push(orderDetails);
-                $("#tblOrder tbody").empty();
-
-                for (var i = 0; i < orderDetailsDB.length; i++) {
-                    let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDB[i].total} </td></tr>`;
-                    $("#tblCustomer tbody").append(raw);
-                }
-
-                /!*$("#itemCode").val("");
-                $("#kind").val("");
-                $("#nameOfItem").val("");
-                $("#qty").val("");
-                $("#unitPrice").val("");*!/
-
-                /!*$("#itemCode").css('border', '2px solid transparent');
-                $("#kind").css('border', '2px solid transparent');
-                $("#nameOfItem").css('border', '2px solid transparent');
-                $("#qty").css('border', '2px solid transparent');
-                $("#unitPrice").css('border', '2px solid transparent');*!/
-            }else {
-                alert("Already Exists");
-            }*/
 
         } else {
 
@@ -277,12 +252,24 @@ $("#btnAddCart").click(function () {
         var total=tblOrderRow.children(':nth-child(6)').text();
         var trim6 = $.trim(total);
 
-        $("#codes").val(trim1);
+        $("#codes option:selected").text(trim1);
         $("#orderKind").val(trim2);
         $("#orderItemName").val(trim3);
         $("#sellQty").val(trim4);
         $("#orderPrice").val(trim5);
         $("#net").val(trim6);
+
+        for (var i = 0; i < itemDB.length; i++) {
+            if ($("#codes option:selected").text() == itemDB[i].code) {
+                $("#orderQty").val(itemDB[i].qty);
+            }
+        }
+
+        for (var i = 0; i < orderDetailsDB.length; i++) {
+            if ($("#codes option:selected").text() == orderDetailsDB[i].code) {
+                $("#itemDiscount").val(orderDetailsDB[i].discount);
+            }
+        }
     });
 
     /*$("#tblItem tbody > tr").dblclick(function () {
