@@ -1,4 +1,17 @@
 
+function disableFields() {
+    $("#orderCusName").css('disabled',false);
+    $("#orderCusContact").disable();
+    $("#orderCusAddress").disable();
+    $("#orderCusNIC").disable();
+    $("#orderItemName").disable();
+    $("#orderKind").disable();
+    $("#orderPrice").disable();
+    $("#orderQty").disable();
+    $("#gross").disable();
+    $("#net").disable();
+}
+
 /*-------------------Customer Sec-----------------------*/
 
 function loadCustomerIds() {
@@ -155,20 +168,6 @@ $("#btnAddCart").click(function () {
             let discount = $("#itemDiscount").val();
             let net = gross-(gross*$("#itemDiscount").val()/100);
 
-            let orderDate = $("#orderDate").val();
-            let cusIds = $("#ids option:selected").text();
-
-            var netAmount=0;
-            netAmount+=net;
-
-            var order={
-                orderId:orderId,
-                orderDate:orderDate,
-                cusIds:cusIds,
-                grossTotal:gross,
-                netTotal:net
-            }
-
             var orderDetails={
                 orderId:orderId,
                 code:itemCode,
@@ -193,7 +192,6 @@ $("#btnAddCart").click(function () {
             if (ifDuplicate==false){
 
                 orderDetailsDB.push(orderDetails);
-                orderDB.push(order);
                 manageQty(sellQty);
                 calculateGrossAmount(gross);
                 calculateNetAmount(net);
@@ -317,4 +315,54 @@ $("#btnClearCart").click(function () {
 
     $("#sellQty").css('border', '2px solid transparent');
     $("#itemDiscount").css('border', '2px solid transparent');
+});
+
+/*-------------------Final Total----------------------*/
+
+$("#btnPurchase").click(function () {
+
+    if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
+        $("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""||$("#gross").val()==""||
+        $("#net").val()==""||$("#cash").val()==""||$("#discount").val()==""||$("#balance").val()=="") {
+        $("#btnPurchase").disable();
+    }else {
+
+        let text = "Do you really want to place order?";
+
+        if (confirm(text) == true) {
+
+            let amountOfGross = $("#gross").val();
+            let amountOfNet = $("#net").val();
+            let orderDate = $("#orderDate").val();
+            let cusIds = $("#ids option:selected").text();
+            let orderId = $("#orderId").val();
+
+            var order = {
+                orderId: orderId,
+                orderDate: orderDate,
+                cusIds: cusIds,
+                grossTotal: amountOfGross,
+                netTotal: amountOfNet
+            }
+
+            var ifDuplicate = false;
+
+            for (var j = 0; j < orderDB.length; j++) {
+                if (orderId == orderDB[j].orderId) {
+                    ifDuplicate = true;
+                } else {
+                    ifDuplicate = false;
+                }
+            }
+
+            if (ifDuplicate == false) {
+                orderDB.push(order);
+
+
+            } else if (ifDuplicate == true) {
+                alert("Something Wrong.");
+            }
+        }
+    }
+
 });

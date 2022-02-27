@@ -55,4 +55,5 @@ $("#order").click(function () {
     loadCustomerIds();
     loadItemCodes();
     $("#orderId").focus();
+    disableFields();
 });
