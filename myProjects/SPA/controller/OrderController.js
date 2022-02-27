@@ -320,30 +320,20 @@ $("#btnClearCart").click(function () {
 /*-------------------Final Total----------------------*/
 
 var regExCash=/^[0-9]{2,10}(.)[0-9]{2}$/;
-var regExBalance=/^[0-9]{1,10}(.)[0-9]{2}$/;
 var regExFinalDiscount=/^[0-9]{1,2}$/;
 
-$("#cash").keyup(function () {
+$("#cash").keyup(function (event) {
 
     let cash = $("#cash").val();
     if (regExCash.test(cash)){
         $("#cash").css('border','2px solid blue');
         $("#errorCash").text("");
+        if (event.key=="Enter") {
+            $("#discount").focus();
+        }
     }else {
         $("#cash").css('border','2px solid red');
         $("#errorCash").text("Cash is a required field: Pattern 00.00");
-    }
-});
-
-$("#balance").keyup(function () {
-
-    let balance = $("#balance").val();
-    if (regExBalance.test(balance)){
-        $("#balance").css('border','2px solid blue');
-        $("#errorBalance").text("");
-    }else {
-        $("#balance").css('border','2px solid red');
-        $("#errorBalance").text("Balance is a required field: Pattern 00.00");
     }
 });
 
@@ -362,9 +352,8 @@ $("#discount").keyup(function () {
 $("#btnPurchase").click(function () {
 
     if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#errorCash").text()!=""||
-        $("#errorBalance").text()!=""||$("#errorFinalDiscount").text()!=""||$("#ids option:selected").val()==""||
-        $("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""||$("#gross").val()==""||
-        $("#net").val()==""||$("#cash").val()==""||$("#discount").val()==""||$("#balance").val()=="") {
+        $("#errorFinalDiscount").text()!=""||$("#ids option:selected").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""||
+        $("#gross").val()==""||$("#net").val()==""||$("#cash").val()==""||$("#discount").val()=="") {
         $("#btnPurchase").disable();
     }else {
 
@@ -377,6 +366,8 @@ $("#btnPurchase").click(function () {
             let orderDate = $("#orderDate").val();
             let cusIds = $("#ids option:selected").text();
             let orderId = $("#orderId").val();
+            let cash = $("#cash").val();
+            let discount = $("#discount").val();
 
             var order = {
                 orderId: orderId,
@@ -398,6 +389,10 @@ $("#btnPurchase").click(function () {
 
             if (ifDuplicate == false) {
                 orderDB.push(order);
+
+                var rest=amountOfNet-(amountOfNet*discount/100);
+                var balance=cash-rest;
+                $("#balance").val(balance);
 
 
             } else if (ifDuplicate == true) {
