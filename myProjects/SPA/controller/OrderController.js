@@ -87,7 +87,7 @@ function loadItemCodes() {
     }
 }
 
-$("#codes").click(function (event) {
+$("#codes").click(function () {
 
     for (var i = 0; i < itemDB.length; i++) {
         if ($("#codes option:selected").text()==itemDB[i].code){
@@ -145,6 +145,8 @@ function calculateNetAmount(net){
     $("#net").val(netAmount);
 }
 
+var tblOrderRow;
+
 $("#btnAddCart").click(function () {
 
     $("#tblItem tbody > tr").off("click");
@@ -158,26 +160,16 @@ $("#btnAddCart").click(function () {
         let text = "Do you really want to add to cart this Item?";
 
         if (confirm(text) == true) {
+
             let orderId = $("#orderId").val();
             let itemCode = $("#codes option:selected").text();
             let kind = $("#orderKind").val();
             let itemName = $("#orderItemName").val();
             let unitPrice = $("#orderPrice").val();
-            var sellQty = $("#sellQty").val();
+            let sellQty = $("#sellQty").val();
             let gross = sellQty*unitPrice;
             let discount = $("#itemDiscount").val();
             let net = gross-(gross*$("#itemDiscount").val()/100);
-
-            var orderDetails={
-                orderId:orderId,
-                code:itemCode,
-                kind:kind,
-                name:itemName,
-                price:unitPrice,
-                sellQty:sellQty,
-                discount:discount,
-                total:net
-            }
 
             var ifDuplicate=false;
 
@@ -191,10 +183,22 @@ $("#btnAddCart").click(function () {
 
             if (ifDuplicate==false){
 
+                var orderDetails={
+                    orderId:orderId,
+                    code:itemCode,
+                    kind:kind,
+                    name:itemName,
+                    price:unitPrice,
+                    sellQty:sellQty,
+                    discount:discount,
+                    total:net
+                }
+
                 orderDetailsDB.push(orderDetails);
                 manageQty(sellQty);
                 calculateGrossAmount(gross);
                 calculateNetAmount(net);
+
                 $("#tblOrder tbody").empty();
 
                 for (var i = 0; i < orderDetailsDB.length; i++) {
@@ -235,6 +239,7 @@ $("#btnAddCart").click(function () {
                 }
 
                 $("#tblOrder tbody").empty();
+
                 for (var i = 0; i < orderDetailsDB.length; i++) {
                     let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDetailsDB[i].total} </td></tr>`;
                     $("#tblOrder tbody").append(raw);
@@ -271,15 +276,12 @@ $("#btnAddCart").click(function () {
         var trim4 = $.trim(sellqty);
         var price=tblOrderRow.children(':nth-child(5)').text();
         var trim5 = $.trim(price);
-        var total=tblOrderRow.children(':nth-child(6)').text();
-        var trim6 = $.trim(total);
 
         $("#codes option:selected").text(trim1);
         $("#orderKind").val(trim2);
         $("#orderItemName").val(trim3);
         $("#sellQty").val(trim4);
         $("#orderPrice").val(trim5);
-        //$("#net").val(trim6);
 
         for (var i = 0; i < itemDB.length; i++) {
             if ($("#codes option:selected").text() == itemDB[i].code) {
@@ -294,15 +296,34 @@ $("#btnAddCart").click(function () {
         }
     });
 
-    /*$("#tblItem tbody > tr").dblclick(function () {
-        $(this).remove();
+    $("#tblOrder tbody > tr").dblclick(function () {
 
-        $("#itemCode").val("");
-        $("#kind").val("");
-        $("#nameOfItem").val("");
-        $("#qty").val("");
-        $("#unitPrice").val("");
-    });*/
+        let text = "Are you sure you want to remove this Item from cart?";
+
+        if (confirm(text) == true) {
+            tblOrderRow.remove();
+
+            var index=-1;
+
+            for (var i = 0; i < orderDetailsDB.length; i++) {
+                if (tblOrderRow.children(':nth-child(1)').text() == orderDetailsDB[i].code){
+                    index=i;
+                }
+            }
+            orderDetailsDB.splice(index,1);
+
+
+
+            $("#orderItemName").val("");
+            $("#orderKind").val("");
+            $("#orderQty").val("");
+            $("#orderPrice").val("");
+            $("#sellQty").val("");
+            $("#itemDiscount").val("");
+        } else {
+
+        }
+    });
 });
 
 $("#btnClearCart").click(function () {
@@ -393,6 +414,17 @@ $("#btnPurchase").click(function () {
                 var rest=amountOfNet-(amountOfNet*discount/100);
                 var balance=cash-rest;
                 $("#balance").val(balance);
+
+                $("#btnAddCart").attr('disabled',false);
+
+                $("#orderDate").val("");
+                $("#orderCusName").val("");
+                $("#orderCusContact").val("");
+                $("#orderCusNIC").val("");
+                $("#orderCusAddress").val("");
+                $("#orderId").val("");
+
+                $("#orderId").css('border', '2px solid transparent');
 
 
             } else if (ifDuplicate == true) {
