@@ -99,6 +99,9 @@ $("#address").keyup(function (event) {
 
 $("#email").keyup(function (event) {
 
+    $("#tblCustomer tbody > tr").off("click");
+    $("#tblCustomer tbody > tr").off("dblclick");
+
     let email = $("#email").val();
     if (regExCusEmail.test(email)){
         $("#email").css('border','2px solid green');

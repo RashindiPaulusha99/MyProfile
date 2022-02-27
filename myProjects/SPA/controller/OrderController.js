@@ -120,15 +120,16 @@ function getAmount(net){
     return amount;
 }
 
+var grossAmount=0;
 function calculateGrossAmount(gross){
-    //for (var j = 0; j < orderDetailsDB.length; j++) {
-        //if ($("#codes option:selected").text() == orderDetailsDB[j].code){
-            var grossAmount;
-            grossAmount+=gross;
-            $("#gross").val(grossAmount);
-       // }
-    //}
-    //return grossAmount;
+    grossAmount+=gross;
+    $("#gross").val(grossAmount);
+}
+
+var netAmount=0;
+function calculateNetAmount(net){
+    netAmount+=net;
+    $("#net").val(netAmount);
 }
 
 $("#btnAddCart").click(function () {
@@ -156,13 +157,6 @@ $("#btnAddCart").click(function () {
 
             let orderDate = $("#orderDate").val();
             let cusIds = $("#ids option:selected").text();
-
-            /*var grossAmount;
-            grossAmount+=gross;*/
-            calculateGrossAmount(gross);
-
-            //$("#gross").val(grossAmount);
-            $("#net").val(net);
 
             var netAmount=0;
             netAmount+=net;
@@ -201,6 +195,8 @@ $("#btnAddCart").click(function () {
                 orderDetailsDB.push(orderDetails);
                 orderDB.push(order);
                 manageQty(sellQty);
+                calculateGrossAmount(gross);
+                calculateNetAmount(net);
                 $("#tblOrder tbody").empty();
 
                 for (var i = 0; i < orderDetailsDB.length; i++) {
@@ -224,6 +220,7 @@ $("#btnAddCart").click(function () {
                 var amount = getAmount(net);
                 manageQty(sellQty);
                 calculateGrossAmount(gross);
+                calculateNetAmount(net);
 
                 for (var i = 0; i < orderDetailsDB.length; i++) {
                     if ($("#codes option:selected").text() == orderDetailsDB[i].code){
@@ -238,8 +235,6 @@ $("#btnAddCart").click(function () {
                         orderDetailsDB[i].total=amount;
                     }
                 }
-
-
 
                 $("#tblOrder tbody").empty();
                 for (var i = 0; i < orderDetailsDB.length; i++) {

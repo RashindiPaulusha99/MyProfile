@@ -66,6 +66,9 @@ $("#qty").keyup(function (event) {
 
 $("#unitPrice").keyup(function (event) {
 
+    $("#tblItem tbody > tr").off("click");
+    $("#tblItem tbody > tr").off("dblclick");
+
     let unitPrice = $("#unitPrice").val();
     if (regExUnitPrice.test(unitPrice)){
         $("#unitPrice").css('border','2px solid blue');
@@ -134,6 +137,55 @@ $("#unitPrice").keyup(function (event) {
         $("#unitPrice").css('border','2px solid red');
         $("#errorPrice").text("Unit Price is a required field: Pattern 00.00");
     }
+
+    $("#tblItem tbody > tr").click(function () {
+
+        tblItemRow=$(this);
+
+        var code=tblItemRow.children(':nth-child(1)').text();
+        var trim1 = $.trim(code);
+        var kind=tblItemRow.children(':nth-child(2)').text();
+        var trim2 = $.trim(kind);
+        var iName=tblItemRow.children(':nth-child(3)').text();
+        var trim3 = $.trim(iName);
+        var qty=tblItemRow.children(':nth-child(4)').text();
+        var trim4 = $.trim(qty);
+        var price=tblItemRow.children(':nth-child(5)').text();
+        var trim5 = $.trim(price);
+
+        $("#itemCode").val(trim1);
+        $("#kind").val(trim2);
+        $("#nameOfItem").val(trim3);
+        $("#qty").val(trim4);
+        $("#unitPrice").val(trim5);
+    });
+
+    $("#tblItem tbody > tr").dblclick(function () {
+
+        let text = "Are you sure you want to delete this Item?";
+        if (confirm(text) == true) {
+            tblItemRow.remove();
+
+            var index=-1;
+            var code=$("#itemCode").val();
+            var trim=$.trim(code);
+
+            for (var i = 0; i < itemDB.length; i++) {
+                if (trim == itemDB[i].code){
+                    index=i;
+                }
+            }
+            itemDB.splice(index,1);
+
+            $("#itemCode").val("");
+            $("#kind").val("");
+            $("#nameOfItem").val("");
+            $("#qty").val("");
+            $("#unitPrice").val("");
+        } else {
+
+        }
+    });
 });
 
 $('#itemCode,#kind,#nameOfItem,#qty,#unitPrice').keydown(function (e) {
