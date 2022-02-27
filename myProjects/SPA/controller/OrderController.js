@@ -76,7 +76,7 @@ $("#itemDiscount").keyup(function () {
         $("#errordiscount").text("");
     }else {
         $("#itemDiscount").css('border','2px solid red');
-        $("#errordiscount").text("Quantity is a required field: Pattern 0");
+        $("#errordiscount").text("ItemDiscount is a required field: Pattern 0");
     }
 });
 
@@ -319,9 +319,50 @@ $("#btnClearCart").click(function () {
 
 /*-------------------Final Total----------------------*/
 
+var regExCash=/^[0-9]{2,10}(.)[0-9]{2}$/;
+var regExBalance=/^[0-9]{1,10}(.)[0-9]{2}$/;
+var regExFinalDiscount=/^[0-9]{1,2}$/;
+
+$("#cash").keyup(function () {
+
+    let cash = $("#cash").val();
+    if (regExCash.test(cash)){
+        $("#cash").css('border','2px solid blue');
+        $("#errorCash").text("");
+    }else {
+        $("#cash").css('border','2px solid red');
+        $("#errorCash").text("Cash is a required field: Pattern 00.00");
+    }
+});
+
+$("#balance").keyup(function () {
+
+    let balance = $("#balance").val();
+    if (regExBalance.test(balance)){
+        $("#balance").css('border','2px solid blue');
+        $("#errorBalance").text("");
+    }else {
+        $("#balance").css('border','2px solid red');
+        $("#errorBalance").text("Balance is a required field: Pattern 00.00");
+    }
+});
+
+$("#discount").keyup(function () {
+
+    let discount = $("#discount").val();
+    if (regExFinalDiscount.test(discount)){
+        $("#discount").css('border','2px solid blue');
+        $("#errorFinalDiscount").text("");
+    }else {
+        $("#discount").css('border','2px solid red');
+        $("#errorFinalDiscount").text("Discount is a required field: Pattern 0");
+    }
+});
+
 $("#btnPurchase").click(function () {
 
-    if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
+    if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#errorCash").text()!=""||
+        $("#errorBalance").text()!=""||$("#errorFinalDiscount").text()!=""||$("#ids option:selected").val()==""||
         $("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""||$("#gross").val()==""||
         $("#net").val()==""||$("#cash").val()==""||$("#discount").val()==""||$("#balance").val()=="") {
         $("#btnPurchase").disable();
