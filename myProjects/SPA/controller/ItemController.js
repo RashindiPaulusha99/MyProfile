@@ -1,3 +1,12 @@
+function loadItemDetails() {
+    $("#tblItem tbody").empty();
+
+    for (var i = 0; i < itemDB.length; i++) {
+        let raw = `<tr><td> ${itemDB[i].code} </td><td> ${itemDB[i].kind} </td><td> ${itemDB[i].name} </td><td> ${itemDB[i].qty} </td><td> ${itemDB[i].price} </td></tr>`;
+        $("#tblItem tbody").append(raw);
+    }
+}
+
 var regExItemID=/^(I00-)[0-9]{3,4}$/;
 var regExKind=/^[A-Z|a-z\s]{3,20}$/;
 var regExItemName=/^[A-Z|a-z\s]{3,20}$/;

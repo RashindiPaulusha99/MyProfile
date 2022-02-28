@@ -156,7 +156,7 @@ function calculateNetAmount(net){
 
 var tblOrderRow;
 
-$("#btnAddCart").click(function () {
+/*$("#btnAddCart").click(function () {
 
      $("#tblItem tbody > tr").off("click");
      $("#tblItem tbody > tr").off("dblclick");
@@ -183,9 +183,9 @@ $("#btnAddCart").click(function () {
             var ifDuplicate=false;
 
             for (var j = 0; j < orderDetailsDB.length; j++) {
-                if ($("#codes option:selected").text() == orderDetailsDB[j].code){
+                if (itemCode == orderDetailsDB[j].code){
                     ifDuplicate = true;
-                }else {
+                } else {
                     ifDuplicate = false;
                 }
             }
@@ -236,16 +236,213 @@ $("#btnAddCart").click(function () {
                 for (var i = 0; i < orderDetailsDB.length; i++) {
                     if ($("#codes option:selected").text() == orderDetailsDB[i].code){
 
-                        /*orderDetailsDB[i].orderId=orderId;
+                        orderDetailsDB[i].orderId=orderId;
                         orderDetailsDB[i].code=itemCode;
                         orderDetailsDB[i].kind=kind;
                         orderDetailsDB[i].name=itemName;
-                        orderDetailsDB[i].price=unitPrice;*/
+                        orderDetailsDB[i].price=unitPrice;
                         orderDetailsDB[i].sellQty=qty;
-                        //orderDetailsDB[i].discount=discount;
+                        orderDetailsDB[i].discount=discount;
                         orderDetailsDB[i].total=amount;
                     }
                 }
+
+                $("#tblOrder tbody").empty();
+
+                for (var i = 0; i < orderDetailsDB.length; i++) {
+                    let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDetailsDB[i].total} </td></tr>`;
+                    $("#tblOrder tbody").append(raw);
+                }
+
+                $("#orderItemName").val("");
+                $("#orderKind").val("");
+                $("#orderQty").val("");
+                $("#orderPrice").val("");
+                $("#sellQty").val("");
+                $("#itemDiscount").val("");
+
+                $("#sellQty").css('border', '2px solid transparent');
+                $("#itemDiscount").css('border', '2px solid transparent');
+
+            }
+
+        } else {
+
+        }
+    }
+
+    $("#tblOrder tbody > tr").click(function () {
+        tblOrderRow=$(this);
+
+        var code=tblOrderRow.children(':nth-child(1)').text();
+        var trim1 = $.trim(code);
+        var kind=tblOrderRow.children(':nth-child(2)').text();
+        var trim2 = $.trim(kind);
+        var iName=tblOrderRow.children(':nth-child(3)').text();
+        var trim3 = $.trim(iName);
+        var sellqty=tblOrderRow.children(':nth-child(4)').text();
+        var trim4 = $.trim(sellqty);
+        var price=tblOrderRow.children(':nth-child(5)').text();
+        var trim5 = $.trim(price);
+
+        $("#codes option:selected").text(trim1);
+        $("#orderKind").val(trim2);
+        $("#orderItemName").val(trim3);
+        $("#sellQty").val(trim4);
+        $("#orderPrice").val(trim5);
+
+        for (var i = 0; i < itemDB.length; i++) {
+            if ($("#codes option:selected").text() == itemDB[i].code) {
+                $("#orderQty").val(itemDB[i].qty);
+            }
+        }
+
+        for (var i = 0; i < orderDetailsDB.length; i++) {
+            if ($("#codes option:selected").text() == orderDetailsDB[i].code) {
+                $("#itemDiscount").val(orderDetailsDB[i].discount);
+            }
+        }
+    });
+
+    $("#tblOrder tbody > tr").dblclick(function () {
+
+        let text = "Are you sure you want to remove this Item from cart?";
+
+        if (confirm(text) == true) {
+            tblOrderRow.remove();
+
+            var index=-1;
+
+            for (var i = 0; i < orderDetailsDB.length; i++) {
+                if (tblOrderRow.children(':nth-child(1)').text() == orderDetailsDB[i].code){
+                    index=i;
+                }
+            }
+            orderDetailsDB.splice(index,1);
+            console.log(orderDetailsDB);
+
+            /!*var qty = getQty(tblOrderRow.children(':nth-child(4)').text());
+            var amount = getAmount(tblOrderRow.children(':nth-child(5)').text());
+            manageQty(tblOrderRow.children(':nth-child(4)').text());
+
+            calculateGrossAmount(gross);
+            calculateNetAmount(net);*!/
+
+            $("#orderItemName").val("");
+            $("#orderKind").val("");
+            $("#orderQty").val("");
+            $("#orderPrice").val("");
+            $("#sellQty").val("");
+            $("#itemDiscount").val("");
+        } else {
+
+        }
+    });
+});*/
+
+$("#btnAddCart").click(function () {
+
+    $("#tblItem tbody > tr").off("click");
+    $("#tblItem tbody > tr").off("dblclick");
+
+    if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
+        $("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""){
+        $("#btnAddCart").disable();
+    }else {
+
+        let text = "Do you really want to add to cart this Item?";
+
+        if (confirm(text) == true) {
+
+            let orderId = $("#orderId").val();
+            let itemCode = $("#codes option:selected").text();
+            let kind = $("#orderKind").val();
+            let itemName = $("#orderItemName").val();
+            let unitPrice = $("#orderPrice").val();
+            let sellQty = $("#sellQty").val();
+            let gross = sellQty*unitPrice;
+            let discount = $("#itemDiscount").val();
+            let net = gross-(gross*$("#itemDiscount").val()/100);
+
+            $("#tblOrder tbody").empty();
+
+            for (var j = 0; j < $("#tblOrder tbody tr").children(':nth-child(1)').length; j++) {
+                if($("#codes option:selected").text()!=$("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
+
+                    let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${sellQty} </td><td> ${unitPrice} </td><td> ${net} </td></tr>`;
+                    $("#tblOrder tbody").append(raw);
+
+                    $("#orderItemName").val("");
+                    $("#orderKind").val("");
+                    $("#orderQty").val("");
+                    $("#orderPrice").val("");
+                    $("#sellQty").val("");
+                    $("#itemDiscount").val("");
+
+                    $("#sellQty").css('border', '2px solid transparent');
+                    $("#itemDiscount").css('border', '2px solid transparent');
+
+                }else{
+
+                }
+            }
+
+
+            /*var orderDetails={
+                orderId:orderId,
+                code:itemCode,
+                kind:kind,
+                name:itemName,
+                price:unitPrice,
+                sellQty:sellQty,
+                discount:discount,
+                total:net
+            }*/
+
+            /*var index=-1;
+
+            for (var j = 0; j < orderDetailsDB.length; j++) {
+                if (itemCode == orderDetailsDB[j].code){
+                    index = j;
+                } else {
+                    index = -1;
+                }
+            }*/
+
+            if (index==-1){
+
+                //orderDetailsDB.push(orderDetails);
+                manageQty(sellQty,"add");
+                calculateGrossAmount(gross);
+                calculateNetAmount(net);
+
+                $("#tblOrder tbody").empty();
+
+                for (var i = 0; i < orderDetailsDB.length; i++) {
+                    let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDetailsDB[i].total} </td></tr>`;
+                    $("#tblOrder tbody").append(raw);
+                }
+
+                $("#orderItemName").val("");
+                $("#orderKind").val("");
+                $("#orderQty").val("");
+                $("#orderPrice").val("");
+                $("#sellQty").val("");
+                $("#itemDiscount").val("");
+
+                $("#sellQty").css('border', '2px solid transparent');
+                $("#itemDiscount").css('border', '2px solid transparent');
+
+            }else if (orderDetails.code==orderDetailsDB[index].code){
+
+                var qty = getQty(sellQty);
+                var amount = getAmount(net,"add");
+                manageQty(sellQty,"add");
+                calculateGrossAmount(gross);
+                calculateNetAmount(net);
+
+                orderDetailsDB[index].sellQty=qty;
+                orderDetailsDB[index].total=amount;
 
                 $("#tblOrder tbody").empty();
 

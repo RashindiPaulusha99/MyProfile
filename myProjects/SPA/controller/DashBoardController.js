@@ -28,6 +28,7 @@ $("#item").click(function () {
     $("#homeSec").css('display','none');
     $("#name").css('display','none');
 
+    loadItemDetails();
     $("#itemCode").focus();
 });
 
@@ -54,6 +55,6 @@ $("#order").click(function () {
 
     loadCustomerIds();
     loadItemCodes();
-    $("#orderId").focus();
     disableFields();
+    $("#orderId").focus();
 });
