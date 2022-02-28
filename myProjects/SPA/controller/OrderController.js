@@ -378,18 +378,17 @@ $("#btnAddCart").click(function () {
 
             var ifDuplicate=false;
             var duplicateIndex=-1;
+            var e;
 
             for (var i = 0; i < $("#tblOrder tbody tr").length; i++) {
                 if($("#codes option:selected").text()==$("#tblOrder tbody tr").children(':nth-child(1)')[i].innerText){
                     ifDuplicate=true;
                     duplicateIndex=i;
-                }else{
-                    ifDuplicate=false;
-                    duplicateIndex=-1;
+                    e=$(this);
                 }
             }
 
-            if (duplicateIndex==-1){
+            if (ifDuplicate!=true){
 
                 manageQty(sellQty,"add");
                 calculateGrossAmount(gross);
@@ -409,7 +408,7 @@ $("#btnAddCart").click(function () {
                 $("#sellQty").css('border', '2px solid transparent');
                 $("#itemDiscount").css('border', '2px solid transparent');
 
-            }else if (duplicateIndex!=-1){
+            }else if (ifDuplicate==true){
 
                 var qty = getQty(sellQty);
                 var amount = getAmount(net,"add");
@@ -417,10 +416,9 @@ $("#btnAddCart").click(function () {
                 calculateGrossAmount(gross);
                 calculateNetAmount(net);
 
-                /*$("#tblOrder tbody tr").children(':nth-child(4)')[duplicateIndex].text(qty);
-                $("#tblOrder tbody tr").children(':nth-child(7)')[duplicateIndex].text(amount);*/
+                $("#tblOrder tbody tr").children(':nth-child(4)')[duplicateIndex].text(qty);
+                $("#tblOrder tbody tr").children(':nth-child(7)')[duplicateIndex].text(amount);
                 alert("succes");
-                //$("#tblOrder tbody tr").children().eq(0).text("cccc");
 
                 $("#orderItemName").val("");
                 $("#orderKind").val("");
@@ -476,12 +474,12 @@ $("#btnAddCart").click(function () {
         if (confirm(text) == true) {
             tblOrderRow.remove();
 
-            /*var qty = getQty(tblOrderRow.children(':nth-child(4)').text());
+            var qty = getQty(tblOrderRow.children(':nth-child(4)').text());
             var amount = getAmount(tblOrderRow.children(':nth-child(5)').text());
             manageQty(tblOrderRow.children(':nth-child(4)').text());
 
             calculateGrossAmount(gross);
-            calculateNetAmount(net);*/
+            calculateNetAmount(net);
 
             $("#orderItemName").val("");
             $("#orderKind").val("");
