@@ -119,9 +119,9 @@ function manageQty(qty,status){
 
 function getQty(sellqty){
     var votevalue = parseInt(sellqty);
-    for (var j = 0; j < orderDetailsDB.length; j++) {
-        if ($("#codes option:selected").text() == orderDetailsDB[j].code){
-            var qty = parseInt(orderDetailsDB[j].sellQty);
+    for (var j = 0; j < $("#tblOrder tbody tr").children(':nth-child(1)').length; j++) {
+        if ($("#codes option:selected").text() == $("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
+            var qty = parseInt($("#tblOrder tbody tr").children(':nth-child(4)')[j].innerText);
             qty+=votevalue;
         }
     }
@@ -129,13 +129,13 @@ function getQty(sellqty){
 }
 
 function getAmount(net,status){
-    for (var j = 0; j < orderDetailsDB.length; j++) {
-        if ($("#codes option:selected").text() == orderDetailsDB[j].code){
-            var amount=orderDetailsDB[j].total;
+    for (var j = 0; j < $("#tblOrder tbody tr").children(':nth-child(1)').length; j++) {
+        if ($("#codes option:selected").text() == $("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
+            var amount=$("#tblOrder tbody tr").children(':nth-child(7)')[j].innerText;
             if (status=="add"){
-                amount=orderDetailsDB[j].total+net;
+                amount=$("#tblOrder tbody tr").children(':nth-child(7)')[j].innerText+net;
             }else if (status=="reduce"){
-                amount=orderDetailsDB[j].total-net;
+                amount=$("#tblOrder tbody tr").children(':nth-child(7)')[j].innerText-net;
             }
         }
     }
@@ -155,6 +155,7 @@ function calculateNetAmount(net){
 }
 
 var tblOrderRow;
+var rowCount=0;
 
 /*$("#btnAddCart").click(function () {
 
@@ -364,31 +365,7 @@ $("#btnAddCart").click(function () {
             let discount = $("#itemDiscount").val();
             let net = gross-(gross*$("#itemDiscount").val()/100);
 
-            $("#tblOrder tbody").empty();
-
-            for (var j = 0; j < $("#tblOrder tbody tr").children(':nth-child(1)').length; j++) {
-                if($("#codes option:selected").text()!=$("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
-
-                    let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${sellQty} </td><td> ${unitPrice} </td><td> ${net} </td></tr>`;
-                    $("#tblOrder tbody").append(raw);
-
-                    $("#orderItemName").val("");
-                    $("#orderKind").val("");
-                    $("#orderQty").val("");
-                    $("#orderPrice").val("");
-                    $("#sellQty").val("");
-                    $("#itemDiscount").val("");
-
-                    $("#sellQty").css('border', '2px solid transparent');
-                    $("#itemDiscount").css('border', '2px solid transparent');
-
-                }else{
-
-                }
-            }
-
-
-            /*var orderDetails={
+            var orderDetails={
                 orderId:orderId,
                 code:itemCode,
                 kind:kind,
@@ -397,31 +374,30 @@ $("#btnAddCart").click(function () {
                 sellQty:sellQty,
                 discount:discount,
                 total:net
-            }*/
+            }
 
-            /*var index=-1;
+            var ifDuplicate=false;
+            var duplicateIndex=-1;
 
-            for (var j = 0; j < orderDetailsDB.length; j++) {
-                if (itemCode == orderDetailsDB[j].code){
-                    index = j;
-                } else {
-                    index = -1;
+            for (var i = 0; i < $("#tblOrder tbody tr").length; i++) {
+                if($("#codes option:selected").text()==$("#tblOrder tbody tr").children(':nth-child(1)')[i].innerText){
+                    ifDuplicate=true;
+                    duplicateIndex=i;
+                }else{
+                    ifDuplicate=false;
+                    duplicateIndex=-1;
                 }
-            }*/
+            }
 
-            if (index==-1){
+            if (duplicateIndex==-1){
 
-                //orderDetailsDB.push(orderDetails);
                 manageQty(sellQty,"add");
                 calculateGrossAmount(gross);
                 calculateNetAmount(net);
 
-                $("#tblOrder tbody").empty();
-
-                for (var i = 0; i < orderDetailsDB.length; i++) {
-                    let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDetailsDB[i].total} </td></tr>`;
-                    $("#tblOrder tbody").append(raw);
-                }
+                let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${sellQty} </td><td> ${unitPrice} </td><td> ${discount} </td><td> ${net} </td></tr>`;
+                $("#tblOrder tbody").append(raw);
+                rowCount++;
 
                 $("#orderItemName").val("");
                 $("#orderKind").val("");
@@ -433,7 +409,7 @@ $("#btnAddCart").click(function () {
                 $("#sellQty").css('border', '2px solid transparent');
                 $("#itemDiscount").css('border', '2px solid transparent');
 
-            }else if (orderDetails.code==orderDetailsDB[index].code){
+            }else if (duplicateIndex!=-1){
 
                 var qty = getQty(sellQty);
                 var amount = getAmount(net,"add");
@@ -441,15 +417,10 @@ $("#btnAddCart").click(function () {
                 calculateGrossAmount(gross);
                 calculateNetAmount(net);
 
-                orderDetailsDB[index].sellQty=qty;
-                orderDetailsDB[index].total=amount;
-
-                $("#tblOrder tbody").empty();
-
-                for (var i = 0; i < orderDetailsDB.length; i++) {
-                    let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDetailsDB[i].total} </td></tr>`;
-                    $("#tblOrder tbody").append(raw);
-                }
+                /*$("#tblOrder tbody tr").children(':nth-child(4)')[duplicateIndex].text(qty);
+                $("#tblOrder tbody tr").children(':nth-child(7)')[duplicateIndex].text(amount);*/
+                alert("succes");
+                //$("#tblOrder tbody tr").children().eq(0).text("cccc");
 
                 $("#orderItemName").val("");
                 $("#orderKind").val("");
@@ -481,22 +452,19 @@ $("#btnAddCart").click(function () {
         var trim4 = $.trim(sellqty);
         var price=tblOrderRow.children(':nth-child(5)').text();
         var trim5 = $.trim(price);
+        var discount=tblOrderRow.children(':nth-child(6)').text();
+        var trim6 = $.trim(discount);
 
         $("#codes option:selected").text(trim1);
         $("#orderKind").val(trim2);
         $("#orderItemName").val(trim3);
         $("#sellQty").val(trim4);
         $("#orderPrice").val(trim5);
+        $("#itemDiscount").val(trim6);
 
         for (var i = 0; i < itemDB.length; i++) {
             if ($("#codes option:selected").text() == itemDB[i].code) {
                 $("#orderQty").val(itemDB[i].qty);
-            }
-        }
-
-        for (var i = 0; i < orderDetailsDB.length; i++) {
-            if ($("#codes option:selected").text() == orderDetailsDB[i].code) {
-                $("#itemDiscount").val(orderDetailsDB[i].discount);
             }
         }
     });
@@ -507,16 +475,6 @@ $("#btnAddCart").click(function () {
 
         if (confirm(text) == true) {
             tblOrderRow.remove();
-
-            var index=-1;
-
-            for (var i = 0; i < orderDetailsDB.length; i++) {
-                if (tblOrderRow.children(':nth-child(1)').text() == orderDetailsDB[i].code){
-                    index=i;
-                }
-            }
-            orderDetailsDB.splice(index,1);
-            console.log(orderDetailsDB);
 
             /*var qty = getQty(tblOrderRow.children(':nth-child(4)').text());
             var amount = getAmount(tblOrderRow.children(':nth-child(5)').text());
