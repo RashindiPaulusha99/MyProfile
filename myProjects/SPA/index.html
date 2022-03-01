@@ -545,17 +545,25 @@
 
                     <div class="col">
                         <div class="form-outline ">
-                            <label class="form-label text-black mb-0 mt-3" for="orderItemName">Item Name</label>
-                            <input type="text" id="orderItemName" class="form-control form-control-sm shadow mb-2" placeholder="xxxx" />
+                            <label class="form-label text-black mb-0 mt-3" for="orderItemCode">Item Code</label>
+                            <input type="text" id="orderItemCode" class="form-control form-control-sm shadow mb-2" placeholder="xxxx" />
                         </div>
                     </div>
                 </div>
 
                 <div class="form row ">
-                    <div class="col">
-                        <div class="form-outline ">
+
+                    <div class="form col ">
+                        <div class="form-outline">
                             <label class="form-label text-black mb-0" for="orderKind">Kind</label>
                             <input type="text" id="orderKind" class="form-control form-control-sm shadow mb-2" placeholder="xxxx" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="orderItemName">Item Name</label>
+                            <input type="text" id="orderItemName" class="form-control form-control-sm shadow mb-2" placeholder="xxxx" />
                         </div>
                     </div>
 
@@ -566,6 +574,9 @@
                         </div>
                     </div>
 
+                </div>
+
+                <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0" for="orderQty">Quantity On Hand</label>
@@ -573,9 +584,6 @@
                         </div>
                     </div>
 
-                </div>
-
-                <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0" for="sellQty">Order Quantity</label>
@@ -697,6 +705,8 @@
                     <th scope="col">Unit Price</th>
                     <th scope="col">Discount</th>
                     <th scope="col">Total</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
                 </tr>
                 </thead>
                 <tbody  style="background-color:white ">
