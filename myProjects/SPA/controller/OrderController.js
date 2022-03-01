@@ -181,16 +181,24 @@ function getAmount(net){
     return amount;
 }
 
+/* if add new gross*/
 var grossAmount=0;
-function calculateGrossAmount(gross,status){
-    if(status=="add"){
-        grossAmount+=gross;
-        $("#gross").val(grossAmount);
-    }else if (status=="reduce"){
-        grossAmount-=gross;
-        $("#gross").val(grossAmount);
-    }
+function calculateGrossAmount(gross){
+    grossAmount+=gross;
+    $("#gross").val(grossAmount);
 }
+
+/* if update new gross*/
+function updateGrossAmount(gross,previousGross){
+    grossAmount-=previousGross;
+    grossAmount+=gross;
+    $("#gross").val(grossAmount);
+}
+
+
+
+
+
 
 var netAmount=0;
 function calculateNetAmount(net,status){
@@ -436,7 +444,7 @@ $("#btnAddCart").click(function () {
             if (ifDuplicate!=true){
 
                 manageAddQty(sellQty);
-                calculateGrossAmount(gross,"add");
+                calculateGrossAmount(gross);
                 calculateNetAmount(net,"add");
 
                 let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${sellQty} </td><td> ${unitPrice} </td><td> ${discount} </td><td> ${net} </td><td> <input id='btnEdit' class='btn btn-success btn-sm' value='Update' style="width: 75px"/> </td><td> <input id='btnDelete' class='btn btn-danger btn-sm' value='Delete' style="width: 75px"/> </td></tr>`;
@@ -458,7 +466,8 @@ $("#btnAddCart").click(function () {
 
                     //var amount = getAmount(net);
                     manageQty(sellQty,$(tblOrderRow).children(':nth-child(4)').text());
-                    calculateGrossAmount(gross,"add");
+                    var previousGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*unitPrice;
+                    updateGrossAmount(gross,previousGross);
                     calculateNetAmount(net,"add");
 
                     $(tblOrderRow).children(':nth-child(4)').text(sellQty);
