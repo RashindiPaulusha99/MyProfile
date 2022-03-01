@@ -23,32 +23,46 @@ var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 $('#orderDate').val(today);
 
 function generateOrderId() {
+    $("#orderId").val("O00-0001");
     var OrderId=orderDB[orderDB.length-1].orderId;
     var tempId = parseInt(OrderId.split("-")[1]);
     tempId = tempId+1;
-    var oId="O00-0001";
     if (tempId <= 9){
-        oId ="O00-000"+tempId;
+        $("#orderId").val("O00-000"+tempId);
     }else if (tempId <= 99) {
-        oId = "O00-00" + tempId;
+        $("#orderId").val("O00-00" + tempId);
     }else if (tempId <= 999){
-        oId = "O00-0" + tempId;
+        $("#orderId").val("O00-0" + tempId);
     }else {
-        oId = "O00-"+tempId;
+        $("#orderId").val("O00-"+tempId);
     }
-    $("#orderId").val(oId);
 }
-
-var test={
-    orderId:"O00-0000",
-    orderdate:$('#orderDate').val(),
-    cusId:$('#ids option:selected').text(),
-}
-orderDB.push(test);
-
 
 $("#btnNew").click(function () {
     generateOrderId();
+    $("#orderItemName").val("");
+    $("#orderItemCode").val("");
+    $("#orderKind").val("");
+    $("#orderQty").val("");
+    $("#orderPrice").val("");
+    $("#sellQty").val("");
+    $("#itemDiscount").val("");
+    $("#orderCusName").val("");
+    $("#orderCusAddress").val("");
+    $("#orderCusNIC").val("");
+    $("#orderCusContact").val("");
+    $("#gross").val("");
+    $("#net").val("");
+    $("#cash").val("");
+    $("#discount").val("");
+    $("#balance").val("");
+    $("#tblOrder tbody").empty();
+
+    $("#sellQty").css('border', '2px solid transparent');
+    $("#itemDiscount").css('border', '2px solid transparent');
+    $("#discount").css('border', '2px solid transparent');
+    $("#cash").css('border', '2px solid transparent');
+
 });
 
 /*-------------------Customer Sec-----------------------*/
@@ -73,24 +87,8 @@ $("#ids").click(function () {
 
 /*-------------------Item Sec-----------------------*/
 
-var regExOrderID=/^(O00-)[0-9]{3,4}$/;
 var regExSellQuantity=/^[0-9]{1,20}$/;
 var regExDiscount=/^[0-9]{1,2}$/;
-
-/*$("#orderId").keyup(function (event) {
-
-    let orderId = $("#orderId").val();
-    if (regExOrderID.test(orderId)){
-        $("#orderId").css('border','2px solid blue');
-        $("#errorOrderId").text("");
-        if (event.key=="Enter"){
-            $("#orderDate").focus();
-        }
-    }else {
-        $("#orderId").css('border','2px solid red');
-        $("#errorOrderId").text("OrderId is a required field: Pattern O00-000");
-    }
-});*/
 
 $("#sellQty").keyup(function (event) {
 
@@ -594,17 +592,6 @@ $("#discount").keyup(function () {
     }
 });
 
-/*var orderDetails={
-                orderId:orderId,
-                code:itemCode,
-                kind:kind,
-                name:itemName,
-                price:unitPrice,
-                sellQty:sellQty,
-                discount:discount,
-                total:net
-            }*/
-
 $("#btnPurchase").click(function () {
 
     if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#errorCash").text()!=""||
@@ -633,6 +620,19 @@ $("#btnPurchase").click(function () {
                 netTotal: amountOfNet
             }
 
+            for (var i = 0; i < $("#tblOrder tbody tr").length; i++) {
+                var orderDetails={
+                    orderId:orderId,
+                    code:$("#tblOrder tbody tr").children(':nth-child(1)')[i].innerText,
+                    kind:$("#tblOrder tbody tr").children(':nth-child(2)')[i].innerText,
+                    name:$("#tblOrder tbody tr").children(':nth-child(3)')[i].innerText,
+                    price:$("#tblOrder tbody tr").children(':nth-child(5)')[i].innerText,
+                    sellQty:$("#tblOrder tbody tr").children(':nth-child(4)')[i].innerText,
+                    discount:$("#tblOrder tbody tr").children(':nth-child(6)')[i].innerText,
+                    total:$("#tblOrder tbody tr").children(':nth-child(7)')[i].innerText
+                }
+            }
+
             var ifDuplicate = false;
 
             for (var j = 0; j < orderDB.length; j++) {
@@ -644,23 +644,27 @@ $("#btnPurchase").click(function () {
             }
 
             if (ifDuplicate == false) {
+
                 orderDB.push(order);
+                for (var i = 0; i < $("#tblOrder tbody tr").length; i++) {
+                    var orderDetails={
+                        orderId:orderId,
+                        code:$("#tblOrder tbody tr").children(':nth-child(1)')[i].innerText,
+                        kind:$("#tblOrder tbody tr").children(':nth-child(2)')[i].innerText,
+                        name:$("#tblOrder tbody tr").children(':nth-child(3)')[i].innerText,
+                        price:$("#tblOrder tbody tr").children(':nth-child(5)')[i].innerText,
+                        sellQty:$("#tblOrder tbody tr").children(':nth-child(4)')[i].innerText,
+                        discount:$("#tblOrder tbody tr").children(':nth-child(6)')[i].innerText,
+                        total:$("#tblOrder tbody tr").children(':nth-child(7)')[i].innerText
+                    }
+                    orderDetailsDB.push(orderDetails);
+                }
 
                 var rest=amountOfNet-(amountOfNet*discount/100);
                 var balance=cash-rest;
                 $("#balance").val(balance);
 
                 $("#btnAddCart").attr('disabled',false);
-
-                $("#orderDate").val("");
-                $("#orderCusName").val("");
-                $("#orderCusContact").val("");
-                $("#orderCusNIC").val("");
-                $("#orderCusAddress").val("");
-                $("#orderId").val("");
-
-                $("#orderId").css('border', '2px solid transparent');
-
 
             } else if (ifDuplicate == true) {
                 alert("Something Wrong.");
