@@ -124,13 +124,13 @@
                         <i class="fas fa-users fa-4x text-white center d-flex justify-content-center mt-2"></i>
                         <h2 class="text-center text-white" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">All</h2>
                         <h2 class="text-center text-white" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Customers</h2>
-                        <h1 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">200</h1>
+                        <h1 id="customerCount" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;"></h1>
                     </div>
                     <div class="col  me-5 ms-5 mb-4 mt-3 " style="background-image: radial-gradient(circle at top,#b6d4fe,#1a1e21);box-shadow: -1px 1px 8px 5px black;">
                         <i class="fas fa-box fa-4x text-white center d-flex justify-content-center mt-2"></i>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">All</h2>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Items</h2>
-                        <h1 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">1000</h1>
+                        <h1 id="itemCount" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;"></h1>
                     </div>
                 </div>
 
@@ -139,13 +139,13 @@
                         <i class="fas fa-shopping-cart fa-4x text-white d-flex justify-content-center mt-2"></i>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">All</h2>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Orders</h2>
-                        <h1 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">200</h1>
+                        <h1 id="orderCount" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;"></h1>
                     </div>
                     <div class="col  me-5 ms-5 mb-5 mt-3 " style="background-image: radial-gradient(circle at top,#b6d4fe,#1a1e21);box-shadow: -1px 1px 8px 5px black;">
                         <i class="fas fa-file-invoice-dollar fa-4x text-white d-flex justify-content-center mt-2"></i>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Daily</h2>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Income</h2>
-                        <h1 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">100000</h1>
+                        <h1 id="income" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;"></h1>
                     </div>
                 </div>
             </div>
@@ -734,6 +734,7 @@
 <script src="db/OrderDetails.js"></script>
 <script src="assets/jquery/jquery-3.6.0.min.js"></script>
 <script src="controller/DashBoardController.js"></script>
+<script src="controller/Home.js"></script>
 <script src="controller/CustomerController.js"></script>
 <script src="controller/ItemController.js"></script>
 <script src="controller/OrderController.js"></script>

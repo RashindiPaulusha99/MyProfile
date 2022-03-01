@@ -41,6 +41,8 @@ $("#home").click(function () {
     $("#orderSec").css('display','none');
     $("#homeSec").css('display','block');
     $("#name").css('display','block');
+
+    Count();
 });
 
 $("#order").click(function () {
