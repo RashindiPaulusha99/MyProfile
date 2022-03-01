@@ -56,5 +56,5 @@ $("#order").click(function () {
     loadCustomerIds();
     loadItemCodes();
     disableFields();
-    $("#orderId").focus();
+    generateOrderId();
 });

@@ -1,6 +1,7 @@
 
 function disableFields() {
     $("#orderCusName").prop('disabled',true);
+    $("#orderId").prop('disabled',true);
     $("#orderCusContact").prop('disabled',true);
     $("#orderCusAddress").prop('disabled',true);
     $("#orderCusNIC").prop('disabled',true);
@@ -21,27 +22,34 @@ var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 
 $('#orderDate').val(today);
 
-/*ResultSet rst = DbConnection.getInstance().getConnection().prepareStatement("SELECT supplierId FROM Supplier ORDER BY supplierId DESC LIMIT 1").executeQuery();
-if (rst.next()){
-    //if data has in database ,split supplierId
-    int tempId = Integer.parseInt(rst.getString(1).split("-")[1]);
+function generateOrderId() {
+    var OrderId=orderDB[orderDB.length-1].orderId;
+    var tempId = parseInt(OrderId.split("-")[1]);
     tempId = tempId+1;
-
+    var oId="O00-0001";
     if (tempId <= 9){
-        return "S00-000"+tempId;
+        oId ="O00-000"+tempId;
     }else if (tempId <= 99) {
-        return "S00-00" + tempId;
+        oId = "O00-00" + tempId;
     }else if (tempId <= 999){
-        return "S00-0" + tempId;
+        oId = "O00-0" + tempId;
     }else {
-        return "S00-"+tempId;
+        oId = "O00-"+tempId;
     }
-}else {
-    //if no data in database
-    return "S00-0001";
-}*/
+    $("#orderId").val(oId);
+}
+
+var test={
+    orderId:"O00-0000",
+    orderdate:$('#orderDate').val(),
+    cusId:$('#ids option:selected').text(),
+}
+orderDB.push(test);
 
 
+$("#btnNew").click(function () {
+    generateOrderId();
+});
 
 /*-------------------Customer Sec-----------------------*/
 
@@ -69,7 +77,7 @@ var regExOrderID=/^(O00-)[0-9]{3,4}$/;
 var regExSellQuantity=/^[0-9]{1,20}$/;
 var regExDiscount=/^[0-9]{1,2}$/;
 
-$("#orderId").keyup(function (event) {
+/*$("#orderId").keyup(function (event) {
 
     let orderId = $("#orderId").val();
     if (regExOrderID.test(orderId)){
@@ -82,7 +90,7 @@ $("#orderId").keyup(function (event) {
         $("#orderId").css('border','2px solid red');
         $("#errorOrderId").text("OrderId is a required field: Pattern O00-000");
     }
-});
+});*/
 
 $("#sellQty").keyup(function (event) {
 
@@ -169,16 +177,6 @@ function manageReduceQty(qty){
             itemDB[j].qty=manageQty;
         }
     }
-}
-
-function getAmount(net){
-    for (var j = 0; j < $("#tblOrder tbody tr").children(':nth-child(1)').length; j++) {
-        if ($("#orderItemCode").val() == $("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
-            var amount=parseInt($("#tblOrder tbody tr").children(':nth-child(7)')[j].innerText);
-            amount=amount+net;
-        }
-    }
-    return amount;
 }
 
 /* if add new gross*/
@@ -413,10 +411,10 @@ $("#btnAddCart").click(function () {
     $("#tblOrder tbody > tr").off("click");
     $("#tblOrder tbody").off("click",'#btnDelete');
 
-    /*if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
+    if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
         $("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""){
         $("#btnAddCart").disable();
-    }else {*/
+    }else {
 
         let text = "Do you really want to add to cart this Item?";
 
@@ -431,17 +429,6 @@ $("#btnAddCart").click(function () {
             var gross = sellQty*unitPrice;
             let discount = $("#itemDiscount").val();
             var net = gross-(gross*discount/100);
-
-            /*var orderDetails={
-                orderId:orderId,
-                code:itemCode,
-                kind:kind,
-                name:itemName,
-                price:unitPrice,
-                sellQty:sellQty,
-                discount:discount,
-                total:net
-            }*/
 
             var ifDuplicate=false;
 
@@ -527,7 +514,7 @@ $("#btnAddCart").click(function () {
 
         }
 
-    //}
+    }
 
     $("#tblOrder tbody > tr").click(function () {
         tblOrderRow=$(this);
@@ -606,6 +593,17 @@ $("#discount").keyup(function () {
         $("#errorFinalDiscount").text("Discount is a required field: Pattern 0");
     }
 });
+
+/*var orderDetails={
+                orderId:orderId,
+                code:itemCode,
+                kind:kind,
+                name:itemName,
+                price:unitPrice,
+                sellQty:sellQty,
+                discount:discount,
+                total:net
+            }*/
 
 $("#btnPurchase").click(function () {
 

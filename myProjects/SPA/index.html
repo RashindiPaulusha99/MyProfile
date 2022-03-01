@@ -466,14 +466,22 @@
             <div class="col w-25 me-3 ms-3 mb-2 mt-2 border border-5 border-white shadow" style="background-color: #b6d4fe">
 
                 <div class="row " style="background: #706fd3">
-                    <h4>Invoice Details</h4>
+                    <div class="col">
+                        <h4>Invoice Details</h4>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-warning btn-sm btn-block shadow float-end mt-1 mb-1 " id="btnNew">
+                            <i class="fas fa-plus-square"></i>
+                            New
+                        </button>
+                    </div>
                 </div>
 
                 <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0 mt-3" for="orderId">Order ID</label>
-                            <input type="text" id="orderId" class="form-control form-control-sm shadow mb-2" placeholder="O00-000" />
+                            <input type="text" id="orderId" class="form-control form-control-sm shadow mb-2" placeholder="O00-0000" />
                             <p><small id="errorOrderId" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
