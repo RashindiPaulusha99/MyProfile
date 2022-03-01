@@ -195,20 +195,30 @@ function updateGrossAmount(gross,previousGross){
     $("#gross").val(grossAmount);
 }
 
+/* if delete gross*/
+function deleteGrossAmount(gross){
+    grossAmount-=gross;
+    $("#gross").val(grossAmount);
+}
 
-
-
-
-
+/* if add new net*/
 var netAmount=0;
-function calculateNetAmount(net,status){
-    if (status=="add"){
-        netAmount+=net;
-        $("#net").val(netAmount);
-    }else if (status=="reduce"){
-        netAmount-=net;
-        $("#net").val(netAmount);
-    }
+function calculateNetAmount(net){
+    netAmount+=net;
+    $("#net").val(netAmount);
+}
+
+/* if update new net*/
+function updateNetAmount(net,previousNet){
+    netAmount-=previousNet;
+    netAmount+=net;
+    $("#net").val(netAmount);
+}
+
+/* if delete net*/
+function deleteNetAmount(net){
+    netAmount-=net;
+    $("#net").val(netAmount);
 }
 
 var tblOrderRow;
@@ -400,8 +410,8 @@ var click="not clicked";
 
 $("#btnAddCart").click(function () {
 
-    $("#tblItem tbody > tr").off("click");
-    $("#tblItem tbody > tr").off("dblclick");
+    $("#tblOrder tbody > tr").off("click");
+    $("#tblOrder tbody > tr").off("dblclick");
 
     /*if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
         $("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""){
@@ -445,7 +455,7 @@ $("#btnAddCart").click(function () {
 
                 manageAddQty(sellQty);
                 calculateGrossAmount(gross);
-                calculateNetAmount(net,"add");
+                calculateNetAmount(net);
 
                 let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${sellQty} </td><td> ${unitPrice} </td><td> ${discount} </td><td> ${net} </td><td> <input id='btnEdit' class='btn btn-success btn-sm' value='Update' style="width: 75px"/> </td><td> <input id='btnDelete' class='btn btn-danger btn-sm' value='Delete' style="width: 75px"/> </td></tr>`;
                 $("#tblOrder tbody").append(raw);
@@ -468,7 +478,7 @@ $("#btnAddCart").click(function () {
                     manageQty(sellQty,$(tblOrderRow).children(':nth-child(4)').text());
                     var previousGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*unitPrice;
                     updateGrossAmount(gross,previousGross);
-                    calculateNetAmount(net,"add");
+                    updateNetAmount(net,$(tblOrderRow).children(':nth-child(7)').text());
 
                     $(tblOrderRow).children(':nth-child(4)').text(sellQty);
                     $(tblOrderRow).children(':nth-child(7)').text(net);
@@ -493,15 +503,18 @@ $("#btnAddCart").click(function () {
 
         }
 
-        /*$("#btnDelete").click(function () {
+        $("#btnDelete").click(function () {
             let text = "Are you sure you want to remove this Item from cart?";
 
             if (confirm(text) == true) {
                 tblOrderRow.remove();
 
                 manageReduceQty(tblOrderRow.children(':nth-child(4)').text());
-                calculateGrossAmount(gross,"reduce");
-                calculateNetAmount(net,"reduce");
+
+                var preGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*$("#orderPrice").val();
+                deleteGrossAmount(preGross);
+                var delNet=parseInt($(tblOrderRow).children(':nth-child(7)').text());
+                deleteNetAmount(delNet);
 
                 $("#orderItemName").val("");
                 $("#orderItemCode").val("");
@@ -513,7 +526,7 @@ $("#btnAddCart").click(function () {
             } else {
 
             }
-    });*/
+        });
     //}
 
     $("#tblOrder tbody > tr").click(function () {
@@ -554,11 +567,12 @@ $("#btnAddCart").click(function () {
         if (confirm(text) == true) {
             tblOrderRow.remove();
 
-            var amount = getAmount(tblOrderRow.children(':nth-child(7)').text(),"reduce");
             manageReduceQty(tblOrderRow.children(':nth-child(4)').text());
 
-            calculateGrossAmount(gross,"reduce");
-            calculateNetAmount(net,"reduce");
+            var preGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*$("#orderPrice").val();
+            deleteGrossAmount(preGross);
+            var delNet=parseInt($(tblOrderRow).children(':nth-child(7)').text());
+            deleteNetAmount(delNet);
 
             $("#orderItemName").val("");
             $("#orderItemCode").val("");
