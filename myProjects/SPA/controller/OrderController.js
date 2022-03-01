@@ -5,6 +5,7 @@ function disableFields() {
     $("#orderCusAddress").disable();
     $("#orderCusNIC").disable();
     $("#orderItemName").disable();
+    $("#orderItemCode").disable();
     $("#orderKind").disable();
     $("#orderPrice").disable();
     $("#orderQty").disable();
@@ -91,6 +92,7 @@ $("#codes").click(function () {
 
     for (var i = 0; i < itemDB.length; i++) {
         if ($("#codes option:selected").text()==itemDB[i].code){
+            $("#orderItemCode").val(itemDB[i].code);
             $("#orderKind").val(itemDB[i].kind);
             $("#orderItemName").val(itemDB[i].name);
             $("#orderQty").val(itemDB[i].qty);
@@ -104,7 +106,7 @@ $("#codes").click(function () {
 function manageQty(qty,status){
     var votevalue = parseInt(qty);
     for (var j = 0; j < itemDB.length; j++) {
-        if ($("#codes option:selected").text() == itemDB[j].code){
+        if ($("#orderItemCode").val() == itemDB[j].code){
             var manageQty=parseInt(itemDB[j].qty);
             if (status=="add"){
                 manageQty-=votevalue;
@@ -120,7 +122,7 @@ function manageQty(qty,status){
 function getQty(sellqty){
     var votevalue = parseInt(sellqty);
     for (var j = 0; j < $("#tblOrder tbody tr").children(':nth-child(1)').length; j++) {
-        if ($("#codes option:selected").text() == $("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
+        if ($("#orderItemCode").val() == $("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
             var qty = parseInt($("#tblOrder tbody tr").children(':nth-child(4)')[j].innerText);
             qty+=votevalue;
         }
@@ -130,12 +132,12 @@ function getQty(sellqty){
 
 function getAmount(net,status){
     for (var j = 0; j < $("#tblOrder tbody tr").children(':nth-child(1)').length; j++) {
-        if ($("#codes option:selected").text() == $("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
-            var amount=$("#tblOrder tbody tr").children(':nth-child(7)')[j].innerText;
+        if ($("#orderItemCode").val() == $("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
+            var amount=parseInt($("#tblOrder tbody tr").children(':nth-child(7)')[j].innerText);
             if (status=="add"){
-                amount=$("#tblOrder tbody tr").children(':nth-child(7)')[j].innerText+net;
+                amount=amount+net;
             }else if (status=="reduce"){
-                amount=$("#tblOrder tbody tr").children(':nth-child(7)')[j].innerText-net;
+                amount=amount-net;
             }
         }
     }
@@ -165,6 +167,7 @@ function calculateNetAmount(net,status){
 }
 
 var tblOrderRow;
+var click="not clicked";
 
 /*$("#btnAddCart").click(function () {
 
@@ -365,16 +368,16 @@ $("#btnAddCart").click(function () {
         if (confirm(text) == true) {
 
             let orderId = $("#orderId").val();
-            let itemCode = $("#codes option:selected").text();
+            let itemCode = $("#orderItemCode").val();
             let kind = $("#orderKind").val();
             let itemName = $("#orderItemName").val();
             let unitPrice = $("#orderPrice").val();
             var sellQty = $("#sellQty").val();
             var gross = sellQty*unitPrice;
             let discount = $("#itemDiscount").val();
-            var net = gross-(gross*$("#itemDiscount").val()/100);
+            var net = gross-(gross*discount/100);
 
-            var orderDetails={
+            /*var orderDetails={
                 orderId:orderId,
                 code:itemCode,
                 kind:kind,
@@ -383,12 +386,12 @@ $("#btnAddCart").click(function () {
                 sellQty:sellQty,
                 discount:discount,
                 total:net
-            }
+            }*/
 
             var ifDuplicate=false;
 
             for (var i = 0; i < $("#tblOrder tbody tr").length; i++) {
-                if($("#codes option:selected").text()==$("#tblOrder tbody tr").children(':nth-child(1)')[i].innerText){
+                if($("#orderItemCode").val()==$("#tblOrder tbody tr").children(':nth-child(1)')[i].innerText){
                     ifDuplicate=true;
                 }
             }
@@ -399,7 +402,7 @@ $("#btnAddCart").click(function () {
                 calculateGrossAmount(gross,"add");
                 calculateNetAmount(net,"add");
 
-                let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${sellQty} </td><td> ${unitPrice} </td><td> ${discount} </td><td> ${net}  </td><td> <input id='btnEdit' class='btn btn-success btn-sm' value='Update' style="width: 75px"/> </td><td> <input id='btnDelete' class='btn btn-danger btn-sm' value='Delete' style="width: 75px"/> </td></tr>`;
+                let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${sellQty} </td><td> ${unitPrice} </td><td> ${discount} </td><td> ${net} </td><td> <input id='btnEdit' class='btn btn-success btn-sm' value='Update' style="width: 75px"/> </td><td> <input id='btnDelete' class='btn btn-danger btn-sm' value='Delete' style="width: 75px"/> </td></tr>`;
                 $("#tblOrder tbody").append(raw);
 
                 $("#orderItemName").val("");
@@ -412,25 +415,54 @@ $("#btnAddCart").click(function () {
                 $("#sellQty").css('border', '2px solid transparent');
                 $("#itemDiscount").css('border', '2px solid transparent');
 
+                $("#btnDelete").click(function () {
+                    let text = "Are you sure you want to remove this Item from cart?";
+
+                    if (confirm(text) == true) {
+                        tblOrderRow.remove();
+
+                        var amount = getAmount(tblOrderRow.children(':nth-child(7)').text(),"reduce");
+                        manageQty(tblOrderRow.children(':nth-child(4)').text(),"reduce");
+
+                        calculateGrossAmount(gross,"reduce");
+                        calculateNetAmount(net,"reduce");
+
+                        $("#orderItemName").val("");
+                        $("#orderItemCode").val("");
+                        $("#orderKind").val("");
+                        $("#orderQty").val("");
+                        $("#orderPrice").val("");
+                        $("#sellQty").val("");
+                        $("#itemDiscount").val("");
+                    } else {
+
+                    }
+                });
+
             }else if (ifDuplicate==true){
 
-                var amount = getAmount(net,"add");
-                manageQty(sellQty,"add");
-                calculateGrossAmount(gross,"add");
-                calculateNetAmount(net,"add");
+                if (click=="clicked"){
+                    var amount = getAmount(net,"add");
+                    manageQty(sellQty,"add");
+                    calculateGrossAmount(gross,"add");
+                    calculateNetAmount(net,"add");
 
-                $(tblOrderRow).children(':nth-child(4)').text(sellQty);
-                $(tblOrderRow).children(':nth-child(7)').text(amount);
+                    $(tblOrderRow).children(':nth-child(4)').text(sellQty);
+                    $(tblOrderRow).children(':nth-child(7)').text(amount);
 
-                $("#orderItemName").val("");
-                $("#orderKind").val("");
-                $("#orderQty").val("");
-                $("#orderPrice").val("");
-                $("#sellQty").val("");
-                $("#itemDiscount").val("");
+                    $("#orderItemName").val("");
+                    $("#orderItemCode").val("");
+                    $("#orderKind").val("");
+                    $("#orderQty").val("");
+                    $("#orderPrice").val("");
+                    $("#sellQty").val("");
+                    $("#itemDiscount").val("");
 
-                $("#sellQty").css('border', '2px solid transparent');
-                $("#itemDiscount").css('border', '2px solid transparent');
+                    $("#sellQty").css('border', '2px solid transparent');
+                    $("#itemDiscount").css('border', '2px solid transparent');
+                }else if (click=="not clicked"){
+                    alert("Please Select A Row.");
+                }
 
             }
 
@@ -441,6 +473,7 @@ $("#btnAddCart").click(function () {
 
     $("#tblOrder tbody > tr").click(function () {
         tblOrderRow=$(this);
+        click="clicked";
 
         var code=tblOrderRow.children(':nth-child(1)').text();
         var trim1 = $.trim(code);
@@ -455,7 +488,7 @@ $("#btnAddCart").click(function () {
         var discount=tblOrderRow.children(':nth-child(6)').text();
         var trim6 = $.trim(discount);
 
-        $("#codes option:selected").text(trim1);
+        $("#orderItemCode").val(trim1);
         $("#orderKind").val(trim2);
         $("#orderItemName").val(trim3);
         $("#sellQty").val(trim4);
@@ -463,7 +496,7 @@ $("#btnAddCart").click(function () {
         $("#itemDiscount").val(trim6);
 
         for (var i = 0; i < itemDB.length; i++) {
-            if ($("#codes option:selected").text() == itemDB[i].code) {
+            if ($("#orderItemCode").val() == itemDB[i].code) {
                 $("#orderQty").val(itemDB[i].qty);
             }
         }
@@ -476,13 +509,14 @@ $("#btnAddCart").click(function () {
         if (confirm(text) == true) {
             tblOrderRow.remove();
 
-            var amount = getAmount(tblOrderRow.children(':nth-child(5)').text(),"reduce");
+            var amount = getAmount(tblOrderRow.children(':nth-child(7)').text(),"reduce");
             manageQty(tblOrderRow.children(':nth-child(4)').text(),"reduce");
 
             calculateGrossAmount(gross,"reduce");
             calculateNetAmount(net,"reduce");
 
             $("#orderItemName").val("");
+            $("#orderItemCode").val("");
             $("#orderKind").val("");
             $("#orderQty").val("");
             $("#orderPrice").val("");
@@ -496,6 +530,7 @@ $("#btnAddCart").click(function () {
 
 $("#btnClearCart").click(function () {
     $("#orderItemName").val("");
+    $("#orderItemCode").val("");
     $("#orderKind").val("");
     $("#orderQty").val("");
     $("#orderPrice").val("");
