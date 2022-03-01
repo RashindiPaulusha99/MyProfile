@@ -1,17 +1,25 @@
 
 function disableFields() {
-    $("#orderCusName").css('disabled',false);
-    $("#orderCusContact").disable();
-    $("#orderCusAddress").disable();
-    $("#orderCusNIC").disable();
-    $("#orderItemName").disable();
-    $("#orderItemCode").disable();
-    $("#orderKind").disable();
-    $("#orderPrice").disable();
-    $("#orderQty").disable();
-    $("#gross").disable();
-    $("#net").disable();
+    $("#orderCusName").prop('disabled',true);
+    $("#orderCusContact").prop('disabled',true);
+    $("#orderCusAddress").prop('disabled',true);
+    $("#orderCusNIC").prop('disabled',true);
+    $("#orderItemName").prop('disabled',true);
+    $("#orderItemCode").prop('disabled',true);
+    $("#orderKind").prop('disabled',true);
+    $("#orderPrice").prop('disabled',true);
+    $("#orderQty").prop('disabled',true);
+    $("#gross").prop('disabled',true);
+    $("#net").prop('disabled',true);
 }
+
+var now = new Date();
+
+var day = ("0" + now.getDate()).slice(-2);
+var month = ("0" + (now.getMonth() + 1)).slice(-2);
+var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+
+$('#orderDate').val(today);
 
 /*-------------------Customer Sec-----------------------*/
 
@@ -119,26 +127,11 @@ function manageQty(qty,status){
     }
 }
 
-function getQty(sellqty){
-    var votevalue = parseInt(sellqty);
-    for (var j = 0; j < $("#tblOrder tbody tr").children(':nth-child(1)').length; j++) {
-        if ($("#orderItemCode").val() == $("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
-            var qty = parseInt($("#tblOrder tbody tr").children(':nth-child(4)')[j].innerText);
-            qty+=votevalue;
-        }
-    }
-    return qty;
-}
-
-function getAmount(net,status){
+function getAmount(net){
     for (var j = 0; j < $("#tblOrder tbody tr").children(':nth-child(1)').length; j++) {
         if ($("#orderItemCode").val() == $("#tblOrder tbody tr").children(':nth-child(1)')[j].innerText){
             var amount=parseInt($("#tblOrder tbody tr").children(':nth-child(7)')[j].innerText);
-            if (status=="add"){
-                amount=amount+net;
-            }else if (status=="reduce"){
-                amount=amount-net;
-            }
+            amount=amount+net;
         }
     }
     return amount;
@@ -358,10 +351,10 @@ $("#btnAddCart").click(function () {
     $("#tblItem tbody > tr").off("click");
     $("#tblItem tbody > tr").off("dblclick");
 
-    /*if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
+    if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
         $("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""){
         $("#btnAddCart").disable();
-    }else {*/
+    }else {
 
         let text = "Do you really want to add to cart this Item?";
 
@@ -421,9 +414,7 @@ $("#btnAddCart").click(function () {
                     if (confirm(text) == true) {
                         tblOrderRow.remove();
 
-                        var amount = getAmount(tblOrderRow.children(':nth-child(7)').text(),"reduce");
                         manageQty(tblOrderRow.children(':nth-child(4)').text(),"reduce");
-
                         calculateGrossAmount(gross,"reduce");
                         calculateNetAmount(net,"reduce");
 
@@ -442,7 +433,8 @@ $("#btnAddCart").click(function () {
             }else if (ifDuplicate==true){
 
                 if (click=="clicked"){
-                    var amount = getAmount(net,"add");
+
+                    var amount = getAmount(net);
                     manageQty(sellQty,"add");
                     calculateGrossAmount(gross,"add");
                     calculateNetAmount(net,"add");
@@ -460,16 +452,16 @@ $("#btnAddCart").click(function () {
 
                     $("#sellQty").css('border', '2px solid transparent');
                     $("#itemDiscount").css('border', '2px solid transparent');
+
                 }else if (click=="not clicked"){
                     alert("Please Select A Row.");
                 }
-
             }
 
         } else {
 
         }
-    //}
+    }
 
     $("#tblOrder tbody > tr").click(function () {
         tblOrderRow=$(this);
