@@ -411,7 +411,7 @@ var click="not clicked";
 $("#btnAddCart").click(function () {
 
     $("#tblOrder tbody > tr").off("click");
-    $("#tblOrder tbody > tr").off("dblclick");
+    $("#tblOrder tbody").off("click",'#btnDelete');
 
     /*if($("#errorSellQty").text()!=""||$("#errorOrderId").text()!=""||$("#errordiscount").text()!=""||$("#ids option:selected").val()==""||
         $("#codes option:selected").val()==""||$("#sellQty").val()==""||$("#orderId").val()==""||$("#orderDate").val()==""){
@@ -470,11 +470,35 @@ $("#btnAddCart").click(function () {
                 $("#sellQty").css('border', '2px solid transparent');
                 $("#itemDiscount").css('border', '2px solid transparent');
 
+                $("#tblOrder tbody").on('click','#btnDelete',function () {
+
+                    let text = "Are you sure you want to remove this Item from cart?";
+
+                    if (confirm(text) == true) {
+                        tblOrderRow.remove();
+
+                        manageReduceQty(tblOrderRow.children(':nth-child(4)').text());
+                        var preGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*$("#orderPrice").val();
+                        deleteGrossAmount(preGross);
+                        var delNet=parseInt($(tblOrderRow).children(':nth-child(7)').text());
+                        deleteNetAmount(delNet);
+
+                        $("#orderItemName").val("");
+                        $("#orderItemCode").val("");
+                        $("#orderKind").val("");
+                        $("#orderQty").val("");
+                        $("#orderPrice").val("");
+                        $("#sellQty").val("");
+                        $("#itemDiscount").val("");
+                    } else {
+
+                    }
+                });
+
             }else if (ifDuplicate==true){
 
                 if (click=="clicked"){
 
-                    //var amount = getAmount(net);
                     manageQty(sellQty,$(tblOrderRow).children(':nth-child(4)').text());
                     var previousGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*unitPrice;
                     updateGrossAmount(gross,previousGross);
@@ -503,30 +527,6 @@ $("#btnAddCart").click(function () {
 
         }
 
-        $("#btnDelete").click(function () {
-            let text = "Are you sure you want to remove this Item from cart?";
-
-            if (confirm(text) == true) {
-                tblOrderRow.remove();
-
-                manageReduceQty(tblOrderRow.children(':nth-child(4)').text());
-
-                var preGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*$("#orderPrice").val();
-                deleteGrossAmount(preGross);
-                var delNet=parseInt($(tblOrderRow).children(':nth-child(7)').text());
-                deleteNetAmount(delNet);
-
-                $("#orderItemName").val("");
-                $("#orderItemCode").val("");
-                $("#orderKind").val("");
-                $("#orderQty").val("");
-                $("#orderPrice").val("");
-                $("#sellQty").val("");
-                $("#itemDiscount").val("");
-            } else {
-
-            }
-        });
     //}
 
     $("#tblOrder tbody > tr").click(function () {
@@ -560,31 +560,6 @@ $("#btnAddCart").click(function () {
         }
     });
 
-    $("#tblOrder tbody > tr").dblclick(function () {
-
-        let text = "Are you sure you want to remove this Item from cart?";
-
-        if (confirm(text) == true) {
-            tblOrderRow.remove();
-
-            manageReduceQty(tblOrderRow.children(':nth-child(4)').text());
-
-            var preGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*$("#orderPrice").val();
-            deleteGrossAmount(preGross);
-            var delNet=parseInt($(tblOrderRow).children(':nth-child(7)').text());
-            deleteNetAmount(delNet);
-
-            $("#orderItemName").val("");
-            $("#orderItemCode").val("");
-            $("#orderKind").val("");
-            $("#orderQty").val("");
-            $("#orderPrice").val("");
-            $("#sellQty").val("");
-            $("#itemDiscount").val("");
-        } else {
-
-        }
-    });
 });
 
 $("#btnClearCart").click(function () {
