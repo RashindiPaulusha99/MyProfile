@@ -476,8 +476,8 @@ $("#btnPurchase").click(function () {
                     code:$("#tblOrder tbody tr").children(':nth-child(1)')[i].innerText,
                     kind:$("#tblOrder tbody tr").children(':nth-child(2)')[i].innerText,
                     name:$("#tblOrder tbody tr").children(':nth-child(3)')[i].innerText,
-                    price:$("#tblOrder tbody tr").children(':nth-child(5)')[i].innerText,
                     sellQty:$("#tblOrder tbody tr").children(':nth-child(4)')[i].innerText,
+                    price:$("#tblOrder tbody tr").children(':nth-child(5)')[i].innerText,
                     discount:$("#tblOrder tbody tr").children(':nth-child(6)')[i].innerText,
                     total:$("#tblOrder tbody tr").children(':nth-child(7)')[i].innerText
                 }

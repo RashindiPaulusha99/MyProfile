@@ -20,21 +20,23 @@ $("#btnSearchOrders").click(function () {
         }
     }
 
-    for (var i = 0; i < customerDB.length; i++) {
-        if ($("#orderCusId").val() == customerDB[i].id){
-            $("#orderCusName").val(customerDB[i].id);
-            $("#orderCusNIC").val(customerDB[i].nic);
-            $("#orderCusContact").val(customerDB[i].contact);
-            $("#orderCusAddress").val(customerDB[i].address);
-        }
-    }
-
     for (var i = 0; i < orderDetailsDB.length; i++) {
         if (trimid == orderDetailsDB[i].orderId){
-            let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDetailsDB[i].discount} </td><td> ${orderDetailsDB[i].total} </td><td> <input id='btnEdit' class='btn btn-success btn-sm' value='Update' style="width: 75px"/> </td><td> <input id='btnDelete' class='btn btn-danger btn-sm' value='Delete' style="width: 75px"/> </td></tr>`;
-            $("#tblOrder tbody").append(raw);
+            let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDetailsDB[i].discount} </td><td> ${orderDetailsDB[i].total} </td></tr>`;
+            $("#tblOrderDetail tbody").append(raw);
         }
     }
 
     $("#itemQty").val($("#tblOrderDetail tbody tr").length);
+});
+
+$("#btnClear").click(function () {
+    $("#tblOrderDetail tbody").empty();
+    $("#cusId").val("");
+    $("#OID").val("");
+    $("#ODate").val("");
+    $("#netAmount").val("");
+    $("#grossAmount").val("");
+    $("#itemQty").val("");
+    $("#searchOrderId").val("");
 });
