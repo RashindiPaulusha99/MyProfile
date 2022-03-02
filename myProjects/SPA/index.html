@@ -50,34 +50,11 @@
                                 <i class="fas fa-shopping-cart fa-2x"></i>
                             </a>
                         </li>
-                        <!--<li class="nav-item dropdown me-3" id="other">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-list-alt fa-2x"></i>
+                        <li class="nav-item me-3" id="orderDetails">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-list fa-2x"></i>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action1</a></li>
-                                <li><a class="dropdown-item" href="#">Action2</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>-->
-
-                        <li class="nav-item dropdown">
-                            <a aria-expanded="false" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown"
-                               href="#"
-                               id="navbarDropdown" role="button">
-                                Other
-                            </a>
-                            <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
-                                <li><a class="dropdown-item" id="linkCustomer" href="#">Customer Manage</a></li>
-                                <li><a class="dropdown-item" id="linkItem" href="#">Item Manage</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item link-Order" id="linkOrder" href="#">Purchase Order</a></li>
-                            </ul>
                         </li>
-
                     </ul>
                 </div>
 
@@ -757,6 +734,89 @@
 
     </section>
 
+    <!--Order Detail-->
+    <div id="orderDetailName" class="container-fluid  mt-1 shadow p-2 mb-2  rounded-circle w-25 ">
+        <h2 class="text-white mb-0 d-flex justify-content-center">
+            <i class="fas fa-list-alt"></i>
+            Order Details
+        </h2>
+    </div>
+
+    <section class="container-fluid mt-3" id="orderDetailSec">
+
+        <!--search order details-->
+        <section class="row mt-3 justify-content-around">
+            <div class="col-12 col-md-4">
+                <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2">
+                    <h1 class="h1 mb-3 text-white">Order Details</h1>
+                    <div class="mb-3">
+                        <label class="form-label text-white" for="searchOrderId">Search OrderID</label>
+                        <input class="form-control" id="searchOrderId" placeholder="Input OrderID" type="text">
+                    </div>
+                    <button class="btn btn-primary" id="btnSearchOrders">Search</button>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+
+            <!--order information-->
+            <div class="col-12 col-md-5">
+                <div class="row">
+                    <div class="mb-2 col">
+                        <label class="form-label fw-bold" for="OID">Order Id</label>
+                        <input class="form-control" id="OID"  type="text">
+                    </div>
+                    <div class="mb-2 col">
+                        <label class="form-label fw-bold" for="ODate">Order Date</label>
+                        <input class="form-control" id="ODate"  type="text">
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label fw-bold" for="cusId">Customer ID</label>
+                    <input class="form-control" id="cusId"  type="text">
+                </div>
+                <div class="mb-2">
+                    <label class="form-label fw-bold" for="itemQty">Item Qty</label>
+                    <input class="form-control" id="itemQty" type="text">
+                </div>
+
+                <div class="row">
+                    <div class="mb-2 col">
+                        <label class="form-label fw-bold" for="grossAmount">Gross Amount</label>
+                        <input class="form-control" id="grossAmount"  type="text">
+                    </div>
+                    <div class="mb-2 col">
+                        <label class="form-label fw-bold" for="netAmount">Net Amount</label>
+                        <input class="form-control" id="netAmount"  type="text">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--order detail table-->
+        <section class="row mt-4">
+            <div class="col">
+                <table class="table" id="tblOrderDetail">
+                    <thead class="text-white" style="background-color: #a29bfe;">
+                    <tr>
+                        <th scope="col">Code</th>
+                        <th scope="col">Kind</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody style="background-color: white">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </section>
+
 </main>
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -770,6 +830,7 @@
 <script src="controller/CustomerController.js"></script>
 <script src="controller/ItemController.js"></script>
 <script src="controller/OrderController.js"></script>
+<script src="controller/OrderDetailsController.js"></script>
 
 </body>
 </html>
