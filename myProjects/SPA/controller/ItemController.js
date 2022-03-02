@@ -2,7 +2,7 @@ function loadItemDetails() {
     $("#tblItem tbody").empty();
 
     for (var i = 0; i < itemDB.length; i++) {
-        let raw = `<tr><td> ${itemDB[i].code} </td><td> ${itemDB[i].kind} </td><td> ${itemDB[i].name} </td><td> ${itemDB[i].qty} </td><td> ${itemDB[i].price} </td></tr>`;
+        let raw = `<tr><td> ${itemDB[i].getItemCode()} </td><td> ${itemDB[i].getKind()} </td><td> ${itemDB[i].getItemName()} </td><td> ${itemDB[i].getQtyOnHand()} </td><td> ${itemDB[i].getUnitPrice()} </td></tr>`;
         $("#tblItem tbody").append(raw);
     }
 }
@@ -93,13 +93,13 @@ $("#unitPrice").keyup(function (event) {
                 let qty = $("#qty").val();
                 let unitPrice = $("#unitPrice").val();
 
-                var itemDetails={
-                    code:itemCode,
-                    kind:kind,
-                    name:itemName,
-                    qty:qty,
-                    price:unitPrice
-                }
+                var itemDetails = new ItemDTO(
+                    itemCode,
+                    kind,
+                    itemName,
+                    qty,
+                    unitPrice
+                );
 
                 var ifDuplicate=false;
 
@@ -107,7 +107,7 @@ $("#unitPrice").keyup(function (event) {
                 var trim = $.trim(code);
 
                 for (var j = 0; j < itemDB.length; j++) {
-                    if (trim == itemDB[j].code){
+                    if (trim == itemDB[j].getItemCode()){
                         ifDuplicate = true;
                     }else {
                         ifDuplicate = false;
@@ -119,7 +119,7 @@ $("#unitPrice").keyup(function (event) {
                     $("#tblItem tbody").empty();
 
                     for (var i = 0; i < itemDB.length; i++) {
-                        let raw = `<tr><td> ${itemDB[i].code} </td><td> ${itemDB[i].kind} </td><td> ${itemDB[i].name} </td><td> ${itemDB[i].qty} </td><td> ${itemDB[i].price} </td></tr>`;
+                        let raw = `<tr><td> ${itemDB[i].getItemCode()} </td><td> ${itemDB[i].getKind()} </td><td> ${itemDB[i].getItemName()} </td><td> ${itemDB[i].getQtyOnHand()} </td><td> ${itemDB[i].getUnitPrice()} </td></tr>`;
                         $("#tblItem tbody").append(raw);
                     }
 
@@ -180,7 +180,7 @@ $("#unitPrice").keyup(function (event) {
             var trim=$.trim(code);
 
             for (var i = 0; i < itemDB.length; i++) {
-                if (trim == itemDB[i].code){
+                if (trim == itemDB[i].getItemCode()){
                     index=i;
                 }
             }
@@ -224,13 +224,13 @@ $("#btnSaveItem").click(function () {
             let qty = $("#qty").val();
             let unitPrice = $("#unitPrice").val();
 
-            var itemDetails={
-                code:itemCode,
-                kind:kind,
-                name:itemName,
-                qty:qty,
-                price:unitPrice
-            }
+            var itemDetails = new ItemDTO(
+                itemCode,
+                kind,
+                itemName,
+                qty,
+                unitPrice
+            );
 
             var ifDuplicate=false;
 
@@ -238,7 +238,7 @@ $("#btnSaveItem").click(function () {
             var trim = $.trim(code);
 
             for (var j = 0; j < itemDB.length; j++) {
-                if (trim == itemDB[j].code){
+                if (trim == itemDB[j].getItemCode()){
                     ifDuplicate = true;
                 }else {
                     ifDuplicate = false;
@@ -250,7 +250,7 @@ $("#btnSaveItem").click(function () {
                 $("#tblItem tbody").empty();
 
                 for (var i = 0; i < itemDB.length; i++) {
-                    let raw = `<tr><td> ${itemDB[i].code} </td><td> ${itemDB[i].kind} </td><td> ${itemDB[i].name} </td><td> ${itemDB[i].qty} </td><td> ${itemDB[i].price} </td></tr>`;
+                    let raw = `<tr><td> ${itemDB[i].getItemCode()} </td><td> ${itemDB[i].getKind()} </td><td> ${itemDB[i].getItemName()} </td><td> ${itemDB[i].getQtyOnHand()} </td><td> ${itemDB[i].getUnitPrice()} </td></tr>`;
                     $("#tblItem tbody").append(raw);
                 }
 
@@ -307,7 +307,7 @@ $("#btnSaveItem").click(function () {
             var trim=$.trim(code);
 
             for (var i = 0; i < itemDB.length; i++) {
-                if (trim == itemDB[i].code){
+                if (trim == itemDB[i].getItemCode()){
                     index=i;
                 }
             }
@@ -356,7 +356,7 @@ $("#btnDeleteItem").click(function () {
             var trim=$.trim(code);
 
             for (var i = 0; i < itemDB.length; i++) {
-                if (trim == itemDB[i].code){
+                if (trim == itemDB[i].getItemCode()){
                     index=i;
                 }
             }
@@ -402,12 +402,12 @@ $("#btnEditItem").click(function () {
                 var code=$("#itemCode").val();
                 var trim=$.trim(code);
 
-                if (trim == itemDB[i].code){
-                    itemDB[i].code=itemCode;
-                    itemDB[i].kind=kind;
-                    itemDB[i].name=itemName;
-                    itemDB[i].qty=qty;
-                    itemDB[i].price=unitPrice;
+                if (trim == itemDB[i].getItemCode()){
+                    itemDB[i].setItemCode(itemCode);
+                    itemDB[i].setKind(kind);
+                    itemDB[i].setItemName(itemName);
+                    itemDB[i].setQtyOnHand(qty);
+                    itemDB[i].setUnitPrice(unitPrice);
                 }
             }
 
@@ -432,12 +432,12 @@ $("#btnEditItem").click(function () {
 
 $("#btnSearchItem").click(function () {
     for (var i = 0; i < itemDB.length; i++) {
-        if ($("#searchItem").val()==itemDB[i].code){
-            $("#itemCode").val(itemDB[i].code);
-            $("#nameOfItem").val(itemDB[i].name);
-            $("#kind").val(itemDB[i].kind);
-            $("#qty").val(itemDB[i].qty);
-            $("#unitPrice").val(itemDB[i].price);
+        if ($("#searchItem").val()==itemDB[i].getItemCode()){
+            $("#itemCode").val(itemDB[i].getItemCode());
+            $("#nameOfItem").val(itemDB[i].getItemName());
+            $("#kind").val(itemDB[i].getKind());
+            $("#qty").val(itemDB[i].getQtyOnHand());
+            $("#unitPrice").val(itemDB[i].getUnitPrice());
         }else {
             alert("No Such Item");
         }

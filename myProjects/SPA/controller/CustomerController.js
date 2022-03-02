@@ -121,16 +121,6 @@ $("#email").keyup(function (event) {
                 let cusAddress = $("#address").val();
                 let cusEmail = $("#email").val();
 
-                /*var cusDetails={
-                    id:cusId,
-                    name:cusName,
-                    gender:cusGender,
-                    contact:cusContact,
-                    nic:cusNIC,
-                    address:cusAddress,
-                    email:cusEmail
-                }*/
-
                 var cusDetails = new CustomerDTO(
                     cusId,
                     cusName,
@@ -267,15 +257,15 @@ $("#btnSaveCustomer").click(function () {
             let cusAddress = $("#address").val();
             let cusEmail = $("#email").val();
 
-            var cusDetails={
-                id:cusId,
-                name:cusName,
-                gender:cusGender,
-                contact:cusContact,
-                nic:cusNIC,
-                address:cusAddress,
-                email:cusEmail
-            }
+            var cusDetails = new CustomerDTO(
+                cusId,
+                cusName,
+                cusGender,
+                cusContact,
+                cusNIC,
+                cusAddress,
+                cusEmail
+            );
 
             var ifDuplicate=false;
 
@@ -283,7 +273,7 @@ $("#btnSaveCustomer").click(function () {
             var trim = $.trim(id);
 
             for (var j = 0; j < customerDB.length; j++) {
-                if (trim == customerDB[j].id){
+                if (trim == customerDB[j].getCustomerId()){
                     ifDuplicate = true;
                 }else {
                     ifDuplicate = false;
@@ -295,7 +285,7 @@ $("#btnSaveCustomer").click(function () {
                 $("#tblCustomer tbody").empty();
 
                 for (var i = 0; i < customerDB.length; i++) {
-                    let raw = `<tr><td> ${customerDB[i].id} </td><td> ${customerDB[i].name} </td><td> ${customerDB[i].gender} </td><td> ${customerDB[i].contact} </td><td> ${customerDB[i].nic} </td><td> ${customerDB[i].address} </td><td> ${customerDB[i].email} </td></tr>`;
+                    let raw = `<tr><td> ${customerDB[i].getCustomerId()} </td><td> ${customerDB[i].getCustomerName()} </td><td> ${customerDB[i].getGender()} </td><td> ${customerDB[i].getContact()} </td><td> ${customerDB[i].getNIC()} </td><td> ${customerDB[i].getAddress()} </td><td> ${customerDB[i].getEmail()} </td></tr>`;
                     $("#tblCustomer tbody").append(raw);
                 }
 
@@ -364,7 +354,7 @@ $("#btnSaveCustomer").click(function () {
             var trim=$.trim(id);
 
             for (var i = 0; i < customerDB.length; i++) {
-                if (trim==customerDB[i].id){
+                if (trim==customerDB[i].getCustomerId()){
                     index=i;
                 }
             }
@@ -419,7 +409,7 @@ $("#btnDeleteCustomer").click(function () {
             var trim=$.trim(id);
 
             for (var i = 0; i < customerDB.length; i++) {
-                if (trim==customerDB[i].id){
+                if (trim==customerDB[i].getCustomerId()){
                     index=i;
                 }
             }
@@ -471,14 +461,14 @@ $("#btnEditCustomer").click(function () {
                 var id=$("#customerId").val();
                 var trim=$.trim(id);
 
-                if (trim == customerDB[i].id){
-                    customerDB[i].id=cusId;
-                    customerDB[i].name=cusName;
-                    customerDB[i].gender=cusGender;
-                    customerDB[i].contact=cusContact;
-                    customerDB[i].nic=cusNIC;
-                    customerDB[i].address=cusAddress;
-                    customerDB[i].email=cusEmail;
+                if (trim == customerDB[i].getCustomerId()){
+                    customerDB[i].setCustomerId(cusId);
+                    customerDB[i].setCustomerName(cusName);
+                    customerDB[i].setGender(cusGender);
+                    customerDB[i].setContact(cusContact);
+                    customerDB[i].setNIC(cusNIC);
+                    customerDB[i].setAddress(cusAddress);
+                    customerDB[i].setEmail(cusEmail);
                 }
             }
 
@@ -506,14 +496,14 @@ $("#btnEditCustomer").click(function () {
 
 $("#btnSearchCustomer").click(function () {
     for (var i = 0; i < customerDB.length; i++) {
-        if ($("#searchCustomer").val()==customerDB[i].id){
-            $("#customerId").val(customerDB[i].id);
-            $("#nameOfCustomer").val(customerDB[i].name);
-            $("#gender").val(customerDB[i].gender);
-            $("#contact").val(customerDB[i].contact);
-            $("#nic").val(customerDB[i].nic);
-            $("#address").val(customerDB[i].address());
-            $("#email").val(customerDB[i].email);
+        if ($("#searchCustomer").val()==customerDB[i].getCustomerId()){
+            $("#customerId").val(customerDB[i].getCustomerId());
+            $("#nameOfCustomer").val(customerDB[i].getCustomerName());
+            $("#gender").val(customerDB[i].getGender());
+            $("#contact").val(customerDB[i].getContact());
+            $("#nic").val(customerDB[i].getNIC());
+            $("#address").val(customerDB[i].getAddress());
+            $("#email").val(customerDB[i].getEmail());
         }else {
             alert("No Such Customer");
         }
