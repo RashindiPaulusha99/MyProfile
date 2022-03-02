@@ -450,7 +450,7 @@
     </section>
 
     <!--Order-->
-    <div id="orderName" class="container-fluid  mt-1 shadow p-2 mb-3  rounded-circle w-25 ">
+    <div id="orderName" class="container-fluid  mt-1 shadow p-2 mb-2  rounded-circle w-25 ">
         <h2 class="text-white mb-0 d-flex justify-content-center">
             <i class="fas fa-shopping-cart"></i>
             Place Order
@@ -458,6 +458,16 @@
     </div>
 
     <section id="orderSec" class="container-fluid  rounded  mt-0 mb-4 ">
+
+        <!--search order-->
+        <div class="row ">
+            <div class="col">
+                <input class="form-control-sm me-0 mt-0 mb-0 border border-white" type="search" placeholder="Input OrderId" aria-label="Search" id="searchOrder"  style="width: 30%;"/>
+                <button class="btn btn-primary btn-sm ms-0 " type="button" style="box-shadow: -1px 1px 30px 5px white" id="btnSearchOrder">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
 
         <!--3 section-->
         <div class="row ">
@@ -504,29 +514,36 @@
 
                     <div class="col">
                         <div class="form-outline ">
-                            <label class="form-label text-black mb-0" for="orderCusName">Name</label>
-                            <input type="text" id="orderCusName" class="form-control form-control-sm shadow mb-2" placeholder="xxxxx" />
+                            <label class="form-label text-black mb-0" for="orderCusId">ID</label>
+                            <input type="text" id="orderCusId" class="form-control form-control-sm shadow mb-2" placeholder="C00-0000" />
                         </div>
                     </div>
                 </div>
 
                 <div class="form row ">
+                    <div class="col">
+                        <div class="form-outline ">
+                            <label class="form-label text-black mb-0" for="orderCusName">Name</label>
+                            <input type="text" id="orderCusName" class="form-control form-control-sm shadow mb-2" placeholder="xxxxx" />
+                        </div>
+                    </div>
+
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0" for="orderCusContact">Contact</label>
                             <input type="tel" id="orderCusContact" class="form-control form-control-sm shadow mb-2" placeholder="0xx-xxxxxxx" />
                         </div>
                     </div>
+                </div>
 
+                <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0" for="orderCusNIC">NIC</label>
                             <input type="text" id="orderCusNIC" class="form-control form-control-sm shadow mb-2" placeholder="xxxxxxxxxV" />
                         </div>
                     </div>
-                </div>
 
-                <div class="form row ">
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0" for="orderCusAddress">Address</label>
@@ -554,7 +571,7 @@
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mb-0 mt-3" for="orderItemCode">Code</label>
-                            <input type="text" id="orderItemCode" class="form-control form-control-sm shadow mb-2" placeholder="I00-000" />
+                            <input type="text" id="orderItemCode" class="form-control form-control-sm shadow mb-2" placeholder="I00-0000" />
                         </div>
                     </div>
                 </div>

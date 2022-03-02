@@ -3,6 +3,7 @@ function disableFields() {
     $("#orderCusName").prop('disabled',true);
     $("#orderId").prop('disabled',true);
     $("#orderCusContact").prop('disabled',true);
+    $("#orderCusId").prop('disabled',true);
     $("#orderCusAddress").prop('disabled',true);
     $("#orderCusNIC").prop('disabled',true);
     $("#orderItemName").prop('disabled',true);
@@ -48,9 +49,11 @@ $("#btnNew").click(function () {
     $("#sellQty").val("");
     $("#itemDiscount").val("");
     $("#orderCusName").val("");
+    $("#orderCusId").val("");
     $("#orderCusAddress").val("");
     $("#orderCusNIC").val("");
     $("#orderCusContact").val("");
+    $("#searchOrder").val("");
     $("#gross").val("");
     $("#net").val("");
     $("#cash").val("");
@@ -63,6 +66,36 @@ $("#btnNew").click(function () {
     $("#discount").css('border', '2px solid transparent');
     $("#cash").css('border', '2px solid transparent');
 
+});
+
+$("#btnSearchOrder").click(function () {
+    var trimid=$.trim($("#searchOrder").val());
+
+    for (var i = 0; i < orderDB.length; i++) {
+        if (trimid == orderDB[i].orderId){
+            $("#orderCusId").val(orderDB[i].cusIds);
+            $("#orderId").val(trimid);
+            $("#orderDate").val(orderDB[i].orderDate);
+            $("#net").val(orderDB[i].netTotal);
+            $("#gross").val(orderDB[i].grossTotal);
+        }
+    }
+
+    for (var i = 0; i < customerDB.length; i++) {
+        if ($("#orderCusId").val() == customerDB[i].id){
+            $("#orderCusName").val(customerDB[i].id);
+            $("#orderCusNIC").val(customerDB[i].nic);
+            $("#orderCusContact").val(customerDB[i].contact);
+            $("#orderCusAddress").val(customerDB[i].address);
+        }
+    }
+
+    for (var i = 0; i < orderDetailsDB.length; i++) {
+        if (trimid == orderDetailsDB[i].orderId){
+            let raw = `<tr><td> ${orderDetailsDB[i].code} </td><td> ${orderDetailsDB[i].kind} </td><td> ${orderDetailsDB[i].name} </td><td> ${orderDetailsDB[i].sellQty} </td><td> ${orderDetailsDB[i].price} </td><td> ${orderDetailsDB[i].discount} </td><td> ${orderDetailsDB[i].total} </td><td> <input id='btnEdit' class='btn btn-success btn-sm' value='Update' style="width: 75px"/> </td><td> <input id='btnDelete' class='btn btn-danger btn-sm' value='Delete' style="width: 75px"/> </td></tr>`;
+            $("#tblOrder tbody").append(raw);
+        }
+    }
 });
 
 /*-------------------Customer Sec-----------------------*/
@@ -78,6 +111,7 @@ $("#ids").click(function () {
     for (var i = 0; i < customerDB.length; i++) {
         if ($("#ids option:selected").text()==customerDB[i].id){
             $("#orderCusName").val(customerDB[i].name);
+            $("#orderCusId").val(customerDB[i].id);
             $("#orderCusContact").val(customerDB[i].contact);
             $("#orderCusNIC").val(customerDB[i].nic);
             $("#orderCusAddress").val(customerDB[i].address);
