@@ -309,12 +309,18 @@ $("#btnAddCart").click(function () {
 
             if (ifDuplicate!=true){
 
-                manageAddQty(sellQty);
-                calculateGrossAmount(gross);
-                calculateNetAmount(net);
+                if(parseInt($("#orderQty").val()) >= sellQty){
 
-                let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${sellQty} </td><td> ${unitPrice} </td><td> ${discount} </td><td> ${net} </td><td> <input id='btnEdit' class='btn btn-success btn-sm' value='Update' style="width: 75px"/> </td><td> <input id='btnDelete' class='btn btn-danger btn-sm' value='Delete' style="width: 75px"/> </td></tr>`;
-                $("#tblOrder tbody").append(raw);
+                    manageAddQty(sellQty);
+                    calculateGrossAmount(gross);
+                    calculateNetAmount(net);
+
+                    let raw = `<tr><td> ${itemCode} </td><td> ${kind} </td><td> ${itemName} </td><td> ${sellQty} </td><td> ${unitPrice} </td><td> ${discount} </td><td> ${net} </td><td> <input id='btnEdit' class='btn btn-success btn-sm' value='Update' style="width: 75px"/> </td><td> <input id='btnDelete' class='btn btn-danger btn-sm' value='Delete' style="width: 75px"/> </td></tr>`;
+                    $("#tblOrder tbody").append(raw);
+
+                }else if(parseInt($("#orderQty").val()) < sellQty){
+                    alert("Not Enough Quantity");
+                }
 
                 $("#orderItemName").val("");
                 $("#orderKind").val("");
@@ -355,14 +361,20 @@ $("#btnAddCart").click(function () {
 
                 if (click=="clicked"){
 
-                    manageQty(sellQty,$(tblOrderRow).children(':nth-child(4)').text());
-                    var previousGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*unitPrice;
-                    updateGrossAmount(gross,previousGross);
-                    updateNetAmount(net,$(tblOrderRow).children(':nth-child(7)').text());
+                    if(parseInt($("#orderQty").val()) >= sellQty){
 
-                    $(tblOrderRow).children(':nth-child(4)').text(sellQty);
-                    $(tblOrderRow).children(':nth-child(7)').text(net);
+                        manageQty(sellQty,$(tblOrderRow).children(':nth-child(4)').text());
+                        var previousGross=parseInt($(tblOrderRow).children(':nth-child(4)').text())*unitPrice;
+                        updateGrossAmount(gross,previousGross);
+                        updateNetAmount(net,$(tblOrderRow).children(':nth-child(7)').text());
 
+                        $(tblOrderRow).children(':nth-child(4)').text(sellQty);
+                        $(tblOrderRow).children(':nth-child(7)').text(net);
+
+                    }else if(parseInt($("#orderQty").val()) < sellQty){
+                        alert("Not Enough Quantity");
+                    }
+                    
                     $("#orderItemName").val("");
                     $("#orderItemCode").val("");
                     $("#orderKind").val("");
