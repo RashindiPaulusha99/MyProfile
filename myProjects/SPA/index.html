@@ -50,7 +50,7 @@
                                 <i class="fas fa-shopping-cart fa-2x"></i>
                             </a>
                         </li>
-                        <li class="nav-item dropdown me-3" id="other">
+                        <!--<li class="nav-item dropdown me-3" id="other">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-list-alt fa-2x"></i>
                             </a>
@@ -60,7 +60,24 @@
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
+                        </li>-->
+
+                        <li class="nav-item dropdown">
+                            <a aria-expanded="false" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown"
+                               href="#"
+                               id="navbarDropdown" role="button">
+                                Other
+                            </a>
+                            <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+                                <li><a class="dropdown-item" id="linkCustomer" href="#">Customer Manage</a></li>
+                                <li><a class="dropdown-item" id="linkItem" href="#">Item Manage</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item link-Order" id="linkOrder" href="#">Purchase Order</a></li>
+                            </ul>
                         </li>
+
                     </ul>
                 </div>
 
@@ -124,13 +141,13 @@
                         <i class="fas fa-users fa-4x text-white center d-flex justify-content-center mt-2"></i>
                         <h2 class="text-center text-white" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">All</h2>
                         <h2 class="text-center text-white" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Customers</h2>
-                        <h1 id="customerCount" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;"></h1>
+                        <h1 id="customerCount" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">0</h1>
                     </div>
                     <div class="col  me-5 ms-5 mb-4 mt-3 " style="background-image: radial-gradient(circle at top,#b6d4fe,#1a1e21);box-shadow: -1px 1px 8px 5px black;">
                         <i class="fas fa-box fa-4x text-white center d-flex justify-content-center mt-2"></i>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">All</h2>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Items</h2>
-                        <h1 id="itemCount" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;"></h1>
+                        <h1 id="itemCount" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">0</h1>
                     </div>
                 </div>
 
@@ -139,13 +156,13 @@
                         <i class="fas fa-shopping-cart fa-4x text-white d-flex justify-content-center mt-2"></i>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">All</h2>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Orders</h2>
-                        <h1 id="orderCount" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;"></h1>
+                        <h1 id="orderCount" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">0</h1>
                     </div>
                     <div class="col  me-5 ms-5 mb-5 mt-3 " style="background-image: radial-gradient(circle at top,#b6d4fe,#1a1e21);box-shadow: -1px 1px 8px 5px black;">
                         <i class="fas fa-file-invoice-dollar fa-4x text-white d-flex justify-content-center mt-2"></i>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Daily</h2>
                         <h2 class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">Income</h2>
-                        <h1 id="income" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;"></h1>
+                        <h1 id="income" class="text-white text-center" style="transform: translateY(10%);text-transform: uppercase;text-shadow: 0 5px 10px rgba(0,0,0,1);mix-blend-mode: overlay;">0</h1>
                     </div>
                 </div>
             </div>
@@ -201,7 +218,7 @@
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mt-1" for="customerId">Customer ID</label>
-                            <input type="text" id="customerId" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="C00-xxx" />
+                            <input type="text" id="customerId" class="form-control rounded rounded-pill shadow mt-0 mb-0" placeholder="C00-xxx" />
                             <p><small id="errorId" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -209,7 +226,7 @@
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label text-black mt-1" for="nameOfCustomer">Name</label>
-                            <input type="text" id="nameOfCustomer" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xxxxx xxxxx xxxxx" />
+                            <input type="text" id="nameOfCustomer" class="form-control rounded rounded-pill shadow mt-0 mb-0" placeholder="xxxxx xxxxx xxxxx" />
                             <p><small id="errorName" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -221,18 +238,16 @@
                         <!-- Gender -->
                         <div class="form-outline">
                             <label class="form-label text-black mt-0" for="gender">Gender</label>
-                            <input type="text" id="gender" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xxxx"/>
+                            <input type="text" id="gender" class="form-control  rounded rounded-pill shadow mt-0 mb-0" placeholder="xxxx"/>
                             <p><small id="errorGender" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
-
-
                     </div>
 
                     <div class="col">
                         <!-- Phone Number -->
                         <div class="form-outline ">
                             <label class="form-label text-black mt-0" for="contact">Contact</label>
-                            <input type="tel" id="contact" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="0xx-xxxxxxx"/>
+                            <input type="tel" id="contact" class="form-control rounded rounded-pill shadow mt-0 mb-0" placeholder="0xx-xxxxxxx"/>
                             <p><small id="errorContact" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -241,7 +256,7 @@
                         <!-- NIC -->
                         <div class="form-outline">
                             <label class="form-label text-black mt-0" for="nic">NIC</label>
-                            <input type="text" id="nic" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xxxxxxxxxV"/>
+                            <input type="text" id="nic" class="form-control rounded rounded-pill shadow mt-0 mb-0" placeholder="xxxxxxxxxV"/>
                             <p><small id="errorNIC" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -252,7 +267,7 @@
                         <!-- Address -->
                         <div class="form-outline ">
                             <label class="form-label text-black mt-0" for="address">Address</label>
-                            <input type="text" id="address" class="form-control form-control-sm rounded rounded-pill shadow mb-0 mt-0" placeholder="xxxxxxxxx"/>
+                            <input type="text" id="address" class="form-control rounded rounded-pill shadow mb-0 mt-0" placeholder="xxxxxxxxx"/>
                             <p><small id="errorAddress" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -261,7 +276,7 @@
                         <!--Email -->
                         <div class="form-outline">
                             <label class="form-label text-black mt-0" for="email">Email</label>
-                            <input type="email" id="email" class="form-control form-control-sm rounded rounded-pill shadow mb-0 mt-0" placeholder="email@example.com"/>
+                            <input type="email" id="email" class="form-control  rounded rounded-pill shadow mb-0 mt-0" placeholder="email@example.com"/>
                             <p><small id="errorEmail" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -358,7 +373,7 @@
                     <div class="col">
                         <div class="form-outline ">
                             <label class="form-label text-black mt-1" for="itemCode">Item Code</label>
-                            <input type="text" id="itemCode" class="form-control form-control-sm mt-0 mb-0 rounded rounded-pill shadow" placeholder="I00-xxx" />
+                            <input type="text" id="itemCode" class="form-control mt-0 mb-0 rounded rounded-pill shadow" placeholder="I00-xxx" />
                             <p><small id="errorCode" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -366,7 +381,7 @@
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label text-black mt-1" for="kind">Kind</label>
-                            <input type="text" id="kind" class="form-control form-control-sm mt-0 mb-0 rounded rounded-pill shadow" placeholder="xxxx" />
+                            <input type="text" id="kind" class="form-control mt-0 mb-0 rounded rounded-pill shadow" placeholder="xxxx" />
                             <p><small id="errorKind" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -374,7 +389,7 @@
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label text-black mt-1" for="nameOfItem">Item Name</label>
-                            <input type="text" id="nameOfItem" class="form-control form-control-sm mt-0 mb-0 rounded rounded-pill shadow" placeholder="xxxxx" />
+                            <input type="text" id="nameOfItem" class="form-control  mt-0 mb-0 rounded rounded-pill shadow" placeholder="xxxxx" />
                             <p><small id="errorItemName" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -386,7 +401,7 @@
                         <!-- Qty -->
                         <div class="form-outline">
                             <label class="form-label text-black mt-0" for="qty">Quantity</label>
-                            <input type="text" id="qty" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="xx" />
+                            <input type="text" id="qty" class="form-control rounded rounded-pill shadow mt-0 mb-0" placeholder="xx" />
                             <p><small id="errorQty" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
                     </div>
@@ -395,7 +410,7 @@
                         <!-- Price -->
                         <div class="form-outline">
                             <label class="form-label text-black mt-0" for="unitPrice">Unit Price</label>
-                            <input type="text" id="unitPrice" class="form-control form-control-sm rounded rounded-pill shadow mt-0 mb-0" placeholder="00.00" />
+                            <input type="text" id="unitPrice" class="form-control rounded rounded-pill shadow mt-0 mb-0" placeholder="00.00" />
                             <p><small id="errorPrice" class="text-danger pl-1 mt-0 mb-0"></small></p>
                         </div>
 
