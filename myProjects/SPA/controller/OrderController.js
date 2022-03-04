@@ -552,6 +552,8 @@ $("#btnPurchase").click(function () {
             }
 
             generateOrderId();
+            netAmount = 0;
+            grossAmount = 0;
 
             $("#orderItemName").val("");
             $("#orderItemCode").val("");
