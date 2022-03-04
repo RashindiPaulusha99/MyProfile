@@ -8,6 +8,8 @@ function disableOrderFields() {
 }
 
 $("#btnSearchOrders").click(function () {
+
+    $("#tblOrderDetail tbody tr").empty();
     var trimid=$.trim($("#searchOrderId").val());
 
     var ifExists = false;

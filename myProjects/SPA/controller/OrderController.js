@@ -40,6 +40,8 @@ function generateOrderId() {
 }
 
 $("#btnNew").click(function () {
+    netAmount = 0;
+    grossAmount = 0;
     generateOrderId();
     $("#orderItemName").val("");
     $("#orderItemCode").val("");
@@ -69,6 +71,7 @@ $("#btnNew").click(function () {
 
 $("#btnSearchOrder").click(function () {
     var trimid=$.trim($("#searchOrder").val());
+    $("#tblOrder tbody tr").empty();
 
     var ifExists = false;
     for (var i = 0; i <orderDB.length ; i++) {
@@ -374,7 +377,7 @@ $("#btnAddCart").click(function () {
                     }else if(parseInt($("#orderQty").val()) < sellQty){
                         alert("Not Enough Quantity");
                     }
-                    
+
                     $("#orderItemName").val("");
                     $("#orderItemCode").val("");
                     $("#orderKind").val("");
@@ -503,19 +506,6 @@ $("#btnPurchase").click(function () {
                 amountOfNet
             );
 
-            for (var i = 0; i < $("#tblOrder tbody tr").length; i++) {
-                var orderDetails = new OrderDetailDTO(
-                    orderId,
-                    $("#tblOrder tbody tr").children(':nth-child(1)')[i].innerText,
-                    $("#tblOrder tbody tr").children(':nth-child(2)')[i].innerText,
-                    $("#tblOrder tbody tr").children(':nth-child(3)')[i].innerText,
-                    $("#tblOrder tbody tr").children(':nth-child(4)')[i].innerText,
-                    $("#tblOrder tbody tr").children(':nth-child(5)')[i].innerText,
-                    $("#tblOrder tbody tr").children(':nth-child(6)')[i].innerText,
-                    $("#tblOrder tbody tr").children(':nth-child(7)')[i].innerText
-                )
-            }
-
             var ifDuplicate = false;
 
             for (var j = 0; j < orderDB.length; j++) {
@@ -562,6 +552,7 @@ $("#btnPurchase").click(function () {
             }
 
             generateOrderId();
+
             $("#orderItemName").val("");
             $("#orderItemCode").val("");
             $("#orderKind").val("");
