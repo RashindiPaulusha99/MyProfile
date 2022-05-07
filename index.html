@@ -109,8 +109,9 @@
         /*--------------------------------Responsive Header------------------------------*/
 
         @media all and (max-width: 320px) and (max-width: 374px) {
+
             body > header{
-                width: 100vw;
+                width: 100%;
             }
 
             body > header > div {
@@ -137,8 +138,8 @@
             }
 
             body > header > ul {
-                left: -11px;
-                font-size: 12px;
+                left: -7px;
+                font-size: 11px;
                 right: 7px;
             }
 
@@ -149,7 +150,8 @@
         }
 
         @media all and (min-width: 375px) and (max-width: 424px){
-            body > header > div {
+
+            /*body > header > div {
                 height: 40%;
                 width: 27.5px;
             }
@@ -179,6 +181,44 @@
                 padding: 0 6px 0 6px;
                 margin-top: 11px;
                 border-bottom: 2px solid transparent;
+            }*/
+
+            body > header{
+                width: 100%;
+            }
+
+            body > header > div {
+                height: 39%;
+                width: 26px;
+            }
+
+            body > header > div::before {
+                border-left: 13.5px solid transparent;
+                border-right: 12.5px solid transparent;
+                top: 31px;
+            }
+
+            body > header > div:nth-child(2) {
+                left: 27px;
+            }
+
+            body > header > div:nth-child(1) > h1 {
+                font-size: 18px;
+            }
+
+            body > header > div:nth-child(2) > h1 {
+                font-size: 18px;
+            }
+
+            body > header > ul {
+                left: -2px;
+                font-size: 13px;
+                right: 7px;
+            }
+
+            body > header > ul > li {
+                padding: 1px 0 0 8px;
+                margin-top: 29px;
             }
         }
 
@@ -366,6 +406,12 @@
         body > main > section:nth-child(1) > section > section:nth-child(3) > div{
             width: 100%;
             height: 100%;
+
+        }
+
+        body > main > section:nth-child(1) > section > section:nth-child(3) > div > img{
+            cursor: pointer;
+
         }
 
         body > main > section:nth-child(1) > section:nth-child(3){
@@ -510,6 +556,7 @@
 
             body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(1) {
                 left: 18px;
+                width: 274px;
             }
 
             body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(1) > h1 {
@@ -520,7 +567,7 @@
             }
 
             body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(2) {
-                width: 300px;
+                width: 260px;
                 left: 18px;
             }
 
@@ -553,7 +600,7 @@
             body > main > section:nth-child(1) > section:nth-child(3) >div:nth-child(1) {
                 background: none;
                 transform: none;
-                width: 192px;
+                width: 184px;
                 height: 199px;
             }
 
@@ -572,12 +619,12 @@
             }
 
             body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(3) {
-                width: 300px;
+                width: 260px;
                 left: 13px;
             }
 
             body> main > section:nth-child(1) > section:nth-child(1) {
-                width: 100vw;
+                width: 100%;
             }
 
             body> main > section:nth-child(1) > section > section {
@@ -604,7 +651,7 @@
 
         @media all and (min-width: 375px) and (max-width: 424px) {
 
-            body> main > section:nth-child(1) > section:nth-child(2) {
+            /*body> main > section:nth-child(1) > section:nth-child(2) {
                 width: 105px;
                 height: 109px;
             }
@@ -691,6 +738,108 @@
                 left: -9px;
                 top: -6px;
                 transform: rotate(19deg);
+            }*/
+
+            body > main > section:nth-child(1){
+                background: none;
+            }
+
+            body> main > section:nth-child(1) > section:nth-child(2) {
+                width: 105px;
+                height: 109px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(1) {
+                left: 18px;
+                width: 274px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(1) > h1 {
+                font-size: 20px;
+                top: -42px;
+                position: absolute;
+                left: 96px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(2) {
+                width: 260px;
+                left: 18px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(2) > h1 {
+                font-size: 18px;
+                position: absolute;
+                top: 42px;
+                left: 68px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(3) > h1 {
+                font-size: 18px;
+                position: absolute;
+                left: 75px;
+            }
+
+            body> main > section:nth-child(1) > section > section > section:nth-child(1) {
+                width: 300px;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(3) {
+                width: 171px;
+                height: 139px;
+                left: 75px;
+                top: 234px;
+                background: none;
+                margin: unset;
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(3) >div:nth-child(1) {
+                background: none;
+                transform: none;
+                width: 184px;
+                height: 199px;
+            }
+
+            body > main > section:nth-child(1)> section:nth-child(3) >div:nth-child(1) > h1 {
+                font-size: 41px;
+                left: -9px;
+                top: 20px;
+                transform: rotate(19deg);
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(3) >div:nth-child(2) > h1 {
+                font-size: 41px;
+                top: 45px;
+                left: 23px;
+                transform: rotate(19deg);
+            }
+
+            body > main > section:nth-child(1) > section:nth-child(4) >div:nth-child(3) {
+                width: 260px;
+                left: 13px;
+            }
+
+            body> main > section:nth-child(1) > section:nth-child(1) {
+                width: 100%;
+            }
+
+            body> main > section:nth-child(1) > section > section {
+                height: 50%;
+                position: absolute;
+                top: 101px;
+                bottom: 0;
+                margin: auto;
+                opacity: 40%;
+                display: none;
+            }
+
+            body > main > section:nth-child(1) > section > section:nth-child(3) {
+                width: 149px;
+                height: 24px;
+                left: 93px;
+                flex-direction: row;
+                top: 451px;
+                background-color: transparent;
+                border-color: transparent;
             }
         }
 
@@ -1108,7 +1257,7 @@
         @media all and (max-width: 320px) and (max-width: 374px){
 
             body > main > section:nth-child(2) > section {
-                width: 100vw;
+                width: 100%;
             }
 
             body > main > section:nth-child(2) > div > h1 {
@@ -1133,9 +1282,9 @@
             }
 
             body > main > section:nth-child(2) > section > section:nth-child(1) > section {
-                left: 10px;
+                left: 5px;
                 top: 244px;
-                width: 298px;
+                width: 292px;
                 height: 122px;
                 border: 1px solid #ff6b81;
                 border-radius: 0;
@@ -1153,8 +1302,8 @@
             }
 
             ul {
-                padding-left: 5px;
-                font-size: 11px;
+                padding-left: 6px;
+                font-size: 10px;
             }
 
             .second {
@@ -1170,9 +1319,9 @@
             body > main > section:nth-child(2) > section > section:nth-child(2) {
                 border: 1px solid #ff6b81;
                 position: absolute;
-                left: 12px;
+                left: 5px;
                 top: 376px;
-                width: 296px;
+                width: 292px;
                 border-radius: 0;
             }
 
@@ -1199,7 +1348,7 @@
 
         @media all and (min-width: 375px) and (max-width: 424px){
 
-            body > main > section:nth-child(2) > section {
+            /*body > main > section:nth-child(2) > section {
                 width: 100vw;
             }
 
@@ -1285,6 +1434,95 @@
                 height: 25px;
                 left: 125px;
                 top: 500px;
+                border-radius: 0;
+            }*/
+
+            body > main > section:nth-child(2) > section {
+                width: 100%;
+            }
+
+            body > main > section:nth-child(2) > div > h1 {
+                font-size: 25px;
+            }
+
+            body > main > section:nth-child(2) > section > section:nth-child(1) > div {
+                top: 48px;
+                left: 57px;
+                width: 175px;
+                height: 170px;
+                box-shadow: 7px 5px 5px 1px #485460;
+                border-top: 5px solid #FC427B;
+                border-left: 5px solid #FC427B;
+            }
+
+            body > main > section:nth-child(2) > section > section:nth-child(1) > div > img {
+                left: 6px;
+                top: 6px;
+                width: 161px;
+                height: 157px;
+            }
+
+            body > main > section:nth-child(2) > section > section:nth-child(1) > section {
+                left: 5px;
+                top: 244px;
+                width: 292px;
+                height: 122px;
+                border: 1px solid #ff6b81;
+                border-radius: 0;
+            }
+
+            .heading {
+                padding-left: 5px;
+                padding-top: 0;
+                margin-top: 2px;
+                font-size: 15px;
+            }
+
+            .first {
+                top: 26px;
+            }
+
+            ul {
+                padding-left: 6px;
+                font-size: 10px;
+            }
+
+            .second {
+                top: 26px;
+                left: 92px;
+            }
+
+            .third {
+                top: 26px;
+                left: 103px;
+            }
+
+            body > main > section:nth-child(2) > section > section:nth-child(2) {
+                border: 1px solid #ff6b81;
+                position: absolute;
+                left: 5px;
+                top: 376px;
+                width: 292px;
+                border-radius: 0;
+            }
+
+            .last > h2 {
+                padding-left: 6px;
+                font-size: 15px;
+                margin-top: 5px;
+            }
+
+            .last > p {
+                padding-left: 6px;
+                font-size: 10px;
+            }
+
+            .final {
+                width: 103px;
+                font-size: 16px;
+                height: 25px;
+                left: 95px;
+                top: 495px;
                 border-radius: 0;
             }
         }
@@ -1731,20 +1969,20 @@
             body > main > section:nth-child(3) > section > section > div > h1 {
                 color: white;
                 font-size: 14px;
-                padding-left: 13px;
+                padding-left: 4px;
             }
 
             body > main > section:nth-child(3) > section > section > div {
                 height: 79px;
-                width: 288px;
+                width: 283px;
                 border: 4px solid white;
                 border-left: 4px solid #FC427B;
-                border-right: 7px solid #FC427B;
+                border-right: 4px solid #FC427B;
             }
 
             body > main > section:nth-child(3) > section {
                 top: 50px;
-                left: 11px;
+                left: 6px;
             }
 
             body > main > section:nth-child(3) > section > section:nth-child(1) > div{
@@ -1770,7 +2008,7 @@
 
         @media all and (min-width: 375px) and (max-width: 424px){
 
-            body > main > section:nth-child(3) > div:nth-child(1) > h1 {
+            /*body > main > section:nth-child(3) > div:nth-child(1) > h1 {
                 font-size: 25px;
             }
 
@@ -1796,6 +2034,54 @@
             body > main > section:nth-child(3) > section {
                 top: 50px;
                 left: 38px;
+            }
+
+            body > main > section:nth-child(3) > section > section:nth-child(1) > div{
+                animation: none;
+            }
+
+            body > main > section:nth-child(3) > section > section:nth-child(2) > div{
+                animation: none;
+            }
+
+            body > main > section:nth-child(3) > section > section:nth-child(3) > div{
+                animation: none;
+            }
+
+            body > main > section:nth-child(3) > section > section:nth-child(4) > div{
+                animation: none;
+            }
+
+            body > main > section:nth-child(3) > section > section:nth-child(5) > div{
+                animation: none;
+            }*/
+
+            body > main > section:nth-child(3) > div:nth-child(1) > h1 {
+                font-size: 25px;
+            }
+
+            body > main > section:nth-child(3) > section:nth-child(3) {
+                width: 300px;
+                height: 182px;
+            }
+
+            body > main > section:nth-child(3) > section > section > div > h1 {
+                color: white;
+                font-size: 14px;
+                padding-left: 4px;
+            }
+
+            body > main > section:nth-child(3) > section > section > div {
+                height: 79px;
+                width: 283px;
+                border: 4px solid white;
+                border-left: 4px solid #FC427B;
+                border-right: 4px solid #FC427B;
+            }
+
+            body > main > section:nth-child(3) > section {
+                top: 50px;
+                left: 6px;
             }
 
             body > main > section:nth-child(3) > section > section:nth-child(1) > div{
@@ -2291,17 +2577,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(1) > img {
-                top: -23px;
-                left: -130px;
-                width: 207px;
-                height: 164px;
+                top: -13px;
+                left: -113px;
+                width: 194px;
+                height: 150px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(1) > div > img {
-                left: -61px;
-                top: 7px;
-                width: 71px;
-                height: 74px;
+                left: -51px;
+                top: 15px;
+                width: 69px;
+                height: 68px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(2) {
@@ -2310,16 +2596,16 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(2) > img {
-                width: 207px;
-                height: 164px;
-                top: -46px;
-                left: 8px;
+                width: 194px;
+                height: 150px;
+                top: -37px;
+                left: 9px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(2) > div > img {
-                width: 71px;
-                height: 74px;
-                top: -14px;
+                width: 65px;
+                height: 66px;
+                top: -9px;
                 left: 78px;
             }
 
@@ -2329,17 +2615,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(3) > img {
-                width: 207px;
-                height: 164px;
-                top: 63px;
-                left: -40px;
+                width: 194px;
+                height: 150px;
+                top: 68px;
+                left: -22px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(3) > div > img {
                 width: 86px;
                 height: 84px;
                 top: 86px;
-                left: 23px;
+                left: 35px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(4) {
@@ -2348,9 +2634,9 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(4) > img {
-                width: 207px;
-                height: 164px;
-                top: 3px;
+                width: 194px;
+                height: 150px;
+                top: 9px;
                 left: 10px;
             }
 
@@ -2358,7 +2644,7 @@
                 width: 67px;
                 height: 64px;
                 top: 40px;
-                left: 83px;
+                left: 76px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(5) {
@@ -2367,17 +2653,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(5) > img {
-                width: 207px;
-                height: 164px;
-                top: -3px;
-                left: -39px;
+                width: 194px;
+                height: 150px;
+                top: 0;
+                left: -20px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(5) > div > img {
                 width: 71px;
                 height: 74px;
-                top: 28px;
-                left: 34px;
+                top: 25px;
+                left: 45px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(6) {
@@ -2386,17 +2672,17 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(6) > img {
-                width: 207px;
-                height: 164px;
-                top: -5px;
-                left: 8px;
+                width: 194px;
+                height: 150px;
+                top: -1px;
+                left: 7px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(6) > div > img {
                 width: 71px;
                 height: 74px;
-                top: 25px;
-                left: 79px;
+                top: 23px;
+                left: 69px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(7) {
@@ -2405,23 +2691,23 @@
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(7) > img {
-                width: 207px;
-                height: 164px;
+                width: 194px;
+                height: 150px;
                 top: 4px;
-                left: -19px;
+                left: -10px;
             }
 
             body > main > section:nth-child(4) > section > div:nth-child(7) > div > img {
-                width: 59px;
-                height: 61px;
+                width: 54px;
+                height: 52px;
                 top: 40px;
-                left: 57px;
+                left: 63px;
             }
         }
 
         @media all and (min-width: 375px) and (max-width: 424px){
 
-            body > main > section:nth-child(4) > section {
+            /*body > main > section:nth-child(4) > section {
                 width: 300px;
                 height: 461px;
                 top: 50px;
@@ -2566,6 +2852,153 @@
                 height: 61px;
                 top: 40px;
                 left: 57px;
+            }*/
+
+            body > main > section:nth-child(4) > section {
+                width: 300px;
+                height: 461px;
+                top: 50px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(1) {
+                top: 7px;
+                left: 96px;
+            }
+
+            body > main > section:nth-child(4) > div:nth-child(1) > h1 {
+                font-size: 25px;
+            }
+
+            body > main > section:nth-child(4) > section > div {
+                animation: none;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(1) > img {
+                top: -13px;
+                left: -113px;
+                width: 194px;
+                height: 150px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(1) > div > img {
+                left: -51px;
+                top: 15px;
+                width: 69px;
+                height: 68px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(2) {
+                top: 30px;
+                left: 96px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(2) > img {
+                width: 194px;
+                height: 150px;
+                top: -37px;
+                left: 9px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(2) > div > img {
+                width: 65px;
+                height: 66px;
+                top: -9px;
+                left: 78px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(3) {
+                top: 28px;
+                left: 5px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(3) > img {
+                width: 194px;
+                height: 150px;
+                top: 68px;
+                left: -22px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(3) > div > img {
+                width: 86px;
+                height: 84px;
+                top: 86px;
+                left: 35px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(4) {
+                top: 87px;
+                left: 95px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(4) > img {
+                width: 194px;
+                height: 150px;
+                top: 9px;
+                left: 10px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(4) > div > img {
+                width: 67px;
+                height: 64px;
+                top: 40px;
+                left: 76px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(5) {
+                top: 200px;
+                left: 4px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(5) > img {
+                width: 194px;
+                height: 150px;
+                top: 0;
+                left: -20px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(5) > div > img {
+                width: 71px;
+                height: 74px;
+                top: 25px;
+                left: 45px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(6) {
+                top: 200px;
+                left: 98px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(6) > img {
+                width: 194px;
+                height: 150px;
+                top: -1px;
+                left: 7px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(6) > div > img {
+                width: 71px;
+                height: 74px;
+                top: 23px;
+                left: 69px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(7) {
+                top: 301px;
+                left: 54px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(7) > img {
+                width: 194px;
+                height: 150px;
+                top: 4px;
+                left: -10px;
+            }
+
+            body > main > section:nth-child(4) > section > div:nth-child(7) > div > img {
+                width: 54px;
+                height: 52px;
+                top: 40px;
+                left: 63px;
             }
         }
 
@@ -3068,6 +3501,7 @@
         /*--------------------------Responsive Experience Page-----------------*/
 
         @media all and (max-width: 320px) and (max-width: 374px){
+
             h1 {
                 font-size: 25px;
             }
@@ -3093,7 +3527,7 @@
                 width: 191px;
                 height: 90px;
                 top: 72px;
-                left: 105px;
+                left: 97px;
                 border-top: 2px solid #FC427B;
                 border-bottom: 2px solid #FC427B;
             }
@@ -3107,7 +3541,7 @@
                 width: 130px;
                 height: 87px;
                 top: -18px;
-                right: 0;
+                right: 4px;
                 border: transparent;
                 box-shadow: -12px 14px 3px -5px darkslateblue;
             }
@@ -3116,17 +3550,16 @@
                 width: 191px;
                 height: 90px;
                 top: 102px;
-                right: 104px;
+                right: 96px;
                 border-top: 2px solid #FC427B;
                 border-bottom: 2px solid #FC427B;
             }
-
 
         }
 
         @media all and (min-width: 375px) and (max-width: 424px){
 
-            h1 {
+            /*h1 {
                 font-size: 25px;
             }
 
@@ -3175,6 +3608,59 @@
                 height: 90px;
                 top: 102px;
                 right: 104px;
+                border-top: 2px solid #FC427B;
+                border-bottom: 2px solid #FC427B;
+            }*/
+
+            h1 {
+                font-size: 25px;
+            }
+
+            body > main > section:nth-child(5) > section > section:nth-child(1) > section > div:nth-child(1) {
+                width: 130px;
+                height: 87px;
+                top: -47px;
+                left: 0;
+                box-shadow: 12px 14px 3px -5px darkslateblue;
+                border: transparent;
+            }
+
+            body > main > section:nth-child(5) > section > section:nth-child(1) > section {
+                animation: none;
+            }
+
+            body > main > section:nth-child(5) > section > section:nth-child(2) > section {
+                animation: none;
+            }
+
+            body > main > section:nth-child(5) > section > section:nth-child(1) > section > div:nth-child(2) {
+                width: 191px;
+                height: 90px;
+                top: 72px;
+                left: 97px;
+                border-top: 2px solid #FC427B;
+                border-bottom: 2px solid #FC427B;
+            }
+
+            body > main > section:nth-child(5) > section > section > section > div:nth-child(2) > p {
+                padding-top: 0;
+                font-size: 10px;
+            }
+
+            body > main > section:nth-child(5) > section > section:nth-child(2) > section > div:nth-child(1) {
+                width: 130px;
+                height: 87px;
+                top: -18px;
+                right: 4px;
+                border: transparent;
+                box-shadow: -12px 14px 3px -5px darkslateblue;
+            }
+
+            body > main > section:nth-child(5) > section > section:nth-child(2) > section > div:nth-child(2) {
+                width: 191px;
+                height: 90px;
+                top: 102px;
+                right: 96px;
                 border-top: 2px solid #FC427B;
                 border-bottom: 2px solid #FC427B;
             }
@@ -3817,7 +4303,7 @@
                 left: 0;
                 margin: 136px auto;
                 top: 18px;
-                width: 318px;
+                width: 302px;
             }
 
             body > main > section:nth-child(6) > section:nth-child(1){
@@ -4016,7 +4502,8 @@
                 display: none;
             }
         }*/
-            .wrapper {
+
+            /*.wrapper {
                 position: absolute;
                 left: 0;
                 margin: 136px auto;
@@ -4068,6 +4555,59 @@
 
             .single_img.img6 {
                 transform: rotateY(300deg) translateX(70px);
+            }
+
+            body > main > section:nth-child(6) > div:nth-child(3) > form > button {
+                top: 454px;
+            }*/
+
+            .wrapper{
+                position: absolute;
+                left: 0;
+                margin: 136px auto;
+                top: 18px;
+                width: 302px;
+            }
+
+            body > main > section:nth-child(6) > section:nth-child(1){
+                width: 500px;
+                height: 600px;
+            }
+
+            .imageArea{
+                width: 98%;
+            }
+
+            .single_img{
+                width: 123px;
+                height: 95px;
+                top: 107px;
+                left: 91px;
+            }
+
+            .single_img img{
+                width: 123px;
+                height: 95px;
+                border: 10px inset white;
+            }
+
+            .single_img.img1{
+                transform: rotateY(0deg) translateX(50px);
+            }
+            .single_img.img2{
+                transform: rotateY(60deg) translateX(50px);
+            }
+            .single_img.img3{
+                transform: rotateY(120deg) translateX(50px);
+            }
+            .single_img.img4{
+                transform: rotateY(180deg) translateX(50px);
+            }
+            .single_img.img5{
+                transform: rotateY(240deg) translateX(50px);
+            }
+            .single_img.img6{
+                transform: rotateY(300deg) translateX(50px);
             }
 
             body > main > section:nth-child(6) > div:nth-child(3) > form > button {
@@ -4565,162 +5105,162 @@
         /*--------------------------Responsive Contact Page-----------------*/
         @media all and (max-width: 320px) and (max-width: 374px) {
 
-                body > footer > section > #m {
-                    height: 518px;
-                    left: 18px;
-                }
-
-                body > footer > section > #m > #pencil {
-                    width: 300px;
-                    height: 197px;
-                    top: 4px;
-                    left: -14px;
-                    border-color: transparent;
-                    border-radius: 0;
-                    border-top: transparent;
-                    border-left: transparent;
-                    background: none;
-                    box-shadow: none;
-                }
-
-                body > footer > section > #m > #pencil > div {
-                    top: 1px;
-                    left: 33px;
-                    font-size: 11px;
-                    width: 249px;
-                    height: 151px;
-                    border-radius: 0;
-                    background: none;
-                    border-bottom: 4px solid #FC427B;
-                    border-right: 4px solid #FC427B;
-                    color: darkgrey;
-                }
-
-                body > footer > section > #m > #pencil > div > figure:nth-child(1) > figcaption {
-                    margin-left: 32px;
-                    margin-top: -22px;
-                }
-
-                body > footer > section > #m > #pencil > div > figure:nth-child(2) > figcaption {
-                    margin-top: -17px;
-                    margin-left: 32px;
-                }
-
-                body > footer > section > #m > #pencil > div > figure:nth-child(3) > figcaption {
-                    margin-top: -20px;
-                    margin-left: 34px;
-                }
-
-                body > footer > section > #m > #pencil > div > figure:nth-child(4) > figcaption {
-                    margin-left: 34px;
-                    margin-top: -24px;
-                }
-
-                figure {
-                    margin-left: 10px;
-                }
-
-                body > footer > section > div > h1:nth-child(2) {
-                    display: none;
-                }
-
-                body > footer > section > #m > section:nth-child(2) {
-                    height: 273px;
-                    top: 159px;
-                    left: -8px;
-                    width: 300px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > label {
-                    font-size: 10px;
-                    color: darkgray;
-                    border: none;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > .input {
-                    border-radius: 0;
-                    width: 114px;
-                    height: 20px;
-                    border: 1px solid slategray;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > #phone_Number {
-                    position: absolute;
-                    top: 68px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
-                    position: absolute;
-                    top: 131px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > #email {
-                    position: absolute;
-                    top: 117px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
-                    position: absolute;
-                    top: 179px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > #massage {
-                    position: absolute;
-                    top: 165px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > #txtPhoneNumber {
-                    width: 293px;
-                    position: absolute;
-                    top: 83px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
-                    width: 293px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
-                    height: 41px;
-                    width: 293px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > #last_name {
-                    bottom: 21px;
-                    left: 56px;
-                }
-
-                body > footer > section > #m > section:nth-child(2) > form > button {
-                    position: absolute;
-                    left: 211px;
-                    top: 246px;
-                    height: 27px;
-                    width: 90px;
-                    background: #ff6b81;
-                    font-size: 13px;
-                    border: 1px solid transparent;
-                }
-
-                #break {
-                    width: 90vw;
-                    height: 0.1px;
-                    background-color: dimgrey;
-                    top: 463px;
-                }
-
-                .copyrights {
-                    position: absolute;
-                    top: 541px;
-                    color: darkgray;
-                    left: 118px;
-                    width: 139px;
-                    font-size: 11px;
-                }
-
+            body > footer > section > #m {
+                height: 518px;
+                left: 3px;
             }
+
+            body > footer > section > #m > #pencil {
+                width: 300px;
+                height: 197px;
+                top: 4px;
+                left: -14px;
+                border-color: transparent;
+                border-radius: 0;
+                border-top: transparent;
+                border-left: transparent;
+                background: none;
+                box-shadow: none;
+            }
+
+            body > footer > section > #m > #pencil > div {
+                top: 1px;
+                left: 33px;
+                font-size: 11px;
+                width: 249px;
+                height: 151px;
+                border-radius: 0;
+                background: none;
+                border-bottom: 4px solid #FC427B;
+                border-right: 4px solid #FC427B;
+                color: darkgrey;
+            }
+
+            body > footer > section > #m > #pencil > div > figure:nth-child(1) > figcaption {
+                margin-left: 32px;
+                margin-top: -22px;
+            }
+
+            body > footer > section > #m > #pencil > div > figure:nth-child(2) > figcaption {
+                margin-top: -17px;
+                margin-left: 32px;
+            }
+
+            body > footer > section > #m > #pencil > div > figure:nth-child(3) > figcaption {
+                margin-top: -20px;
+                margin-left: 34px;
+            }
+
+            body > footer > section > #m > #pencil > div > figure:nth-child(4) > figcaption {
+                margin-left: 34px;
+                margin-top: -24px;
+            }
+
+            figure {
+                margin-left: 10px;
+            }
+
+            body > footer > section > div > h1:nth-child(2) {
+                display: none;
+            }
+
+            body > footer > section > #m > section:nth-child(2) {
+                height: 273px;
+                top: 159px;
+                left: 1px;
+                width: 295px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > label {
+                font-size: 10px;
+                color: darkgray;
+                border: none;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > .input {
+                border-radius: 0;
+                width: 113px;
+                height: 20px;
+                border: 1px solid slategray;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #phone_Number {
+                position: absolute;
+                top: 68px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
+                position: absolute;
+                top: 131px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #email {
+                position: absolute;
+                top: 117px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
+                position: absolute;
+                top: 179px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #massage {
+                position: absolute;
+                top: 165px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #txtPhoneNumber {
+                width: 289px;
+                position: absolute;
+                top: 83px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
+                width: 289px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
+                height: 41px;
+                width: 289px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #last_name {
+                bottom: 21px;
+                left: 56px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > button {
+                position: absolute;
+                left: 202px;
+                top: 246px;
+                height: 27px;
+                width: 90px;
+                background: #ff6b81;
+                font-size: 13px;
+                border: 1px solid transparent;
+            }
+
+            #break {
+                width: 90vw;
+                height: 0.1px;
+                background-color: dimgrey;
+                top: 463px;
+            }
+
+            .copyrights {
+                position: absolute;
+                top: 541px;
+                color: darkgray;
+                left: 118px;
+                width: 139px;
+                font-size: 11px;
+            }
+
+        }
 
         @media all and (min-width: 375px) and (max-width: 424px) {
 
-                body > footer > section > #m {
+            /*body > footer > section > #m {
                     height: 518px;
                     left: 18px;
                 }
@@ -4866,8 +5406,156 @@
                     left: 148px;
                     width: 139px;
                     font-size: 11px;
-                }
+                }*/
+
+            body > footer > section > #m {
+                height: 518px;
+                left: 18px;
             }
+
+            body > footer > section > #m > #pencil {
+                width: 300px;
+                height: 197px;
+                top: 4px;
+                left: 7px;
+                border-color: transparent;
+                border-radius: 0;
+                border-top: transparent;
+                border-left: transparent;
+                background: none;
+                box-shadow: none;
+            }
+
+            body > footer > section > #m > #pencil > div {
+                top: 1px;
+                left: 33px;
+                font-size: 11px;
+                width: 249px;
+                height: 151px;
+                border-radius: 0;
+                background: none;
+                border-bottom: 4px solid #FC427B;
+                border-right: 4px solid #FC427B;
+                color: darkgrey;
+            }
+
+            body > footer > section > #m > #pencil > div > figure:nth-child(1) > figcaption {
+                margin-left: 32px;
+                margin-top: -22px;
+            }
+
+            body > footer > section > #m > #pencil > div > figure:nth-child(2) > figcaption {
+                margin-top: -17px;
+                margin-left: 32px;
+            }
+
+            body > footer > section > #m > #pencil > div > figure:nth-child(3) > figcaption {
+                margin-top: -20px;
+                margin-left: 34px;
+            }
+
+            body > footer > section > #m > #pencil > div > figure:nth-child(4) > figcaption {
+                margin-left: 34px;
+                margin-top: -24px;
+            }
+
+            figure {
+                margin-left: 10px;
+            }
+
+            body > footer > section > div > h1:nth-child(2) {
+                display: none;
+            }
+
+            body > footer > section > #m > section:nth-child(2) {
+                height: 273px;
+                top: 159px;
+                left: -8px;
+                width: 358px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > label {
+                font-size: 10px;
+                color: darkgray;
+                border: none;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > .input {
+                border-radius: 0;
+                width: 143px;
+                height: 20px;
+                border: 1px solid slategray;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #phone_Number {
+                position: absolute;
+                top: 68px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #txtE-mailAddress {
+                position: absolute;
+                top: 131px;
+                width: 349px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #email {
+                position: absolute;
+                top: 117px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
+                position: absolute;
+                top: 179px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #massage {
+                position: absolute;
+                top: 165px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #txtPhoneNumber {
+                width: 349px;
+                position: absolute;
+                top: 83px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #txtMassage {
+                height: 41px;
+                width: 348px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > #last_name {
+                bottom: 21px;
+                left: 56px;
+            }
+
+            body > footer > section > #m > section:nth-child(2) > form > button {
+                position: absolute;
+                left: 262px;
+                top: 246px;
+                height: 27px;
+                width: 90px;
+                background: #ff6b81;
+                font-size: 13px;
+                border: 1px solid transparent;
+            }
+
+            #break {
+                width: 90vw;
+                height: 0.1px;
+                background-color: dimgrey;
+                top: 463px;
+            }
+
+            .copyrights {
+                position: absolute;
+                top: 541px;
+                color: darkgray;
+                left: 148px;
+                width: 139px;
+                font-size: 11px;
+            }
+        }
 
         @media all and (min-width: 425px) and (max-width: 767px) {
 
