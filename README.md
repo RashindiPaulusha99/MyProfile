@@ -2,7 +2,7 @@
 
 This is my **Personal Profile**.
 
-![Image of Book](assets/images/home1.png) 
+<img src="assets/images/home1.png" alt="home" width="1000" height="250"/>
 
 I'm Rashindi Paulusha Wijesinghe and I am passionate software engineer based in Sri Lanka.
 This is a professional documentation that provides proof of my accomplishments of my work.
