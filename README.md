@@ -1,4 +1,4 @@
-# *About*
+# *About* ❓
 
 This is my **Personal Profile**.
 
@@ -7,16 +7,16 @@ This is my **Personal Profile**.
 I'm Rashindi Paulusha Wijesinghe and I am passionate software engineer based in Sri Lanka.
 This is a professional documentation that provides proof of my accomplishments of my work.
 
-# *Importance*
+# *Importance* 📝
 
 This is a great way to demonstrate my competencies. During a job Search, this profile showcase my work to the potential employers.
 It presents evidence of my relevant skills and abilities.
 
-# *Details*
+# *Details* 🔖
 
 Below you can see the languages , tools I used and some links of my Profile.
 
-## Images
+## Images 📷
 ![Image of About](assets/images/about1.png)
 
 ![Image of Education](assets/images/education1.png)
@@ -29,7 +29,7 @@ Below you can see the languages , tools I used and some links of my Profile.
 
 ![Image of Contact](assets/images/contact1.png)
 
-## Assignments
+## Assignments 📋
 
 1. ### Layout
 
@@ -83,17 +83,18 @@ Below you can see the languages , tools I used and some links of my Profile.
    
 ![Image of assignment](assets/images/case11.png)   
 
-## Languages
+## Languages 📗
 
-![Image of CSS](assets/logo/css__2_-removebg-preview.png)
-![Image of HTML](assets/logo/html%20(2).png)
+<p align="center"><img src="assets/logo/css__2_-removebg-preview.png" alt="css" width="250" height="250"/>
+   <img src="assets/logo/html%20(2).png" alt="html" width="250" height="250"/></p>
 
-## Tools
+## Tools 📌
 
-![Image of Intellij](assets/logo/IntelliJ_IDEA_Icon.svg-removebg-preview.png)
-![Image of Figma](assets/logo/figma-removebg-preview.png)
+<p align="center">
+<img src="assets/logo/IntelliJ_IDEA_Icon.svg-removebg-preview.png" alt="intellij" width="250" height="250"/>
+<img src="assets/logo/figma-removebg-preview.png" alt="figma" width="250" height="250"/></p>
 
-## Links
+## Links 🔎
 
 * **SiteMap URL-** https://www.gloomaps.com/Jc9afdjkC6
 
