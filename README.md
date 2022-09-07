@@ -2,7 +2,7 @@
 
 This is my **Personal Profile**.
 
-<img src="assets/images/home1.png" alt="home" width="1000" height="250"/>
+![Image of Home](assets/images/home1.png)
 
 I'm Rashindi Paulusha Wijesinghe and I am passionate software engineer based in Sri Lanka.
 This is a professional documentation that provides proof of my accomplishments of my work.
@@ -85,14 +85,14 @@ Below you can see the languages , tools I used and some links of my Profile.
 
 ## Languages 📗
 
-<p align="center"><img src="assets/logo/css__2_-removebg-preview.png" alt="css" width="250" height="250"/>
-   <img src="assets/logo/html%20(2).png" alt="html" width="250" height="250"/></p>
+<p align="center"><img src="assets/logo/css__2_-removebg-preview.png" alt="css" width="150" height="150"/>
+   <img src="assets/logo/html%20(2).png" alt="html" width="150" height="150"/></p>
 
 ## Tools 📌
 
 <p align="center">
-<img src="assets/logo/IntelliJ_IDEA_Icon.svg-removebg-preview.png" alt="intellij" width="250" height="250"/>
-<img src="assets/logo/figma-removebg-preview.png" alt="figma" width="250" height="250"/></p>
+<img src="assets/logo/IntelliJ_IDEA_Icon.svg-removebg-preview.png" alt="intellij" width="150" height="150"/>
+<img src="assets/logo/figma-removebg-preview.png" alt="figma" width="150" height="150"/></p>
 
 ## Links 🔎
 
